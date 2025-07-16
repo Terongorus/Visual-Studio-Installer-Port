@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": true,
+    "patternProperties": {
+      ".+": {
+        "type": "object",
+        "additionalProperties": false,
+        "patternProperties": {
+          ".+\\s-\\s.+": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "BuildCommand": { "type": "string" },
+              "RebuildCommand": { "type": "string" },
+              "CleanCommand": { "type": "string" },
+              "BuildOutput": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }

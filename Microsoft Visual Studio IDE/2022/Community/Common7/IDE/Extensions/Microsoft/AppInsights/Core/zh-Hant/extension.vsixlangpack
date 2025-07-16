@@ -1,0 +1,6 @@
+<PackageLanguagePackManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <DisplayName xml:space="preserve">Developer Analytics Tools</DisplayName>
+    <Description xml:space="preserve">Telemetry search, CodeLens integration, and other tools for Application Insights.</Description>
+  </Metadata>
+</PackageLanguagePackManifest>

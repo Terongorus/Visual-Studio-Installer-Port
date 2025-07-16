@@ -1,0 +1,54 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>CSharp\Windows UAP\1033\WapProj</RelativePathOnDisk>
+    <TemplateFileName>WapProj.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="200" />
+        <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="201" />
+        <Icon>WapProjTemplate.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <ProjectSubType>WapProj</ProjectSubType>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <TemplateID>Microsoft.DesktopBridge.CS</TemplateID>
+        <SortOrder>100</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WapProjTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <CreateInPlace>true</CreateInPlace>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\Windows UAP\1033\WapProj</RelativePathOnDisk>
+    <TemplateFileName>WapProj.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="200" />
+        <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="201" />
+        <Icon>WapProjTemplate.ico</Icon>
+        <TemplateGroupID>WinRT-Native</TemplateGroupID>
+        <TemplateID>Microsoft.DesktopBridge.VB</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <ProjectSubType>WapProj</ProjectSubType>
+        <SortOrder>100</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WapProjTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <CreateInPlace>true</CreateInPlace>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <RequiredPlatformVersion>6.1.0</RequiredPlatformVersion>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

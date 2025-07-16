@@ -1,0 +1,6 @@
+﻿.dataGridContainer .formattedMessage,
+.dataGridContainer .providerGuid,
+.dataGridContainer .eventName,
+.dataGridContainer .processName {
+    text-align: left;
+}

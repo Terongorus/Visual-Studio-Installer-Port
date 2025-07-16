@@ -1,0 +1,33 @@
+{
+  "debugExtensions": {
+    "UEWin64": {
+      "vsDebugEngineGuid": "{3B476D35-A401-11D2-AAD4-00C04F990171}",
+      "VsDebugTargetInfo4": {
+        "bstrCurDir": "${debugInfo.currentDir}",
+        "bstrExe": "${debugInfo.target}",
+        "bstrOptions": "*"
+      },
+      "defaultProperties": {
+        "args": [],
+        "env": {},
+        "uproject": {
+          "supportedPlatforms": [
+            "Win64",
+            "x64"
+          ]
+        }
+      },
+      "templates": [
+        {
+          "templateId": "launchUEWin64",
+          "fileExtensions": [
+            "*.exe",
+            "*.dll"
+          ],
+          "initialConfiguration": {
+          }
+        }
+      ]
+    }
+  }
+}

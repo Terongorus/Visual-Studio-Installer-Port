@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Доступ к службам Office 365 с помощью Microsoft Graph",
+  "o365DependencyTypeDescription": "Используйте API Microsoft Graph для интеграции приложений со службами Office 365.",
+  "connectionSettings": "Параметры подключения",
+  "nugetComponentName": "Пакеты NuGet",
+  "nugetComponentDescription": "Пакеты NuGet будут изменены для оптимальной работы новой зависимости.",
+  "gettingStartedComponentName": "Документ \"Начало работы\"",
+  "gettingStartedComponentDescription": "Вызов Microsoft 365 с документацией по API Microsoft Graph",
+  "graphPermissionsComponentName": "Разрешения Microsoft Graph",
+  "graphPermissionsComponentDescription": "Обновление разрешений приложения Microsoft Entra для API Microsoft Graph",
+  "configSettingsComponentName": "Параметры конфигурации",
+  "configSettingsComponentDescription": "Параметры будут изменены для оптимальной работы новой зависимости."
+}

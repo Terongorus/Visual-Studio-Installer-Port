@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AsyncMethodLabel" xml:space="preserve">
+    <value>[Async]</value>
+  </data>
+  <data name="BacktraceAriaLabel" xml:space="preserve">
+    <value>Backtrace of selected file</value>
+  </data>
+  <data name="BacktraceFileDisplay" xml:space="preserve">
+    <value>Backtrace: {0} for PID: {1}</value>
+    <comment>The title for the backtrace tree. The first parameter is the file name for the tree, the second is a process ID</comment>
+  </data>
+  <data name="BacktraceNoStacks" xml:space="preserve">
+    <value>Unable to compute the backtrace for the given file, no stacks are available</value>
+  </data>
+  <data name="ContextMenu_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="ContextMenu_CopyAsMarkdown" xml:space="preserve">
+    <value>Copy as Markdown</value>
+    <comment>Context menu item for copying the selected text to the clipboard as Markdown</comment>
+  </data>
+  <data name="ContextMenu_GoToSourceFile" xml:space="preserve">
+    <value>Go To Source File</value>
+  </data>
+  <data name="ExternalCallLabel" xml:space="preserve">
+    <value>[External Call]</value>
+  </data>
+  <data name="ExternalCodeLabel" xml:space="preserve">
+    <value>[External Code]</value>
+  </data>
+  <data name="FileReadsAriaLabel" xml:space="preserve">
+    <value>File read operations</value>
+  </data>
+  <data name="FileReadsHeaderKBRead" xml:space="preserve">
+    <value>Data Read (KB)</value>
+  </data>
+  <data name="FileReadWriteHeaderCount" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="FileReadWriteHeaderDuplicationFactor" xml:space="preserve">
+    <value>Duplication Factor</value>
+  </data>
+  <data name="FileReadWriteHeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FileReadWriteHeaderSize" xml:space="preserve">
+    <value>File Size on Disk (KB)</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_DataReadTooltip" xml:space="preserve">
+    <value>Data read from the file in KB. Parent file rows display the total amount of data read from that file across all read operations. Parent process rows display the total number of bytes read by every read operation in that process.</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_DataWriteTooltip" xml:space="preserve">
+    <value>Data written to the file in KB. Parent rows display the total amount of data written to that file across all write operations. Parent process rows display the total number of bytes written by every write operation in that process.</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_NameTooltip" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_ReadCountTooltip" xml:space="preserve">
+    <value>Number of times the file was read</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_ReadDuplicationFactorTooltip" xml:space="preserve">
+    <value>Number of bytes read from the file divided by the size of the file. Parent file rows display the total amount of bytes read from the file divided by the average size of the file across all read operations.</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_SizeTooltip" xml:space="preserve">
+    <value>Size of the file in KB. Parent file rows display the average size of their child rows.</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_WriteCountTooltip" xml:space="preserve">
+    <value>Number of times the file was written to</value>
+  </data>
+  <data name="FileReadWriteTreeGrid_WriteDuplicationFactorTooltip" xml:space="preserve">
+    <value>Number of bytes written to the file divided by the size of the file. Parent rows display the total amount of bytes written to the file divided by the average size of the file across all write operations.</value>
+  </data>
+  <data name="FileWritesAriaLabel" xml:space="preserve">
+    <value>File write operations</value>
+  </data>
+  <data name="FileWritesHeaderKBWritten" xml:space="preserve">
+    <value>Data Written (KB)</value>
+  </data>
+  <data name="FoldedNativeLabel" xml:space="preserve">
+    <value>[Native]</value>
+  </data>
+  <data name="HeaderModuleName" xml:space="preserve">
+    <value>Module Name</value>
+  </data>
+  <data name="HeaderModuleNameToolTip" xml:space="preserve">
+    <value>Name of the module which contains this function</value>
+  </data>
+  <data name="LoadingDataMessage" xml:space="preserve">
+    <value>Loading data ...</value>
+  </data>
+  <data name="MultipleModuleLabel" xml:space="preserve">
+    <value>Multiple modules</value>
+  </data>
+  <data name="NoDataMessage" xml:space="preserve">
+    <value>No file IO operations occurred in the selected timespan</value>
+  </data>
+  <data name="NoSource" xml:space="preserve">
+    <value>Unable to determine source location.</value>
+  </data>
+  <data name="Overlay_ProgressIndeterminateAriaLabel" xml:space="preserve">
+    <value>Loading data...</value>
+    <comment>Aria label for indeterminate progress bar in File IO tool after data collection</comment>
+  </data>
+  <data name="SelectFileMessage" xml:space="preserve">
+    <value>Select a file to view the backtrace</value>
+  </data>
+  <data name="ShowJmc" xml:space="preserve">
+    <value>Show Just My Code</value>
+  </data>
+  <data name="ShowNative" xml:space="preserve">
+    <value>Show Native Code</value>
+  </data>
+  <data name="SystemCallLabel" xml:space="preserve">
+    <value>[System Call]</value>
+  </data>
+  <data name="SystemCodeLabel" xml:space="preserve">
+    <value>[System Code]</value>
+  </data>
+  <data name="UnableShowDataMessage" xml:space="preserve">
+    <value>Unable to show data</value>
+  </data>
+  <data name="UnknownDataLabel" xml:space="preserve">
+    <value>[Unknown]</value>
+  </data>
+  <data name="UnknownModuleLabel" xml:space="preserve">
+    <value>[External Code]</value>
+  </data>
+  <data name="UnwalkableStackLabel" xml:space="preserve">
+    <value>[Unwalkable]</value>
+  </data>
+  <data name="VerticalSplitterAriaLabel" xml:space="preserve">
+    <value>Splitter</value>
+  </data>
+</root>

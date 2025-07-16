@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>AutoCreateRefTerm</Title>
+			<Shortcut>AutoCreateRefTerm</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>The listed parameters, although passed by reference, will have an automatically created default if their pins are left disconnected. This is a convenience feature for Blueprints, often used on array pins.</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[AutoCreateRefTerm="$value$$end$"]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,502 @@
+{
+    "default": {
+        "properties": [
+            {
+                "name": "REPLACEMENT_MARKER",
+                "value": "%"
+            },
+            {
+                "name": "CLASS_PREFIX",
+                "value": ""
+            }
+        ],
+        "tokens": [
+            {
+                "name": "%CLASS_MODULE_API_MACRO%",
+                "value": "$(ClassModuleApi)_API "
+            },
+            {
+                "name": "%MY_HEADER_INCLUDE_DIRECTIVE%",
+                "value": "#include \"$(NewClassHeaderIncludeDirective)\""
+            },
+            {
+                "name": "%UCLASS_SPECIFIER_LIST%",
+                "value": ""
+            },
+            {
+                "name": "%UNPREFIXED_CLASS_NAME%",
+                "value": "$(UnPrefixedClassName)"
+            },
+
+            {
+                "name": "%PREFIXED_CLASS_NAME%",
+                "value": "$(PrefixedClassName)"
+            }
+        ],
+        "templates": [
+            {
+                "type": "Empty",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "EmptyClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "EmptyClass.h.template"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": ""
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "type": "Actor",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "ActorClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "ActorClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)Actor"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/Actor.h\""
+                    }
+                ]
+            },
+            {
+                "type": "Character",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "CharacterClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "CharacterClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)Character"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/Character.h\""
+                    }
+                ]
+            },
+            {
+                "type": "Pawn",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "PawnClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "PawnClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)Pawn"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/Pawn.h\""
+                    }
+                ]
+            },
+            {
+                "type": "ActorComponent",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "ActorComponentClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "ActorComponentClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "U"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)ActorComponent"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Components/ActorComponent.h\""
+                    }
+                ]
+            },
+            {
+                "type": "BlueprintLibrary",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "U"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)BlueprintFunctionLibrary"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Kismet/BlueprintFunctionLibrary.h\""
+                    }
+                ]
+            },
+            {
+                "type": "GameModeBase",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)GameModeBase"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/GameModeBase.h\""
+                    }
+                ]
+            },
+            {
+                "type": "Hud",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)HUD"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/HUD.h\""
+                    }
+                ]
+            },
+            {
+                "type": "Interface",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "InterfaceClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "InterfaceClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "U"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)Interface"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": ""
+                    },
+                    {
+                        "name": "%UCLASS_SPECIFIER_LIST%",
+                        "value": "MinimalAPI"
+                    }
+                ]
+            },
+            {
+                "type": "PlayerCameraManager",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)PlayerCameraManager"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Camera/PlayerCameraManager.h\""
+                    }
+                ]
+            },
+            {
+                "type": "PlayerController",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)PlayerController"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/PlayerController.h\""
+                    }
+                ]
+            },
+            {
+                "type": "PlayerState",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)PlayerState"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/PlayerState.h\""
+                    }
+                ]
+            },
+            {
+                "type": "SceneComponent",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "ActorComponentClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "ActorComponentClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "U"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)SceneComponent"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Components/SceneComponent.h\""
+                    }
+                ]
+            },
+            {
+                "type": "SlateWidget",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "SlateWidget.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "SlateWidget.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "S"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": ""
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Widgets/SCompoundWidget.h\""
+                    }
+                ]
+            },
+            {
+                "type": "SlateWidgetStyle",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "SlateWidgetStyle.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "SlateWidgetStyle.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "F"
+                    }
+                ],
+                "fileNameFormat": "{0}WidgetStyle",
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": ""
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"Styling/SlateWidgetStyle.h\""
+                    }
+                ]
+            },
+            {
+                "type": "WorldSettings",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "UObjectClass.cpp.template"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "UObjectClass.h.template"
+                    }
+                ],
+                "properties": [
+                    {
+                        "name": "CLASS_PREFIX",
+                        "value": "A"
+                    }
+                ],
+                "tokens": [
+                    {
+                        "name": "%PREFIXED_BASE_CLASS_NAME%",
+                        "value": "$(CLASS_PREFIX)WorldSettings"
+                    },
+                    {
+                        "name": "%BASE_CLASS_INCLUDE_DIRECTIVE%",
+                        "value": "#include \"GameFramework/WorldSettings.h\""
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="Microsoft.VisualStudio.Debugger.VsDbg.Integration.7B06A237-37E6-4260-A5D5-BC8C5BFC851D" Version="17.8.10724.1" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Microsoft.VisualStudio.Debugger.VsDbg.Integration</DisplayName>
+    <PackageId>Microsoft.VisualStudio.Debugger.VsDbg.Integration</PackageId>
+    <Description xml:space="preserve">VsDbg integration components</Description>
+  </Metadata>
+  <Installation SystemComponent="true" AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.VisualStudio.Debugger.VsDbg.Integration.dll" AssemblyName="Microsoft.VisualStudio.Debugger.VsDbg.Integration, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|Microsoft.VisualStudio.Debugger.VsDbg.Integration;PkgdefProjectOutputGroup|" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+</PackageManifest>

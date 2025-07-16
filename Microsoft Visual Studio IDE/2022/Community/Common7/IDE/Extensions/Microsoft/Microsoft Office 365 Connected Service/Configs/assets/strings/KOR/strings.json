@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Microsoft Graph를 통해 Office 365 서비스에 액세스",
+  "o365DependencyTypeDescription": "Microsoft Graph API를 사용하여 애플리케이션을 Office 365 서비스와 통합합니다.",
+  "connectionSettings": "연결 설정",
+  "nugetComponentName": "NuGet 패키지",
+  "nugetComponentDescription": "새 종속성이 최적으로 작동하도록 NuGet 패키지가 수정됩니다.",
+  "gettingStartedComponentName": "시작 문서",
+  "gettingStartedComponentDescription": "Microsoft Graph API 설명서를 사용하여 Microsoft 365 호출",
+  "graphPermissionsComponentName": "Microsoft Graph 권한",
+  "graphPermissionsComponentDescription": "Microsoft Graph API에 대한 Microsoft Entra 애플리케이션 권한 업데이트",
+  "configSettingsComponentName": "구성 설정",
+  "configSettingsComponentDescription": "새 종속성의 최적 작업을 보장하기 위해 설정이 수정됩니다."
+}

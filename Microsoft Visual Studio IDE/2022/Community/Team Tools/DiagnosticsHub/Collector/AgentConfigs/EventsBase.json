@@ -1,0 +1,8 @@
+{
+  "Agents": [
+    {
+      "CLSID": "078F77AA-E71C-43C5-951C-D24B70367E9C",
+      "Name": "DiagnosticsHub.EventsViewerAgent.dll"
+    }
+  ]
+}

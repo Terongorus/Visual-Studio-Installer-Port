@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ML.ModelBuilder.SourceGenerator</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.ObservableClassTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplate">
+            <summary>
+            Class to produce the template output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplate.TransformText">
+            <summary>
+            Create the template output
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase">
+            <summary>
+            Base class for this transformation
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.GenerationEnvironment">
+            <summary>
+            The string builder that generation-time code is using to assemble generated output
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Errors">
+            <summary>
+            The error collection for the generation process
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.indentLengths">
+            <summary>
+            A list of the lengths of each indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.CurrentIndent">
+            <summary>
+            Gets the current indent we use when adding lines to the output
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Session">
+            <summary>
+            Current transformation session
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Write(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.WriteLine(System.String)">
+            <summary>
+            Write text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Write(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.WriteLine(System.String,System.Object[])">
+            <summary>
+            Write formatted text directly into the generated output
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Error(System.String)">
+            <summary>
+            Raise an error
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.Warning(System.String)">
+            <summary>
+            Raise a warning
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.PushIndent(System.String)">
+            <summary>
+            Increase the indent
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.PopIndent">
+            <summary>
+            Remove the last indent that was added with PushIndent
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.ClearIndent">
+            <summary>
+            Remove any indentation
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.ToStringInstanceHelper">
+            <summary>
+            Utility class to produce culture-oriented representation of an object as a string.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.ToStringInstanceHelper.FormatProvider">
+            <summary>
+            Gets or sets format provider to be used by ToStringWithCulture method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.ToStringInstanceHelper.ToStringWithCulture(System.Object)">
+            <summary>
+            This is called from the compile/run appdomain to convert objects within an expression block to a string
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.SourceGenerator.Templates.PackageVersionClassTemplateBase.ToStringHelper">
+            <summary>
+            Helper to produce culture-oriented representation of an object as a string
+            </summary>
+        </member>
+        <member name="T:ObservableModel.CodeGenerator.AutoNotifyGenerator.SyntaxReceiver">
+            <summary>
+            Created on demand before each generation pass
+            </summary>
+        </member>
+        <member name="M:ObservableModel.CodeGenerator.AutoNotifyGenerator.SyntaxReceiver.OnVisitSyntaxNode(Microsoft.CodeAnalysis.GeneratorSyntaxContext)">
+            <summary>
+            Called for every syntax node in the compilation, we can inspect the nodes and save any information useful for generation
+            </summary>
+        </member>
+    </members>
+</doc>

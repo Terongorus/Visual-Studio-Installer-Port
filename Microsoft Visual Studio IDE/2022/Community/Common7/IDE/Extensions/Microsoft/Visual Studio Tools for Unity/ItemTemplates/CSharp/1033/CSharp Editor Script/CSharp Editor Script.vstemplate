@@ -1,0 +1,12 @@
+<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>CSharp Editor Script</Name>
+    <Description>Unity Editor Script in CSharp language</Description>
+    <Icon>CSharp Editor Script.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>NewEditorScript</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+	  <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.cs">NewEditorScript.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,10 @@
+[$RootKey$\ToolsOptionsPages\Cross Platform]
+@="#100"
+"Package"="{905FD3EB-1BAF-4257-ABEB-70F577F48512}"
+[$RootKey$\ToolsOptionsPages\Cross Platform\C++]
+@="#101"
+"Package"="{905FD3EB-1BAF-4257-ABEB-70F577F48512}"
+[$RootKey$\ToolsOptionsPages\Cross Platform\C++\Android]
+@="#102"
+"Package"="{905FD3EB-1BAF-4257-ABEB-70F577F48512}"
+"Page"="{1FD2F419-A7BE-4EBC-ADD8-E7EBF2464D6C}"

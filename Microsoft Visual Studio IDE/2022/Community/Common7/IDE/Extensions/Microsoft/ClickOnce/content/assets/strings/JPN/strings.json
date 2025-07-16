@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "ClickOnce でアプリケーションを発行します",
+  "clickonceCategoryMultipleTargetsDescription": "どのローカル ターゲットに発行しますか?",
+  "installLocation": "インストール場所",
+  "manifestsSigned": "署名されたマニフェスト",
+  "publishLanguage": "発行の言語",
+  "configuration": "構成",
+  "portable": "移植可能",
+  "PublishLocation": "発行場所",
+  "settingsSection": "設定",
+  "showAll": "すべて表示",
+  "targetFramework": "ターゲット フレームワーク",
+  "targetRuntime": "ターゲット ランタイム",
+  "updateEnabled": "更新が有効",
+  "updateLocation": "更新場所"
+}

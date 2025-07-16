@@ -1,0 +1,97 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiContentPageCS.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Content Page (C#)</Name>
+        <Description>A page for displaying content using C#.</Description>
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.NETMAUI.ContentPage</TemplateID>
+        <AppliesTo>CSharp</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>110</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>NewPage1.cs</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiContentPageXaml.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Content Page (XAML)</Name>
+        <Description>A page for displaying content using XAML.</Description>
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.NETMAUI.XamlContentPage</TemplateID>
+        <AppliesTo>CSharp</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>111</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>NewPage1.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiContentViewCS.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Content View (C#)</Name>
+        <Description>A view for displaying content using C#. This is very suitable for creating your own custom and reusable controls.</Description>
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.NETMAUI.ContentView</TemplateID>
+        <AppliesTo>CSharp</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>112</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>NewContent1.cs</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiContentViewXaml.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Content View (XAML)</Name>
+        <Description>A view for displaying content using XAML. This is very suitable for creating your own custom and reusable controls.</Description>
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.NETMAUI.XamlContentView</TemplateID>
+        <AppliesTo>CSharp</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>113</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>NewContent1.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiXamlResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Resource Dictionary (XAML)</Name>
+        <Description>A repository for resources that are used by a .NET MAUI app. Typical resources that are stored in a ResourceDictionary include styles, control templates, data templates, converters, and colors.</Description>
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <TemplateID>Microsoft.CSharp.NETMAUI.XamlResourceDictionary</TemplateID>
+        <AppliesTo>CSharp</AppliesTo>
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>114</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Dictionary1.xaml</DefaultName>
+        <ShowByDefault>false</ShowByDefault>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

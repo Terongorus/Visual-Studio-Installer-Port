@@ -1,0 +1,22 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>FSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>MSTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="521" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="522" />
+        <Icon Package="{91A04A73-4F2C-4E7C-AD38-C1A68E7DA05C}" ID="4018" />
+        <ProjectType>FSharp</ProjectType>
+        <SortOrder>15</SortOrder>
+        <TemplateID>Microsoft.FSharp.NETCore.UnitTest</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>UnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

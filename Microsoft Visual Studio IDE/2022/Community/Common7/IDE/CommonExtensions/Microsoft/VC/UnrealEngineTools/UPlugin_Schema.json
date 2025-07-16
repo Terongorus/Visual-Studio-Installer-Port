@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "definitions": {
+    "url": {
+      "type": "string",
+      "anyOf": [
+        { "format": "uri" },
+        { "format": "hostname" },
+        {
+          "format": "regex",
+          "pattern": "\\s*"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "FileVersion": { "type": "integer" },
+    "Version": { "type": "integer" },
+    "VersionName": { "type": "string" },
+    "FriendlyName": { "type": "string" },
+    "Description": { "type": "string" },
+    "Category": { "type": "string" },
+    "CreatedBy": { "type": "string" },
+    "CreatedByURL": { "$ref": "#/definitions/url" },
+    "DocsURL": { "$ref": "#/definitions/url" },
+    "MarketplaceURL": { "$ref": "#/definitions/url" },
+    "SupportURL": { "$ref": "#/definitions/url" },
+    "CanContainContent": { "type": "boolean" },
+    "Installed": { "type": "boolean" },
+    "IsBetaVersion": { "type": "boolean" },
+    "Modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "Name": { "type": "string" },
+          "Type": { "type": "string" },
+          "LoadingPhase": { "type": "string" }
+        },
+        "required": [ "Name" ]
+      }
+    },
+    "Plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "Name": { "type": "string" },
+          "Enabled": { "type": "boolean" }
+        },
+        "required": [ "Name" ]
+      }
+    }
+  }
+}

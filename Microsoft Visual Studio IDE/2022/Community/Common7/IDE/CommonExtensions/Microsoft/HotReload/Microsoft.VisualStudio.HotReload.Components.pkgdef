@@ -1,0 +1,8 @@
+﻿[$RootKey$\RuntimeConfiguration\dependentAssembly\bindingRedirection\{E3B73D96-5FEA-2FAD-BBD8-EF290C2646A5}]
+"name"="Microsoft.VisualStudio.HotReload.Components"
+"publicKeyToken"="31bf3856ad364e35"
+"culture"="neutral"
+"oldVersion"="6.0.0.0-17.0.0.0"
+"newVersion"="17.0.0.0"
+"codeBase"="$PackageFolder$\Microsoft.VisualStudio.HotReload.Components.dll"
+

@@ -1,0 +1,178 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.ClassLibrary</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.ClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name ID="1025" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1027" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.ClassLibrary.ico</Icon>
+        <TemplateID>Microsoft.WinUI.Desktop.Cs.ClassLibrary</TemplateID>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+        <PreviewImage>WinUI.Desktop.Cs.ClassLibrary.png</PreviewImage>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.PackagedApp</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.PackagedApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name ID="1029" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1031" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.PackagedApp.ico</Icon>
+        <TemplateID>Microsoft.WinUI.Desktop.Cs.PackagedApp</TemplateID>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <CreateNewFolder>false</CreateNewFolder>
+        <DefaultName>App</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+        <PreviewImage>WinUI.Desktop.Cs.PackagedApp.png</PreviewImage>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.PackagedApp\BlankApp</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.BlankApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Hidden>true</Hidden>
+        <Name ID="1040" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1041" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.BlankApp.ico</Icon>
+        <TemplateID>Microsoft.WinUI.Desktop.Cs.BlankApp</TemplateID>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>App</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+        <PreviewImage>WinUI.Desktop.Cs.BlankApp.png</PreviewImage>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.PackagedApp\WapProj</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.WapProj.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Hidden>true</Hidden>
+        <Name ID="1042" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1043" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WapProjTemplate.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Desktop.Cs.WapProj</TemplateID>
+        <ProjectSubType>WapProj</ProjectSubType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>WapProjTemplate</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <CreateInPlace>true</CreateInPlace>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.SingleProjectPackagedApp</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.SingleProjectPackagedApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name ID="1033" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1035" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.SingleProjectPackagedApp.ico</Icon>
+        <TemplateID>Microsoft.WinUI.Desktop.Cs.SingleProjectPackagedApp</TemplateID>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>App</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+        <PreviewImage>WinUI.Desktop.Cs.SingleProjectPackagedApp.png</PreviewImage>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>CSharp\1033\WinUI.Desktop.Cs.UnitTestApp</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.UnitTestApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name ID="1037" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1039" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.UnitTestApp.ico</Icon>
+        <TemplateID>Microsoft.WinUI.Desktop.Cs.UnitTestApp</TemplateID>
+        <TemplateGroupID>WinRT-Managed</TemplateGroupID>
+        <ProjectType>CSharp</ProjectType>
+        <CreateNewFolder>true</CreateNewFolder>
+        <DefaultName>UnitTestApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <LocationField>Enabled</LocationField>
+        <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <CreateInPlace>true</CreateInPlace>
+        <PreviewImage>WinUI.Desktop.Cs.UnitTestApp.png</PreviewImage>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <LanguageTag>csharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+        <ProjectTypeTag>test</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -1,0 +1,101 @@
+{
+  "PublishDir_CO": {
+    "id": "PublishDir_CO",
+    "displayName": {
+      "$ref": "strings:#/PublishLocation"
+    },
+    "propertyName": "PublishUrl",
+    "kind": "link",
+    "linkAction": {
+      "id": "openFolder",
+      "provider": "default"
+    },
+    "action": {
+      "id": "copyPath",
+      "provider": "default"
+    }
+  },
+  "InstallUrl": {
+    "id": "InstallUrl",
+    "displayName": {
+      "$ref": "strings:#/installLocation"
+    },
+    "propertyName": "InstallUrl",
+    "kind": "link",
+    "linkAction": {
+      "id": "openFolder",
+      "provider": "default"
+    },
+    "action": {
+      "id": "copy",
+      "provider": "default"
+    }
+  },
+  "SignManifests": {
+    "id": "SignManifests",
+    "displayName": {
+      "$ref": "strings:#/manifestsSigned"
+    },
+    "propertyName": "SignManifests",
+    "kind": "string"
+  },
+  "TargetCulture": {
+    "id": "TargetCulture",
+    "displayName": {
+      "$ref": "strings:#/publishLanguage"
+    },
+    "propertyName": "TargetCulture",
+    "kind": "string"
+  },
+  "UpdateEnabled": {
+    "id": "UpdateEnabled",
+    "displayName": {
+      "$ref": "strings:#/updateEnabled"
+    },
+    "propertyName": "UpdateEnabled",
+    "kind": "string"
+  },
+  "UpdateUrl": {
+    "id": "UpdateUrl",
+    "displayName": {
+      "$ref": "strings:#/updateLocation"
+    },
+    "propertyName": "UpdateUrl",
+    "kind": "link",
+    "linkAction": {
+      "id": "openFolder",
+      "provider": "default"
+    },
+    "action": {
+      "id": "copy",
+      "provider": "default"
+    }
+  },
+  "Configuration_CO": {
+    "id": "Configuration_CO",
+    "displayName": {
+      "$ref": "strings:#/configuration"
+    },
+    "propertyName": "Configuration",
+    "kind": "string"
+  },
+  "TargetFramework_CO": {
+    "id": "TargetFramework_CO",
+    "displayName": {
+      "$ref": "strings:#/targetFramework"
+    },
+    "propertyName": "TargetFramework",
+    "kind": "string"
+  },
+  "TargetRuntime_CO": {
+    "id": "TargetRuntime_CO",
+    "displayName": {
+      "$ref": "strings:#/targetRuntime"
+    },
+    "propertyName": "RuntimeIdentifier",
+    "defaultValue": {
+      "$ref": "strings:#/portable"
+    },
+    "kind": "string"
+  }
+}

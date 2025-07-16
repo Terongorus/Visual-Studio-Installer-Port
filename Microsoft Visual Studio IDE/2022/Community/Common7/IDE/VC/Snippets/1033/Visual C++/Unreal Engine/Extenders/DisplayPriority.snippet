@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DisplayPriority</Title>
+			<Shortcut>DisplayPriority</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>If two properties feature the same 'DisplayAfter' value, or are in the same category and do not have the 'DisplayAfter' Meta Tag, this property will determine their sorting order. The highest-priority value is 1, meaning that a property with a 'DisplayPriority' value of 1 will appear above a property with a 'DisplayPriority' value of 2. If multiple properties have the same 'DisplayAfter' value, they will appear in the order in which they are declared in the header file.</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[DisplayPriority="$value$"$end$]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

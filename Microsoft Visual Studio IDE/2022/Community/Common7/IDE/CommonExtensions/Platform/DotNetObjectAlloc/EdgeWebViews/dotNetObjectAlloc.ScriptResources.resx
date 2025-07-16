@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AllocationTreeAriaLabel" xml:space="preserve">
+    <value>Allocations in target process</value>
+  </data>
+  <data name="AllocationTreeHeaderName" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="AllocationTreeHeaderNameToolTip" xml:space="preserve">
+    <value>Type that was allocated.</value>
+  </data>
+  <data name="HeaderTotalAllocSize" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="HeaderTotalAllocSizeToolTipType" xml:space="preserve">
+    <value>Total number of bytes allocated were of this type.</value>
+  </data>
+  <data name="HeaderTotalAllocSizeToolTipFunction" xml:space="preserve">
+    <value>Total number of bytes allocated in this function.</value>
+  </data>
+  <data name="HeaderTotalAllocCount" xml:space="preserve">
+    <value>Allocations</value>
+  </data>
+  <data name="HeaderTotalAllocCountToolTipType" xml:space="preserve">
+    <value>Number of object allocations were of this type.</value>
+  </data>
+  <data name="HeaderTotalAllocCountToolTipFunction" xml:space="preserve">
+    <value>Number of object allocations by this function and its children.</value>
+  </data>
+  <data name="AsyncMethodLabel" xml:space="preserve">
+    <value>[Async]</value>
+  </data>
+  <data name="UnwalkableStackLabel" xml:space="preserve">
+    <value>[Unwalkable]</value>
+  </data>
+  <data name="CallTree_ExpandHotPathAriaLabel" xml:space="preserve">
+    <value>Expand Hot Path</value>
+  </data>
+  <data name="CallTree_ShowHotPathAriaLabel" xml:space="preserve">
+    <value>Show Hot Path</value>
+  </data>
+  <data name="CallTree_ExpandHotPathButtonText" xml:space="preserve">
+    <value>Expand Hot Path</value>
+  </data>
+  <data name="CallTree_ShowPathButtonText" xml:space="preserve">
+    <value>Show Hot Path</value>
+  </data>
+  <data name="FoldedNativeLabel" xml:space="preserve">
+    <value>[Native]</value>
+  </data>
+  <data name="AllocationsLabel" xml:space="preserve">
+    <value>[Allocations]</value>
+  </data>
+  <data name="TypesLabel" xml:space="preserve">
+    <value>[Type]</value>
+  </data>
+  <data name="CollectedTypesTitle" xml:space="preserve">
+    <value>Top Collected Types</value>
+  </data>
+  <data name="ExternalCallLabel" xml:space="preserve">
+    <value>[External Call]</value>
+  </data>
+  <data name="ExternalCodeLabel" xml:space="preserve">
+    <value>[External Code]</value>
+  </data>
+  <data name="FilterAriaLabel" xml:space="preserve">
+    <value>Filter allocation types</value>
+  </data>
+  <data name="FilterWatermark" xml:space="preserve">
+    <value>Filter types</value>
+  </data>
+  <data name="GcListAriaLabel" xml:space="preserve">
+    <value>GCs in target process</value>
+  </data>
+  <data name="PieChartItemAriaLabel" xml:space="preserve">
+    <value>{0} - {1}</value>
+    <comment>{0} will be the value displayed in a pie chart, and {1} will be the corresponding legend text</comment>
+  </data>
+  <data name="LoadingRowText" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="ShowJmc" xml:space="preserve">
+    <value>Show Just My Code</value>
+  </data>
+  <data name="ShowNative" xml:space="preserve">
+    <value>Show Native Code</value>
+  </data>
+  <data name="SurvivedTypesTitle" xml:space="preserve">
+    <value>Top Survived Types</value>
+  </data>
+  <data name="SystemCallLabel" xml:space="preserve">
+    <value>[System Call]</value>
+  </data>
+  <data name="SystemCodeLabel" xml:space="preserve">
+    <value>[System Code]</value>
+  </data>
+  <data name="LoadingDataMessage" xml:space="preserve">
+    <value>Loading data ...</value>
+  </data>
+  <data name="CallTreeAriaLabel" xml:space="preserve">
+    <value>Call tree of target process</value>
+  </data>
+  <data name="CallTreeHeaderSelfAllocCount" xml:space="preserve">
+    <value>Self (Allocations)</value>
+  </data>
+  <data name="CallTreeHeaderSelfAllocCountToolTip" xml:space="preserve">
+    <value>Number of object allocations by this function alone.</value>
+  </data>
+  <data name="CallTreeHeaderSizeInBytes" xml:space="preserve">
+    <value>Size (Bytes)</value>
+  </data>
+  <data name="CallTreeHeaderTotalAllocCount" xml:space="preserve">
+    <value>Total (Allocations)</value>
+  </data>
+  <data name="CallTreeHeaderTotalAllocSize" xml:space="preserve">
+    <value>Total Size (Bytes)</value>
+  </data>
+  <data name="CallTreeHeaderTotalAllocSizeToolTip" xml:space="preserve">
+    <value>Number of bytes allocated by this function and its children.</value>
+  </data>
+  <data name="CallTreeHeaderSelfAllocSize" xml:space="preserve">
+    <value>Self Size (Bytes)</value>
+  </data>
+  <data name="CallTreeHeaderSelfAllocSizeToolTip" xml:space="preserve">
+    <value>Number of bytes allocated by this function alone.</value>
+  </data>
+  <data name="FunctionListAriaLabel" xml:space="preserve">
+    <value>Function list of target process</value>
+  </data>
+  <data name="FunctionListHeaderName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FunctionListHeaderNameToolTip" xml:space="preserve">
+    <value>Name and type signature of the function</value>
+  </data>
+  <data name="FunctionListHeaderSelf" xml:space="preserve">
+    <value>Self (Allocations)</value>
+  </data>
+  <data name="FunctionListHeaderSelfToolTip" xml:space="preserve">
+    <value>Number of object allocations by this function alone.</value>
+  </data>
+  <data name="FunctionListHeaderTotal" xml:space="preserve">
+    <value>Total (Allocations)</value>
+  </data>
+  <data name="FunctionListHeaderTotalToolTip" xml:space="preserve">
+    <value>Number of object allocations by this function and its children.</value>
+  </data>
+  <data name="FunctionListHeaderSelfAllocSize" xml:space="preserve">
+    <value>Self Size (Bytes)</value>
+  </data>
+  <data name="FunctionListHeaderSelfAllocSizeToolTip" xml:space="preserve">
+    <value>Number of bytes allocated by this function alone.</value>
+  </data>
+  <data name="FunctionListHeaderTotalAllocSize" xml:space="preserve">
+    <value>Total Size (Bytes)</value>
+  </data>
+  <data name="FunctionListHeaderTotalAllocSizeToolTip" xml:space="preserve">
+    <value>Number of bytes allocated by this function and its children.</value>
+  </data>
+  <data name="MultipleModuleLabel" xml:space="preserve">
+    <value>Multiple modules</value>
+  </data>
+  <data name="UnknownModuleLabel" xml:space="preserve">
+    <value>[External Code]</value>
+  </data>
+  <data name="UnknownFunctionLabel" xml:space="preserve">
+    <value>Unknown function</value>
+  </data>
+  <data name="ProcessIdFormat" xml:space="preserve">
+    <value>PID: {0}</value>
+    <comment>{0} will be the ID of the process</comment>
+  </data>
+  <data name="ProcessNameFormat" xml:space="preserve">
+    <value>{0} (PID: {1})</value>
+    <comment>{0} will be the name of the process and {1} will be the ID of the process</comment>
+  </data>
+  <data name="OtherTypes" xml:space="preserve">
+    <value>Other Types</value>
+  </data>
+  <data name="ShowOtherTypes" xml:space="preserve">
+    <value>Show Other Types</value>
+  </data>
+  <data name="UnknownTypeLabel" xml:space="preserve">
+    <value>Unknown Type Token:</value>
+  </data>
+  <data name="NoAllocationDataMessage" xml:space="preserve">
+    <value>No allocation occurred in the selected timespan</value>
+  </data>
+  <data name="NoGcDataMessage" xml:space="preserve">
+    <value>No GC occurred in the selected timespan</value>
+  </data>
+  <data name="ContextMenu_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="ContextMenu_ShowInCallTree" xml:space="preserve">
+    <value>View in Call Tree</value>
+  </data>
+  <data name="ContextMenu_ShowInFunctions" xml:space="preserve">
+    <value>View in Functions</value>
+  </data>
+  <data name="DotNetAllocSearchControlAriaLabel" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Match Case</value>
+  </data>
+  <data name="SearchIconAriaLabel" xml:space="preserve">
+    <value>Execute Search</value>
+  </data>
+  <data name="SearchOptionsTitle" xml:space="preserve">
+    <value>Search options</value>
+  </data>
+  <data name="SearchRegularExpression" xml:space="preserve">
+    <value>Use Regular Expressions</value>
+  </data>
+  <data name="SearchWatermark" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Message_SearchNoMatches" xml:space="preserve">
+    <value>Could not find any matches.</value>
+  </data>
+  <data name="Message_SearchStartFromTop" xml:space="preserve">
+    <value>Reached the end of the document. Do you want to restart the search from the beginning?</value>
+  </data>
+  <data name="ContextMenu_GoToSourceFile" xml:space="preserve">
+    <value>Go to Source File</value>
+  </data>
+  <data name="ContextMenu_ExpandHotPath" xml:space="preserve">
+    <value>Expand Hot Path</value>
+  </data>
+  <data name="NoAllocations" xml:space="preserve">
+    <value>No Allocation</value>
+  </data>
+  <data name="ContextMenu_ShowInAllocations" xml:space="preserve">
+    <value>View in Allocations</value>
+  </data>
+  <data name="SelectTypeMessage" xml:space="preserve">
+    <value>Double-click a type to view the backtrace.</value>
+  </data>
+  <data name="BacktraceAriaLabel" xml:space="preserve">
+    <value>Backtrace of selected type.</value>
+  </data>
+  <data name="HeaderModuleName" xml:space="preserve">
+    <value>Module Name</value>
+  </data>
+  <data name="HeaderModuleNameToolTip" xml:space="preserve">
+    <value>Name of the module which contains this function.</value>
+  </data>
+  <data name="HeaderName" xml:space="preserve">
+    <value>Function Name</value>
+  </data>
+  <data name="HeaderNameToolTip" xml:space="preserve">
+    <value>Name and type signature of the function.</value>
+  </data>
+  <data name="BacktraceTypeDisplay" xml:space="preserve">
+    <value>Backtrace: {0}</value>
+    <comment>The title for the backtrace tree. The parameter is the type name for the tree.</comment>
+  </data>
+  <data name="HeaderAverageSize" xml:space="preserve">
+    <value>Average Size (Bytes)</value>
+  </data>
+  <data name="HeaderAverageSizeToolTipType" xml:space="preserve">
+    <value>Number of bytes contained in an average allocation for this type.</value>
+  </data>
+  <data name="HeaderAverageSizeToolTipFunction" xml:space="preserve">
+    <value>Number of bytes contained in an average allocation for this function.</value>
+  </data>
+  <data name="VerticalSplitterAriaLabel" xml:space="preserve">
+    <value>Splitter</value>
+  </data>
+  <data name="ContextMenu_CopyAsMarkdown" xml:space="preserve">
+    <value>Copy as Markdown</value>
+    <comment>Context menu item for copying the selected text to the clipboard as Markdown</comment>
+  </data>
+  <data name="NoRowMessage" xml:space="preserve">
+    <value>Function not in view(Hint: Turn off "Show Just My Code")</value>
+    <comment>When user selects "View In Functions/CallTree" from the context menu in backtrace view, sometimes the row cannot be found. This message will pop up and tell the user to turn off Just My Code.</comment>
+  </data>
+  <data name="GcListHeaderCollected" xml:space="preserve">
+    <value>Collected</value>
+  </data>
+  <data name="GcListHeaderGcNumber" xml:space="preserve">
+    <value>GC</value>
+  </data>
+  <data name="GcListHeaderSurvived" xml:space="preserve">
+    <value>Survived</value>
+  </data>
+  <data name="GcListHeaderStart" xml:space="preserve">
+    <value>Pause Start</value>
+  </data>
+  <data name="GcListHeaderStop" xml:space="preserve">
+    <value>Pause Stop</value>
+  </data>
+  <data name="GcListHeaderDuration" xml:space="preserve">
+    <value>Pause Duration</value>
+  </data>
+  <data name="GcListHeaderPercentInGc" xml:space="preserve">
+    <value>% CPU Time in GC</value>
+  </data>
+  <data name="GcListHeaderGen0" xml:space="preserve">
+    <value>Gen0 Size</value>
+  </data>
+  <data name="GcListHeaderGen1" xml:space="preserve">
+    <value>Gen1 Size</value>
+  </data>
+  <data name="GcListHeaderGen2" xml:space="preserve">
+    <value>Gen2 Size</value>
+  </data>
+  <data name="GcListHeaderGen3" xml:space="preserve">
+    <value>LOH Size</value>
+    <comment>Large Object Heap Size for allocating large objects</comment>
+  </data>
+  <data name="GcListHeaderGen5" xml:space="preserve">
+    <value>POH Size</value>
+    <comment>Pinned Object Heap Size</comment>
+  </data>
+  <data name="GcListHeaderGeneration" xml:space="preserve">
+    <value>Generation</value>
+  </data>
+  <data name="GcListHeaderFinalizableSurvMb" xml:space="preserve">
+    <value>Finalizable Surv (MB)</value>
+  </data>
+  <data name="GcListHeaderPinnedObjs" xml:space="preserve">
+    <value>Pinned Objects</value>
+  </data>
+  <data name="GcListHeaderReason" xml:space="preserve">
+    <value>GC Reason</value>
+  </data>
+  <data name="GcListHeaderType" xml:space="preserve">
+    <value>GC Type</value>
+  </data>
+  <data name="GcListHeaderCollectedToolTip" xml:space="preserve">
+    <value>Count of objects collected in this GC.</value>
+  </data>
+  <data name="GcListHeaderGcNumberToolTip" xml:space="preserve">
+    <value>ID of this GC in the executable's lifecycle.</value>
+  </data>
+  <data name="GcListHeaderSurvivedToolTip" xml:space="preserve">
+    <value>count of objects that survived this GC.</value>
+  </data>
+  <data name="GcListHeaderStartToolTip" xml:space="preserve">
+    <value>point in time this GC started.</value>
+  </data>
+  <data name="GcListHeaderStopToolTip" xml:space="preserve">
+    <value>point in time that this GC stopped.</value>
+  </data>
+  <data name="GcListHeaderDurationToolTip" xml:space="preserve">
+    <value>Time that execution in managed code is blocked because the GC needs exclusive use to the heap.  For background GCs this is small.</value>
+  </data>
+  <data name="GcListHeaderPercentInGcToolTip" xml:space="preserve">
+    <value>CPU time in GC divided by the total process CPU time since last GC.</value>
+  </data>
+  <data name="GcListHeaderGen0ToolTip" xml:space="preserve">
+    <value>Size of gen0 at the end of this GC.</value>
+  </data>
+  <data name="GcListHeaderGen1ToolTip" xml:space="preserve">
+    <value>Size of gen1 at the end of this GC.</value>
+  </data>
+  <data name="GcListHeaderGen2ToolTip" xml:space="preserve">
+    <value>Size of gen1 at the end of this GC.</value>
+  </data>
+  <data name="GcListHeaderGen3ToolTip" xml:space="preserve">
+    <value>Size of Large Object Heap at the end of this GC.</value>
+  </data>
+  <data name="GcListHeaderGen5ToolTip" xml:space="preserve">
+    <value>Size of Pinned Object Heap at the end of this GC.</value>
+  </data>
+  <data name="GcListHeaderFinalizableSurvMbToolTip" xml:space="preserve">
+    <value>Number of MB of objects that have finalizers (destructors) that survived this GC.</value>
+  </data>
+  <data name="GcListHeaderPinnedObjsToolTip" xml:space="preserve">
+    <value>Number of pinned objects this GC promoted.</value>
+  </data>
+  <data name="GcListHeaderReasonToolTip" xml:space="preserve">
+    <value>Reason for the garbage collection event.</value>
+    <comment>How this GC was triggered.</comment>
+  </data>
+  <data name="GcListHeaderTypeToolTip" xml:space="preserve">
+    <value>Type of this GC.</value>
+  </data>
+  <data name="GcListHeaderGenerationToolTip" xml:space="preserve">
+    <value>Generation of this GC.</value>
+  </data>
+  <data name="GcReason_AllocSmall" xml:space="preserve">
+    <value>AllocSmall</value>
+  </data>
+  <data name="GcReason_Induced" xml:space="preserve">
+    <value>Induced</value>
+  </data>
+  <data name="GcReason_LowMemory" xml:space="preserve">
+    <value>LowMemory</value>
+  </data>
+  <data name="GcReason_Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="GcReason_AllocLarge" xml:space="preserve">
+    <value>AllocLarge</value>
+  </data>
+  <data name="GcReason_OutOfSpaceSOH" xml:space="preserve">
+    <value>OutOfSpaceSOH</value>
+  </data>
+  <data name="GcReason_OutOfSpaceLOH" xml:space="preserve">
+    <value>OutOfSpaceLOH</value>
+  </data>
+  <data name="GcReason_InducedNotForced" xml:space="preserve">
+    <value>InducedNotForced</value>
+  </data>
+  <data name="GcReason_Internal" xml:space="preserve">
+    <value>Internal</value>
+  </data>
+  <data name="GcReason_InducedLowMemory" xml:space="preserve">
+    <value>InducedLowMemory</value>
+  </data>
+  <data name="GcReason_InducedCompacting" xml:space="preserve">
+    <value>InducedCompacting</value>
+  </data>
+  <data name="GcReason_LowMemoryHost" xml:space="preserve">
+    <value>LowMemoryHost</value>
+  </data>
+  <data name="GcReason_PMFullGC" xml:space="preserve">
+    <value>PMFullGC</value>
+  </data>
+  <data name="GcReason_LowMemoryHostBlocking" xml:space="preserve">
+    <value>LowMemoryHostBlocking</value>
+  </data>
+  <data name="GcType_NonConcurrentGC" xml:space="preserve">
+    <value>NonConcurrent</value>
+  </data>
+  <data name="GcType_BackgroundGC" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="GcType_ForegroundGC" xml:space="preserve">
+    <value>Foreground</value>
+  </data>
+  <data name="AutoCompleteLists" xml:space="preserve">
+    <value>Auto Complete Lists</value>
+  </data>
+  <data name="NoSource" xml:space="preserve">
+    <value>Unable to determine source location.</value>
+  </data>
+  <data name="ButtonAriaLabel_DotNetAllocProfiling" xml:space="preserve">
+    <value>Enable .NET Object Allocation Profiling</value>
+  </data>
+  <data name="ButtonTooltip_DotNetAllocProfilingNotToggled" xml:space="preserve">
+    <value>Enable .NET Object Allocation Profiling</value>
+  </data>
+  <data name="ButtonTooltip_DotNetAllocProfilingToggled" xml:space="preserve">
+    <value>Disable .NET Object Allocation Profiling</value>
+  </data>
+  <data name="Button_DotNetAllocProfiling" xml:space="preserve">
+    <value>Record .NET Object Allocation Profile</value>
+  </data>
+  <data name="Overlay_CollectingData" xml:space="preserve">
+    <value>Collecting .NET Object Allocation data...</value>
+  </data>
+  <data name="Overlay_CollectionPaused" xml:space="preserve">
+    <value>.NET Object Allocation profiling is paused.</value>
+  </data>
+  <data name="Overlay_EnableProfiling" xml:space="preserve">
+    <value>Enable .NET Object Allocation profiling.</value>
+  </data>
+  <data name="Overlay_ProfilingDisabled" xml:space="preserve">
+    <value>.NET Object Allocation profiling is disabled.</value>
+  </data>
+  <data name="Overlay_StopCollection" xml:space="preserve">
+    <value>Stop collection to view .NET Object Allocation data.</value>
+  </data>
+  <data name="Overlay_ProgressIndeterminateAriaLabel" xml:space="preserve">
+    <value>Loading data...</value>
+    <comment>Aria label for indeterminate progress bar in DotNetObjectAlloc tool after data collection</comment>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>Learn More</value>
+    <comment>Link to view documentations on Top Insights issue</comment>
+  </data>
+  <data name="TopInsightsAriaLabel" xml:space="preserve">
+    <value>Top insights found</value>
+  </data>
+  <data name="TopInsightsDescriptionHeader" xml:space="preserve">
+    <value>Description</value>
+    <comment>Collection view "Top Insights" section description</comment>
+  </data>
+  <data name="TopInsightsTitleHeader" xml:space="preserve">
+    <value>Title</value>
+    <comment>Collection view "Top Insights" section title</comment>
+  </data>
+  <data name="GCSummaryHeader" xml:space="preserve">
+    <value>GC Summary</value>
+    <comment>Header for GC summary table in Collections tab</comment>
+  </data>
+  <data name="TopInsightsHeader" xml:space="preserve">
+    <value>Top Insights</value>
+    <comment>GC Insights" here refers to the most important GC issues found when running analysis.</comment>
+  </data>
+  <data name="InvestigateInsightsIssue" xml:space="preserve">
+    <value>Investigate</value>
+    <comment>Title for link of Investigating a top insights issue</comment>
+  </data>
+  <data name="HeapType_LOH" xml:space="preserve">
+    <value>Large Object Heap</value>
+  </data>
+  <data name="HeapType_POH" xml:space="preserve">
+    <value>Pinned Object Heap</value>
+  </data>
+  <data name="HeapType_SOH" xml:space="preserve">
+    <value>Small Object Heap</value>
+  </data>
+  <data name="HeapType_ALL" xml:space="preserve">
+    <value>All Heap Types</value>
+  </data>
+  <data name="Top_NoInsights" xml:space="preserve">
+    <value>No insights found.</value>
+    <comment>Message displayed when no GC insights were found.</comment>
+  </data>
+  <data name="UnableShowDataMessage" xml:space="preserve">
+    <value>Unable to show data</value>
+  </data>
+  <data name="Allocation_CopilotButtonAriaLabel" xml:space="preserve">
+    <value>Ask Copilot to analyze the allocation and look for 0 length array allocations</value>
+  </data>
+  <data name="Allocation_CopilotButtonText" xml:space="preserve">
+    <value>Ask Copilot</value>
+  </data>
+</root>

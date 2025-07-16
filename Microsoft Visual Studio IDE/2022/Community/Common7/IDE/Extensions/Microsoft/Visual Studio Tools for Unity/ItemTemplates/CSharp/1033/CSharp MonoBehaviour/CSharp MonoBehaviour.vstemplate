@@ -1,0 +1,12 @@
+<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>CSharp MonoBehaviour</Name>
+    <Description>Unity MonoBehaviour in CSharp language</Description>
+    <Icon>CSharp MonoBehaviour.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>NewBehaviourScript</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+	  <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.cs">NewMonoBehaviour.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,7 @@
+﻿div#___markdown-content___ {
+    font-size: var(--plugin-font-size, 9pt);
+}
+
+div.markdown-body#___markdown-content___ {
+    font-size: var(--plugin-font-size, 9pt);
+}

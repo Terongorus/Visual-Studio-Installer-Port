@@ -1,0 +1,78 @@
+{
+  "_from": "@pylance/pylance@2025.3.2",
+  "_id": "@pylance/pylance@2025.3.2",
+  "_inBundle": false,
+  "_integrity": "sha1-LW35+1yJUybVn4qBrdvl5/aquZA=",
+  "_location": "/@pylance/pylance",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@pylance/pylance@2025.3.2",
+    "name": "@pylance/pylance",
+    "escapedName": "@pylance%2fpylance",
+    "scope": "@pylance",
+    "rawSpec": "2025.3.2",
+    "saveSpec": null,
+    "fetchSpec": "2025.3.2"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://pkgs.dev.azure.com/azure-public/vside/_packaging/msft_consumption/npm/registry/@pylance/pylance/-/pylance-2025.3.2.tgz",
+  "_shasum": "2d6df9fb5c895326d59f8a81addbe5e7f6aab990",
+  "_spec": "@pylance/pylance@2025.3.2",
+  "_where": "D:\\a\\_work\\1\\s",
+  "author": {
+    "name": "Microsoft Corporation"
+  },
+  "bin": {
+    "pylance-langserver": "langserver.index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/pyrx/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A performant, feature-rich language server for Python",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "copy-webpack-plugin": "^11.0.0",
+    "esbuild-loader": "^3.2.0",
+    "javascript-obfuscator": "4.1.1",
+    "shx": "^0.3.4",
+    "tar-to-zip": "^3.0.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "ts-loader": "^9.5.1",
+    "typescript": "~5.5.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-obfuscator": "^3.5.1"
+  },
+  "displayName": "Pylance",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "/dist"
+  ],
+  "homepage": "https://github.com/Microsoft/pyrx#readme",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "main": "langserver.index.js",
+  "name": "@pylance/pylance",
+  "publisher": "Microsoft Corporation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Microsoft/pyrx.git",
+    "directory": "packages/pylance"
+  },
+  "scripts": {
+    "build": "webpack --mode production --progress",
+    "clean": "shx rm -rf ./dist ./out NOTICE.txt",
+    "pack-zip": "npm pack && tar-to-zip pylance-pylance-*.tgz",
+    "prepack": "npm run clean && shx cp ../../NOTICE.txt . && npm run build",
+    "webpack": "webpack --mode development --progress",
+    "webpack-dev": "npm run clean && webpack --mode development --watch --progress"
+  },
+  "version": "2025.3.2"
+}

@@ -1,0 +1,19 @@
+[$RootKey$\DslTools\DomainModels\{91d59b16-e488-4a28-8d51-59273ad5bf2e}]
+"Assembly"="Microsoft.VisualStudio.Modeling.Sdk.Diagrams,version=17.0.0.0,publicKeyToken=b03f5f7f11d50a3a,culture=neutral"
+"Class"="Microsoft.VisualStudio.Modeling.CoreDesignSurfaceDomainModel"
+"Uri"="http://schemas.microsoft.com/VisualStudio/2008/DslTools/CoreDesignSurface"
+[$RootKey$\DslTools\DomainModels\{968f9fb9-6074-49e3-8ec2-1e1ce7143e71}]
+"Assembly"="Microsoft.VisualStudio.Modeling.Sdk,version=17.0.0.0,publicKeyToken=b03f5f7f11d50a3a,culture=neutral"
+"Class"="Microsoft.VisualStudio.Modeling.CoreDomainModel"
+"Uri"="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core"
+[$RootKey$\Menus]
+"{d1091694-ea72-4bdd-8918-78324cc25448}"=",1000.ctmenu,1"
+[$RootKey$\Packages\{d1091694-ea72-4bdd-8918-78324cc25448}]
+@="Microsoft.VisualStudio.Modeling.Shell.CommonModelingPackage"
+"Assembly"="Microsoft.VisualStudio.Modeling.Sdk.Shell,version=17.0.0.0,publicKeyToken=b03f5f7f11d50a3a,culture=neutral"
+"Class"="Microsoft.VisualStudio.Modeling.Shell.CommonModelingPackage"
+"CompanyName"="Microsoft"
+"ID"=dword:00000064
+"InprocServer32"="$System$\mscoree.dll"
+"ProductName"="Microsoft DSL Tools"
+"ProductVersion"="2.0"

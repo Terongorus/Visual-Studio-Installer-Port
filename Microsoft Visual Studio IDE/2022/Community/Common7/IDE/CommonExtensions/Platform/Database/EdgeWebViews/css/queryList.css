@@ -1,0 +1,7 @@
+﻿.treeGridContainer .query {
+    text-align: left;
+}
+
+    .treeGridContainer .query > span {
+        text-overflow: ellipsis;
+    }

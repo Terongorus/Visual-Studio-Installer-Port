@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>fsiArm64</name></assembly>
+<members>
+<member name="P:LegacyResolver.SR.SwallowResourceText(System.Boolean)">
+<summary>
+ If set to true, then all error messages will just return the filled &apos;holes&apos; delimited by &apos;,,,&apos;s - this is for language-neutral testing (e.g. localization-invariant baselines).
+</summary>
+</member>
+<member name="P:LegacyResolver.SR.SwallowResourceText">
+<summary>
+ If set to true, then all error messages will just return the filled &apos;holes&apos; delimited by &apos;,,,&apos;s - this is for language-neutral testing (e.g. localization-invariant baselines).
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionNetFramework">
+<summary>
+ .NET Framework
+ (Originally from D:\a\_work\1\s\src\fsi\..\LegacyMSBuildResolver\LegacyResolver.txt:6)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionGAC">
+<summary>
+ Global Assembly Cache
+ (Originally from D:\a\_work\1\s\src\fsi\..\LegacyMSBuildResolver\LegacyResolver.txt:7)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionFoundByAssemblyFoldersKey">
+<summary>
+ Found by AssemblyFolders registry key
+ (Originally from D:\a\_work\1\s\src\fsi\..\LegacyMSBuildResolver\LegacyResolver.txt:4)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionFoundByAssemblyFoldersExKey">
+<summary>
+ Found by AssemblyFoldersEx registry key
+ (Originally from D:\a\_work\1\s\src\fsi\..\LegacyMSBuildResolver\LegacyResolver.txt:5)
+</summary>
+</member>
+<member name="P:FSharp.Compiler.Interactive.ReadLineConsole.Prompt">
+<summary>
+ Inset all inputs by this amount
+</summary>
+</member>
+<member name="T:FSharp.Compiler.Interactive.Options">
+<summary>
+ List of available optionsCache
+</summary>
+</member>
+<member name="T:FSharp.Compiler.Interactive.History">
+<summary>
+ Class managing the command History.
+</summary>
+</member>
+<member name="M:FSharp.Compiler.Interactive.Utils.bufferWidth">
+<summary>
+ Limits BufferWidth to make sure that full-width characters will not be print to wrong position.
+
+ The return value is Console.BufferWidth - 2.
+
+ When printing full-width characters to the screen (such as 一二三四五六七八九零),
+
+ if BufferWidth = Console.BufferWidth, the output will be
+
+ #&gt; 一二三四五六七八九零一二三四五六七八九  # (零 is missing)
+
+ #一二三四五六七八九零                      #
+
+ if BufferWidth = Console.BufferWidth - 1, the output will be
+
+ #&gt; 一二三四五六七八九零一二三四五六七八九零# (零 is printed, but will not correctly calculate cursor position)
+
+ #一二三四五六七八九零                      # (cursor may appear in the middle of the character)
+
+ if BufferWidth = Console.BufferWidth - 2, the output will be
+
+ #&gt; 一二三四五六七八九零一二三四五六七八九  #
+
+ #零一二三四五六七八九零                    # (work correctly)
+</summary>
+</member>
+<member name="P:FSharp.Compiler.Interactive.Utils.fullWidthCharRanges">
+<summary>
+ An array stores ranges of full-width chars.
+
+ The ranges are sorted by increasing order in the array, and each range are stored in the 2nth and 2n+1th
+ position in the array (n is the ordinal number of the range)
+
+ Array [| a; b; c; d |] represents range [a, b] or [c, d], means chars in these ranges are full-width.
+
+ Definition: https://www.unicode.org/reports/tr11/
+
+ Data source: https://www.unicode.org/Public/UCD/latest/ucd/EastAsianWidth.txt
+</summary>
+</member>
+<member name="T:FSharp.Compiler.Interactive.Utils">
+<summary>
+ Cursor position management
+</summary>
+</member>
+<member name="T:Sample.FSharp.Compiler.Interactive.Main.WinFormsEventLoop">
+<summary>
+ This is the event loop implementation for winforms
+</summary>
+</member>
+<member name="M:Sample.FSharp.Compiler.Interactive.Main.DummyForm.Finalize">
+<summary>
+ Creating the dummy form object can crash on Mono Mac, and then prints a nasty background
+ error during finalization of the half-initialized object...
+</summary>
+</member>
+<member name="T:Sample.FSharp.Compiler.Interactive.Main.DummyForm">
+<summary>
+Use a dummy to access protected member
+</summary>
+</member>
+<member name="M:Sample.FSharp.Compiler.Interactive.Main.StartServer(FSharp.Compiler.Interactive.Shell.FsiEvaluationSession,System.String)">
+<summary>
+ Starts the remoting server to handle interrupt requests from a host tool.
+</summary>
+</member>
+<member name="M:Sample.FSharp.Compiler.Interactive.Main.TrySetUnhandledExceptionMode">
+<summary>
+ Try to set the unhandled exception mode of System.Windows.Forms
+</summary>
+</member>
+<member name="M:Sample.FSharp.Compiler.Interactive.Main.SetCurrentUICultureForThread(Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Set the current ui culture for the current thread.
+</summary>
+</member>
+</members>
+</doc>

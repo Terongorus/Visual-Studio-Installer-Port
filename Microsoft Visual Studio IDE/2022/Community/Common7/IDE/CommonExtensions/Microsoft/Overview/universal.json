@@ -1,0 +1,108 @@
+{
+  "browserHostVersion": "2.0",
+  "start_url": "universal.html",
+  "domain": "http://microsoft.com",
+  "name": "UAPOverviewPlugin",
+  "version": "1.0",
+  "vs": {
+    "resource_aliases": {
+      "Resources": {
+        "type": "Embedded",
+        "name": "Microsoft.VisualStudio.UniversalLibrary",
+        "path": "Microsoft.VisualStudio.UniversalLibrary.UniversalLibraryResources",
+        "is_default": true
+      }
+    },
+    "theme_token_aliases": {
+      "overview-body": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "Body"
+      },
+      "overview-body-background": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "BackgroundColor",
+        "name": "Body"
+      },
+      "overview-h1": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "H1"
+      },
+      "overview-hyperlink": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "Hyperlink"
+      },
+      "overview-hyperlink-hover": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "HyperlinkHover"
+      },
+      "overview-hyperlink-active": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "HyperlinkActive"
+      },
+      "overview-numbered-list-item": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "NumberedListItem"
+      },
+      "overview-numbered-list-item-background": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "BackgroundColor",
+        "name": "NumberedListItem"
+      },
+      "overview-numbered-list-item-hover-background": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "BackgroundColor",
+        "name": "NumberedListItemHover"
+      },
+      "overview-numbered-list-item-hover-border": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "NumberedListItemHoverBorder"
+      },
+      "overview-numbered-list-item-active": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "NumberedListItemActive"
+      },
+      "overview-numbered-list-item-active-background": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "BackgroundColor",
+        "name": "NumberedListItemActive"
+      },
+      "overview-numbered-list-item-active-border": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "NumberedListItemActiveBorder"
+      },
+      "overview-content-section-header": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "ContentSectionHeader"
+      },
+      "overview-content-section-header-border": {
+        "category": "c8887ac6-3c60-4209-9d69-8f4c12a60044",
+        "key_type": "ForegroundColor",
+        "name": "ContentSectionHeaderBorder"
+      }
+    },
+    "themed_images": {
+      "overview-image-code": {
+        "bitmap_source": "images\\uwp_code.png",
+        "background_color": "overview-body-background"
+      },
+      "overview-image-services": {
+        "bitmap_source": "images\\uwp_services.png",
+        "background_color": "overview-body-background"
+      },
+      "overview-image-azure": {
+        "bitmap_source": "images\\uwp_azure.png",
+        "background_color": "overview-body-background"
+      }
+    }
+  }
+}

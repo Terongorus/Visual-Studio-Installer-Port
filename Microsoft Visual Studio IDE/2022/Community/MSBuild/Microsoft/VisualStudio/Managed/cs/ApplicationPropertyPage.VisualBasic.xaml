@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="Application" OverrideMode="Extend" xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:xliff="https://github.com/dotnet/xliff-tasks" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xliff">
+  <Rule.Categories>
+    <Category Name="ApplicationFramework" DisplayName="Architektura aplikace" Description="Nastavení architektury aplikace." />
+    <Category Name="WPF" DisplayName="WPF" Description="Nastavení specifická pro aplikace WPF." />
+  </Rule.Categories>
+  <StringProperty Name="CreateOrOpenAppManifest" DisplayName="Vytvořte nebo otevřete manifest aplikace pro nastavení Windows." Category="General">
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="LinkAction">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Action" Value="Command" />
+          <NameValuePair Name="Command" Value="CreateOrOpenAppManifest" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <!-- TODO: Add a hyperlink/button to open the ApplicationEvents.vb. Previously, we had a View Application Events button. -->
+  <!-- The StartupObject property has a different set of appropriate values for VB and for C#.
+       For VB projects, we expect to see every Form in the assembly directly or indirectly inherited from Form.
+       We specify this by setting the SearchForEntryPointsInFormsOnly to true.
+       We also want to ensure that the property always has a value. -->
+  <DynamicEnumProperty Name="StartupObject" DisplayName="Spouštěcí objekt" Description="Definuje vstupní bod, který se má volat při načtení aplikace. Obecně je tato možnost nastavena buď na hlavní formulář v aplikaci, nebo na proceduru Main, která se má spustit při spuštění aplikace. Knihovny tříd vstupní bod nedefinují." Category="General" EnumProvider="StartupObjectsEnumProvider">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+            (not (has-evaluated-value "Application" "OutputType" "Library"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+    <DynamicEnumProperty.ProviderSettings>
+      <NameValuePair Name="IncludeEmptyValue" Value="false" />
+      <NameValuePair Name="SearchForEntryPointsInFormsOnly" Value="true" />
+    </DynamicEnumProperty.ProviderSettings>
+  </DynamicEnumProperty>
+  <!-- This property actually is saved as MyType. -->
+  <BoolProperty Name="UseApplicationFramework" DisplayName="Architektura aplikace" Description="Povolte Visual Basic Application Framework pro tento projekt. Obecně platí, že tato nastavení se serializují do souboru myapp." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195444" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (is-vb)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="EnableVisualStyles" DisplayName="Vizuální styly Windows" Description="Používá nejaktuálnější verzi knihovny ovládacích prvků COMCTL k zajištění vykreslování ovládacích prvků s moderním vizuálním stylem." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195445" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="SingleInstance" DisplayName="Aplikace s jednou instancí" Description="Zabrání uživatelům ve spuštění více instancí aplikace. Výchozí hodnota je vymazána, což umožňuje spuštění více instancí aplikace." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195340" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="SaveMySettingsOnExit" DisplayName="Ukládat nastavení uživatele při ukončení" Description="Určuje, jestli se nastavení uloží, když uživatelé vypnou své počítače." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195171" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <EnumProperty Name="HighDpiMode" DisplayName="Režim vysokého rozlišení DPI" Description="Určuje režim HighDpiMode pro celou aplikaci. Toto nastavení může být programové přepsání prostřednictvím události ApplyApplicationDefaults." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195173" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and 
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-net-core-app-version-or-greater "6.0")
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- TODO: Validate DisplayName values. -->
+    <EnumValue Name="0" DisplayName="Nepodporuje DPI – Bez měřítka a předpokládá se 100% škálování." />
+    <EnumValue Name="4" DisplayName="Nepodporuje DPI, GDI se škáluje – Stejně jako rozlišení DPI bez rozlišení, ale je optimalizované pro grafický obsah, který není ve vyrovnávací paměti." />
+    <EnumValue Name="1" DisplayName="Informace o systému – DPI primárního monitoru je potenciální měřítko." />
+    <EnumValue Name="2" DisplayName="Na monitor – Rozpoznáno DPI při spuštění a při změně." />
+    <EnumValue Name="3" DisplayName="Na monitor V2 – Rozpoznáno DPI při spuštění a při změně včetně podřízených oken" />
+  </EnumProperty>
+  <EnumProperty Name="VBAuthenticationMode" DisplayName="Režim ověřování" Description="Určuje metodu identifikace přihlášeného uživatele v případě potřeby." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195341" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- TODO: Validate DisplayName values. -->
+    <EnumValue Name="Windows" DisplayName="Windows – Načte informace o uživateli prostřednictvím My.User za běhu." />
+    <EnumValue Name="ApplicationDefined" DisplayName="Definované aplikací – V aplikaci bylo implementováno vlastní ověřování." />
+  </EnumProperty>
+  <EnumProperty Name="ShutdownMode" DisplayName="Režim vypnutí" Description="Určuje, který stav způsobuje ukončení aplikace." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195343" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <EnumValue Name="AfterMainFormCloses" DisplayName="Vypne se, když se zavře hlavní formulář." />
+    <EnumValue Name="AfterAllFormsClose" DisplayName="Vypněte až po zavření posledního formuláře." />
+  </EnumProperty>
+  <!-- This property has been made temporarily invisible, and is blocked on https://github.com/dotnet/project-system/issues/8286
+       When that is fixed and this property displayed, its suppression should be removed from NonVisiblePropertiesShouldntBeLocalized. -->
+  <DynamicEnumProperty Name="SplashScreen" DisplayName="Úvodní obrazovka" Description="Nastaví formulář, který se má pro aplikaci použít jako úvodní obrazovka." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195177" Category="ApplicationFramework" EnumProvider="SplashScreenEnumProvider">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+    <DynamicEnumProperty.ProviderSettings>
+      <!-- We want an explicit item representing the empty value. We can remove this setting
+           when the enum provider starts including it by default. -->
+      <NameValuePair Name="IncludeEmptyValue" Value="true" />
+    </DynamicEnumProperty.ProviderSettings>
+  </DynamicEnumProperty>
+  <StringProperty Name="MinimumSplashScreenDisplayTime" DisplayName="Minimální doba zobrazení úvodní obrazovky" Description="Nastaví minimální dobu (v milisekundách), po kterou se bude zobrazovat úvodní obrazovka." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195289" Category="ApplicationFramework">
+    <StringProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </StringProperty.DataSource>
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="String">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="EvaluatedValueValidationRegex" Value="^\d*$" />
+          <NameValuePair Name="EvaluatedValueFailedValidationMessage" Value="Tato vlastnost musí být celé číslo." xliff:LocalizedProperties="Value" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <DynamicEnumProperty Name="StartupURI" DisplayName="Spouštěcí URI" Description="Určuje okno, které se otevře při načtení aplikace." EnumProvider="PageItemEnumProvider" Category="WPF">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <EnumProperty Name="ShutdownMode_WPF" DisplayName="Režim vypnutí" Description="Určuje, kdy se má aplikace automaticky zavřít." Category="WPF">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- Note these match the values of the System.Windows.ShutdownMode enum. -->
+    <EnumValue Name="OnLastWindowClose" DisplayName="Při zavření posledního okna" />
+    <EnumValue Name="OnMainWindowClose" DisplayName="Při zavření hlavního okna" />
+    <EnumValue Name="OnExplicitShutdown" DisplayName="Při jednoznačném vypnutí" />
+  </EnumProperty>
+  <StringProperty Name="CreateOrOpenApplicationXaml" DisplayName="Upravit XAML" Description="Otevřít soubor Application.xaml" Category="WPF">
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="LinkAction">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Action" Value="Command" />
+          <NameValuePair Name="Command" Value="CreateOrOpenApplicationXaml" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+</Rule>

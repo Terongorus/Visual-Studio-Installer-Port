@@ -1,0 +1,27 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="Office365.F8BFDB32-F4EB-49BF-97CF-FF814F939753" Version="17.5.40626.1212" Language="en-US" Publisher="Microsoft" />
+    <PackageId>Microsoft.VisualStudio.ConnectedServices.Office365</PackageId>
+    <DisplayName>Microsoft Office 365 Services with Microsoft Graph</DisplayName>
+    <Description xml:space="preserve">Use the Microsoft Graph API to integrate your application with Office 365 services</Description>
+    <Icon>Images\OfficeTooling_whiteHalo_64x.png</Icon>
+    <PreviewImage>Images\OfficeTooling_whiteHalo_64x.png</PreviewImage>
+  </Metadata>
+  <Installation InstalledByMsi="false" AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 19.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" Version="[15.0, 19.0)" />
+    <Dependency Id="ConnectedServices.897486C9-63BD-48D3-8A33-CB770FBD0723" DisplayName="Microsoft Connected Services" Version="[15.0, 19.0)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.Office365.dll" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0, 19.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.ConnectedServices.Core" Version="[15.0, 19.0)" DisplayName="Microsoft Visual Studio Connected Services Core" />
+  </Prerequisites>
+</PackageManifest>

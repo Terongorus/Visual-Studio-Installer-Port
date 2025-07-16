@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Deployment.DotNet.Releases</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent">
+            <summary>
+            Describes an ASP.NET Core release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent.AspNetCoreModuleVersions">
+            <summary>
+            The versions of the ASP.NET Core Module in this release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent.Name">
+            <summary>
+            The friendly display name for the component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent.VisualStudioVersion">
+            <summary>
+            The versions of Visual Studio that includes this runtime. Multiple versions may be listed, e.g.
+            &quot;15.9.25, 16.0.16, 16.4.11, 16.6.4&quot;
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.ProductRelease)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.AspNetCoreReleaseComponent"/> instance.
+            </summary>
+            <param name="element">The JSON element of the component.</param>
+            <param name="release">The release to which the component belongs.</param>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.Cve">
+            <summary>
+            Represents a Common Vulnerabilities and Exposures (CVE) entry. CVEs can be associated with one or more <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Cve.Id">
+            <summary>
+            The identifier of the CVE.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Cve.DescriptionLink">
+            <summary>
+            The URI pointing to a description of the vulnerability.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Cve.#ctor(System.Text.Json.JsonElement)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.Cve"/> instance from a <see cref="T:System.Text.Json.JsonElement"/>.
+            </summary>
+            <param name="cveElement">The <see cref="T:System.Text.Json.JsonElement"/> to deserialize.</param>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Cve.#ctor(System.String,System.Uri)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.Cve"/> instance.
+            </summary>
+            <param name="id">The CVE identifier.</param>
+            <param name="address">The URI pointing to the CVE description.</param>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Cve.Equals(Microsoft.Deployment.DotNet.Releases.Cve)">
+            <summary>
+            Determines whether the specified <see cref="T:Microsoft.Deployment.DotNet.Releases.Cve"/> is equal to this instance. 
+            </summary>
+            <param name="other">The <see cref="T:Microsoft.Deployment.DotNet.Releases.Cve"/> to this instance.</param>
+            <returns><see langword="true"/> if the specified <see cref="T:Microsoft.Deployment.DotNet.Releases.Cve"/> is equal to this instance; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Cve.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare to the current object.</param>
+            <returns><see langword="true"/> if the specified object is equal to the current object; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Cve.GetHashCode">
+            <summary>
+            Returns the hash code for this CVE.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.JsonExtensions.GetReleaseVersionOrDefault(System.Text.Json.JsonElement,System.String)">
+            <summary>
+            Looks for a property named <paramref name="propertyName"/> and creates a <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/>
+            using its value.
+            </summary>
+            <param name="value">The <see cref="T:System.Text.Json.JsonElement"/> to query.</param>
+            <param name="propertyName">The name of the property.</param>
+            <returns>A <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> or <see langword="null"/> if the property does not exist or contains a null value.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.JsonExtensions.GetStringOrDefault(System.Text.Json.JsonElement,System.String)">
+            <summary>
+            Looks for a property named <paramref name="propertyName"/> and creates a string
+            using its value.
+            </summary>
+            <param name="value">The <see cref="T:System.Text.Json.JsonElement"/> to query.</param>
+            <param name="propertyName">The name of the property.</param>
+            <returns>A string or <see langword="null"/> if the property does not exist or contains a null value.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.JsonExtensions.GetUriOrDefault(System.Text.Json.JsonElement,System.String)">
+            <summary>
+            Looks for a property named <paramref name="propertyName"/> and creates a <see cref="T:System.Uri"/>
+            using its value.
+            </summary>
+            <param name="value">The <see cref="T:System.Text.Json.JsonElement"/> to query.</param>
+            <param name="propertyName">The name of the property.</param>
+            <returns>A <see cref="T:System.Uri"/> or <see langword="null"/> if the property does not exist or contains a null value.</returns>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.Product">
+            <summary>
+            Provides an overview of a single product, including information related to its support level and the latest SDK and runtime releases.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.ProductVersion">
+            <summary>
+            The version of the product, e.g "5.0" or "1.1".
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.EndOfLifeDate">
+            <summary>
+            The end-of-life (EOL) date for this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/> when it is considered to be out of support. The value 
+            may be <see langword="null" /> if the EOL date is undetermined, e.g. when a product is still a prerelease.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.LatestReleaseIncludesSecurityUpdate">
+            <summary>
+            <see langword="True"/> if the latest release of the product contained a security update;
+            <see langword="false"/> otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.LatestReleaseDate">
+            <summary>
+            The date of the latest release for this product.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.LatestReleaseVersion">
+            <summary>
+            The version of the latest release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.LatestRuntimeVersion">
+            <summary>
+            The version of the runtime included in the latest release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.LatestSdkVersion">
+            <summary>
+            The version of the SDK included in the latest release.
+            </summary>
+            <remarks>
+            This is usually the SDK with the highest feature band. A <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>
+            may include multiple SDKs across different feature bands, all of which carry the same runtime version.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.ProductName">
+            <summary>
+            The name of the product.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.ReleasesJson">
+            <summary>
+            The URL pointing to the releases.json file that contains information about all the releases 
+            associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.ReleaseType">
+            <summary>
+            A value indicating the support duration of the product.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.SupportPhase">
+            <summary>
+            The current support phase of this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>. For an LTS release, the <see cref="P:Microsoft.Deployment.DotNet.Releases.Product.EndOfLifeDate"/> property should 
+            be checked to confirm whether a release is still supported.
+            </summary>
+            <remarks>
+            The EOL dates are often published in advance, but there can be delays to updating the support phase in the published
+            data.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.Product.IsSupported">
+            <summary>
+            <see langword="true"/> if the support phase is not <see cref="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.EOL"/>
+            and the current date is less than the EOL date of the product, 
+            <see langword="false"/> otherwise.
+            </summary>
+            <returns><see langword="true"/> if the product is currently supported; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Product.GetReleasesAsync">
+            <summary>
+            Gets a collection of all releases associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.
+            </summary>
+            <returns>A collection of all releases for this product.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Product.GetReleasesAsync(System.String,System.Boolean)">
+            <summary>
+            Gets a collection of all releases associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/> using a file
+            containing the releases data.
+            </summary>
+            <param name="path">The path of the file containing the releases data.</param>
+            <param name="downloadLatest">When <see langword="true"/>, the latest copy of the releases data is used
+            if the online version is newer than the local file copy.</param>
+            <returns>A collection of releases associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Product.GetReleasesAsync(System.Uri)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> collection using the releases.json file pointed to
+            by the provided URL.
+            </summary>
+            <param name="address">The URL pointing to the releases.json file to use.</param>
+            <returns>A collection of releases associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Product.IsOutOfSupport">
+            <summary>
+            <see langword="true"/> if the support phase is <see cref="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.EOL"/>
+            or the current date is greater than or equal to the EOL date of the product, 
+            <see langword="false"/> otherwise.
+            </summary>
+            <returns><see langword="true"/> if the product is out of support; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Product.GetReleasesAsync(System.String)">
+            <summary>
+            Gets a collection of all releases defined in the specified file.
+            </summary>
+            <param name="path">The path of the file containing the releases data.</param>
+            <returns>A collection of releases. The releases are not linked to a specific <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.</returns>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ProductCollection">
+            <summary>
+            A collection of all released products.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ProductCollection.ReleasesIndexDefaultUrl">
+            <summary>
+            The default URL of the releases index file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.#ctor(System.Collections.Generic.IList{Microsoft.Deployment.DotNet.Releases.Product})">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductCollection"/> instance.
+            </summary>
+            <param name="productList">The list of products to include.</param>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.GetSupportPhases">
+            <summary>
+            Gets an enumerable of all the support phases across all products.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.GetAsync">
+            <summary>
+            Creates a new collection of all released products using the default URL for the releases index file.
+            </summary>
+            <returns>A collection of products described in the releases index file.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.GetAsync(System.String)">
+            <summary>
+            Creates a new collection of all released products using the provided URL for the releases index file.
+            </summary>
+            <param name="releasesIndexUri">A string containing the URL pointing to the releases index file.</param>
+            <returns>A collection of products described in the releases index file.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.GetAsync(System.Uri)">
+            <summary>
+            Creates a new collection of all released products using the provided URL for the releases index file.
+            </summary>
+            <param name="releasesIndexUrl">A URL pointing to the releases index file.</param>
+            <returns>A collection of products described in releases index file.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductCollection.GetFromFileAsync(System.String,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductCollection"/> using the specified file containing the releases index. If 
+            the file does not exist or is outdated, a newer copy can optionally be downloaded. If the file exist and a
+            newer copy is available it will replace the existing local copy.
+            </summary>
+            <param name="path">The path of the releases index file.</param>
+            <param name="downloadLatest">When <see langword="true"/>, if the local copy of the index is
+            outdated, or does not exist, a new copy is downloaded, replacing the local copy before processing the file.
+            Otherwise, the local copy is used.</param>
+            <returns>A collection of all products described by the index.</returns>
+            <exception cref="T:System.IO.FileNotFoundException">If <paramref name="downloadLatest"/> is <see langword="false"/> and 
+            <paramref name="path"/> does not exist.
+            </exception>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ProductRelease">
+            <summary>
+            Describes a single .NET <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>. A release may include multiple SDKs and runtime releases.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.AspNetCoreRuntime">
+            <summary>
+            The ASP.NET Core runtime included in this release, or <see langword="null"/> if the component is absent."/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Components">
+            <summary>
+            Gets a collection of all the release components (SDKs and runtimes) in the release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Cves">
+            <summary>
+            The collection of CVEs addressed by this release. The collection may be empty if no CVEs are associated with
+            it, typically when the release does not contain any security fixes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Files">
+            <summary>
+            Gets all files from all the release components (SDKs and runtimes) associated with this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.IsPreview">
+            <summary>
+            <see langword="true"/> if the release version describes a prerelease; <see langword="false"/> otherwise.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.IsSecurityUpdate">
+            <summary>
+            <see langword="true"/> if the release includes security fixes; otherwise <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Product">
+            <summary>
+            The <see cref="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Product"/> to which this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> belongs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.ReleaseDate">
+            <summary>
+            The date this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> was published.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.ReleaseNotes">
+            <summary>
+            A <see cref="T:System.Uri"/> pointing to the release notes of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Runtime">
+            <summary>
+            The .NET runtime included with this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Runtimes">
+            <summary>
+            A collection of all the runtime components (.NET, ASP.NET Core, Windows Desktop, etc.) included in this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Sdks">
+            <summary>
+            All SDKs included in this release. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.Version">
+            <summary>
+            The version of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ProductRelease.WindowsDesktopRuntime">
+            <summary>
+            The Windows desktop runtime associated with this release or <see langword="null"/> if the component is absent.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ProductRelease.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.Product)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> instance.
+            </summary>
+            <param name="element">The JSON element of the release.</param>
+            <param name="product">The product to which the release belongs.</param>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ReleaseComponent">
+            <summary>
+            Defines properties common to all types of release components.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.DisplayVersion">
+            <summary>
+            A display friendly version.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.Files">
+            <summary>
+            The files associated with the <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseComponent"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.Name">
+            <summary>
+            The friendly display name for the component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.Release">
+            <summary>
+            The <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> to which this component belongs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.Version">
+            <summary>
+            The version of the <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseComponent"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseComponent.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.ProductRelease)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseComponent"/> instance.
+            </summary>
+            <param name="element">The JSON element of the component.</param>
+            <param name="release">The release to which the component belongs.</param>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile">
+            <summary>
+            Represents a single file associated with a release component such as an SDK or runtime.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Address">
+            <summary>
+            The URL from where to download the file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseFile.FileName">
+            <summary>
+            The filename and extension of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Hash">
+            <summary>
+            The <see cref="T:System.Security.Cryptography.SHA512"/> hash of the file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Name">
+            <summary>
+            The version agnostic name and extension of the file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Rid">
+            <summary>
+            The runtime identifier associated with the file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.#ctor(System.Text.Json.JsonElement)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/> instance from a <see cref="T:System.Text.Json.JsonElement"/>.
+            </summary>
+            <param name="fileElement">The <see cref="T:System.Text.Json.JsonElement"/> to deserialize.</param>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.#ctor(System.Uri,System.String,System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/> instance.
+            </summary>
+            <param name="address">The URL of the file.</param>
+            <param name="hash">A string containing the SHA512 hash of the file.</param>
+            <param name="name">The name and extension of the file.</param>
+            <param name="rid">The RID associated with the file.</param>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.DownloadAsync(System.String)">
+            <summary>
+            Download this file to the specified local file and verify the file hash. If the destination file exists, the new copy is
+            downloaded to a temporary file before verifying its hash. If the hash check fails, the temporary file is deleted. Otherwise,
+            the temporary file is copied to the destination path. If the destination file does not exist, the file is downloaded and
+            the hash is verified. If the hash check fails, the destination file is deleted.
+            </summary>
+            <param name="destinationPath">The path, including the filename of the local file. The file will be
+            overwritten if it already exists if the hash check passed.</param>
+            <exception cref="T:System.IO.InvalidDataException">Thrown if the downloaded file's hash does to match the 
+            expected hash.</exception>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare to the current object.</param>
+            <returns><see langword="true"/> if the specified object is equal to the current object; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.Equals(Microsoft.Deployment.DotNet.Releases.ReleaseFile)">
+            <summary>
+            Determines whether the specified <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/> is equal to this instance.
+            </summary>
+            <param name="other">The <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/> to compare to this instance.</param>
+            <returns><see langword="true"/> if the specified <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseFile"/> is equal to this instance; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseFile.GetHashCode">
+            <summary>
+            Returns the hash code for this release file.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ReleaseType">
+            <summary>
+            An enumeration describing different releases types based on their support duration.
+            See the <see href="https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core">support lifecycle</see>
+            documentation for further details.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseType.LTS">
+            <summary>
+            Indicates a release is supported for the Long Term Support (LTS) timeframe (3 years).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseType.STS">
+            <summary>
+            Indicates a release is supported for the Standard Term Support (STS) timeframe (18 months).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseType.Unknown">
+            <summary>
+            The release type is unknown and could not be parsed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion">
+            <summary>
+            Represents a version associated with a <see cref="T:Microsoft.Deployment.DotNet.Releases.ProductRelease"/> or <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseComponent"/>. The
+            version is treated as a semantic version.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.PrereleasePattern">
+            <summary>
+            Regular expression for capturing the pre-release part of a semantic version.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.BuildMetadataPattern">
+            <summary>
+            Regular expression for capturing the build-metadata part of a semantic version.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.SemanticVersionPattern">
+            <summary>
+            A regular expression pattern to capture a semantic version (2.0) into named groups called "major", "minor", "patch", "prerelease",
+            and "buildmetadata".
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.BuildMetadata">
+            <summary>
+            The build metadata of the version or <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Major">
+            <summary>
+            The major version number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Minor">
+            <summary>
+            The minor version number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Patch">
+            <summary>
+            The patch number.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Prerelease">
+            <summary>
+            The prerelease label of the version or <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.SdkFeatureBand">
+            <summary>
+            Gets the feature band of the version (also known as the SDK minor version). Feature bands only apply to SDK versions.
+            The value is derived from the hundreds group of the version's patch field (third part of the version number).
+            For example, if the SDK version is 2.1.809, the feature band is 800.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.SdkPatchLevel">
+            <summary>
+            Gets the patch level of the feature band if this version is associated with an SDK. The patch level will be between 0 and 99. 
+            For example, if the SDK version is 2.1.516, the patch level is 16 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> instance using a string representation of a version. The version may
+            be expressed as a semantic version.
+            </summary>
+            <param name="version">The string value of the version, e.g. &quot;1.0.0-preview1&quot;.</param>
+            <exception cref="T:System.FormatException">If the string represents an invalid version.</exception>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.#ctor(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> class using the specified
+            version components.
+            </summary>
+            <param name="major">The major version.</param>
+            <param name="minor">The minor version.</param>
+            <param name="patch">The patch number.</param>
+            <param name="prerelease">The prerelease label.</param>
+            <param name="buildMetadata">The build metadata.</param>
+            <exception cref="T:System.FormatException">Thrown if the content of any field is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if the major, minor, or patch version is less than 0.</exception>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.ComparePrecedenceTo(Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Compares this instance to another <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> and returns an indication of their relative precedence.
+            Dot-separated prerelease labels are individually compared. Versions that only differ in build metadata have the same
+            precedence.
+            </summary>
+            <param name="value">The <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> to compare against this instance.</param>
+            <returns>Returns a signed integer indicating whether this instance precedes, follows or appears in the same position in 
+            the sort order as the specified <paramref name="value"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an integer that indicates whether the current 
+            instance precedes, follows, or occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="obj">An object to compare or null.</param>
+            <returns>
+            Returns a signed integer indicating whether this instance precedes, follows or appears in the same position in 
+            the sort order as the <paramref name="obj"/> parameter.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.CompareTo(Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Compares this instance to the specified object and returns an indication of their relative values.
+            </summary>
+            <param name="other">An object to compare.</param>
+            <returns>
+            Returns a signed integer indicating whether this instance precedes, follows or appears in the same position in 
+            the sort order as the <paramref name="other"/> parameter.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare to the current object.</param>
+            <returns><see langword="true"/> if the specified object is equal to the current object; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Equals(Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Returns a value indicating whether the current <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object and a specified
+            <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object represent the same value.
+            </summary>
+            <param name="other">The <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object to compare to this instance, or <see langword="null" />.</param>
+            <returns><see langword="true"/> if every component of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> matches the corresponding
+            component of the <paramref name="other"/> parameter; <see langword="false"/> otherwise.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.GetHashCode">
+            <summary>
+            The default hash function.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.PrecedenceEquals(Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether this instance and another <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> share the same precedence.
+            </summary>
+            <param name="value">The value to compare.</param>
+            <returns>
+            <see langword="true"/> if both values have the same sort order; <see langword="false"/> otherwise.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/>.
+            </summary>
+            <returns>The <see cref="T:System.String"/> representation of this <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.ToString(System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.String"/> representation of the current <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/>. A specified
+            count indicates the number of components to return.
+            </summary>
+            <param name="fieldCount">The number of components to return. If the field count is less than 0 or greater than 3, all
+            components including the prerelease and build metadata is returned.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Compare(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Compare two specified <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> objects and returns an integer that indicates their relative position in
+            the sort order.
+            </summary>
+            <param name="a">The first object to compare.</param>
+            <param name="b">The second object to compare.</param>
+            <returns>
+            A signed integer indicating the relative position in the sort order. Less than zero indicates that the first value
+            preceeds the second. Zero indicates that both values occur at the same sort position. Greater than zero indicates that
+            the first value follows the second.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Equals(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determiens whether two <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> objects have the same value.
+            </summary>
+            <param name="a">The first value to compare, or null.</param>
+            <param name="b">The second value to compare, or null</param>
+            <returns>
+            <see langword="true"/> if the value of <paramref name="a"/> is the same as the value of <paramref name="b"/>. 
+            If both values are null, the method returns <see langword="true"/>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_Equality(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether two specified <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> objects are equal.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> equals <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_Inequality(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether two specified <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> objects are unequal.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> does not equal <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_GreaterThan(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether the first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object is greater than the 
+            second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> is greater than <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_GreaterThanOrEqual(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether the first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object is greater than or equal to the 
+            second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> is greater than or equal to <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_LessThan(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether the first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object is less than the 
+            second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> is less than <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.op_LessThanOrEqual(Microsoft.Deployment.DotNet.Releases.ReleaseVersion,Microsoft.Deployment.DotNet.Releases.ReleaseVersion)">
+            <summary>
+            Determines whether the first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object is less than or equal to the 
+            second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.
+            </summary>
+            <param name="a">The first <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <param name="b">The second <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.</param>
+            <returns><see langword="true"/> if <paramref name="a"/> is less than or equal to <paramref name="b"/>;otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.Parse(System.String)">
+            <summary>
+            Converts the string representation of a version to an equivalent <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object.
+            </summary>
+            <param name="input">A string that contains a version to convert.</param>
+            <returns>An object that is equivalent to the version number specified in the <paramref name="input"/> parameter.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="input"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.FormatException">If <paramref name="input"/> contains an invalid version.</exception>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.TryParse(System.String,Microsoft.Deployment.DotNet.Releases.ReleaseVersion@)">
+            <summary>
+            Tries to convert the string representation of a version to an equivalent <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object,
+            and returns a value indicating whether the conversion succeeded.
+            </summary>
+            <param name="input">A string that contains a version to convert.</param>
+            <param name="result">Contains the <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> equivalent of the value in <paramref name="input"/> if
+            successful; otherwise <see langword="null"/>.</param>
+            <returns><see langword="true"/> if the string could be converted; <see langword="false"> otherwise.</see> </returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.IsNumericIdentifier(System.String)">
+            <summary>
+            Determines whether a string is a valid numeric identifier.
+            </summary>
+            <param name="input">The string to check.</param>
+            <returns><see langword="true"/> if the string is a numeric identifier; <see langword="false"> otherwise.</see></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.IsAllDigits(System.String)">
+            <summary>
+            Determines if a string only contains digits.
+            </summary>
+            <param name="input">The string to check.</param>
+            <returns><see langword="true"/> if the string only contains digits; <see langword="false"> otherwise.</see></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.IsBuildIdentifier(System.String)">
+            <summary>
+            Determines whether a string is a valid build identifier.
+            </summary>
+            <param name="input">The string to check.</param>
+            <returns><see langword="true"/> if the string is a build identifier; <see langword="false"> otherwise.</see></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.IsAlphaNumericIdentifier(System.String)">
+            <summary>
+            Determines whether a string is a valid alphanumeric identifier.
+            </summary>
+            <param name="input">The string to check.</param>
+            <returns><see langword="true"/> if the string is an alphanumeric identifier; <see langword="false"> otherwise.</see></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.IsPrereleaseIdentifier(System.String)">
+            <summary>
+            Determines whether a string is a valid prelease identifier.
+            </summary>
+            <param name="input">The string to check.</param>
+            <returns><see langword="true"/> if the string is a prerelease identifier; <see langword="false"> otherwise.</see></returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.TryParse(System.String,System.Boolean,Microsoft.Deployment.DotNet.Releases.ReleaseVersion@)">
+            <summary>
+            Tries to convert the string representation of a version to an equivalent <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> object,
+            and returns a value indicating whether the conversion succeeded. 
+            </summary>
+            <param name="input">A string that contains a version to convert.</param>
+            <param name="version">Contains the <see cref="T:Microsoft.Deployment.DotNet.Releases.ReleaseVersion"/> equivalent of the value in <paramref name="input"/> if
+            successful; otherwise <see langword="null"/>.</param>
+            <param name="throwOnFailure">A boolean indicating whether an exception should be raised if the conversion failed.</param>
+            <returns><see langword="true"/> if the string could be converted; <see langword="false"> otherwise.</see> </returns>
+            <exception cref="T:System.FormatException">If the string is an invalid semantic version.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If the major, minor, or patch version exceeds <see cref="F:System.Int32.MaxValue"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.ReleaseVersion.TryParseCoreVersionPart(System.String,System.Boolean,System.Int32@)">
+            <summary>
+            Tries to convert a part of the core version to an integer.
+            </summary>
+            <param name="input">A string containing the major, minor, or patch value of the version.</param>
+            <param name="throwOnFailure">A boolean indicating whether an exception should be raised if the conversion failed.</param>
+            <param name="value">The converted value.</param>
+            <returns><see langword="true"/> if the string could be converted; <see langword="false"> otherwise.</see> </returns>
+            <exception cref="T:System.FormatException">If the input string is an invalid major, minor or patch value.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="throwOnFailure"/> is <see langword="true"/> and the value is less than 0.</exception>
+            <exception cref="T:System.OverflowException">If <paramref name="throwOnFailure"/> is <see langword="true"/> and the value exceeds <see cref="F:System.Int32.MaxValue"/>.</exception>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent">
+            <summary>
+            Describes a single runtime release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent.Name">
+            <summary>
+            The friendly display name for the component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent.VisualStudioMacVersion">
+            <summary>
+            The versions of Visual Studio for Mac that includes this runtime.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent.VisualStudioVersion">
+            <summary>
+            The versions of Visual Studio that includes this runtime. Multiple versions may be listed, e.g.
+            &quot;15.9.25, 16.0.16, 16.4.11, 16.6.4&quot;
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.ProductRelease)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.RuntimeReleaseComponent"/> instance.
+            </summary>
+            <param name="element">The JSON element of the component.</param>
+            <param name="release">The release to which the component belongs.</param>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent">
+            <summary>
+            Describes an SDK release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.CSharpVersion">
+            <summary>
+            The C# language version supported by this SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.FSharpVersion">
+            <summary>
+            The F# language version supported by this SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.Name">
+            <summary>
+            The friendly display name for the component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.RuntimeVersion">
+            <summary>
+            The version of the runtime included with the SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.VisualStudioMacSupport">
+            <summary>
+            The versions of Visual Studio for Mac that supports this SDK or <see langword="null"/>. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.VisualStudioMacVersion">
+            <summary>
+            The versions of Visual Studio for Mac that includes this SDK or <see langword="null"/>. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.VisualStudioSupport">
+            <summary>
+            The versions of Visual Studio that support this SDK or <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.VisualStudioVersion">
+            <summary>
+            The versions of Visual Studio that includes this SDK. Multiple versions may be listed, e.g.
+            &quot;15.9.25, 16.0.16, 16.4.11, 16.6.4&quot;
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.VisualBasicVersion">
+            <summary>
+            The Visual Basic language version supported by this SDK.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.ProductRelease)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.SdkReleaseComponent"/> instance.
+            </summary>
+            <param name="element">The JSON element of the component.</param>
+            <param name="release">The release to which the component belongs.</param>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.SupportPhase">
+            <summary>
+            An enumeration describing the different support phases of a <see cref="T:Microsoft.Deployment.DotNet.Releases.Product"/>.
+            See the <see href="https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core">support lifecycle</see>
+            documentation for further details.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.Active">
+            <summary>
+            The product is in active support and will continue to receive servicing and security updates.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.EOL">
+            <summary>
+            The product is considered end-of-life and will not receive any updates.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.GoLive">
+            <summary>
+            A preview or release candidate that is supported in production.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.Maintenance">
+            <summary>
+            The product is no longer in active support and will be declared <see cref="P:Microsoft.Deployment.DotNet.Releases.Product.EndOfLifeDate">end-of-life</see>.
+            Only security fixes are provided until the product reaches end-of-life status.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.Preview">
+            <summary>
+            The product is a preview release and is unsupported.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Deployment.DotNet.Releases.SupportPhase.Unknown">
+            <summary>
+            The support phase is unknown and could not be parsed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.Utils">
+            <summary>
+            Utility and helper methods.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Utils.IsLatestFileAsync(System.String,System.Uri)">
+            <summary>
+            Determines if a local file is the latest version compared to an online copy.
+            </summary>
+            <param name="fileName">The path of the local file.</param>
+            <param name="address">The address pointing of the file.</param>
+            <returns><see langword="true"/> if the local file is the latest; <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Utils.DownloadFileAsync(System.Uri,System.String)">
+            <summary>
+            Downloads or copy a file from the specified address to the specified destination.
+            </summary>
+            <param name="address">The address of the source file to download or copy.</param>
+            <param name="fileName">The path of the destination file.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Utils.GetFileHash(System.String,System.Security.Cryptography.HashAlgorithm)">
+            <summary>
+            Computes the hash for the specified file using the specified hash algorithm.
+            </summary>
+            <param name="fileName">The path, including the filename and extension of the file to use.</param>
+            <param name="hashAlgorithm">The hash algorithm to use.</param>
+            <returns>A string containing the file hash.</returns>
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.IO.FileNotFoundException" />
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.Utils.GetLatestFileAsync(System.String,System.Boolean,System.Uri)">
+            <summary>
+            Checks whether a specified file exists, and if not, optionally downloads a copy from
+            the specified address.
+            </summary>
+            <param name="path">The path of the local file to check.</param>
+            <param name="downloadLatest">When <see langword="true"/>, the latest copy of the file is downloaded if a newer version
+            exists online.</param>
+            <param name="address">The address of the file to download.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:Microsoft.Deployment.DotNet.Releases.WindowsDesktopReleaseComponent">
+            <summary>
+            Represents a Windows Desktop runtime release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.WindowsDesktopReleaseComponent.Name">
+            <summary>
+            The friendly display name for the component.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Deployment.DotNet.Releases.WindowsDesktopReleaseComponent.#ctor(System.Text.Json.JsonElement,Microsoft.Deployment.DotNet.Releases.ProductRelease)">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Deployment.DotNet.Releases.WindowsDesktopReleaseComponent"/> instance.
+            </summary>
+            <param name="element">The JSON element of the component.</param>
+            <param name="release">The release to which the component belongs.</param>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.AspNetCoreReleaseName">
+            <summary>ASP.NET Core Runtime</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.BuildMetadataCannotBeEmpty">
+            <summary>The build metadata cannot be empty if a separator is provided.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.FileNotFound">
+            <summary>Could not find the specified file: {0}</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.HashMismatch">
+            <summary>The expected hash ({0}) and actual hash ({1}) for {2} do not match.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidBuildMetadata">
+            <summary>The build metadata value is invalid: {0}</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidMajorVersion">
+            <summary>Invalid or missing major version.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidMinorVersion">
+            <summary>Invalid or missing minor version.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidNumericIdentifier">
+            <summary>Invalid numeric identifier: '{0}'.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidPatch">
+            <summary>Invalid or missing patch version.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidPrerelease">
+            <summary>The prerelease value is invalid: {0}</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidReleaseVersion">
+            <summary>The specified version is not a valid semantic version.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.InvalidVersion">
+            <summary>The specified version does not contain a valid major, minor, and patch version: '{0}'.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.PrereleaseCannotBeEmpty">
+            <summary>The prerelease value cannot be empty if a separator is provided.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.RuntimeReleaseName">
+            <summary>.NET Core Runtime</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.SdkReleaseName">
+            <summary>SDK</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.ValueCannotBeEmpty">
+            <summary>Value cannot be empty.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.VersionPartLessThanZero">
+            <summary>The value cannot be less than 0.</summary>
+        </member>
+        <member name="P:Microsoft.Deployment.DotNet.Releases.ReleasesResources.WindowsDesktopReleaseName">
+            <summary>Desktop Runtime</summary>
+        </member>
+    </members>
+</doc>

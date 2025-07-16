@@ -1,0 +1,67 @@
+﻿/* -----------------------------------------------------------------------
+     Copyright (c) Microsoft Corporation.  All rights reserved.
+ ----------------------------------------------------------------------- */
+ 
+ a{
+    cursor:pointer;
+    text-decoration:none !important;
+}
+
+span{
+    display:block;
+    text-align: center;
+}
+
+.contentLink{
+    margin-top:2em !important;
+}
+
+.contentLinkDesc{
+    text-align: center;
+}
+
+.content{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.title{
+    margin:3em !important;
+}
+
+.content-group{
+    margin-top:48px !important;
+    justify-content: flex-start;
+    width:180px;
+}
+
+.contentSectionHeader{
+    margin-top:1em !important;
+}
+
+@media screen and (min-width: 648px){
+    .content-group{
+        flex:0 0 33%;
+    }   
+}
+
+@media screen and (min-width: 456px) and (max-width: 648px){
+    .content-group{
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (max-width: 456px){
+    .content-group{
+        flex: 1 1 100%;
+    }
+}
+
+html{
+    padding:24px !important;
+
+}
+
+body{
+    padding:0px !important;
+}

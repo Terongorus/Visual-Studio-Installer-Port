@@ -1,0 +1,611 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Axe.Windows.Automation</name>
+    </assembly>
+    <members>
+        <member name="T:Axe.Windows.Automation.AxeWindowsAutomationException">
+            <summary>
+            The exception type thrown for all unhandled errors in Axe.Windows.Automation.
+            If an exception was thrown from code not owned by Axe.Windows.Automation,
+            that exception will be wrapped in <see cref="T:Axe.Windows.Automation.AxeWindowsAutomationException"/>
+            In the <see cref="P:System.Exception.InnerException"/> property.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.AxeWindowsAutomationException.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.AxeWindowsAutomationException.#ctor(System.String)">
+            <summary>
+            Constructor taking a message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Axe.Windows.Automation.AxeWindowsAutomationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor taking a message string
+            and an optional inner exception to wrap
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Axe.Windows.Automation.AxeWindowsAutomationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Serialization constructor
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Axe.Windows.Automation.Config">
+            <summary>
+            Configuration options for creating an AxeWindows automation session
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.ProcessId">
+            <summary>
+            The process Id of the application to test.
+            If the value is invalid, the automation session will throw an <see cref="T:Axe.Windows.Automation.AxeWindowsAutomationException"/>.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.OutputDirectory">
+            <summary>
+            The directory to which any output files should be written.
+            This value is ignored if <see cref="P:Axe.Windows.Automation.Config.OutputFileFormat"/> is set to <see cref="F:Axe.Windows.Automation.OutputFileFormat.None"/>.
+            If this value is null, and if <see cref="P:Axe.Windows.Automation.Config.OutputFileFormat"/> is not set to <see cref="F:Axe.Windows.Automation.OutputFileFormat.None"/>,
+            files will be written to a directory named "AxeWindowsScanResults" under the current directory.
+            If the value is not null, and the given directory does not exist, the <see cref="T:Axe.Windows.Automation.IScanner"/> object will attempt to create it.
+            If the directory cannot be created, an <see cref="T:Axe.Windows.Automation.AxeWindowsAutomationException"/> will be thrown.
+            </summary>
+            <remarks>
+            No output files will be written if no errors were found during the automation session.
+            </remarks>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.OutputFileFormat">
+            <summary>
+            Flags specifying the type of output file to create.
+            Multiple values may be specified using the '|' (or) operator
+            </summary>
+            <remarks>
+            No output files will be written if no errors were found during the automation session.
+            </remarks>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.CustomUIAConfigPath">
+             <summary>The path to a file containing configuration instructing Axe Windows how to interpret custom UI Automation data.</summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.AlwaysSaveTestFile">
+            <summary>Override the default behavior of only saving a11ytest files if errors are found.</summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.TestAllChromiumContent">
+            <summary>Override the default behavior of not testing Chromium content.</summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Config.DPIAwareness">
+            <summary>
+            Custom handling of DPI awareness. The default handling is to set the entire process as DPI-aware
+            before running the scan, and to leave it in that state after the scan completes. If your process
+            needs to be non-DPI aware, create your own implementation of IDPIAwareness that meets your needs.
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.Config.Builder">
+            <summary>
+            Builds an instance of the <see cref="T:Axe.Windows.Automation.Config"/> class
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.ForProcessId(System.Int32)">
+            <summary>
+            Create the builder for the specified process
+            </summary>
+            <param name="processId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithOutputDirectory(System.String)">
+            <summary>
+            Specify the directory where any output files should be written
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithDPIAwareness(Axe.Windows.Automation.IDPIAwareness)">
+            <summary>
+            Specifies a custom mechanism to enable/restore DPI awareness during a scan
+            </summary>
+            <param name="dpiAwareness"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithOutputFileFormat(Axe.Windows.Automation.OutputFileFormat)">
+            <summary>
+            Specify the type(s) of output files you wish AxeWindows to create
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithCustomUIAConfig(System.String)">
+            <summary>
+            Specify the path to a custom configuration file instructing Axe Windows how to interpret custom UIA data.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithAlwaysSaveTestFile">
+            <summary>
+            Configure Axe.Windows to always save test files in the specified format, even if no errors are found.
+            By default, test files are saved only if errors are found or if multiple top-level windows exist.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.WithTestAllChromiumContent">
+            <summary>
+            Configure Axe.Windows to test all Chromium content. By default, Chromium content is not tested.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Config.Builder.Build">
+            <summary>
+            Build an instance of <see cref="T:Axe.Windows.Automation.Config"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Axe.Windows.Automation.ElementInfo">
+            <summary>
+            Contains identifying information about an element
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.ElementInfo.Parent">
+            <summary>
+            This element's parent element.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.ElementInfo.Properties">
+            <summary>
+            A string to string dictionary where the key is a UIAutomation property name
+            and the value is the corresponding UI Automation property value.
+            </summary>
+            <remarks>
+            The key strings are likely to be very stable, so it will be safe to index certain keys
+            without fear of breaking changes.
+            Only properties with values set will be included.
+            </remarks>
+        </member>
+        <member name="P:Axe.Windows.Automation.ElementInfo.Patterns">
+            <summary>
+            A list of names of supported patterns
+            </summary>
+            <remarks>
+            The names are likely to be very stable.
+            </remarks>
+        </member>
+        <member name="T:Axe.Windows.Automation.OutputFile">
+            <summary>
+            Represents the output file(s), if any, associated with a WindowScanOutput object
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.OutputFile.A11yTest">
+            <summary>
+            The A11yTest file that was generated (or null if no file was generated)
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.OutputFile.Sarif">
+            <summary>
+            The Sarif file that was generated (or null if no file was generated)
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.OutputFile.#ctor(System.String,System.String)">
+            <summary>
+            Private constructor. Called by the BuildFrom* methods
+            </summary>
+            <param name="a11yTest">The A11yTest file that was created (if any)</param>
+            <param name="sarif">The Sarif file that was created (if any)</param>
+        </member>
+        <member name="M:Axe.Windows.Automation.OutputFile.BuildFromA11yTestFile(System.String)">
+            <summary>
+            Build an OutputFile containing just an A11yTest file
+            </summary>
+            <param name="a11yTestFile"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Axe.Windows.Automation.Data.ScanOptions">
+            <summary>
+            Represents options for methods of <see cref="T:Axe.Windows.Automation.IScanner"/>.
+            Passing null in place of a ScanOptions object to <see cref="T:Axe.Windows.Automation.IScanner"/> methods will use default values for all options.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Data.ScanOptions.ScanId">
+            <summary>
+            The ID of this scan. Must be null or meet the requirements for a file name.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Data.ScanOptions.ScanRootWindowHandle">
+            <summary>
+            The window handle for the root of the UIA subtree to scan.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Data.ScanOptions.#ctor(System.String,System.Nullable{System.IntPtr})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="scanId">The ID of this scan. Must be null or meet the requirements for a file name.</param>
+            <param name="scanRootWindowHandle">The window handle for the root of the UIA subtree to scan.</param>
+        </member>
+        <member name="T:Axe.Windows.Automation.Data.ScanOutput">
+            <summary>
+            Contains information, such as WindowScanOutput objects, related to a particular invocation of the IScanner interface.
+            This object currently contains a collection of WindowScanOutput objects.
+            However, additional fields may be added at a future time to add extra information without breaking existing users of the IScanner API.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Data.ScanOutput.WindowScanOutputs">
+            <summary>
+            A collection of WindowScanOutput objects produced from this scan
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.Data.ScanOutput.#ctor(System.Collections.Generic.IReadOnlyCollection{Axe.Windows.Automation.WindowScanOutput})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="windowScanOutputs">A collection of WindowScanOutput objects produced from this scan</param>
+        </member>
+        <member name="T:Axe.Windows.Automation.ScanResult">
+            <summary>
+            The result of a single rule test on a single element
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.ScanResult.Rule">
+            <summary>
+            Information about the rule that evaluated the element specified by <see cref="P:Axe.Windows.Automation.ScanResult.Element"/>
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.ScanResult.Element">
+            <summary>
+            The element which was tested against the rule specified in <see cref="P:Axe.Windows.Automation.ScanResult.Rule"/>
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.WindowScanOutput">
+            <summary>
+            Contains information about an AxeWindows automated scan
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.WindowScanOutput.OutputFile">
+            <summary>
+            A <see cref="P:Axe.Windows.Automation.WindowScanOutput.OutputFile"/> object containing paths to any output files written as
+            a result of a scan.
+            </summary>
+            <remarks>
+            This property's members may be null if no output files were written.
+            That may happen if no <see cref="P:Axe.Windows.Automation.Config.OutputFileFormat"/> was specified
+            or was set to <see cref="F:Axe.Windows.Automation.OutputFileFormat.None"/>.
+            This property's members will also be null if no errors were found.
+            </remarks>
+        </member>
+        <member name="P:Axe.Windows.Automation.WindowScanOutput.ErrorCount">
+            <summary>
+            A count of all errors across all elements scanned.
+            </summary>
+            <remarks>
+            This may be useful as a simple test to determine if the number of errors between scans of the same area
+            of an application has increased or (hopefully) decreased.
+            </remarks>
+        </member>
+        <member name="P:Axe.Windows.Automation.WindowScanOutput.Errors">
+            <summary>
+            A collection of errors found during the scan.
+            </summary>
+            <remarks>
+            Use this to get in-depth information about the rule + element combination for each error.
+            </remarks>
+        </member>
+        <member name="T:Axe.Windows.Automation.OutputFileFormat">
+            <summary>
+            Bit flags to specify which output file formats a <see cref="T:Axe.Windows.Automation.IScanner"/> should write
+            </summary>
+        </member>
+        <member name="F:Axe.Windows.Automation.OutputFileFormat.None">
+            <summary>
+            Create no output files
+            </summary>
+        </member>
+        <member name="F:Axe.Windows.Automation.OutputFileFormat.A11yTest">
+            <summary>
+            Create output files which can be opened using <see href="https://accessibilityinsights.io/docs/en/windows/overview">Accessibility Insights for Windows</see>.
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.Factory">
+            <summary>
+            Factory used to create objects for internal use
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.IAxeWindowsActions">
+            <summary>
+            The Interface representing the boundary between this Automation library
+            and the other parts (in other projects) of AxeWindows which perform the actual scan.
+            The code behind this interface should be unit tested as part of the projects where it is implemented,
+            not as part of this (Automation) project.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.IAxeWindowsActions.Scan``1(Axe.Windows.Core.Bases.A11yElement,Axe.Windows.Automation.ScanActionCallback{``0},Axe.Windows.Actions.Contexts.IActionContext)">
+            <summary>
+            Runs a scan and calls a callback which can transform the results
+            into another form and/or save output files
+            </summary>
+            <typeparam name="T">The type of results object to be returned by the callback</typeparam>
+            <param name="element">The element from which to start the scan</param>
+            <param name="resultsCallback">A delegate which can act on results and transform them into a specified type</param>
+            <param name="actionContext">Context for storing action-related data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.IAxeWindowsActions.CaptureScreenshot(System.Guid,Axe.Windows.Actions.Contexts.IActionContext)">
+            <summary>
+            Takes a screenshot, highlighting the given element
+            </summary>
+            <param name="elementId"></param>
+            <param name="actionContext">Context for storing action-related data</param>
+        </member>
+        <member name="M:Axe.Windows.Automation.IAxeWindowsActions.SaveA11yTestFile(System.String,Axe.Windows.Core.Bases.A11yElement,System.Guid,Axe.Windows.Actions.Contexts.IActionContext)">
+            <summary>
+            Saves an a11ytest file to the given path
+            </summary>
+            <param name="path"></param>
+            <param name="element"></param>
+            <param name="elementId"></param>
+            <param name="actionContext">Context for storing Action-related data</param>
+        </member>
+        <member name="M:Axe.Windows.Automation.IAxeWindowsActions.RegisterCustomUIAPropertiesFromConfig(System.String)">
+            <summary>
+            Registers the custom UI Automation properties defined in the configuration file at path
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:Axe.Windows.Automation.IAxeWindowsActions.SetShouldTestAllChromiumContent(System.Boolean)">
+            <summary>
+            Specify how Chromium content should be evaluated
+            </summary>
+            <param name="shouldTestAllChromiumContent">This can be set to true to allow browser teams to test and debug code that converts from HTML to UIA.
+            It should be set to false for all other scenarios.</param>
+        </member>
+        <member name="T:Axe.Windows.Automation.IDPIAwareness">
+            <summary>
+            UIA operates in physical screen coordinates, so DPI awareness must be enabled while scanning.
+            Methods on this interface will be called before the first scan begins and after the last scan completes.
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.IDPIAwareness.Enable">
+            <summary>
+            Enable DPI awareness for the scan
+            </summary>
+            <returns>An object that will be passed as a parameter <see cref="M:Axe.Windows.Automation.IDPIAwareness.Restore(System.Object)"/></returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.IDPIAwareness.Restore(System.Object)">
+            <summary>
+            Restore DPI awareness to its original state
+            </summary>
+            <param name="dataFromEnable">The object returned from the call to <see cref="M:Axe.Windows.Automation.IDPIAwareness.Enable"/></param>
+        </member>
+        <member name="T:Axe.Windows.Automation.IFactory">
+            <summary>
+            Factory used to create objects for internal use
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.IScanner">
+            <summary>
+            Runs AxeWindows automated tests
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.IScanner.ScanAsync(Axe.Windows.Automation.Data.ScanOptions,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously run AxeWindows automated tests
+            </summary>
+            <param name="scanOptions">An instance of <see cref="T:Axe.Windows.Automation.Data.ScanOptions"/>. If null, default options will be used.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <remarks>
+            If a value was provided in <see cref="P:Axe.Windows.Automation.Config.OutputDirectory"/>,
+            output files may be written to the specified directory.
+            (Note: no output files will be written if no errors were found.)
+            An exception may be thrown if the value of <see cref="P:Axe.Windows.Automation.Config.ProcessId"/> is invalid
+            or if the directory provided in <see cref="P:Axe.Windows.Automation.Config.OutputDirectory"/> cannot be created or accessed.
+            </remarks>
+            <returns>Information about the scan and any issues detected</returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.IScanner.Scan(Axe.Windows.Automation.Data.ScanOptions)">
+            <summary>
+            Synchronously run AxeWindows automated tests
+            </summary>
+            <param name="scanOptions">An instance of <see cref="T:Axe.Windows.Automation.Data.ScanOptions"/>. If null, default options will be used.</param>
+            <remarks>
+            If a value was provided in <see cref="P:Axe.Windows.Automation.Config.OutputDirectory"/>,
+            output files may be written to the specified directory.
+            (Note: no output files will be written if no errors were found.)
+            An exception may be thrown if the value of <see cref="P:Axe.Windows.Automation.Config.ProcessId"/> is invalid
+            or if the directory provided in <see cref="P:Axe.Windows.Automation.Config.OutputDirectory"/> cannot be created or accessed.
+            </remarks>
+            <returns>Information about the scan and any issues detected</returns>
+        </member>
+        <member name="T:Axe.Windows.Automation.IScanResultsAssembler">
+            <summary>
+            Provides methods used to assemble <see cref="T:Axe.Windows.Automation.ScanResult"/> and <see cref="T:Axe.Windows.Automation.WindowScanOutput"/> objects
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.IScanResultsAssembler.AssembleWindowScanOutputFromElement(Axe.Windows.Core.Bases.A11yElement)">
+            <summary>
+            Assembles failed scans from the provided element
+            </summary>
+            <param name="element">Root element from which the scan output will be assembled</param>
+            <returns>A WindowScanOutput object containing the relevant errors and error count</returns>
+        </member>
+        <member name="T:Axe.Windows.Automation.IScanTools">
+            <summary>
+            Encapsulates the set of tools used to scan, assemble results, and write output files
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.OutputFileHelper.VerifyPathOrThrow(System.String)">
+            <summary>
+            Check if the given path is a well-formed absolute path.
+            If not, throw and <see cref="T:Axe.Windows.Automation.AxeWindowsAutomationException"/>.
+            </summary>
+            <param name="path"></param>
+            <exception cref="T:Axe.Windows.Automation.AxeWindowsAutomationException"/>
+        </member>
+        <member name="M:Axe.Windows.Automation.OutputFileHelper.EnsureOutputDirectoryExists">
+            <summary>
+            Ensures the output directory for the file path returned by <see cref="M:Axe.Windows.Automation.OutputFileHelper.GetNewA11yTestFilePath(System.Func{System.String,System.String})"/>
+            exists.
+            </summary>
+            <remarks>
+            If the directory does not exist, the method attempts to create it.
+            This method does not catch any exceptions so that file IO errors are reported to the user.
+            </remarks>
+        </member>
+        <member name="T:Axe.Windows.Automation.Resources.ErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorDirectoryInvalid">
+            <summary>
+              Looks up a localized string similar to The directory &quot;{0}&quot; was invalid..
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorFailToGetRootElementsOfProcess">
+            <summary>
+              Looks up a localized string similar to Failed to get the root element(s) of the specified process({0}).
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorIsNotFullPath">
+            <summary>
+              Looks up a localized string similar to The given path was not an absolute path..
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorKeyNotFound">
+            <summary>
+              Looks up a localized string similar to {0} not found in {1} dictionary..
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorTooManyElementsToSetDataContext">
+            <summary>
+              Looks up a localized string similar to Unable to set Data context (more than {0:N0} elements were found).
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorUnableToSetDataContext">
+            <summary>
+              Looks up a localized string similar to Unable to set Data context.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ErrorUnhandledExceptionFormat">
+            <summary>
+              Looks up a localized string similar to Unhandled Exception {0}.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.NoDesktopElements">
+            <summary>
+              Looks up a localized string similar to The argument must be a non-empty IEnumerable.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ScanToolsActionsNull">
+            <summary>
+              Looks up a localized string similar to The Actions property of the given ScanTools object should not be null.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ScanToolsDpiAwarenessNull">
+            <summary>
+              Looks up a localized string similar to The DpiAwareness property of the given ScanTools object should not be null.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ScanToolsOutputFileHelperNull">
+            <summary>
+              Looks up a localized string similar to The OutputFileHelper property of the given ScanTools object should not be null.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ScanToolsResultsAssemblerNull">
+            <summary>
+              Looks up a localized string similar to The ResultsAssembler property of the given ScanTools object should not be null.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.ScanToolsTargetElementLocatorNull">
+            <summary>
+              Looks up a localized string similar to The TargetElementLocator property of the given ScanTools object should not be null.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.StringNullOrWhiteSpace">
+            <summary>
+              Looks up a localized string similar to The given string must not be null or white space.
+            </summary>
+        </member>
+        <member name="P:Axe.Windows.Automation.Resources.ErrorMessages.VariableNull">
+            <summary>
+              Looks up a localized string similar to Expected the variable &apos;{0}&apos; not to be null.
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.Scanner">
+            <summary>
+            Implementation of the <see cref="T:Axe.Windows.Automation.IScanner"/> interface
+            </summary>
+        </member>
+        <member name="T:Axe.Windows.Automation.ScannerFactory">
+            <summary>
+            Create objects that implement IScanner
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.ScannerFactory.CreateScanner(Axe.Windows.Automation.Config)">
+            <summary>
+            Create an object that implements IScanner
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Axe.Windows.Automation.ScanResultsAssembler">
+            <summary>
+            Provides methods used to assemble <see cref="T:Axe.Windows.Automation.ScanResult"/> and <see cref="T:Axe.Windows.Automation.WindowScanOutput"/> objects
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.ScanResultsAssembler.AssembleWindowScanOutputFromElement(Axe.Windows.Core.Bases.A11yElement)">
+            <summary>
+            Assembles failed scans from the provided element
+            </summary>
+            <param name="element">Root element from which the scan output will be assembled</param>
+            <returns>A WindowScanOutput object containing the relevant errors and error count</returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.ScanResultsAssembler.AssembleErrorsFromElement(System.Collections.Generic.List{Axe.Windows.Automation.ScanResult},Axe.Windows.Core.Bases.A11yElement,Axe.Windows.Automation.ElementInfo)">
+            <summary>
+            Assembles errors recursively into a <see cref="T:Axe.Windows.Automation.ScanResult"/> list starting at the given element
+            </summary>
+            <param name="errors">Where the <see cref="T:Axe.Windows.Automation.ScanResult"/> objects created from errors will be added</param>
+            <param name="element">Root element from which errors will be assembled</param>
+            <param name="parent">The parent of element</param>
+        </member>
+        <member name="T:Axe.Windows.Automation.SnapshotCommand">
+            <summary>
+            Class to take a snapshot (via SnapshotCommand.Execute*).
+            </summary>
+        </member>
+        <member name="M:Axe.Windows.Automation.SnapshotCommand.ExecuteAsync(Axe.Windows.Automation.Config,Axe.Windows.Automation.IScanTools,System.Threading.CancellationToken)">
+            <summary>
+            Execute the scan asynchronously
+            </summary>
+            <param name="config">A set of configuration options</param>
+            <param name="scanTools">A set of tools for writing output files,
+            creating the expected results format, and finding the target element to scan</param>
+            <param name="cancellationToken">A cancellation token</param>
+            <returns>A ScanOutput object that describes the result of the command</returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.SnapshotCommand.Execute(Axe.Windows.Automation.Config,Axe.Windows.Automation.IScanTools)">
+            <summary>
+            Execute the scan synchronously
+            </summary>
+            <param name="config">A set of configuration options</param>
+            <param name="scanTools">A set of tools for writing output files,
+            creating the expected results format, and finding the target element to scan</param>
+            <returns>A ScanOutput object that describes the result of the command</returns>
+        </member>
+        <member name="M:Axe.Windows.Automation.SnapshotCommand.ScanAndProcessResults(Axe.Windows.Automation.Config,Axe.Windows.Automation.IScanTools,System.Collections.Generic.List{Axe.Windows.Automation.WindowScanOutput},System.Collections.Generic.IEnumerable{Axe.Windows.Core.Bases.A11yElement},System.Boolean,System.Int32,Axe.Windows.Core.Bases.A11yElement,Axe.Windows.Actions.Contexts.IActionContext)">
+            <summary>
+            This method is our atomic scanner. It needs to run within the scope of a single thread.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,29 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="6784BA9A-FE1E-4000-8357-DC3D9B2C27F9" Version="17.14.119.50502" Language="en-US" Publisher="Microsoft Corporation" />
+    <DisplayName xml:space="preserve">Developer Analytics Tools</DisplayName>
+    <Description xml:space="preserve">Telemetry search, CodeLens integration, and other tools for Application Insights.</Description>
+    <PackageId>Microsoft.VisualStudio.ApplicationInsights</PackageId>
+    <ReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=786904</ReleaseNotes>
+    <Icon>MicrosoftLogo.png</Icon>
+    <PreviewImage>MicrosoftLogo.png</PreviewImage>
+  </Metadata>
+  <Installation AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.0,17.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0,17.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[16.0,17.0)" />
+  </Installation>
+  <Dependencies></Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.ApplicationInsights.Interfaces" Version="[15.0,17.0)" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.Common.Azure.Tools" Version="[16.0,17.0)" DisplayName="Common Azure tools" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.NuGet" Version="[16.0,17.0)" DisplayName="NuGet package manager" />
+    <Prerequisite Id="Microsoft.VisualStudio.PackageGroup.ConnectedServices" Version="[16.0,17.0)" />
+    <Prerequisite Id="Microsoft.VisualStudio.PackageGroup.Community" Version="[16.0,17.0)" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.VisualStudio.ApplicationInsights.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.ApplicationInsights.dll" />
+  </Assets>
+</PackageManifest>

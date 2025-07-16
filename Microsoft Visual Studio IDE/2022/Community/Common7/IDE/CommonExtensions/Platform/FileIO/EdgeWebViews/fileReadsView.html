@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text\html" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" />
+    <link href="css/fileReadWrite.css" type="text/css" rel="stylesheet" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" />
+    <link href="css/toolbar.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/fileReadsViewModel.js"></script>
+    <title>File Reads</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                // Allows us to control clipboard keys
+                plugin.HotKeys.setClipboardState(true);
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("fileReadsViewModel");
+            }
+        })();
+    </script>
+    <div class="mainArea">
+        <div id="left">
+            <div id="mainToolbar" class="toolbar-container">
+                <!-- ko template: { name: 'ToggleButtonView', data: showJmc } --><!-- /ko -->
+                <!-- ko template: { name: 'ToggleButtonView', data: showNative } --><!-- /ko -->
+            </div>
+            <div id="files" data-bind="
+                    event: { keydown: onKeyDown },
+                    dynamicContextMenu: contextMenu,
+                    template: {
+                    name: 'TreeGridView',
+                    data: fileReads,
+                    afterRender: fileReads.onAfterDomInsert }">
+            </div>
+            <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+                <div class="message" data-bind="template: currentOverlay">
+                </div>
+            </div>
+        </div>
+        <div id="divider" data-bind="localizedAriaLabel: 'VerticalSplitterAriaLabel', verticalSplit: { leftSelector: '#left', rightSelector: '#right' }"></div>
+        <div id="right" class="container" style="width: 30%">
+            <div id="backtraceFileDisplay" class="toolbar-container" data-bind="text: backtraceFile"></div>
+            <div id="fileBacktrace" data-bind="
+                event: { keydown: onKeyDownBacktrace },
+                dynamicContextMenu: contextMenu,
+                template: {
+                    name: 'TreeGridView',
+                    data: backtraceTree,
+                    afterRender: backtraceTree.onAfterDomInsert }">
+            </div>
+            <div id="backtrace-message-overlay" data-bind="css: { hide: !backtraceOverlay() }, if: backtraceOverlay">
+                <div class="message" data-bind="template: backtraceOverlay">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

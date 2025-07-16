@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>swidget</Title>
+			<Shortcut>swidget</Shortcut>
+			<Description>Unreal Engine SWIDGET Macro</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>MYSWIDGET</Default>
+					<ToolTip>SWIDGET name</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>parentname</ID>
+					<Default>CompoundWidget</Default>
+					<ToolTip>SWIDGET parent name</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="cpp"><![CDATA[class S$name$ : public S$parentname$
+				{
+				SLATE_BEGIN_ARGS(S$name$){}
+				SLATE_END_ARGS()
+				void Construct(const FArguments& InArgs);
+				$end$
+				};]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

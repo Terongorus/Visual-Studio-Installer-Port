@@ -1,0 +1,48 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="Microsoft.SingleProjectMSIXPackagingTools.Dev17" Version="1.4.0.2303101" Language="en-US" Publisher="Microsoft" />
+    <PackageId>Microsoft.SingleProjectMSIXPackagingTools.Dev17</PackageId>
+    <DisplayName>Single-project MSIX Packaging Tools for VS 2022</DisplayName>
+    <Description xml:space="preserve">Provides Visual Studio 2022 support for working with and debugging Windows apps that use Single-project MSIX Packaging.</Description>
+    <MoreInfo>https://github.com/microsoft/WindowsAppSDK/</MoreInfo>
+    <License>LICENSE</License>
+    <GettingStartedGuide>https://github.com/microsoft/WindowsAppSDK/</GettingStartedGuide>
+    <ReleaseNotes>https://github.com/microsoft/WindowsAppSDK/releases</ReleaseNotes>
+    <Icon>WindowsAppSDK.png</Icon>
+    <PreviewImage>WindowsAppSDK.png</PreviewImage>
+    <Tags>MSIX, Windows, WindowsAppSDK, WinUI, XAML, C#, C++, C++/WinRT, Managed</Tags>
+    <RemovePerUserExtension>true</RemovePerUserExtension>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.5,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.5,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.5,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.5, 18.0)">
+      <ProductArchitecture>arm64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.5, 18.0)">
+      <ProductArchitecture>arm64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.5, 18.0)">
+      <ProductArchitecture>arm64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.Component.MSBuild" Version="[17.0,18.0)" DisplayName="MSBuild" />
+    <Prerequisite Id="Microsoft.VisualStudio.Windows.Build" Version="[17.0,18.0)" DisplayName="Build Tools for Windows Apps" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.Windows.Msix.VisualStudio.ProjectExtensions.Dev17.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.Windows.Msix.VisualStudio.ProjectExtensions.Dev17.dll" />
+    <Asset Type="Microsoft.VisualStudio.ToolboxControl" Path="Microsoft.Windows.Msix.VisualStudio.ProjectExtensions.Dev17.pkgdef" />
+  </Assets>
+</PackageManifest>

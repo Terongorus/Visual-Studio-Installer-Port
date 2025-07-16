@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+    <link href="css/toolbar.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+    <link href="css/eventsList.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+    <link href="css/collapsibleTable.css" type="text/css" rel="stylesheet" data-plugin-theme="true" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/anyStacksViewModel.js"></script>
+    <title>Events Viewer UI</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("anyStacksViewModel");
+            }
+        })();
+    </script>
+    <div id="mainToolbar" class="toolbar-container" data-bind="template: { afterRender: AnyStacksOnAfterDomInsert }">
+        <!-- ko template: { name: 'OpenSymbolSettingsButtonView', data: openSymbolSettingsButtonViewModel } --><!-- /ko -->
+        <!-- ko template: { name: 'ToggleButtonView', data: showJmc } --><!-- /ko -->
+        <!-- ko template: { name: 'ToggleButtonView', data: showNative } --><!-- /ko -->
+    </div>
+    <div class="mainArea" data-bind="
+         event: { keydown: onKeyDown },
+         dynamicContextMenu: contextMenu,
+         template: {
+            name: 'TreeGridView',
+            data: anyStacks,
+            afterRender: anyStacks.onAfterDomInsert }">
+    </div>
+    <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+        <div class="message" data-bind="template: currentOverlay">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Microsoft Graph ile Office 365 Hizmetlerine Erişim",
+  "o365DependencyTypeDescription": "Microsoft Graph API'sini kullanarak uygulamalarınızı Office 365 hizmetleriyle tümleştirin.",
+  "connectionSettings": "Bağlantı ayarları",
+  "nugetComponentName": "NuGet paketleri",
+  "nugetComponentDescription": "Yeni bağımlılığın en iyi şekilde çalışmasını sağlamak için NuGet paketleri değiştirilecek",
+  "gettingStartedComponentName": "Başlarken Belgesi",
+  "gettingStartedComponentDescription": "Microsoft Graph API Belgeleri ile Microsoft 365’i çağırın",
+  "graphPermissionsComponentName": "Microsoft Graph İzinleri",
+  "graphPermissionsComponentDescription": "Microsoft Graph API için Microsoft Entra Uygulama İzinlerini güncelleştirir",
+  "configSettingsComponentName": "Yapılandırma Ayarları",
+  "configSettingsComponentDescription": "Ayarlar, yeni bağımlılığın en iyi şekilde çalışmasını sağlamak için değiştirilecek"
+}

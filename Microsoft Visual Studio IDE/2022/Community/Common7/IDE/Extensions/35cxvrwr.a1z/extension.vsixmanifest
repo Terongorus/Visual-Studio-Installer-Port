@@ -1,0 +1,44 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="HLSLTools-GameDev-dev17" Version="1.1.320" Language="en-US" Publisher="Tim Jones" />
+    <DisplayName>HLSL Tools for Visual Studio</DisplayName>
+    <Description xml:space="preserve">Enhanced support for editing HLSL in Visual Studio</Description>
+    <PackageId>Microsoft.VisualStudio.VC.Ide.HLSL</PackageId>
+    <MoreInfo>https://github.com/tgjones/HlslTools</MoreInfo>
+    <License>Resources\LICENSE</License>
+    <ReleaseNotes>https://github.com/tgjones/HlslTools/blob/master/CHANGELOG.md</ReleaseNotes>
+    <Icon>Resources\icon.png</Icon>
+    <PreviewImage>Resources\preview.png</PreviewImage>
+    <Tags>HLSL, shader, Direct3D</Tags>
+  </Metadata>
+  <Installation InstalledByMsi="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[16.9,17.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ShaderTools.Editor.VisualStudio.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.Editor.VisualStudio.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.VisualStudio.LanguageServices.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.EditorFeatures.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.Workspaces.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.Hlsl.Workspaces.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.VisualStudio.LanguageServices.Hlsl.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.VisualStudio.LanguageServices.ShaderLab.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.Hlsl.EditorFeatures.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.ShaderLab.EditorFeatures.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.ShaderLab.Workspaces.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.Features.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.Hlsl.Features.dll" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ShaderTools.VisualStudio.SyntaxVisualizer.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ShaderTools.VisualStudio.LanguageServices.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.ShaderLab.Features.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="ShaderTools.CodeAnalysis.EditorFeatures.Text.dll" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ShaderTools.VisualStudio.LanguageServices.Hlsl.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="ShaderTools.VisualStudio.LanguageServices.ShaderLab.pkgdef" />
+  </Assets>
+</PackageManifest>

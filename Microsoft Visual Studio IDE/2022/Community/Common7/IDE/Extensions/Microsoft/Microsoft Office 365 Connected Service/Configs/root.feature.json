@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "detectors": {
+    "o365.nuget": {
+      "model": "feature/detectors/o365.nuget.json"
+    }
+  },
+  "modifiers": {
+    "o365.configSettings": "feature/modifiers/o365.configSettings.json",
+    "o365.document": "feature/modifiers/o365.document.json",
+    "o365.nuget": "feature/modifiers/o365.nuget.json",
+    "o365.permissions": "feature/modifiers/o365.permissions.json"
+  },
+  "components": {
+    "configSettings": "feature/components/configSettings.json",
+    "gettingStartedDocument": "feature/components/gettingStartedDocument.json",
+    "graphPermissionsUpdate": "feature/components/graphPermissionsUpdate.json"
+  },
+  "features": {
+    "o365": {
+      "appliesTo": "feature/context/o365.json"
+    }
+  },
+  "featureConfigs": {
+    "o365.config": "feature/configs/o365.config.json"
+  }
+}

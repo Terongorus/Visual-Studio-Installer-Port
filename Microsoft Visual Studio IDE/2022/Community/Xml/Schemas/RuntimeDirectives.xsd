@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" 
+           elementFormDefault="qualified" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata"
+           xmlns:md="http://schemas.microsoft.com/netfx/2013/01/metadata"
+           targetNamespace="http://schemas.microsoft.com/netfx/2013/01/metadata">
+
+  <xs:attributeGroup name="type_reflection_scenarios">
+    <xs:attribute name="Serialize" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Serialize_applicabilitySpec" -->
+          Controls support for serialization with reflection-based serializers.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Dynamic" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Dynamic_applicabilitySpec" -->
+          Controls all reflection scenarios requiring reflection or metadata.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Activate" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Activate_applicabilitySpec" -->
+          Controls instantiation of objects through reflection.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Browse" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Browse_applicabilitySpec" -->
+          Controls keeping metadata, but not implementations, for objects.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="XmlSerializer" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="XmlSerializer_applicabilitySpec" -->
+          Controls support for serialization using System.Xml.Serialzation.XmlSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DataContractSerializer" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DataContractSerializer_applicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.DataContractSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DataContractJsonSerializer" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DataContractJsonSerializer_applicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.DataContractJsonSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="BinaryFormatter" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation>
+          <!-- _locID_text="BinaryFormatter_applicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalObject" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalObject_applicabilitySpec" -->
+          Controls native marshalling for reference types to WinRT and COM.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalDelegate" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalDelegate_applicabilitySpec" -->
+          Controls native marshalling for delegate types as function pointers.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalStructure" type="applicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalStructure_applicabilitySpec" -->
+          Controls native marshalling for structures.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Shared" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Shared_applicabilitySpec" -->
+          Specifies that the given member should be made shareable.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DoNotOptimize" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DoNotOptimize_applicabilitySpec" -->
+          Specifies that the given member should not be optimized by the compiler.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DoNotInline" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DoNotInline_applicabilitySpec" -->
+          Specifies that the given member should not be inlined by the compiler.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="type_reflection_scenarios_inference">
+    <xs:attribute name="Serialize" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Serialize_inferenceApplicabilitySpec" -->
+          Controls support for serialization with reflection-based serializers.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Dynamic" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Dynamic_inferenceApplicabilitySpec" -->
+          Controls all reflection scenarios requiring reflection or metadata.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Activate" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Activate_inferenceApplicabilitySpec" -->
+          Controls instantiation of objects through reflection.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Browse" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Browse_inferenceApplicabilitySpec" -->
+          Controls keeping metadata, but not implementations, for objects.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="XmlSerializer" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="XmlSerializer_inferenceApplicabilitySpec" -->
+          Controls support for serialization using System.Xml.Serialzation.XmlSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DataContractSerializer" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DataContractSerializer_inferenceApplicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.DataContractSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DataContractJsonSerializer" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DataContractJsonSerializer_inferenceApplicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.DataContractJsonSerializer.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="BinaryFormatter" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation>
+          <!-- _locID_text="BinaryFormatter_applicabilitySpec" -->
+          Controls support for serialization using System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalObject" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalObject_inferenceApplicabilitySpec" -->
+          Controls native marshalling for reference types to WinRT and COM.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalDelegate" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalDelegate_inferenceApplicabilitySpec" -->
+          Controls native marshalling for delegate types as function pointers.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="MarshalStructure" type="inferenceApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="MarshalStructure_inferenceApplicabilitySpec" -->
+          Controls native marshalling for structures.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="member_reflection_scenarios">
+    <xs:attribute name="Dynamic" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Dynamic_memberApplicabilitySpec" -->
+          Controls all reflection scenarios involving this member.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Browse" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Browse_memberApplicabilitySpec" -->
+          Controls metadata, but not dynamic invocation, for this member.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DispatchProxy" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="DispatchProxy_memberApplicabilitySpec" -->
+          Allows necessary DispatchProxy.Create{T,TProxy}() method calls to be discovered.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DoNotOptimize" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>
+          <!-- _locID_text="DoNotOptimize_applicabilitySpec" -->
+          Specifies that the given member should not be optimized by the compiler.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DoNotInline" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>
+          <!-- _locID_text="DoNotInline_applicabilitySpec" -->
+          Specifies that the given member should not be inlined by the compiler.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="property_field_reflection_scenarios">
+    <xs:attribute name="Serialize" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Serialize_field_memberApplicabilitySpec" -->
+          Controls serialization with reflection-based serializers.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Dynamic" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Dynamic_field_memberApplicabilitySpec" -->
+          Controls all reflection scenarios involving this member.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Browse" type="memberApplicabilitySpec">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Browse_field_memberApplicabilitySpec" -->
+          Controls metadata, but not dynamic invocation, for this member.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:simpleType name ="applicabilitySpec">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Excluded">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Excluded" -->
+            Removes this policy from this element - overrides specification of a parent.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Auto">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Auto" -->
+            Applies the default behavior for this policy.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Public" -->
+            Applies this policy to this element and all public children.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PublicAndInternal">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_PublicAndInternal" -->
+            Applies this policy to this element and all public and internal children.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_All" -->
+            Applies this policy to this element and all children regardless of accessibility.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required Public">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Required_Public" -->
+            Applies this policy to this element and all public children. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required PublicAndInternal">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Required_PublicAndInternal" -->
+            Applies this policy to this element and all public and internal children. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required All">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Visibility_Required_All" -->
+            Applies this policy to this element and all children regardless of accessibility. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name ="memberApplicabilitySpec">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Excluded">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Member_Visibility_Excluded" -->
+            Removes this policy from this element - overrides specification of a parent.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Auto">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Member_Visibility_Auto" -->
+            Applies the default behavior for this policy.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Member_Visibility_Required" -->
+            Ensures this element is present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Included">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Member_Visibility_Included" -->
+            Applies this policy if this element is present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="inferenceApplicabilitySpec">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_Public" -->
+            Applies this policy to this element and all public children.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PublicAndInternal">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_PublicAndInternal" -->
+            Applies this policy to this element and all public and internal children.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_All" -->
+            Applies this policy to this element and all children regardless of accessibility.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required Public">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_Required_Public" -->
+            Applies this policy to this element and all public children. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required PublicAndInternal">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_Required_PublicAndInternal" -->
+            Applies this policy to this element and all public and internal children. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Required All">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="inferenceApplicabilitySpec_Required_All" -->
+            Applies this policy to this element and all children regardless of accessibility. Ensure affected elements are present in the final binary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="NamespaceType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_NamespaceType" -->
+        Applies policy to a namespace and provides a context for Type elements.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Namespace" type ="NamespaceType">
+        <xs:unique name="NamespaceMustHaveUniqueNameInNamespace_3">
+          <xs:selector xpath="md:Namespace"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeMustHaveUniqueNameInNamespace_3">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInNamespace_3">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Type" type="TypeType">
+        <xs:unique name="TypeMustHaveUniqueNameInType_3">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInType_3">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInType_3">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInType_3">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInType_3">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInType_3">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInType_3">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="TypeInstantiation" type="TypeInstantiationType">
+        <xs:unique name="TypeMustHaveUniqueNameInTypeInstantiation_3">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInTypeInstantiation_3">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInTypeInstantiation_3">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInTypeInstantiation_3">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInTypeInstantiation_3">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInTypeInstantiation_3">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInTypeInstantiation_3">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>    
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_NamespaceType_Name" -->
+          Specifies the name of the namespace.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="AssemblyType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_AssemblyType" -->
+        Applies policy to all referenced items in an assembly.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Namespace" type ="NamespaceType">
+        <xs:unique name="NamespaceMustHaveUniqueNameInNamespace_2">
+          <xs:selector xpath="md:Namespace"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeMustHaveUniqueNameInNamespace_2">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInNamespace_2">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Type" type="TypeType">
+        <xs:unique name="TypeMustHaveUniqueNameInType_">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInType_">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInType_">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInType_">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInType_">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInType_">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInType_">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="TypeInstantiation" type="TypeInstantiationType">
+        <xs:unique name="TypeMustHaveUniqueNameInTypeInstantiation_">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInTypeInstantiation_">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInTypeInstantiation_">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInTypeInstantiation_">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInTypeInstantiation_">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInTypeInstantiation_">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInTypeInstantiation_">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_AssemblyType_Name" -->
+          Specifies the simple name of the assembly or "*Application*" for all non-Framework code.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="MemberType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_EventType" -->
+        Applies policy to a named event.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_EventType_Name" -->
+          Specifies the name of the event.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="member_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="PropertyOrFieldMemberType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_PropertyOrFieldType" -->
+        Applies policy to a named property or field.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:appinfo><!-- _locID_text="Policy_PropertyOrFieldType_Name" -->
+          Specifies the name of the property or field.
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="property_field_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="MethodType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_MethodType" -->
+        Applies policy to a named method.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="GenericParameter">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Policy_GenericParameterType" -->
+              Applies policy to the type argument supplied to a generic parameter.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation><!-- _locID_text="Policy_GenericParameterType_Name" -->
+                  Specifies the name of the generic parameter (e.g. "T" or "T2").
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="type_reflection_scenarios_inference"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="Parameter">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Policy_MethodArgumentType" -->
+              Applies policy to the type of the argument supplied to this parameter. Use this to indicate that an argument passed to this method needs a policy applied to it.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation><!-- _locID_text="Policy_MethodArgumentType_Name" -->
+                  Specifies the name of the method parameter.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="type_reflection_scenarios_inference"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="TypeParameter">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Policy_MethodTypeParameterType" -->
+              Applies policy to the type supplied to this parameter. Use if the parameter is type Type.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation><!-- _locID_text="Policy_MethodTypeParameterType_Name" -->
+                  Specifies the name of the method parameter.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="type_reflection_scenarios_inference"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="TypeEnumerableParameter">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Policy_MethodEnumerableParameterType" -->
+              Applies policy to each type in the enumerable supplied to this parameter. Use if the parameter is type IEnumerable&lt;Type&gt; or Type[]. The scope of the static analysis of values passed to this parameter is currently limited to values of type List&lt;Type&gt; or Type[].
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation><!-- _locID_text="Policy_MethodEnumerableParameterType_Name" -->
+                  Specifies the name of the method parameter.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="type_reflection_scenarios_inference"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:sequence minOccurs="0" maxOccurs="1">
+        <xs:element name="ImpliesType" type="ImpliesTypeType" />
+      </xs:sequence>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_MethodType_Name" -->
+          Specifies the name of the method. Include generic parameters and use '{' and '}' as brackets (e.g. "Method{T}").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Signature" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_MethodType_Signature" -->
+          Specifies the signature of the method using parameter types. Use ',' to separate parameters (e.g. "(System.String, System.Int32)").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="member_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="TypeType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_TypeType" -->
+        Applies policy to a named type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="GenericParameter">
+        <xs:annotation>
+          <xs:documentation><!-- _locID_text="Policy_TypeType_GenericParameter" -->
+            Applies policy to the type argument supplied to a generic parameter.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attribute name="Name" type="xs:string" use="required">
+            <xs:annotation>
+              <xs:documentation><!-- _locID_text="Policy_TypeType_GenericParameter_Name" -->
+                Specifies the name of the generic parameter (e.g. "T" or "T2").
+              </xs:documentation>
+            </xs:annotation>
+          </xs:attribute>
+          <xs:attributeGroup ref="type_reflection_scenarios_inference"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ImpliesType" type="ImpliesTypeType" />
+      <xs:element name="Subtypes" type="SubtypesType" />
+      <xs:element name="AttributeImplies" type="AttributeImpliesType" />
+      <xs:element name="TypeInstantiation" type="TypeInstantiationType">
+        <xs:unique name="TypeMustHaveUniqueNameInTypeInstantiation">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInTypeInstantiation">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInTypeInstantiation">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInTypeInstantiation">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInTypeInstantiation">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInTypeInstantiation">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInTypeInstantiation">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="MethodInstantiation" type="MethodInstantiationType"/>
+      <xs:element name="Method" type="MethodType"/>
+      <xs:element name="Type" type="TypeType">
+        <xs:unique name="TypeMustHaveUniqueNameInType">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInType">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInType">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInType">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInType">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInType">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInType">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Property" type="PropertyOrFieldMemberType"/>
+      <xs:element name="Field" type="PropertyOrFieldMemberType"/>
+      <xs:element name="Event" type="MemberType"/>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_TypeType_Name" -->
+          Specifies the name of the type. Include generic parameters, if any, as a comma-separated list enclosed in curly braces (e.g. "Dictionary{TKey,TValue}").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="TypeInstantiationType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_TypeInstantiationType" -->
+        Applies policy to a named type with named arguments.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="TypeInstantiation" type="TypeInstantiationType">
+        <xs:unique name="TypeMustHaveUniqueNameInTypeInstantiation_2">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInTypeInstantiation_2">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInTypeInstantiation_2">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInTypeInstantiation_2">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInTypeInstantiation_2">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInTypeInstantiation_2">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInTypeInstantiation_2">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="MethodInstantiation" type="MethodInstantiationType"/>
+      <xs:element name="Method" type="MethodType"/>
+      <xs:element name="ImpliesType" type="ImpliesTypeType" />
+      <xs:element name="Type" type="TypeType">
+        <xs:unique name="TypeMustHaveUniqueNameInType_2">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInType_2">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInType_2">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInType_2">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInType_2">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInType_2">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInType_2">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Property" type="PropertyOrFieldMemberType"/>
+      <xs:element name="Field" type="PropertyOrFieldMemberType"/>
+      <xs:element name="Event" type="MemberType"/>
+    </xs:choice>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_TypeInstantiationType_Name" -->
+          Specifies the name of the type. You may include generic parameters or a signature. Include generic parameters as a comma-separated list enclosed in curly braces (e.g. "Method{T,T2}").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+    <xs:attribute name="Arguments" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_TypeInstantiationType_GenericArguments" -->
+          Specifies generic arguments that define this type instance. Use ',' to separate multiple arguments.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ImpliesTypeType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_ImpliesTypeType" -->
+        Applies policy to a type, if that policy has been applied to the containing type or method.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_ImpliesTypeType_Name" -->
+          Specifies the name of the type. You may include generic arguments. Include generic arguments as a comma-separated list enclosed in curly braces (e.g. "MyType{T1,T2}").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+
+  <xs:complexType name="SubtypesType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_SubtypesType" -->
+        Applies policy to types that inherit from this type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+
+  <xs:complexType name="AttributeImpliesType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_AttributeImpliesType" -->
+        Applies policy to a type if the containing type is applied as an attribute to the type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref ="type_reflection_scenarios"/>
+  </xs:complexType>
+  
+  <xs:complexType name="MethodInstantiationType">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_MethodInstantiationType" -->
+        Applies policy to a specific instantiation of a generic method.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_MethodInstantiationType_Name" -->
+          Specifies the name of the method. Include generic parameters as a comma-separated list enclosed in curly braces (e.g. "Method{T,T2}").
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Arguments" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_MethodInstantiationType_GenericArguments" -->
+          Specifies generic arguments that define this type instance. Use ',' to separate multiple arguments.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Signature" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation><!-- _locID_text="Policy_MethodInstantiationType_Signature" -->
+          Specifies named parameters of the method. Use ',' to separate multiple parameters.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref ="member_reflection_scenarios"/>
+  </xs:complexType>
+
+  <xs:complexType name="UnifiableDirectiveGroup">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Namespace" type ="NamespaceType">
+        <xs:unique name="NamespaceMustHaveUniqueNameInNamespace">
+          <xs:selector xpath="md:Namespace"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeMustHaveUniqueNameInNamespace">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInNamespace">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Assembly" type="AssemblyType">
+        <xs:unique name="NamespaceMustHaveUniqueNameInAssembly">
+          <xs:selector xpath="md:Namespace"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeMustHaveUniqueNameInAssembly">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInAssembly">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="TypeInstantiation" type="TypeInstantiationType">
+        <xs:unique name="TypeMustHaveUniqueNameInTypeInstantiation_1">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInTypeInstantiation_1">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInTypeInstantiation_1">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInTypeInstantiation_1">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInTypeInstantiation_1">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInTypeInstantiation_1">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInTypeInstantiation_1">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="Type" type="TypeType">
+        <xs:unique name="TypeMustHaveUniqueNameInType_1">
+          <xs:selector xpath="md:Type"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="TypeInstantiationMustHaveUniqueNameInType_1">
+          <xs:selector xpath="md:TypeInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+        </xs:unique>
+        <xs:unique name ="MethodInstantiationMustHaveUniqueNameAndArgumentInType_1">
+          <xs:selector xpath="md:MethodInstantiation"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Arguments"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="MethodMustHaveUniqueNameAndArgumentsInType_1">
+          <xs:selector xpath="md:Method"/>
+          <xs:field xpath="@Name"/>
+          <xs:field xpath="@Signature"/>
+        </xs:unique>
+        <xs:unique name="PropertyMustHaveUniqueNameInType_1">
+          <xs:selector xpath="md:Property"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="FieldMustHaveUniqueNameInType_1">
+          <xs:selector xpath="md:Field"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+        <xs:unique name="EventMustHaveUniqueNameInType_1">
+          <xs:selector xpath="md:Event"/>
+          <xs:field xpath="@Name"/>
+        </xs:unique>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="ApplicationDirectiveGroup">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_ApplicationDirectiveGroup" -->
+        Applies policy to all components compiled into the application. Normally, no policy is applied here and this is only used as a container.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base ="UnifiableDirectiveGroup">
+        <xs:attributeGroup ref ="type_reflection_scenarios"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="LibraryDirectiveGroup">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_LibraryDirectiveGroup" -->
+        Applies policy to a specific library.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base ="UnifiableDirectiveGroup">
+        <xs:attribute name="Name" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation><!-- _locID_text="Policy_UnifiableDirectiveGroup" -->
+              Specifies either a name for logical grouping or a conditional check for an included library. Place the name in asterisks to use as a conditional (e.g. "*Contoso.MyLib*").
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:element name="Directives">
+    <xs:annotation>
+      <xs:documentation><!-- _locID_text="Policy_Directives" -->
+        Root element of Runtime Directives
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="Application" type ="ApplicationDirectiveGroup">
+            <xs:unique name="NamespaceMustHaveUniqueNameInApplication">
+              <xs:selector xpath="md:Namespace"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+            <xs:unique name="AssemblyMustHaveUniqueNameInApplication">
+              <xs:selector xpath="md:Assembly"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+            <xs:unique name="TypeInstantiationMustHaveUniqueNameInApplication">
+              <xs:selector xpath="md:TypeInstantiation"/>
+              <xs:field xpath="@Name"/>
+              <xs:field xpath="@Arguments"/>
+            </xs:unique>
+            <xs:unique name="MethodInstantiationMustHaveUniqueNameInApplication">
+              <xs:selector xpath="md:MethodInstantiation"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+          </xs:element>
+        </xs:sequence>
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Library" type ="LibraryDirectiveGroup">
+            <xs:unique name="NamespaceMustHaveUniqueNameInLibrary">
+              <xs:selector xpath="md:Namespace"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+            <xs:unique name="AssemblyMustHaveUniqueNameInLibrary">
+              <xs:selector xpath="md:Assembly"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+            <xs:unique name="TypeInstantiationMustHaveUniqueNameInLibrary">
+              <xs:selector xpath="md:TypeInstantiation"/>
+              <xs:field xpath="@Name"/>
+              <xs:field xpath="@Arguments"/>
+            </xs:unique>
+            <xs:unique name="MethodInstantiationMustHaveUniqueNameInLibrary">
+              <xs:selector xpath="md:MethodInstantiation"/>
+              <xs:field xpath="@Name"/>
+            </xs:unique>
+          </xs:element>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="LibraryMustHaveUniqueName">
+      <xs:selector xpath="md:Library"/>
+      <xs:field xpath="@Name"/>
+    </xs:unique>
+  </xs:element>
+</xs:schema>

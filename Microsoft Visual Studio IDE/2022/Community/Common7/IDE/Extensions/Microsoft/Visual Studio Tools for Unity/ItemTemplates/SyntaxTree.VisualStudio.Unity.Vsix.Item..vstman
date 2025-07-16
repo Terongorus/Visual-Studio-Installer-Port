@@ -1,0 +1,28 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\CSharp Editor Script</RelativePathOnDisk>
+    <TemplateFileName>CSharp Editor Script.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>CSharp Editor Script</Name>
+        <Description>Unity Editor Script in CSharp language</Description>
+        <Icon>CSharp Editor Script.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <DefaultName>NewEditorScript</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\1033\CSharp MonoBehaviour</RelativePathOnDisk>
+    <TemplateFileName>CSharp MonoBehaviour.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>CSharp MonoBehaviour</Name>
+        <Description>Unity MonoBehaviour in CSharp language</Description>
+        <Icon>CSharp MonoBehaviour.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <DefaultName>NewBehaviourScript</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

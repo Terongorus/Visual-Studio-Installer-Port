@@ -1,0 +1,52 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="96492FC7-7BC6-46F7-8559-66BB4E09FD1E" Version="17.0.0" Language="en-US" Publisher="Microsoft Corporation" />
+    <DisplayName>Python</DisplayName>
+    <Description xml:space="preserve">Provides support for editing and debugging Python programs.</Description>
+    <MoreInfo>http://aka.ms/ptvs</MoreInfo>
+    <License>License_en-US.rtf</License>
+    <GettingStartedGuide>http://aka.ms/ptvstutorial</GettingStartedGuide>
+    <Icon>PythonProject.ico</Icon>
+    <PreviewImage>PythonProjectBig.ico</PreviewImage>
+  </Metadata>
+  <Installation SystemComponent="true" AllUsers="true" InstalledByMsi="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.6" />
+    <Dependency IsRequired="false" Version="[17.0,18.0)" Id="TestWindow.Microsoft.0771d463-d74d-4e95-aac2-39d3c7ec1f97" DisplayName="Test Explorer" />
+    <Dependency Id="1F42C6D0-F876-4AF0-8185-1BEB0A325BB2" DisplayName="VisualStudio Interactive Components" />
+  </Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Package" Path="Microsoft.PythonTools.Core.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.Package" Path="Microsoft.PythonTools.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.dll" AssemblyName="Microsoft.PythonTools, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.BuildTasks.dll" AssemblyName="Microsoft.PythonTools.BuildTasks, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Common.dll" AssemblyName="Microsoft.PythonTools.Common, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Debugger.dll" AssemblyName="Microsoft.PythonTools.Debugger, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Debugger.Concord.dll" AssemblyName="Microsoft.PythonTools.Debugger.Concord, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.EnvironmentsList.dll" AssemblyName="Microsoft.PythonTools.EnvironmentsList, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.ProjectWizards.dll" AssemblyName="Microsoft.PythonTools.ProjectWizards, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.VSCommon.dll" AssemblyName="Microsoft.PythonTools.VSCommon, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.VSInterpreters.dll" AssemblyName="Microsoft.PythonTools.VSInterpreters, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Workspace.dll" AssemblyName="Microsoft.PythonTools.Workspace, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.Debugger.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.EnvironmentsList.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.VSInterpreters.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.TestAdapter.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.PythonTools.Workspace.dll" />
+    <Asset Type="UnitTestExtension" Path="Microsoft.PythonTools.TestAdapter.Executor.dll" />
+    <Asset Type="DebuggerEngineExtension" Path="DkmDebugger.vsdconfig" />
+    <Asset Type="NativeVisualizer" Path="Visualizers\PythonDkm.natvis" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Newtonsoft.Json.dll" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Ipc.Json.dll" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.PythonTools.Attacher.exe" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="Microsoft.Extensions.FileSystemGlobbing.dll" />
+  </Assets>
+</PackageManifest>

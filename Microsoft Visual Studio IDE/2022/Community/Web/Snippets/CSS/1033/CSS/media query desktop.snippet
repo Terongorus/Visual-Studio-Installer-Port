@@ -1,0 +1,25 @@
+﻿<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>media query for desktop</Title>
+    <Author>Microsoft Corporation</Author>
+    <Shortcut>@media-desktop</Shortcut>
+    <Description>A media query for a typical desktop resolution</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+      <SnippetType>SurroundsWith</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>width</ID>
+        <ToolTip>Width value</ToolTip>
+        <Default>1224px</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="css" Kind="AtDirectiveName">
+        <![CDATA[@media only screen and (min-width : $width$) {
+  $selected$$end$
+}]]></Code>
+  </Snippet>
+</CodeSnippet>

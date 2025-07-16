@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_EnableXamlUpgradeAnalyzerInVs Condition="'$(UseMaui)' == 'true' and '$(DesignTimeBuild)' == 'true' and '$(BuildingInsideVisualStudio)' == 'true'">true</_EnableXamlUpgradeAnalyzerInVs>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(_EnableXamlUpgradeAnalyzerInVs)' == 'true'">
+    <_VSPrivateAssemblies>$(MSBuildThisFileDirectory)..\..\..\..\Common7\IDE\PrivateAssemblies</_VSPrivateAssemblies>
+    <_VSXlsPackageRoot>$(MSBuildThisFileDirectory)..\..\..\..\Common7\IDE\CommonExtensions\Microsoft\XamlLanguageService</_VSXlsPackageRoot>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(_EnableXamlUpgradeAnalyzerInVs)' == 'true'">
+    <Analyzer Include="$(_VSXlsPackageRoot)\Microsoft.VisualStudio.DesignTools.XamlUpgradeAssistant.dll"/>
+    <Analyzer Include="$(_VSPrivateAssemblies)\Microsoft.VisualStudio.DesignTools.XamlLanguageServiceBase.dll"/>
+    <Analyzer Include="$(_VSPrivateAssemblies)\Microsoft.VisualStudio.DesignTools.UtilityBase.dll"/>
+    <Analyzer Include="$(_VSPrivateAssemblies)\Microsoft.VisualStudio.DesignTools.Markup.dll"/>
+    <Analyzer Include="$(_VSPrivateAssemblies)\Microsoft.VisualStudio.DesignTools.DesignerContractBase.dll"/>
+  </ItemGroup>
+</Project>

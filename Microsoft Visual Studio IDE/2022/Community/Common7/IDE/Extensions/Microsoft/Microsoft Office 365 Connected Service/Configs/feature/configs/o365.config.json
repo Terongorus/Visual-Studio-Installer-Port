@@ -1,0 +1,24 @@
+{
+  "components": {
+    "nuget": {
+      "modifiers": [
+        "o365.nuget"
+      ]
+    },
+    "gettingStartedDocument": {
+      "modifiers": [
+        "o365.document"
+      ]
+    },
+    "graphPermissionsUpdate": {
+      "modifiers": [
+        "o365.permissions"
+      ]
+    },
+    "configSettings": {
+      "modifiers": [
+        "o365.configSettings"
+      ]
+    }
+  }
+}

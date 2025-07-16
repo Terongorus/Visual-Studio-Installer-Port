@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rule Name="Build" OverrideMode="Extend" xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <!-- TODO (https://github.com/dotnet/fsharp/issues/12102):
+       Missing HelpUrl links need to be added.
+  -->
+  <EnumProperty Name="Nullable" Visible="False" />
+  <BoolProperty Name="AllowUnsafeBlocks" Visible="False" />
+  <BoolProperty Name="Optimize" DisplayName="Optimiser le code" Description="Activez les optimisations du compilateur pour une sortie plus petite, plus rapide et plus efficace." HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="optimiser;optimisation" />
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="Tailcalls" DisplayName="Générer des tailcalls" Description="Activer la génération d’un appel tail." HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="tailcall" />
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <StringProperty Name="OtherFlags" DisplayName="Autres indicateurs" Description="Indicateurs de compilateur supplémentaires. Séparez les indicateurs par des espaces blancs." HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General" />
+  <BoolProperty Name="FSharpPreferNetFrameworkTools" DisplayName="Outils de l’infrastructure" Description="Préférez .NET Framework version du compilateur, le cas échéant." Category="General">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <BoolProperty Name="FSharpPrefer64BitTools" DisplayName="Préférer 64 outils de bits" Description="Utilisez un compilateur 64 bits sur les systèmes qui prennent en charge les compilateurs 32 bits et 64 bits." Category="General">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <EnumProperty Name="DebugType" DisplayName="Symboles de débogage" Description="Spécifie le genre de symboles de débogage produits lors de la génération." HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <EnumProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="type de débogage" />
+    </EnumProperty.Metadata>
+    <EnumValue Name="none" DisplayName="Aucun symbole n’est émis" />
+    <EnumValue Name="full" DisplayName="Fichier PDB, plateforme actuelle" />
+    <EnumValue Name="portable" DisplayName="Fichier PDB, portable sur toutes les plateformes" />
+    <EnumValue Name="embedded" DisplayName="Incorporé dans DLL/EXE, portable sur toutes les plateformes" />
+  </EnumProperty>
+  <!--
+    From: https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/compiler-options
+    
+  	"warn:warning-level" Sets a warning level (0 to 5). The default level is 3. Each warning is given a level based on its severity. Level 5 gives more, but less severe, warnings than level 1.
+  -->
+  <EnumProperty Name="WarningLevel" DisplayName="Niveau d'avertissement" Description="Spécifie le niveau à afficher pour les avertissements du compilateur. Les niveaux supérieurs produisent plus d'avertissements, et incluent tous les avertissements des niveaux inférieurs." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2146798" Category="ErrorsAndWarnings">
+    <EnumProperty.Metadata>
+      <NameValuePair Name="EditabilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Build" "WarningLevelOverridden" false)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <EnumValue Name="0" DisplayName="0 - Moins d’avertissements, y compris les problèmes les plus graves" />
+    <EnumValue Name="1" DisplayName="1" />
+    <EnumValue Name="2" DisplayName="2" />
+    <EnumValue Name="3" DisplayName="3 - Niveau d’avertissement par défaut" />
+    <EnumValue Name="4" DisplayName="4" />
+    <EnumValue Name="5" DisplayName="5 - La plupart des avertissements, y compris les problèmes moins graves" />
+  </EnumProperty>
+  <StringProperty Name="LangVersion" Visible="False" />
+  <BoolProperty Name="CheckForOverflowUnderflow" Visible="False" />
+  <EnumProperty Name="ErrorReport" Visible="False" />
+  <EnumProperty Name="FileAlignment" Visible="False" />
+  <BoolProperty Name="ProduceReferenceAssembly" Visible="False" />
+</Rule>

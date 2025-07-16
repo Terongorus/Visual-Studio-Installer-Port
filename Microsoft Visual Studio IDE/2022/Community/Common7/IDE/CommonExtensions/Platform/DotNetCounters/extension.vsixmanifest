@@ -1,0 +1,18 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="DotNetCountersTool.Microsoft Corp..0ec7bae7-c2b8-4df3-87ed-47dccb4d0192" Version="1.0" Language="en-US" Publisher="Microsoft Corp." />
+    <DisplayName>.Net Counters Tool</DisplayName>
+    <Description xml:space="preserve">Tool to visualize .NET counters.</Description>
+    <AllowClientRole>true</AllowClientRole>
+  </Metadata>
+  <Installation AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,16.0)" />
+  </Installation>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.DiagnosticTools" Version="[15.0,16.0)" DisplayName="Visual Studio Diagnostic Tools" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.DiagnosticsHub.DotNetCountersTool.dll" />
+  </Assets>
+</PackageManifest>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DisplayAfter</Title>
+			<Shortcut>DisplayAfter</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>This property will show up in the Blueprint Editor immediately after the property named 'PropertyName', regardless of its order in source code, as long as both properties are in the same category. If multiple properties have the same 'DisplayAfter' value and the same 'DisplayPriority' value, they will appear after the named property in the order in which they are declared in the header file.</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[DisplayAfter="$value$"$end$]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

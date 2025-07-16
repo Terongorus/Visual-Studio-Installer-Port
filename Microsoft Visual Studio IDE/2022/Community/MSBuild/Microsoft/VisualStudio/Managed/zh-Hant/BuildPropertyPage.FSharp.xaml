@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rule Name="Build" OverrideMode="Extend" xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <!-- TODO (https://github.com/dotnet/fsharp/issues/12102):
+       Missing HelpUrl links need to be added.
+  -->
+  <EnumProperty Name="Nullable" Visible="False" />
+  <BoolProperty Name="AllowUnsafeBlocks" Visible="False" />
+  <BoolProperty Name="Optimize" DisplayName="將程式碼最佳化" Description="啟用編譯器最佳化以取得較小、更快速且較富效率的輸出。" HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="最佳化;最佳化" />
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="Tailcalls" DisplayName="產生 Tail 呼叫" Description="啟用 Tail 呼叫產生。" HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="tailcall" />
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <StringProperty Name="OtherFlags" DisplayName="其他旗標" Description="其他編譯器旗標。以空白字元分隔旗標。" HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General" />
+  <BoolProperty Name="FSharpPreferNetFrameworkTools" DisplayName="Framework 工具" Description="偏好 .NET Framework 的編譯器版本 (若有)。" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <BoolProperty Name="FSharpPrefer64BitTools" DisplayName="偏好 64 位元工具" Description="在支援 32 位元及 64 位元編譯器的系統上，使用 64 位元編譯器。" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <EnumProperty Name="DebugType" DisplayName="偵錯符號" Description="指定在建置期間產生的偵錯工具符號類型。" HelpUrl="https://docs.microsoft.com/dotnet/fsharp/language-reference/compiler-options" Category="General">
+    <EnumProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="偵錯類型" />
+    </EnumProperty.Metadata>
+    <EnumValue Name="none" DisplayName="未發出任何符號" />
+    <EnumValue Name="full" DisplayName="PDB 檔案，目前的平台" />
+    <EnumValue Name="portable" DisplayName="PDB 檔案，可跨平台攜帶" />
+    <EnumValue Name="embedded" DisplayName="內嵌在 DLL/EXE 中，可跨平台攜帶" />
+  </EnumProperty>
+  <!--
+    From: https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/compiler-options
+    
+  	"warn:warning-level" Sets a warning level (0 to 5). The default level is 3. Each warning is given a level based on its severity. Level 5 gives more, but less severe, warnings than level 1.
+  -->
+  <EnumProperty Name="WarningLevel" DisplayName="警告層級" Description="指定編譯器警告顯示的層級。較高層級會產生更多警告，並包含較低層級的所有警告。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2146798" Category="ErrorsAndWarnings">
+    <EnumProperty.Metadata>
+      <NameValuePair Name="EditabilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Build" "WarningLevelOverridden" false)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <EnumValue Name="0" DisplayName="0 - 最少警告，包含最嚴重問題" />
+    <EnumValue Name="1" DisplayName="1" />
+    <EnumValue Name="2" DisplayName="2" />
+    <EnumValue Name="3" DisplayName="3 - 預設警告等級" />
+    <EnumValue Name="4" DisplayName="4" />
+    <EnumValue Name="5" DisplayName="5 - 最多警告，包含較不嚴重問題" />
+  </EnumProperty>
+  <StringProperty Name="LangVersion" Visible="False" />
+  <BoolProperty Name="CheckForOverflowUnderflow" Visible="False" />
+  <EnumProperty Name="ErrorReport" Visible="False" />
+  <EnumProperty Name="FileAlignment" Visible="False" />
+  <BoolProperty Name="ProduceReferenceAssembly" Visible="False" />
+</Rule>

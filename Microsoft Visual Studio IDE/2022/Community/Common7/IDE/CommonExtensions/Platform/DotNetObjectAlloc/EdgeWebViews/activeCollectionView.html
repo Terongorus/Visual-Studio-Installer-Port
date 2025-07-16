@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/activeCollectionView.css" type="text/css" rel="stylesheet" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" />
+    <link href="css/chart.css" type="text/css" rel="stylesheet" />
+    <link href="css/toolbar.css" type="text/css" rel="stylesheet" />
+    <link href="css/enableSamplingButton.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/activeCollectionViewModel.js"></script>
+    <title>.NET Alloc Active Collection</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("activeCollectionViewModel");
+            }
+        })();
+    </script>
+    <div id="mainToolbar" class="toolbar-container">
+        <!-- ko template: { if: !globalCollectionEnabled && isPauseResumeSupported, name: 'EnableSamplingButtonView', data: enableSamplingButtonViewModel } --><!-- /ko -->
+    </div>
+        <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+            <div class="message" data-bind="template: currentOverlay">
+            </div>
+        </div>
+</body>
+</html>

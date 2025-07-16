@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+    <Type Name="FFrame" IncludeView="nodepins">
+        <Version Name="UnrealEditor-CoreUObject.dll" Min="5.4" />
+        <DisplayString>Expand for node pins information </DisplayString>
+        <Expand>
+            <Synthetic Name="Node Pins" Optional="true">
+                <Expand>
+                    <Item Name="Available pins">(*((UnrealEditor-Engine.dll!UBlueprintGeneratedClass*)(*(UObject**)(&amp;(Node->OuterPrivate.ObjectPtr.ObjectPtr).Handle)))).DebugData.DebugPinToPropertyMap.Pairs,view(nodepins)</Item>
+                </Expand>
+            </Synthetic>
+        </Expand>
+    </Type>
+
+    <Type Name="FFrame" IncludeView="nodepins">
+        <Version Name="UnrealEditor-CoreUObject.dll" Min="5.0" Max="5.3.99.99" />
+        <DisplayString>Expand for node pins information </DisplayString>
+        <Expand>
+            <Synthetic Name="Node Pins" Optional="true">
+                <Expand>
+                    <Item Name="Available pins">(*((UnrealEditor-Engine.dll!UBlueprintGeneratedClass*)(*(UObject**)(&amp;(Node->OuterPrivate))))).DebugData.DebugPinToPropertyMap.Pairs,view(nodepins)</Item>
+                </Expand>
+            </Synthetic>
+        </Expand>
+    </Type>
+
+    <Type Name="FFrame" IncludeView="nodepins">
+        <Version Name="UE4Editor-CoreUObject.dll" Min="4.27" Max="4.99" />
+        <DisplayString>Expand for node pins information </DisplayString>
+        <Expand>
+            <Synthetic Name="Node Pins" Optional="true">
+                <Expand>
+                    <Item Name="Available pins">(*((UE4Editor-Engine.dll!UBlueprintGeneratedClass*)(*(UObject**)(&amp;(Node->OuterPrivate))))).DebugData.DebugPinToPropertyMap.Pairs,view(nodepins)</Item>
+                </Expand>
+            </Synthetic>
+        </Expand>
+    </Type>
+
+    <Type IncludeView="nodepins" Name="TSet&lt;*,*,*&gt;">
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Index" InitialValue="0" />
+                <Variable Name="ElementsAdded" InitialValue="0" />
+                <Variable Name="ElementsCount" InitialValue="(Elements.Data.ArrayNum - Elements.NumFreeIndices &gt; 0 &amp;&amp; Elements.Data.ArrayNum &lt;= Elements.Data.ArrayMax) ? Elements.Data.ArrayNum - Elements.NumFreeIndices : 0" />
+                <Size>(Elements.Data.ArrayNum - Elements.NumFreeIndices &gt; 0 &amp;&amp; Elements.Data.ArrayNum &lt;= Elements.Data.ArrayMax) ? Elements.Data.ArrayNum - Elements.NumFreeIndices : 0</Size>
+                <Loop Condition="ElementsAdded &lt; ElementsCount">
+                    <If Condition="
+                 ((Elements.AllocationFlags.AllocatorInstance.SecondaryData.Data != 0) &amp;&amp; ((reinterpret_cast&lt;uint32*&gt;(Elements.AllocationFlags.AllocatorInstance.SecondaryData.Data)[Index/32]&gt;&gt;(Index%32)) &amp; 1) != 0)
+              || ((Elements.AllocationFlags.AllocatorInstance.SecondaryData.Data == 0) &amp;&amp; ((reinterpret_cast&lt;uint32*&gt;(Elements.AllocationFlags.AllocatorInstance.InlineData        )[Index/32]&gt;&gt;(Index%32)) &amp; 1) != 0)
+          ">
+                        <Item Name="{((TSetElement &lt;$T1&gt; *)Elements.Data.AllocatorInstance.Data)[Index].Value.Value,sb}">((TSetElement &lt;$T1&gt; *)Elements.Data.AllocatorInstance.Data)[Index].Value.Value,view(nodepins)</Item>
+                        <Exec>++ElementsAdded</Exec>
+                    </If>
+                    <Exec>++Index</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+    <Type IncludeView="nodepins" Name="TMap&lt;FEdGraphPinReference,TFieldPath&lt;FProperty&gt;,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs&lt;FEdGraphPinReference,TFieldPath&lt;FProperty&gt;,0&gt;&gt;">
+        <Expand>
+            <Item Name="Pairs">Pairs,view(nodepins)</Item>
+        </Expand>
+    </Type>
+    <Type Name="FFrame">
+        <Version Name="UnrealEditor-CoreUObject.dll" Min="5.4" />
+        <Expand>
+            <Synthetic Name="Blueprint helpers">
+                <Expand>
+                    <Item Name="UFunction path name">Node->GetPathName(nullptr)</Item>
+                    <Item Name="UFunction name">Node->NamePrivate,sub</Item>
+                    <Item Name="UFunction source name">Node->OuterPrivate.ObjectPtr->NamePrivate,sub</Item>
+                    <Item Name="Blueprint name">(*(((UObject**)&amp;((UnrealEditor-Engine.dll!UBlueprintGeneratedClass*)(*(UObject**)(&amp;(Node->OuterPrivate.ObjectPtr.ObjectPtr).Handle)))->ClassGeneratedBy.ObjectPtr)))->NamePrivate,sub</Item>
+                </Expand>
+            </Synthetic>
+            <ExpandedItem>*this,!</ExpandedItem>
+        </Expand>
+    </Type>
+    <Type Name="FFrame">
+        <Version Name="UnrealEditor-CoreUObject.dll" Min="5.0" Max="5.3.99.99" />
+        <Expand>
+            <Synthetic Name="Blueprint helpers" Optional="true">
+                <Expand>
+                    <Item Name="UFunction path name">Node->GetPathName(nullptr)</Item>
+                    <Item Name="UFunction name">Node->NamePrivate,sub</Item>
+                    <Item Name="UFunction source name">Node->OuterPrivate->NamePrivate,sub</Item>
+                    <Item Name="Blueprint name">((UnrealEditor-Engine.dll!UBlueprintGeneratedClass*)Node->OuterPrivate)->ClassGeneratedBy->NamePrivate,sub</Item>
+                </Expand>
+            </Synthetic>
+            <ExpandedItem>*this,!</ExpandedItem>
+        </Expand>
+    </Type>
+    <Type Name="FFrame">
+        <Version Name="UE4Editor-CoreUObject.dll" Min="4.27" Max="4.99" />
+        <Expand>
+            <Synthetic Name="Blueprint helpers" Optional="true">
+                <Expand>
+                    <Item Name="UFunction path name">Node->GetPathName(nullptr)</Item>
+                    <Item Name="UFunction name">Node->NamePrivate,sub</Item>
+                    <Item Name="UFunction source name">Node->OuterPrivate->NamePrivate,sub</Item>
+                    <Item Name="Blueprint name">((UE4Editor-Engine.dll!UBlueprintGeneratedClass*)Node->OuterPrivate)->ClassGeneratedBy->NamePrivate,sub</Item>
+                </Expand>
+            </Synthetic>
+            <ExpandedItem>*this,!</ExpandedItem>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodePinRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper.dll" Min="4.27" Max="4.99" />
+        <DisplayString>{Pin->PinName,sb} : {Pin->Direction}</DisplayString>
+        <Expand>
+            <Item Name="Value">Property.Value,sb</Item>
+            <Item Name="Type">Property.Type,sb</Item>
+            <Item Name="Children">Property.Children</Item>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodePinRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="4.27" Max="4.99" />
+        <DisplayString>{Pin->PinName,sb} : {Pin->Direction}</DisplayString>
+        <Expand>
+            <Item Name="Value">Property.Value,sb</Item>
+            <Item Name="Type">Property.Type,sb</Item>
+            <Item Name="Children">Property.Children</Item>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodePinRuntimeInformation">
+        <DisplayString>{Pin->PinName,sb} : {Pin->Direction}</DisplayString>
+        <Expand>
+            <Item Name="Value">Property->Value,sb</Item>
+            <Item Name="Object">Property->Object</Item>
+            <Item Name="Type">Property->Type,sb</Item>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.4" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {Properties[Idx]->Property->DisplayName,sb}">Properties[Idx],na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.0" Max="5.3.99.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx]->Property->DisplayName,sb}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.4" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {Nodes[Idx]->NodeName,sb} - Depth: {Nodes[Idx]->ScriptEntryTag}">Nodes[Idx],na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.0" Max="5.3.99.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx]->NodeName,sb} - Depth: {((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx]->ScriptEntryTag}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.4" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{RunningBlueprints[Idx].Key->NamePrivate,sb}">RunningBlueprints[Idx].Value,na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper.dll" Min="5.0" Max="5.3.99.99" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,1&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Key->NamePrivate,sb}">
+                        ((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,1&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Value,na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.4" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {Properties[Idx]->Property->DisplayName,sb}">Properties[Idx],na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.0" Max="5.3.99.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx]->Property->DisplayName,sb}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.4" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {Nodes[Idx]->NodeName,sb} - Depth: {Nodes[Idx]->ScriptEntryTag}">Nodes[Idx],na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.0" Max="5.3.99.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx]->NodeName,sb} - Depth: {((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx]->ScriptEntryTag}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodeData,1&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.4" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{RunningBlueprints[Idx].Key->NamePrivate,sb}">RunningBlueprints[Idx].Value,na</Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UnrealEditor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="5.0" Max="5.3.99.99" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,1&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Key->NamePrivate,sb}">
+                        ((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,1&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Value,na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper.dll" Min="4.27" Max="4.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx].Object->Property.DisplayName,sb}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper.dll" Min="4.27" Max="4.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx].Object->NodeName,sb} - Depth: {((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx].Object->ScriptEntryTag}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper.dll" Min="4.27" Max="4.99" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,0&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Key->NamePrivate,sb}">
+                        ((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,0&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Value,na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodeData">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="4.27" Max="4.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Properties.ArrayNum">
+                    <Item Name="Pin: {((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx].Object->Property.DisplayName,sb}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodePinRuntimeInformation,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Properties.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSNodesRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="4.27" Max="4.99" />
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; Nodes.ArrayNum">
+                    <Item Name="Node: {((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx].Object->NodeName,sb} - Depth: {((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx].Object->ScriptEntryTag}">
+                        ((TArray&lt;TSharedPtr&lt;FVSNodeData,0&gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)Nodes.AllocatorInstance.Data)[Idx],na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="FVSBlueprintRuntimeInformation">
+        <Version Name="UE4Editor-VisualStudioBlueprintDebuggerHelper-Win64-DebugGame.dll" Min="4.27" Max="4.99" />
+        <DisplayString>Total nodes: {RunningBlueprints.ArrayNum}</DisplayString>
+        <Expand>
+            <CustomListItems>
+                <Variable Name="Idx" InitialValue="0" />
+                <Loop Condition="Idx &lt; RunningBlueprints.ArrayNum">
+                    <Item Name="{((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,0&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Key->NamePrivate,sb}">
+                        ((TArray&lt;TTuple&lt;UBlueprint *,TSharedPtr&lt;FVSNodesRuntimeInformation,0&gt; &gt;,TSizedDefaultAllocator&lt;32&gt; &gt;::ElementType*)RunningBlueprints.AllocatorInstance.Data)[Idx].Value,na
+                    </Item>
+                    <Exec>++Idx</Exec>
+                </Loop>
+            </CustomListItems>
+        </Expand>
+    </Type>
+
+    <Type Name="StackTraceHelper">
+        <DisplayString>{NodeName,sb}</DisplayString>
+    </Type>
+</AutoVisualizer>

@@ -1,0 +1,76 @@
+{
+  "categories": {
+    "environment.security.certificates": {
+      "title": "@EnvironmentSecurityCertificatesCategoryTitle;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+      "visibleWhen": "${feature:Security.EnableCRLValidation} == 'true'",
+      "legacyOptionPageId": "836AF6D1-16E9-4A93-AB62-FD4F644721A2"
+    }
+  },
+  "properties": {
+    "environment.security.certificates.enabled": {
+      "type": "boolean",
+      "title": "@EnableCRLValidation;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "vs.certificates.setting.enabled"
+          }
+        }
+      }
+    },
+    "environment.security.certificates.shouldWarnStatusUnknown": {
+      "type": "boolean",
+      "title": "@CrlShouldIgnoreUnknownStatus;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "vs.certificates.setting.ignoreStatusUnknown"
+          }
+        }
+      }
+    },
+    "environment.security.certificates.allowedStore": {
+      "type": "external",
+      "title": "@CrlAllowedStoreSettingTitle;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+      "backingStoreDescription": "@CrlAllowedStoreBackingDescription;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+      "realtimeNotifications": true,
+      "callback": {
+        "packageId": "CABF0D02-8895-4894-AF75-17C3C2149D07",
+        "serviceId": "DEDB9080-7496-4673-B37D-19235C28E8CF"
+      },
+      "properties": {
+        "allowedStore": {
+          "type": "array",
+          "title": "@CrlAllowedStoreSettingTitle;{CABF0D02-8895-4894-AF75-17C3C2149D07}",
+          "allowItemEditing": false,
+          "allowAdditionsAndRemovals": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "domain": {
+                "type": "string",
+                "title": "@CrlSettingDomainHeader;{CABF0D02-8895-4894-AF75-17C3C2149D07}"
+              },
+              "issuer": {
+                "type": "string",
+                "title": "@CrlSettingIssuerHeader;{CABF0D02-8895-4894-AF75-17C3C2149D07}"
+              },
+              "serialNumber": {
+                "type": "string",
+                "title": "@CrlSettingSerialNumberHeader;{CABF0D02-8895-4894-AF75-17C3C2149D07}"
+              },
+              "thumbprint": {
+                "type": "string",
+                "title": "@CrlSettingThumbprintHeader;{CABF0D02-8895-4894-AF75-17C3C2149D07}"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

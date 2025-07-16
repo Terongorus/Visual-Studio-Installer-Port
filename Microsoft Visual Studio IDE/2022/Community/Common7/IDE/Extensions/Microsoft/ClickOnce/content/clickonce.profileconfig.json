@@ -1,0 +1,108 @@
+{
+  "hasDefaultsForAllFields": true,
+  "editSteps": [
+    {
+      "id": "PublishLocationEditStep",
+      "dynamicProperties": []
+    },
+    {
+      "id": "InstallLocationEditStep",
+      "dynamicProperties": []
+    },
+    {
+      "id": "AdvancedSettingsEditStep",
+      "dynamicProperties": []
+    },
+    {
+      "id": "SigningEditStep",
+      "dynamicProperties": []
+    },
+    {
+      "id": "CoreSettingsEditStep",
+      "dynamicProperties": []
+    }
+  ],
+  "staticProperties": {
+    "AzureServiceCreatedFromHandler": true,
+    "GenerateManifests": true,
+    "PublishProvider": "ClickOnce",
+    "PublishProtocol": "ClickOnce",
+    "ProfileVisualFactoryId": "ClickOnce",
+    "SkipPublishVerification":  false,
+    "UpdateMode": "Foreground",
+    "WebPublishMethod": "FileSystem"
+  },
+  "dynamicProperties": {
+  },
+  "persistence": {
+    "enabled": true,
+    "handlerId": "Pubxml",
+    "profileBaseName": "ClickOnceProfile",
+    "targetedPropertyNames": {
+      "default": [
+        "ApplicationRevision",
+        "ApplicationVersion",
+        "AutorunEnabled",
+        "BootstrapperComponentsLocation",
+        "BootstrapperComponentsUrl",
+        "BootstrapperEnabled",
+        "BootstrapperPackage",
+        "Configuration",
+        "CreateDesktopShortcut",
+        "CreateWebPageOnPublish",
+        "DisallowUrlActivation",
+        "ErrorReportUrl",
+        "ExcludeDeploymentUrl",
+        "FileAssociation",
+        "GenerateManifests",
+        "Install",
+        "InstallFrom",
+        "InstallUrl",
+        "IsRevisionIncremented",
+        "IsWebBootstrapper",
+        "ManifestCertificateThumbprint",
+        "ManifestKeyFile",
+        "ManifestTimestampUrl",
+        "MapFileExtensions",
+        "MinimumRequiredVersion",
+        "OpenBrowserOnPublish",
+        "Platform",
+        "ProductName",
+        "PublishDir",
+        "PublishFile",
+        "PublishUrl",
+        "PublisherName",
+        "PublishProtocol",
+        "PublishReadyToRun",
+        "PublishSingleFile",
+        "PublishWizardCompleted",
+        "RuntimeIdentifier",
+        "SelfContained",
+        "SignatureAlgorithm",
+        "SignManifests",
+        "SkipPublishVerification",
+        "SuiteName",
+        "SupportUrl",
+        "TargetCulture",
+        "TargetFramework",
+        "TrustUrlParameters",
+        "UpdateEnabled",
+        "UpdateMode",
+        "UpdateRequired",
+        "UpdateUrl",
+        "UseApplicationTrust",
+        "VerifyUploadedFiles",
+        "WebPage",
+        "WebPageFileName"
+      ],
+      "private": []
+    },
+    "preprocessors": [
+      {
+        "id": "ClickOncePreprocessor",
+        "isRequired": true,
+        "arguments": {}
+      }
+    ]
+  }
+}

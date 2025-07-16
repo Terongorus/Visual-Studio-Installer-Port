@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ This file defines icon ID's and which image files they correspond to. This file is used in 
+ conjunction with the CustomMoniker.vsct file to provide the necessary data to display your 
+ custom moniker in menu buttons, toolbars, etc.
+-->
+<ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
+  <Symbols>
+    <String Name="Resources" Value="/Microsoft.ML.ModelBuilder.Resource;v0.0.0.0;b03f5f7f11d50a3a;Component/Resources" />
+    <Guid Name="CustomMoniker" Value="{7f5c38b0-f0bc-4551-a9a8-b4f467cc4670}" />
+    <ID Name="ModelBuilderFileIcon" Value="12"/>
+    <ID Name="MLServiceIcon" Value="13"/>
+  </Symbols>
+  <Images>
+    <Image Guid="$(CustomMoniker)" ID="$(ModelBuilderFileIcon)">
+      <Source Uri="$(Resources)/ModelBuilderFileIcon.png" />
+    </Image>
+    <Image Guid="$(CustomMoniker)" ID="$(MLServiceIcon)">
+      <Source Uri="$(Resources)/mlServiceIcon.png" />
+    </Image>
+  </Images>
+  <ImageLists />
+</ImageManifest>

@@ -1,0 +1,8 @@
+﻿{
+  "Agents": [
+    {
+      "CLSID": "F023C42F-702B-4E00-B472-EF2EC8217532",
+      "Name": "DiagnosticsHub.DotNetCountersAgent.dll"
+    }
+  ]
+}

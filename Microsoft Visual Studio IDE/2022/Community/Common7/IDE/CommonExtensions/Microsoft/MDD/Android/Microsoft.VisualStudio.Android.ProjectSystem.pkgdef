@@ -1,0 +1,24 @@
+﻿[$RootKey$\Projects\{39e2626f-3545-4960-a6e8-258ad8476ce5}]
+@="ProjectFactory"
+"AllowDeferredProjectLoad"="0"
+"ProjectFactoryPackage"="{3347bee8-d7a1-4082-95e4-38a439553cc2}"
+"Package"="{905fd3eb-1baf-4257-abeb-70f577f48512}"
+"DisplayName"="Android packaging project"
+"DisplayProjectFileExtensions"="#202"
+"DefaultProjectExtension"="androidproj"
+"PossibleProjectExtensions"="androidproj"
+"Language(VsTemplate)"="AndroidPackaging"
+
+// Item filtering Android projects
+[$RootKey$\Projects\{F8BBB05E-FBD0-4B36-8C17-0B3F79AD4F01}]
+"Language(VsTemplate)"="VC"
+"DisplayProjectType(VsTemplate)"="#1501"
+"ShowOnlySpecifiedTemplates(VsTemplate)"=dword:00000000
+"TemplateGroupIDs(VsTemplate)"="VC-Android"
+@="#10007"
+
+// Item template location for android projects
+[$RootKey$\Projects\{F8BBB05E-FBD0-4B36-8C17-0B3F79AD4F01}\AddItemTemplates\TemplateDirs\{F1C25864-3097-11D2-A5C5-00C04F7968B4}\/1]
+"SortPriority"=dword:0000000C
+"TemplatesDir"="$BaseInstallDir$\Common7\IDE\VC\VCProjectItems"
+@="#10007"

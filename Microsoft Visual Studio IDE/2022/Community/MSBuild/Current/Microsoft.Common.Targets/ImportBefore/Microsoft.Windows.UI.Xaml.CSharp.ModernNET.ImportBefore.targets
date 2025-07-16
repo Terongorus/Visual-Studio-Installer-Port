@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************************************************************
+Microsoft.Windows.UI.Xaml.CSharp.ModernNET.ImportBefore.targets
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--
+    This .targets automatically sets 'UseUwpTools' for apps using 'UseUwp'. this property is used by the .NET 9 SDK, and it makes
+    it reference the new WinRT projections for Windows.UI.Xaml.* types in the Windows SDK package for .NET projects. In the vast
+    majority of cases, projects setting this property indent to actually be compiled as UWP (that is, importing all tooling for
+    UWP apps, such as the XAML compiler). Because of this, and also to make the experience consistent with other UI frameworks
+    such as WinForms, WPF and WinUI 3, which also use a single property to enable their associated tooling (ie. 'UseWinForms',
+    'UseWpf' and 'UseWinUI' respectively), we automatically set 'UseUwpTools' for all projects setting 'UseUwp' by default.
+
+    For advanced "mixed-mode" scenarios where projects are both referencing Windows.UI.Xaml.* projections and using WindowsAppSDK,
+    and do not intend to compile as a UWP app, they can manually disable 'UseUwpTools', and we will respect their preference.
+
+    Note that this property is set in an 'ImportBefore' .targets file, for two reasons:
+      - We need to read properties set in the .csproj (or in any .props files), so we must be a .targets file.
+      - We need to set this default option as soon as possible after the project is evaluated, such that the default option is
+        visible not only to .targets imported by NuGet packages, but also by any Directory.Build.targets files, as well as any
+        'CustomBeforeMicrosoftCommonTargets' files. MSBuild will import this file before all of them, as it will be picked up
+        by 'Microsoft.Common.CurrentVersion.targets' before any 'CustomBeforeMicrosoftCommonTargets' file as well.
+  -->
+  <PropertyGroup>
+    <UseUwpTools Condition="'$(UseUwp)' == 'true' AND '$(UseUwpTools)' == ''">true</UseUwpTools>
+  </PropertyGroup>
+
+  <!--
+    We want to allow projects to skip defining 'TargetPlatformMinVersion', which should automatically match the target platform
+    version specified in 'TargetFramework' in that case. For WinUI 3, this is handled automatically by the .NET SDK, which sets
+    the value of 'TargetPlatformMinVersion' from 'Microsoft.NET.Windows.targets' to either sync with 'SupportedOSPlatformVersion',
+    if that property is set, or to just match 'TargetPlatformVersion' otherwise. For UWP apps, we cannot rely on that same logic,
+    because there are various checks in the APPX and XAML compiler .targets that assume this property should already be set by
+    the time they are imported, which happens before that .targets from the .NET SDK. To work around this, we can check whether
+    the current project didn't define 'TargetPlatformMinVersion', and automatically set it from here. This file is imported
+    before any of the APPX or XAML .targets, so that ensures those will work correctly. The logic below matches the behavior
+    of the .NET SDK, with the only difference being that it only sets 'TargetPlatformMinVersion' (not 'SupportedOSPlatformVersion').
+
+    Note that this .targets file is imported well after 'Microsoft.NET.TargetFrameworkInference.targets', so we can rely on that
+    setting the value of 'TargetPlatformVersion' used below, meaning that we don't have to parse 'TargetFramework' from here.
+  -->
+  <PropertyGroup Condition="'$(UseUwpTools)' == 'true'">
+    <TargetPlatformMinVersion Condition="'$(TargetPlatformMinVersion)' == ''">$(SupportedOSPlatformVersion)</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion Condition="'$(TargetPlatformMinVersion)' == ''">$(TargetPlatformVersion)</TargetPlatformMinVersion>
+  </PropertyGroup>
+</Project>

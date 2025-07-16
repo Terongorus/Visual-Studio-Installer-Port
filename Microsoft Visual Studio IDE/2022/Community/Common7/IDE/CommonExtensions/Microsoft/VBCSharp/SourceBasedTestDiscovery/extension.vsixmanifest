@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="100cce4d-b061-4215-8fcd-9cb9334929b3" Version="17.14.0.2532302" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Real Time Test Discovery Package</DisplayName>
+    <Description xml:space="preserve">Roslyn-based unit test discovery for C# and Visual Basic</Description>
+    <PackageId>Microsoft.VisualStudio.TestWindow.SourceBasedTestDiscovery</PackageId>
+  </Metadata>
+  <Installation SystemComponent="true">
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
+      <ProductArchitecture>x86</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+      <ProductArchitecture>x86</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Version="[17.0,18.0)" Id="Microsoft.VisualStudio.Community">
+      <ProductArchitecture>x86</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.CodeAnalysis.UnitTesting.SourceBasedTestDiscovery.dll" />
+    <!--  The installation path "\Common7\IDE\CommonExtensions\Microsoft\VBCSharp\SourceBasedTestDiscovery\**" length should not over 175 characters -->
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.VisualStudio.SBD.RemoteServices.pkgdef" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="Core\Microsoft.VisualStudio.SBD.AnalysisCore64.servicehub.service.json" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="Core\Microsoft.VisualStudio.SBD.AnalysisCore64S.servicehub.service.json" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="Core\Microsoft.VisualStudio.SBD.SourceLocationLookupCore64.servicehub.service.json" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="Core\Microsoft.VisualStudio.SBD.SourceLocationLookupCore64S.servicehub.service.json" />
+  </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[17.0,18.0)" DisplayName="C# and Visual Basic" />
+    <Prerequisite Id="Microsoft.VisualStudio.PackageGroup.TestTools.Managed" Version="[17.0,18.0)" DisplayName="Managed test tools" />
+  </Prerequisites>
+</PackageManifest>

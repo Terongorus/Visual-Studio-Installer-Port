@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Config</Title>
+			<Shortcut>Config</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>Indicates that this class is allowed to store data in a configuration file ('.ini'). If there are any class properties declared with the 'config' or 'globalconfig' Specifiers, this Specifier causes those properties to be stored in the named configuration file. This Specifier is propagated to all child classes and cannot be negated, but child classes can change the 'config' file by re-declaring the config Specifier and providing a different 'ConfigName'. Common 'ConfigName' values are "Engine", "Editor", "Input", and "Game".</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[Config=$value$$end$]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

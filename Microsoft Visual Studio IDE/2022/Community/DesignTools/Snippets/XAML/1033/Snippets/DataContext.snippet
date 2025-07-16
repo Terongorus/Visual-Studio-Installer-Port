@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>d:DataContext</Title>
+    <Author>Microsoft Corporation</Author>
+    <Description>Snippet for a new design-time DataContext attribute</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>ddc</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>DesignTimeViewModel</ID>
+        <ToolTip>The type name of the ViewModel to be used at design-time</ToolTip>
+        <Default>local:MyViewModel</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="XAML"><![CDATA[d:DataContext="{d:DesignInstance Type=$DesignTimeViewModel$, IsDesignTimeCreatable=True}"]]></Code>
+  </Snippet>
+</CodeSnippet>

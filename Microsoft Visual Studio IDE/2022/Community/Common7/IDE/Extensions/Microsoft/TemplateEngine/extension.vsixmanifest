@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="3B5EAFB3-87E4-4986-8924-D24DF860D894" Version="17.14.119.50502" Language="en-US" Publisher="Microsoft" />
+    <Icon>WebConfiguration.png</Icon>
+    <PreviewImage>WebConfigurationPreview.png</PreviewImage>
+    <DisplayName>Microsoft Visual Studio Template Engine</DisplayName>
+    <Description xml:space="preserve">Provides the abililty to use templates that are compatible with the dotnet CLI</Description>
+    <Tags>Visual Studio Web Developer Tools</Tags>
+  </Metadata>
+  <Installation InstalledByMsi="true" AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.IntegratedShell" Version="[15.0,]" />
+  </Installation>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.VisualStudio.TemplateEngine.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TemplateEngine.Shared.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TemplateEngine.VS.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.VisualStudio.TemplateEngine.Wizard.dll" /> 
+  </Assets>
+</PackageManifest>

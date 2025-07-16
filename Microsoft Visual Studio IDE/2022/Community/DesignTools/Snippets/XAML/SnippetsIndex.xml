@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SnippetCollection>
+    <Language Lang="XAML" Guid="{CD53C9A1-6BC2-412B-BE36-CC715ED8DD41}">
+        <SnippetDir>
+            <OnOff>On</OnOff>
+            <Installed>true</Installed>
+            <DirPath>%InstallRoot%\DesignTools\Snippets\XAML\%LCID%\Snippets\</DirPath> 
+            <LocalizedName>Snippets</LocalizedName>
+        </SnippetDir>
+    </Language>
+</SnippetCollection>

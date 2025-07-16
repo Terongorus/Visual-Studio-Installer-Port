@@ -1,0 +1,40 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="A274A0E2-E41E-40CC-A694-8D5D14BBD2D0" Version="17.18.4.2443003" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>ML.NET Model Builder 2022</DisplayName>
+    <Description xml:space="preserve">Simple UI tool to build custom machine learning models for VS2022.</Description>
+    <License>eula.rtf</License>
+    <Icon>Resources\ExtensionIcon.png</Icon>
+    <PackageId>Microsoft.ML.ModelBuilder</PackageId>
+  </Metadata>
+  <Installation AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0, 18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Professional" Version="[17.0,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,18.0)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="relatedFiles.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="optout.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="icons.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.ML.ModelBuilder.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.ML.ModelBuilder.dll" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="AutoMLService\MicrosoftMLModelBuilderAutoML.serviceHub.service.json" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="AutoMLService\MicrosoftMLModelBuilderModelInference.serviceHub.service.json" />
+    <Asset Type="Microsoft.ServiceHub.Service" Path="AutoMLService\MicrosoftMLModelBuilderCodeGenerator.serviceHub.service.json" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Tokens.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="servicehubservices.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="ItemTemplate" />
+  </Assets>
+</PackageManifest>

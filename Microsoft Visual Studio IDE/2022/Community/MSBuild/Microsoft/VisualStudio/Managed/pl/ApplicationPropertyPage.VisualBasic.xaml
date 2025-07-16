@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="Application" OverrideMode="Extend" xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:xliff="https://github.com/dotnet/xliff-tasks" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xliff">
+  <Rule.Categories>
+    <Category Name="ApplicationFramework" DisplayName="Struktura aplikacji" Description="Ustawienia struktury aplikacji." />
+    <Category Name="WPF" DisplayName="WPF" Description="Ustawienia specyficzne dla aplikacji WPF." />
+  </Rule.Categories>
+  <StringProperty Name="CreateOrOpenAppManifest" DisplayName="Utwórz lub otwórz manifest aplikacji dla ustawień systemu Windows." Category="General">
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="LinkAction">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Action" Value="Command" />
+          <NameValuePair Name="Command" Value="CreateOrOpenAppManifest" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <!-- TODO: Add a hyperlink/button to open the ApplicationEvents.vb. Previously, we had a View Application Events button. -->
+  <!-- The StartupObject property has a different set of appropriate values for VB and for C#.
+       For VB projects, we expect to see every Form in the assembly directly or indirectly inherited from Form.
+       We specify this by setting the SearchForEntryPointsInFormsOnly to true.
+       We also want to ensure that the property always has a value. -->
+  <DynamicEnumProperty Name="StartupObject" DisplayName="Obiekt startowy" Description="Definiuje punkt wejścia do wywołania, gdy aplikacja zostanie załadowana. Ta opcja jest zazwyczaj ustawiana na formularz główny w aplikacji lub na procedurę „Main”, która ma być uruchamiana po uruchomieniu aplikacji. Biblioteki klas nie definiują punktu wejścia." Category="General" EnumProvider="StartupObjectsEnumProvider">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+            (not (has-evaluated-value "Application" "OutputType" "Library"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+    <DynamicEnumProperty.ProviderSettings>
+      <NameValuePair Name="IncludeEmptyValue" Value="false" />
+      <NameValuePair Name="SearchForEntryPointsInFormsOnly" Value="true" />
+    </DynamicEnumProperty.ProviderSettings>
+  </DynamicEnumProperty>
+  <!-- This property actually is saved as MyType. -->
+  <BoolProperty Name="UseApplicationFramework" DisplayName="Struktura aplikacji" Description="Włącz strukturę aplikacji języka Visual Basic dla tego projektu. Ogólnie, te ustawienia są serializowane do pliku myapp." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195444" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (is-vb)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="EnableVisualStyles" DisplayName="Style wizualne systemu Windows" Description="Używa najnowszej wersji biblioteki kontrolek COMCTL, aby zapewnić renderowanie kontrolek z nowoczesnym stylem wizualnym." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195445" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="SingleInstance" DisplayName="Aplikacja z jednym wystąpieniem" Description="Uniemożliwia użytkownikom uruchamianie wielu wystąpień aplikacji. Wartość domyślna jest czyszczona, co umożliwia uruchamianie wielu wystąpień aplikacji." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195340" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="SaveMySettingsOnExit" DisplayName="Zapisz ustawienia użytkownika przy zakończeniu" Description="Określa, czy ustawienia są zapisywane, gdy użytkownicy zamykają swoje komputery." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195171" Category="ApplicationFramework">
+    <BoolProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <EnumProperty Name="HighDpiMode" DisplayName="Tryb wysokiej rozdzielczości DPI" Description="Określa tryb HighDpiMode dla całej aplikacji. To ustawienie może być zastępowane programowo za pośrednictwem zdarzenia ApplyApplicationDefaults." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195173" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and 
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-net-core-app-version-or-greater "6.0")
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- TODO: Validate DisplayName values. -->
+    <EnumValue Name="0" DisplayName="Nierozpoznawane wartość DPI — bez skalowania i przy założeniu skalowania na 100%." />
+    <EnumValue Name="4" DisplayName="Nierozpoznawane wartości DPI, skalowane GDI — podobnie jak nierozpoznawane DPI, ale zoptymalizowane pod kątem zawartości grafiki niebuforowanej dwukrotnie." />
+    <EnumValue Name="1" DisplayName="Rozpoznawanie systemu — DPI monitora podstawowego to potencjalny klient skalowania." />
+    <EnumValue Name="2" DisplayName="Na monitor — wykryto DPI podczas uruchamiania i zmiany." />
+    <EnumValue Name="3" DisplayName="Na monitor w wersji 2 — wykryto DPI podczas uruchamiania i zmiany, w tym okna podrzędne" />
+  </EnumProperty>
+  <EnumProperty Name="VBAuthenticationMode" DisplayName="Tryb uwierzytelniania" Description="Określa metodę identyfikowania zalogowanego użytkownika w razie potrzeby." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195341" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- TODO: Validate DisplayName values. -->
+    <EnumValue Name="Windows" DisplayName="Windows — pobieranie informacji o użytkowniku za pośrednictwem pliku My.User w czasie wykonywania." />
+    <EnumValue Name="ApplicationDefined" DisplayName="Zdefiniowane przez aplikację — uwierzytelnianie niestandardowe zaimplementowane w aplikacji." />
+  </EnumProperty>
+  <EnumProperty Name="ShutdownMode" DisplayName="Tryb zamykania" Description="Wskazuje, który warunek powoduje zamknięcie aplikacji." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195343" Category="ApplicationFramework">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <EnumValue Name="AfterMainFormCloses" DisplayName="Zamknij po zamknięciu formularza głównego." />
+    <EnumValue Name="AfterAllFormsClose" DisplayName="Zamknij dopiero po zamknięciu ostatniego formularza." />
+  </EnumProperty>
+  <!-- This property has been made temporarily invisible, and is blocked on https://github.com/dotnet/project-system/issues/8286
+       When that is fixed and this property displayed, its suppression should be removed from NonVisiblePropertiesShouldntBeLocalized. -->
+  <DynamicEnumProperty Name="SplashScreen" DisplayName="Ekran powitalny" Description="Ustawia formularz, który ma być używany jako ekran powitalny aplikacji." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195177" Category="ApplicationFramework" EnumProvider="SplashScreenEnumProvider">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+    <DynamicEnumProperty.ProviderSettings>
+      <!-- We want an explicit item representing the empty value. We can remove this setting
+           when the enum provider starts including it by default. -->
+      <NameValuePair Name="IncludeEmptyValue" Value="true" />
+    </DynamicEnumProperty.ProviderSettings>
+  </DynamicEnumProperty>
+  <StringProperty Name="MinimumSplashScreenDisplayTime" DisplayName="Minimalny czas wyświetlania ekranu powitalnego" Description="Ustawia minimalny czas (w milisekundach), przez który jest wyświetlany ekran powitalny." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2195289" Category="ApplicationFramework">
+    <StringProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </StringProperty.DataSource>
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (has-evaluated-value "Application" "UseApplicationFramework" true)
+        </NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="String">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="EvaluatedValueValidationRegex" Value="^\d*$" />
+          <NameValuePair Name="EvaluatedValueFailedValidationMessage" Value="Ta właściwość musi być liczbą całkowitą." xliff:LocalizedProperties="Value" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <DynamicEnumProperty Name="StartupURI" DisplayName="Początkowy identyfikator URI" Description="Określa okno, które zostanie otwarte po załadowaniu aplikacji." EnumProvider="PageItemEnumProvider" Category="WPF">
+    <DynamicEnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <EnumProperty Name="ShutdownMode_WPF" DisplayName="Tryb zamykania" Description="Określa, kiedy aplikacja powinna zostać zamknięta automatycznie." Category="WPF">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </EnumProperty.Metadata>
+    <!-- Note these match the values of the System.Windows.ShutdownMode enum. -->
+    <EnumValue Name="OnLastWindowClose" DisplayName="Przy zamknięciu ostatniego okna" />
+    <EnumValue Name="OnMainWindowClose" DisplayName="Przy zamknięciu głównego okna" />
+    <EnumValue Name="OnExplicitShutdown" DisplayName="Przy jawnym zamykaniu" />
+  </EnumProperty>
+  <StringProperty Name="CreateOrOpenApplicationXaml" DisplayName="Edytuj XAML" Description="Otwórz plik Application.xaml" Category="WPF">
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>
+          (and
+            (has-evaluated-value "Application" "UseWPF" true)
+            (has-evaluated-value "Application" "UseApplicationFramework" true)
+            (has-evaluated-value "Application" "OutputType" "WinExe"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="LinkAction">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Action" Value="Command" />
+          <NameValuePair Name="Command" Value="CreateOrOpenApplicationXaml" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+</Rule>

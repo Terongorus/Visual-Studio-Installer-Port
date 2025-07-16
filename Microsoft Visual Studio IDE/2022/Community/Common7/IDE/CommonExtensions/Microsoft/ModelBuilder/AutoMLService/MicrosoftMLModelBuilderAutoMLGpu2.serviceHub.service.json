@@ -1,0 +1,10 @@
+﻿{
+  "hostId": "gpu",
+  "singleDomainLoaderOptimization": true,
+  "host": "dotnet",
+  "name": "MicrosoftMLModelBuilderAutoMLGpu2",
+  "entryPoint": {
+    "assemblyPath": "Microsoft.ML.ModelBuilder.AutoMLService.dll",
+    "fullClassName": "Microsoft.ML.ModelBuilder.AutoMLService.ServiceFactory.AutoMLService"
+  }
+}

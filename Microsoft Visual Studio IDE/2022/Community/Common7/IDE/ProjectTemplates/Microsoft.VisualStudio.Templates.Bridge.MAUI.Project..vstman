@@ -1,0 +1,317 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\Android</RelativePathOnDisk>
+    <TemplateFileName>AndroidApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Android App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>20</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETAndroid.App</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>AndroidApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\Android</RelativePathOnDisk>
+    <TemplateFileName>AndroidBinding.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Android Java Library Binding</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>21</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETAndroid.Binding</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>AndroidBinding1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\Android</RelativePathOnDisk>
+    <TemplateFileName>AndroidLib.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Android Class Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>22</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETAndroid.Library</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>AndroidLib1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\Android</RelativePathOnDisk>
+    <TemplateFileName>AndroidWearApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Android Wear App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>23</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETAndroid.WearApp</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>AndroidApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\iOS</RelativePathOnDisk>
+    <TemplateFileName>IOSApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET iOS App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>24</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETiOS.App</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>iOSApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\iOS</RelativePathOnDisk>
+    <TemplateFileName>IOSBinding.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET iOS Binding Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>25</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETiOS.Binding</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>iOSBinding1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\iOS</RelativePathOnDisk>
+    <TemplateFileName>IOSClassLib.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET iOS Class Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>26</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETiOS.Library</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>iOSLib1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\iOS</RelativePathOnDisk>
+    <TemplateFileName>IOSTabbed.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET iOS Tabbed App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>27</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETiOS.TabbedApp</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>iOSTabbedApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MacCatalyst</RelativePathOnDisk>
+    <TemplateFileName>MacCatalystApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Mac Catalyst App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>28</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMacCatalyst.App</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MacCatalystApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MacCatalyst</RelativePathOnDisk>
+    <TemplateFileName>MacCatalystBinding.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Mac Catalyst Binding Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>29</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMacCatalyst.Binding</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MacCatalystBinding1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MacCatalyst</RelativePathOnDisk>
+    <TemplateFileName>MacCatalystLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET Mac Catalyst Class Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>30</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMacCatalyst.Library</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MacCatalystLib1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiBlazor.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Blazor Hybrid App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>17</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMAUI.BlazorHybrid</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MauiApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiLib.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Class Library</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>18</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMAUI.ClassLib</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MauiLib1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiMobile.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>19</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMAUI.Mobile</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MauiApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\MAUI</RelativePathOnDisk>
+    <TemplateFileName>MauiMultiProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>.NET MAUI Multi-Project App</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>20</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETMAUI.MultiProject</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>MauiApp1</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -1,0 +1,256 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>ClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="9" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="10" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4547" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetCore.ClassLibrary</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>ConsoleApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="3" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="4" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4548" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>12</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NETCore.ConsoleApplication</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ConsoleApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>MSTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="521" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="522" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>15</SortOrder>
+        <TemplateID>Microsoft.CSharp.NETCore.UnitTest</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>UnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>Wpf.Control.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>WPF User Control Library (.NET)</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4655" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4600" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetCore.WPF.Control</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>WpfControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <LanguageTag>C#</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>Windows</PlatformTag>
+        <ProjectTypeTag>Desktop</ProjectTypeTag>
+        <ProjectTypeTag>Library</ProjectTypeTag>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>Wpf.Custom.Control.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>WPF Custom Control Library (.NET)</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4674" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4604" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetCore.WPF.Custom.Control</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>WpfCustomControlLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <LanguageTag>C#</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>Windows</PlatformTag>
+        <ProjectTypeTag>Desktop</ProjectTypeTag>
+        <ProjectTypeTag>Library</ProjectTypeTag>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>WpfApp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>WPF App (.NET)</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4651" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4602" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetCore.WPF</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>WpfApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <LanguageTag>CSharp</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>Windows</PlatformTag>
+        <ProjectTypeTag>Desktop</ProjectTypeTag>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>WpfLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name>WPF Library (.NET)</Name>
+        <Description Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4651" />
+        <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4602" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetCore.WPF.Library</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>WpfLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <LanguageTag>C#</LanguageTag>
+        <LanguageTag>XAML</LanguageTag>
+        <PlatformTag>Windows</PlatformTag>
+        <ProjectTypeTag>Desktop</ProjectTypeTag>
+        <ProjectTypeTag>Library</ProjectTypeTag>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>XUnitTest.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="11" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="12" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="531" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>16</SortOrder>
+        <TemplateID>Microsoft.CSharp.NETCore.XUnitTest</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>XUnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>CSharp\Bridge\NS</RelativePathOnDisk>
+    <TemplateFileName>ClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="5" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="6" />
+        <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4547" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.CSharp.NetStandard.ClassLibrary</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>VisualBasic\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>ClassLibrary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="9" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="10" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4500" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>14</SortOrder>
+        <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.NetCore.ClassLibrary</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ClassLibrary</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <AppIdFilter>blend</AppIdFilter>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="ProjectGroup">
+    <RelativePathOnDisk>VisualBasic\Bridge\NET</RelativePathOnDisk>
+    <TemplateFileName>ConsoleApplication.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="3" />
+        <Description Package="{860A27C0-B665-47F3-BC12-637E16A1050A}" ID="4" />
+        <Icon Package="{164B10B9-B200-11D0-8C61-00A0C91E29D5}" ID="4501" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>12</SortOrder>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <TemplateID>Microsoft.VisualBasic.NETCore.ConsoleApplication</TemplateID>
+        <CreateNewFolder>true</CreateNewFolder>
+        <CreateInPlace>true</CreateInPlace>
+        <DefaultName>ConsoleApp</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <Hidden>true</Hidden>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

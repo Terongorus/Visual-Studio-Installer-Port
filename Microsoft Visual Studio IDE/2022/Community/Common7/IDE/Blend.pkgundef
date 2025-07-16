@@ -1,0 +1,45 @@
+//Remove toolbox
+[$RootKey$\Toolbox Item Types]
+[$RootKey$\ToolWindows\{B1E99781-AB81-11D0-B683-00AA00A3EE26}]
+[$RootKey$\ToolboxPages]
+[$RootKey$\ToolboxItemConfiguration]
+
+// Remove blank solution node from new project dialog
+[$RootKey$\NewProjectTemplates\TemplateDirs\{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}]
+
+// Exclude F# editor--its only package dependency is the text management package
+[$RootKey$\AutomationProperties\TextEditor\FSharp]
+
+// Exclude unwanted Tools/Options pages, not otherwise removed by cascading deletes from package whitelisting
+[$RootKey$\ToolsOptionsPages\Graphics Diagnostics]
+[$RootKey$\ToolsOptionsPages\Graphics Diagnostics\Capture]
+
+// Exclude unwanted language keys not otherwise filtered by package GUIDs
+[$RootKey$\Languages\Language Services\VBScript]
+[$RootKey$\Languages\Language Services\XOML]
+
+// Exclude file extensions for files we don't support
+[$RootKey$\Projects\{F184B08F-C81C-45F6-A57F-5ABD9991F28F}\FileExtensions\.asax]
+[$RootKey$\Projects\{F184B08F-C81C-45F6-A57F-5ABD9991F28F}\FileExtensions\.ascx]
+[$RootKey$\Projects\{F184B08F-C81C-45F6-A57F-5ABD9991F28F}\FileExtensions\.asmx]
+[$RootKey$\Projects\{F184B08F-C81C-45F6-A57F-5ABD9991F28F}\FileExtensions\.aspx]
+[$RootKey$\Projects\{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\FileExtensions\.asax]
+[$RootKey$\Projects\{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\FileExtensions\.ascx]
+[$RootKey$\Projects\{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\FileExtensions\.asmx]
+[$RootKey$\Projects\{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}\FileExtensions\.aspx]
+[$RootKey$\Languages\File Extensions\.coffee]
+[$RootKey$\Languages\File Extensions\.less]
+[$RootKey$\Languages\File Extensions\.scss]
+
+// Exclude Xml chooser factory dependent on entity designer editor disallowed by directory filtering
+[$RootKey$\XmlChooserFactory\EDMX]
+
+// Exclude all external tools
+[$RootKey$\External Tools]
+
+// Exclude Code Sharing JavaScript Project Add Item Templates
+[$RootKey$\Projects\{D38D89B0-85D5-4C40-9EE2-3B2111BDE3FD}]
+
+// Exclude unsupported Preview Features
+[$RootKey$\FeatureFlags\VS\Core\NewSettingsExperience]
+[$RootKey$\FeatureFlags\TestingTools]

@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "使用 Microsoft Graph 访问 Office 365 服务",
+  "o365DependencyTypeDescription": "使用 Microsoft Graph API 将应用程序与 Office 365 服务集成。",
+  "connectionSettings": "连接设置",
+  "nugetComponentName": "NuGet 包",
+  "nugetComponentDescription": "将修改 NuGet 包以确保新依赖项采用最佳操作",
+  "gettingStartedComponentName": "入门指南文档",
+  "gettingStartedComponentDescription": "使用 Microsoft Graph API 文档调用 Microsoft 365",
+  "graphPermissionsComponentName": "Microsoft Graph 权限",
+  "graphPermissionsComponentDescription": "更新 Microsoft 图形 API 的 Microsoft Entra 应用程序权限",
+  "configSettingsComponentName": "配置设置",
+  "configSettingsComponentDescription": "将修改设置以确保新依赖项采用最佳操作"
+}

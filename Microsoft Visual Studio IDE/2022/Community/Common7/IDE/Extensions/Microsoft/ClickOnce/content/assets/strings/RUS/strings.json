@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "Публикация приложения с помощью ClickOnce",
+  "clickonceCategoryMultipleTargetsDescription": "В какой локальный целевой объект вы хотите выполнить публикацию?",
+  "installLocation": "Расположение установки",
+  "manifestsSigned": "Подписанные манифесты",
+  "publishLanguage": "Язык публикации",
+  "configuration": "Конфигурация",
+  "portable": "Переносимый",
+  "PublishLocation": "Расположение публикации",
+  "settingsSection": "Параметры",
+  "showAll": "Показать все",
+  "targetFramework": "Целевая платформа",
+  "targetRuntime": "Целевая среда выполнения",
+  "updateEnabled": "Обновление включено.",
+  "updateLocation": "Обновление расположения"
+}

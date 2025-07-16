@@ -1,0 +1,16 @@
+<HTML>
+<HEAD>
+<TITLE>ATL test page for object $short_name$</TITLE>
+</HEAD>
+<BODY>
+
+
+[!if !DEVICE]
+<OBJECT ID="$short_name$" CLASSID="CLSID:$guid_clsid$"></OBJECT>
+[!else]
+<OBJECT ID="$short_name$" CLASSID="CLSID:$guid_clsid$" width="240" height="240"></OBJECT>
+[!endif]
+
+
+</BODY>
+</HTML>

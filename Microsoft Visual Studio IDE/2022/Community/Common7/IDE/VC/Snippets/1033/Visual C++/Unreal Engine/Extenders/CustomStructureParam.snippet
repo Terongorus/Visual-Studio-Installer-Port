@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CustomStructureParam</Title>
+			<Shortcut>CustomStructureParam</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>The listed parameters are all treated as wildcards. This specifier requires the 'UFUNCTION'-level specifier, 'CustomThunk', which will require the user to provide a custom 'exec' function. In this function, the parameter types can be checked and the appropriate function calls can be made based on those parameter types. The base 'UFUNCTION' should never be called, and should assert or log an error if it is.</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[CustomStructureParam="$value$$end$"]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

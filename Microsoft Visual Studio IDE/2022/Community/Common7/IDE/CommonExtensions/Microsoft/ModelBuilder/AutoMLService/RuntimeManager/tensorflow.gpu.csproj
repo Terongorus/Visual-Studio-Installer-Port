@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Condition="'$(OS)' == 'Windows_NT'" Include="SciSharp.TensorFlow.Redist-Windows-GPU" Version="$(TensorflowRuntimeVersion)" />
+    <PackageReference Condition="'$(OS)' == 'Linux'" Include="SciSharp.TensorFlow.Redist-Linux-GPU" Version="$(TensorflowRuntimeVersion)" />
+  </ItemGroup>
+
+</Project>

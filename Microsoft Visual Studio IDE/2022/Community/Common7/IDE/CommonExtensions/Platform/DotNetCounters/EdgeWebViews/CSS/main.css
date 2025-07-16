@@ -1,0 +1,259 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    cursor: default;
+    -ms-high-contrast-adjust: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--plugin-font-family, "Segoe Script"), Arial, sans-serif;
+    font-size: var(--plugin-font-size, 12px);
+    color: var(--plugin-color, rgb(0, 0, 0));
+    /* This will set the toolbar as the top row and the grid using the remaining space */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+}
+
+#plugin-contextmenu-container {
+    /**
+     * This puts the plugin context menu element behind all of our view
+     * so that it does not intercept any events. This element is only used
+     * to generate HTML passed to the context menu ScriptedSandbox instance
+     * and is never shown on this DOM.
+     */
+    z-index: -1;
+}
+
+.mainArea {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.treeGridContainer {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.treeGridContainer .name {
+    text-align: left;
+}
+
+.treeGridContainer .name > span {
+    text-overflow: ellipsis;
+}
+
+.toolbar-container {
+    grid-row: 1;
+    display: flex;
+}
+
+.toolbar-container>* {
+    margin: auto 3px;
+}
+
+.toolbar-container>*:first-child {
+    margin-left: auto;
+}
+
+/** No data overlay */
+#message-overlay {
+    grid-row: 2;
+    grid-column: 1;
+    position: relative;
+    overflow: hidden;
+    z-index: 10000;
+    transition: opacity .25s, height 0s;
+    background-color: var(--plugin-background-color, rgba(200, 200, 200, 0.50));
+}
+
+#message-overlay.hide {
+    height: 0;
+    opacity: 0;
+    transition: opacity .25s, height 0 .25s;
+}
+
+#message-overlay>div {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+}
+
+#message-overlay span {
+    display: block;
+    background-color: var(--plugin-background-color, rgba(200, 200, 200, 0.50));
+}
+
+#message-overlay progress {
+    display: block;
+    margin: 5px auto;
+    color: var(--ProgressBar-IndicatorFill-Background, fuchsia);
+    background-color: var(--ProgressBar-Background-Background, red);
+}
+
+/** meter tag filter **/
+.meterTagsFilterFlyout .filterFlyout {
+    position: absolute;
+    top: 34px;
+    overflow-y: auto;
+    visibility: hidden;
+    z-index: 1;
+    border: 1px solid var(--Environment-CommandBarMenuBorder-Background, black);
+    background-color: var(--Environment-CommandBarMenuBackgroundGradientBegin-Background, aquamarine);
+    color: var(--Environment-CommandBarTextActive-Background, fuchsia);
+    margin-top: -1px;
+    display: grid;
+    grid-template-rows: auto auto;
+    max-height: min(400px, 100% - 34px);
+}
+
+.meterTagsFilterFlyout .filterFlyout>* {
+    display: inline-block;
+}
+
+.meterTagsFilterFlyout .filterFlyout.flyoutActive {
+    visibility: visible;
+}
+
+.meterTagsFilterFlyout .filterList {
+    grid-row: 1;
+    list-style-type: none;
+    margin: 2px;
+    padding: 0px;
+}
+
+.meterTagsFilterFlyout .filterList>li {
+    white-space: nowrap;
+    margin: 3px 0px;
+    padding: 0px 20px 0px 6px;
+}
+
+.meterTagsFilterFlyout .filterList>li.childOption {
+    margin-left: 40px;
+}
+
+.meterTagsFilterFlyout .filterList>li:hover,
+.meterTagsFilterFlyout .filterList>li.hasFocus {
+    background-color: var(--SearchControl-PopupControlMouseOverBackgroundGradientBegin-Background, lightgreen);
+    color: var(--SearchControl-PopupCheckboxMouseDownText-Background, black);
+}
+
+.meterTagsFilterFlyout .filterList>li .filter-expander {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    vertical-align: middle;
+    background: var(--itemCollapsed, url("../images/itemCollapsed.png")) no-repeat 0px 0px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 70%;
+}
+
+.meterTagsFilterFlyout .filterList>li .filter-expander.expanded {
+    background: var(--itemExpanded, url("../images/itemExpanded.png")) no-repeat 0px 0px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 60%;
+}
+
+
+.treeGridContainer tbody td .filterButton {
+    padding: 0px 5px;
+    min-width: auto;
+    right: 0px;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--Environment-CommandBarTextInactive-Background, fuchsia);
+}
+
+.treeGridContainer tbody td .filterButton:hover {
+    border-color: var(--Environment-CommandBarBorder-Background, lawngreen);
+    background-color: var(--DetailsView-CommandBarMouseOverBackground-Background, fuchsia);
+    color: var(--Environment-CommandBarTextHover-Background, lawngreen);
+}
+
+.icon {
+    width: 1.34em;
+    height: 1.34em;
+}
+
+.icon svg {
+    width: auto;
+    height: 100%;
+    vertical-align: baseline;
+}
+
+.meterTagsFilterFlyout .filterFooter {
+    grid-row: 2;
+    display: flex;
+    justify-content: flex-end;
+    padding: 9px 9px;
+}
+
+.meterTagsFilterFlyout .filterFooter>button {
+    margin-left: 3px;
+}
+
+.meterTagsFilterFlyout .filterFooter>button:active {
+    background-color: var(--Environment-CommandBarMouseDownBackgroundBegin-Background, fuchsia);
+    color: var(--Environment-CommandBarTextMouseDown-Background, lawngreen);
+}
+
+.meterTagsFilterFlyout .filterFooter>.button-disabled {
+    background-color: transparent;
+    color: var(--Environment-CommandBarTextInactive-Background, lawngreen);
+}
+
+.meterTagsFilterFlyout .filterFooter>.button-disabled:active,
+.meterTagsFilterFlyout .filterFooter>.button-disabled:hover,
+.meterTagsFilterFlyout .filterFooter>.button-disabled:focus {
+    background-color: transparent;
+    color: var(--Environment-CommandBarTextInactive-Background, lawngreen);
+    border: 1px solid #ACACAC;
+}
+
+/* reset the default IE button:active animation */
+.meterTagsFilterFlyout .filterFooter button:active * {
+    position: relative;
+}
+
+
+/* Filter control */
+input.filter {
+    padding: 0px 0px 0px 3px;
+    margin: 3px 3px 3px auto;
+    width: 150px;
+    border: 1px solid var(--SearchControl-UnfocusedBorder-Background, lawngreen);
+    background-color: var(--SearchControl-Unfocused-Background, lawngreen);
+    color: var(--SearchControl-Unfocused-Foreground, fuchsia);
+}
+
+input.filter:focus {
+    color: var(--SearchControl-FocusedBackground-Foreground, coral);
+    background-color: var(--SearchControl-FocusedBackground-Background, lawngreen);
+    border-color: var(--SearchControl-FocusedBorder-Background, fuchsia);
+}
+
+input.filter:hover {
+    color: var(--SearchControl-MouseOverBackground-Foreground, deeppink);
+    background-color: var(--SearchControl-MouseOverBackground-Background, lawngreen);
+    border-color: var(--SearchControl-MouseOverBorder-Background, fuchsia);
+}

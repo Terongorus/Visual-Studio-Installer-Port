@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "Anwendung mit ClickOnce veröffentlichen",
+  "clickonceCategoryMultipleTargetsDescription": "In welchem lokalen Ziel soll die Veröffentlichung erfolgen?",
+  "installLocation": "Speicherort für Installation",
+  "manifestsSigned": "Signierte Manifeste",
+  "publishLanguage": "Sprache für Veröffentlichung",
+  "configuration": "Konfiguration",
+  "portable": "Portierbar",
+  "PublishLocation": "Speicherort für Veröffentlichung",
+  "settingsSection": "Einstellungen",
+  "showAll": "Alle anzeigen",
+  "targetFramework": "Zielframework",
+  "targetRuntime": "Zielruntime",
+  "updateEnabled": "Update aktiviert",
+  "updateLocation": "Speicherort für Updates"
+}

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ManifestCapabilities CapabilityGroups="Capabilities DeviceCapabilities">
+  
+  <!--
+  ====================================================================================================
+  | Min Supported SDK values per namespace:
+  ====================================================================================================
+  | uap:  10.0.10240.0
+  | uap2: 10.0.11000.0
+  | uap3: 10.0.14000.0
+  | uap4: 10.0.15000.0
+  | uap5: 10.0.16000.0
+  | uap6: 10.0.17000.0
+  ====================================================================================================
+  -->
+  
+  <Capabilities>
+    <Capability Name="allJoyn"/>
+    <Capability Name="codeGeneration"/>
+    <Capability Name="internetClient">
+      <SIDs>
+        <SID>S-1-15-3-1</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="internetClientServer">
+      <SIDs>
+        <SID>S-1-15-3-2</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="privateNetworkClientServer">
+      <SIDs>
+        <SID>S-1-15-3-3</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="appointments" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-11</SID>
+        <SID>S-1-15-3-1024-3143806525-1203864249-1421818192-3633341372-1897640038-385730927-2799706934-2446152123</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="blockedChatMessages" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="chat" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="contacts" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-12</SID>
+        <SID>S-1-15-3-1024-1197171996-1180401634-863664575-1500363675-265870253-3312865253-308402948-872443910</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="documentsLibrary" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-7</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="enterpriseAuthentication" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-8</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="musicLibrary" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-6</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="objects3D" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="phoneCall" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="picturesLibrary" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-4</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="removableStorage" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-10</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="sharedUserCertificates" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-9</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="userAccountInformation" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="videosLibrary" MinSupportedSdk="10.0.10240.0" Namespace="uap">
+      <SIDs>
+        <SID>S-1-15-3-5</SID>
+      </SIDs>
+    </Capability>
+    <Capability Name="voipCall" MinSupportedSdk="10.0.10240.0" Namespace="uap"/>
+    <Capability Name="phoneCallHistoryPublic" MinSupportedSdk="10.0.11000.0" Namespace="uap2">
+      <CapabilityNamespace Name="uap2" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"/>
+    </Capability>
+    <Capability Name="spatialPerception" MinSupportedSdk="10.0.11000.0" Namespace="uap2">
+      <CapabilityNamespace Name="uap2" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"/>
+    </Capability>
+    <Capability Name="backgroundMediaPlayback" MinSupportedSdk="10.0.14000.0" Namespace="uap3">
+      <CapabilityNamespace Name="uap3" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"/>
+    </Capability>
+    <Capability Name="remoteSystem" MinSupportedSdk="10.0.14000.0" Namespace="uap3">
+      <CapabilityNamespace Name="uap3" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"/>
+    </Capability>
+    <Capability Name="userNotificationListener" MinSupportedSdk="10.0.14000.0" Namespace="uap3">
+      <CapabilityNamespace Name="uap3" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"/>
+    </Capability>
+    <Capability Name="graphicsCapture" MinSupportedSdk="10.0.17000.0" Namespace="uap6">
+      <CapabilityNamespace Name="uap6" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"/>
+    </Capability>
+    <Capability Name="offlineMapsManagement" MinSupportedSdk="10.0.15000.0" Namespace="uap4">
+      <CapabilityNamespace Name="uap4" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"/>
+    </Capability>
+    <Capability Name="userDataTasks" MinSupportedSdk="10.0.15000.0" Namespace="uap4">
+      <CapabilityNamespace Name="uap4" Path="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"/>
+    </Capability>
+    <Capability Name="lowLevelDevices" MinSupportedSdk="10.0.11000.0" Namespace="iot">
+      <CapabilityNamespace Name="iot" Path="http://schemas.microsoft.com/appx/manifest/iot/windows10"/>
+    </Capability>
+    <Capability Name="systemManagement" MinSupportedSdk="10.0.11000.0" Namespace="iot">
+      <CapabilityNamespace Name="iot" Path="http://schemas.microsoft.com/appx/manifest/iot/windows10"/>
+    </Capability>
+  </Capabilities>
+  <DeviceCapabilities>
+    <DeviceCapability Name="location" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="microphone" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="proximity" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="webcam" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="bluetooth" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="pointOfService" MinSupportedSdk="10.0.10240.0"/>
+    <DeviceCapability Name="lowLevel" MinSupportedSdk="10.0.11000.0" />
+    <DeviceCapability Name="gazeInput" MinSupportedSdk="10.0.17000.0"/>
+  </DeviceCapabilities>
+</ManifestCapabilities>

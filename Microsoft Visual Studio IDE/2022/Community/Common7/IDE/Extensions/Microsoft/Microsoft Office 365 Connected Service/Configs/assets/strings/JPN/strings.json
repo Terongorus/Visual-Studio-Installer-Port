@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Microsoft Graph を使用して Office 365 サービスにアクセスする",
+  "o365DependencyTypeDescription": "Microsoft Graph API を使用して、アプリケーションを Office 365 サービスに統合します。",
+  "connectionSettings": "接続の設定",
+  "nugetComponentName": "NuGet パッケージ",
+  "nugetComponentDescription": "新しい依存関係の最適な動作を確保するために、NuGet パッケージが変更されます",
+  "gettingStartedComponentName": "概要ドキュメント",
+  "gettingStartedComponentDescription": "Microsoft Graph API ドキュメントを使用して Microsoft 365 を呼び出す",
+  "graphPermissionsComponentName": "Microsoft Graph のアクセス許可",
+  "graphPermissionsComponentDescription": "Microsoft Graph API 用の Microsoft Entra アプリケーションのアクセス許可を更新する",
+  "configSettingsComponentName": "構成の設定",
+  "configSettingsComponentDescription": "新しい依存関係の最適な動作を確保するために、設定が変更されます"
+}

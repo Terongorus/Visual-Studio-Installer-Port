@@ -1,0 +1,146 @@
+{
+    "start_url": "fileReadsView.html",
+    "domain": "http://microsoft.com",
+    "name": "File IO Reads",
+    "browserHostVersion": "2.0",
+    "use_css_variables": true,
+    "resource_aliases": {
+        "Resources": {
+            "path": "FileIOTool.ScriptResources",
+            "is_default": true
+        },
+        "DiagnosticsHubResources": {
+            "path": "..\\..\\DiagnosticsHub\\EdgeWebViews\\DiagnosticsHub.TypeScript.ScriptResources",
+            "is_default": false
+        }
+    },
+    "vs": {
+        "theme_token_aliases": {
+            "CommonControls-FocusVisual-Foreground": {
+                "category": "c01072a1-a915-4abf-89b7-e2f9e8ec4c7f",
+                "key_type": "ForegroundColor",
+                "name": "FocusVisual"
+            },
+            "CommonControls-InnerTabActiveBackground-Background": {
+                "category": "c01072a1-a915-4abf-89b7-e2f9e8ec4c7f",
+                "key_type": "BackgroundColor",
+                "name": "InnerTabActiveBackground"
+            },
+            "TreeGridCellLabelText": {
+                "category": "02071ec8-0cf0-4822-af30-9f001537e7eb",
+                "key_type": "BackgroundColor",
+                "name": "TreeGridCellLabelText"
+            },
+            "Environment-CommandBarBorder-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarBorder"
+            },
+            "Environment-CommandBarMouseDownBackgroundBegin-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseDownBackgroundBegin"
+            },
+            "Environment-CommandBarMouseOverBackgroundBegin-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarMouseOverBackgroundBegin"
+            },
+            "Environment-CommandBarSelected-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelected"
+            },
+            "Environment-CommandBarSelectedBorder-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarSelectedBorder"
+            },
+            "Environment-CommandBarTextMouseDown-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextMouseDown"
+            },
+            "Environment-CommandBarTextActive-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextActive"
+            },
+            "Environment-CommandBarTextInactive-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextInactive"
+            },
+            "Environment-CommandBarTextHover-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextHover"
+            },
+            "Environment-CommandBarTextHoverOverSelected-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextHoverOverSelected"
+            },
+            "Environment-CommandBarHoverOverSelectedIconBorder-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarHoverOverSelectedIconBorder"
+            },
+            "Environment-CommandBarTextSelected-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarTextSelected"
+            },
+            "Environment-CommandBarOptionsBackground-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarOptionsBackground"
+            },
+            "Environment-CommandBarGradientBegin-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "CommandBarGradientBegin"
+            },
+            "Environment-GridLine-Background": {
+                "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+                "key_type": "BackgroundColor",
+                "name": "GridLine"
+            },
+            "Header-Default-Background": {
+                "category": "4997f547-1379-456e-b985-2f413cdfa536",
+                "key_type": "BackgroundColor",
+                "name": "Default"
+            },
+            "Header-MouseOver-Background": {
+                "category": "4997f547-1379-456e-b985-2f413cdfa536",
+                "key_type": "BackgroundColor",
+                "name": "MouseOver"
+            },
+            "Header-SeparatorLine-Background": {
+                "category": "4997f547-1379-456e-b985-2f413cdfa536",
+                "key_type": "BackgroundColor",
+                "name": "SeparatorLine"
+            },
+            "ProgressBar-IndicatorFill-Background": {
+                "category": "94acf70f-a81d-4512-a31d-8196616751ee",
+                "key_type": "BackgroundColor",
+                "name": "IndicatorFill"
+            },
+            "ProgressBar-Background-Background": {
+                "category": "94acf70f-a81d-4512-a31d-8196616751ee",
+                "key_type": "BackgroundColor",
+                "name": "Background"
+            }
+        },
+        "themed_images": {
+            "itemCollapsed": {
+                "bitmap_source": "Images\\itemCollapsed.png",
+                "background_color": "plugin-background-color"
+            },
+            "itemExpanded": {
+                "bitmap_source": "Images\\itemExpanded.png",
+                "background_color": "plugin-background-color"
+            }
+        }
+    }
+}

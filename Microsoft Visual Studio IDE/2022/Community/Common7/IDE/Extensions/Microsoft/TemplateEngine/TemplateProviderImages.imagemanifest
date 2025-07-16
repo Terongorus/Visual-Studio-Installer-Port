@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                           xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
+  <Symbols>
+    <String Name="ResourceIcons" Value="/Microsoft.VisualStudio.TemplateEngine.VS;v17.0.0.0;b03f5f7f11d50a3a;Component/Resources/Icons" />
+    <Guid Name="TemplateProviderImagesGuid" Value="{ECDEBEC2-5645-4E9A-ADB2-E77962FBED84}" />
+    <ID Name="DefaultProjectIcon" Value="1" />
+  </Symbols>
+  <Images>
+    <Image Guid="$(TemplateProviderImagesGuid)" ID="$(DefaultProjectIcon)">
+      <Source Uri="$(ResourceIcons)/DefaultProjectIcon.ico" />
+    </Image>
+  </Images>
+  <ImageLists />
+</ImageManifest>

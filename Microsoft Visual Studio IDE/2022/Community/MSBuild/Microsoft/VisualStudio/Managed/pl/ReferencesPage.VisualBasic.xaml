@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="References" Description="Określa odwołania projektu i importy przestrzeni nazw." DisplayName="Odwołania" PageTemplate="generic" Order="200" xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:xliff="https://github.com/dotnet/xliff-tasks" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="xliff">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="Ogólne" Description="Odwołania i ustawienia przestrzeni nazw dla projektów Visual Basic." />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" SourceOfDefaultValue="AfterContext" HasConfigurationCondition="False" />
+  </Rule.DataSource>
+  <DynamicEnumProperty Name="ImportedNamespaces" DisplayName="Importuj przestrzenie nazw" Description="Zarządzaj przestrzeniami nazw do zaimportowania w aplikacji." Category="General" EnumProvider="DotNetImportsEnumProvider">
+    <DynamicEnumProperty.DataSource>
+      <DataSource PersistedName="ImportedNamespaces" Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </DynamicEnumProperty.DataSource>
+    <DynamicEnumProperty.ValueEditors>
+      <ValueEditor EditorType="MultiStringSelector">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="TypeDescriptorText" Value="Importowane przestrzenie nazw" xliff:LocalizedProperties="Value" />
+          <NameValuePair Name="AllowsCustomStrings" Value="True" />
+          <NameValuePair Name="ShouldDisplayEvaluatedPreview" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </DynamicEnumProperty.ValueEditors>
+  </DynamicEnumProperty>
+</Rule>

@@ -1,0 +1,21 @@
+{
+  "start_url": "default.html",
+  "domain": "http://microsoft.com",
+  "name": "ModelBuilderGraph",
+  "version": "1.0",
+  "browserHostVersion": "2.0",
+  "vs": {
+    "theme_token_aliases": {
+      "test-button-backgroundcolor": {
+        "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+        "key_type": "BackgroundColor",
+        "name": "ButtonFace"
+      },
+      "test-button-color": {
+        "category": "624ed9c3-bdfd-41fa-96c3-7c824ea32e3d",
+        "key_type": "BackgroundColor",
+        "name": "ButtonText"
+      }
+    }
+  }
+}

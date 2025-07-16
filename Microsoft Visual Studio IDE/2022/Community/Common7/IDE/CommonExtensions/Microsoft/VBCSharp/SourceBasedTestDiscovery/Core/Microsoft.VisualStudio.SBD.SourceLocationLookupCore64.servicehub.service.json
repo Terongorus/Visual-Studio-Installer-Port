@@ -1,0 +1,10 @@
+{
+  "host": "dotnet",
+  "hostId": "RoslynCodeAnalysisService",
+  "hostGroupAllowed": true,
+  "entryPoint": {
+    "assemblyPath": "Microsoft.CodeAnalysis.UnitTesting.SourceBasedTestDiscovery.Core.dll",
+    "fullClassName": "Microsoft.CodeAnalysis.UnitTesting.SourceBasedTestDiscovery.RemoteSourceLocationLookupService+Factory"
+  },
+  "friendServices": [ "Microsoft.VisualStudio.LanguageServices.DiagnosticAnalyzerCore64" ]
+}

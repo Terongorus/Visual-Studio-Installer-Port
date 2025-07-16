@@ -1,0 +1,143 @@
+﻿[$RootKey$\Packages\{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}]
+"VsWinExpressId"=dword:00000004
+"VWDExpressId"=dword:00000003
+"MinEdition"="Standard"
+"ProductVersion"="1.0"
+"ProductName"="Application Insights Tools for Visual Studio"
+"CompanyName"="Microsoft Corporation"
+
+[$RootKey$\Packages\{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}]
+@="VSPackage"
+"InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL"
+"Class"="Microsoft.AppInsights.GettingStarted.VSPackage"
+"Assembly"="Microsoft.VisualStudio.ApplicationInsights, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+"AllowsBackgroundLoad"=dword:00000001
+
+[$RootKey$\AutoLoadPackages\{c7a507c9-4afb-474f-b871-6dc6fe403cf8}]
+"{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"=dword:00000002
+
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{0FA29D4C-1763-4115-AB4E-24AD616316BF}]
+"name"="Microsoft.VisualStudio.ApplicationInsights"
+"publicKeyToken"="b03f5f7f11d50a3a"
+"culture"="neutral"
+"version"="17.0.0.0"
+"codeBase"="$PackageFolder$\Microsoft.VisualStudio.ApplicationInsights.dll"
+
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{DAC73948-D93B-413D-BFD3-1C2A71209F11}]
+"name"="Microsoft.ApplicationInsights"
+"publicKeyToken"="31bf3856ad364e35"
+"culture"="neutral"
+"version"="2.4.0.0"
+"codeBase"="$PackageFolder$\Microsoft.ApplicationInsights.dll"
+
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{49CA7744-993D-4C51-8D8B-C465A527F2EF}]
+"name"="LiveCharts.Wpf"
+"publicKeyToken"="3b585c2a5f1a92c1"
+"culture"="neutral"
+"version"="0.7.13.0"
+"codeBase"="$PackageFolder$\LiveCharts.Wpf.dll"
+
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{AF647BB1-9CB8-4FFD-9897-A0E07EF38521}]
+"name"="LiveCharts"
+"publicKeyToken"="c5935629d38af058"
+"culture"="neutral"
+"version"="0.7.13.0"
+"codeBase"="$PackageFolder$\LiveCharts.dll"
+
+[$RootKey$\Menus]
+"{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"=", Menus.ctmenu, 1"
+
+[$RootKey$\Services\{e944416b-96ef-4d58-af78-339b54e15a01}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Account Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{a8b51b90-1236-3dab-bc12-53cbd78bcdfa}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Annotation Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{5636a2c9-11d1-364c-bc4c-ab3b87f6ddfb}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Components Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{5dbc9840-6c14-34de-92b6-99cd45770afa}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights LoggingFramework Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{5ce9763d-cb33-30e4-ab5d-40f284f86242}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Menu Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{abf8cd09-cfbe-3589-9396-1c3847319994}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Notification Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{ecf4c0fb-c339-3709-b5b0-a7d747a06d8b}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights NugetInstallation Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{12597bae-769c-318f-a933-a96696dda4fe}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Search Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{815a698f-0ccb-308b-a3da-380bc79fee16}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{da92fbc9-6753-3e4d-afaf-579e0c54f3cc}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Solution Data Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{c5cbfcbd-4074-3759-8ddf-6c9f22753619}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Solution Events Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\Services\{16ac8cf8-4cf0-3185-a002-9229b94b05d3}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Application Insights Streaming Events Service"
+"IsAsyncQueryable"=dword:00000001
+"IsCacheable"=dword:00000000
+
+[$RootKey$\ToolWindows\{682e7d2a-5c60-4f00-be98-e787ff511646}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Microsoft.AppInsights.GettingStarted.AIStatus.AIConfigurationStatusToolWindow"
+"Style"="Tabbed"
+"DocumentLikeTool"=dword:00000001
+
+[$RootKey$\ToolWindows\{3f28efa6-37c0-4c33-95a7-c72f22064023}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Microsoft.AppInsights.GettingStarted.LiveMetrics.LiveMetricsToolWindow"
+"Style"="Tabbed"
+"DocumentLikeTool"=dword:00000001
+
+[$RootKey$\ToolWindows\{83107a3e-496a-485e-b455-16ddb978e55e}]
+@="{1a4efade-f6b2-4490-a2ef-21d5f3d1c8e0}"
+"Name"="Microsoft.AppInsights.Search.SearchToolWindow"
+"Style"="Tabbed"
+"DocumentLikeTool"=dword:00000001
+
+[$RootKey$\UIContextRules\{c7a507c9-4afb-474f-b871-6dc6fe403cf8}]
+@="Auto load for vb, c#, php"
+"Expression"="(SolutionContainsSupportedType)"
+"SolutionContainsSupportedType"="SolutionHasProjectCapability:(CSharp|VB|PHP)"

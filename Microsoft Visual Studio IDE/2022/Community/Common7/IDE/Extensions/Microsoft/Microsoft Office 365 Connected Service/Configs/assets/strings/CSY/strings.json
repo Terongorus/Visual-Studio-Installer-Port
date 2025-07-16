@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Přístup ke službám Office 365 s Microsoft Graphem",
+  "o365DependencyTypeDescription": "Pomocí rozhraní API pro Microsoft Graph integrujte své aplikace se službami Office 365.",
+  "connectionSettings": "Nastavení připojení",
+  "nugetComponentName": "Balíčky NuGet",
+  "nugetComponentDescription": "Balíčky NuGet se upraví tak, aby se zajistil optimální provoz nové závislosti.",
+  "gettingStartedComponentName": "Dokument Začínáme",
+  "gettingStartedComponentDescription": "Volat Microsoft 365 pomocí dokumentace k rozhraní Microsoft Graph API",
+  "graphPermissionsComponentName": "Oprávnění pro Microsoft Graph",
+  "graphPermissionsComponentDescription": "Aktualizuje oprávnění aplikace Microsoft Entra pro Microsoft Graph API.",
+  "configSettingsComponentName": "Nastavení konfigurace",
+  "configSettingsComponentDescription": "Nastavení se upraví tak, aby se zajistil optimální provoz nové závislosti."
+}

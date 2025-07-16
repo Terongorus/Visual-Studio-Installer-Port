@@ -1,0 +1,18 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="DotNetObjectAllocation.Microsoft Corp..2205b5d8-e06d-453d-80b8-dcea82c6dd5b" Version="1.0" Language="en-US" Publisher="Microsoft Corp." />
+    <DisplayName>.NET Object Allocation</DisplayName>
+    <Description xml:space="preserve">Tool to track and inspect .NET Object Allocations.</Description>
+    <AllowClientRole>true</AllowClientRole>
+  </Metadata>
+  <Installation AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,16.0)" />
+  </Installation>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.DiagnosticTools" Version="[15.0,16.0)" DisplayName="Visual Studio Diagnostic Tools" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.DiagnosticsHub.DotNetObjectAllocation.dll" />
+  </Assets>
+</PackageManifest>

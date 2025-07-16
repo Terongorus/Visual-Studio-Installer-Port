@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [ "EngineAssociation" ],
+  "properties": {
+    "FileVersion": { "type": "integer" },
+    "EngineAssociation": {
+      "type": "string",
+      "anyOf": [
+        {
+          "$comment": "GUID support",
+          "format": "regex",
+          "pattern": "^[({]?[a-fA-F0-9]{8}[-]?([a-fA-F0-9]{4}[-]?){3}[a-fA-F0-9]{12}[})]?$"
+        },
+        {
+          "$comment": "Plain version syntax",
+          "format": "regex",
+          "pattern": "^\\d+.\\d+(.\\d+){0,1}$"
+        }
+      ]
+    },
+    "Category": { "type": "string" },
+    "Description": { "type": "string" },
+    "Modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "Name": { "type": "string" },
+          "Type": { "type": "string" },
+          "LoadingPhase": { "type": "string" }
+        },
+        "required": [ "Name" ]
+      }
+    },
+    "Plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "Name": { "type": "string" },
+          "Enabled": { "type": "boolean" }
+        },
+        "required": [ "Name" ]
+      }
+    },
+    "TargetPlatforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "AdditionalRootDirectories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "AdditionalPluginDirectories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "EpicSampleNameHash": { "type": "string" }
+  }
+}

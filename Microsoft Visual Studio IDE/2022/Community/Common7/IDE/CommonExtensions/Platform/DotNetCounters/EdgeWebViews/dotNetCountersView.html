@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" />
+    <link href="css/countersView.css" type="text/css" rel="stylesheet" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/dotNetCountersUI.js"></script>
+
+    <title>DotNet Counters UI</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                // Allows us to control clipboard keys
+                plugin.HotKeys.setClipboardState(true);
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("dotNetCountersUI");
+            }
+        })();
+    </script>
+    <div id="mainToolbar" class="toolbar-container">
+        <input type="search" class="filter" type="text" data-bind="
+                    textInput: filterText,
+                    valueUpdate: 'afterkeydown',
+                    localizedPlaceholderText: 'FilterWatermark',
+                    localizedAriaLabel: 'FilterAriaLabel',
+                    event: {keydown: onFilterKeyDown}" />
+        </div>
+    <div class="mainArea">
+        <!-- ko if: meterTagsFilter() !== null-->
+            <div id="meterTag" data-bind="
+                template: {
+                    name: 'MeterTagsFilterView',
+                    data: meterTagsFilter(),
+                    afterRender: meterTagsFilter().onAfterDomInsert }">
+            </div>
+        <!-- /ko --> 
+        <div id="CountersList" data-bind="
+             event: { keydown: onKeyDown },
+             template: {
+                name: 'TreeGridView',
+                data: countersList,
+                afterRender: countersList.onAfterDomInsert }">
+        </div>
+    </div>
+    <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+        <div class="message" data-bind="template: currentOverlay">
+        </div>
+    </div>
+</body>
+</html>

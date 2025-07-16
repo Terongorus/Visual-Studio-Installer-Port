@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>fscArm64</name></assembly>
+<members>
+<member name="P:LegacyResolver.SR.SwallowResourceText(System.Boolean)">
+<summary>
+ If set to true, then all error messages will just return the filled &apos;holes&apos; delimited by &apos;,,,&apos;s - this is for language-neutral testing (e.g. localization-invariant baselines).
+</summary>
+</member>
+<member name="P:LegacyResolver.SR.SwallowResourceText">
+<summary>
+ If set to true, then all error messages will just return the filled &apos;holes&apos; delimited by &apos;,,,&apos;s - this is for language-neutral testing (e.g. localization-invariant baselines).
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionNetFramework">
+<summary>
+ .NET Framework
+ (Originally from D:\a\_work\1\s\src\fsc\..\LegacyMSBuildResolver\LegacyResolver.txt:6)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionGAC">
+<summary>
+ Global Assembly Cache
+ (Originally from D:\a\_work\1\s\src\fsc\..\LegacyMSBuildResolver\LegacyResolver.txt:7)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionFoundByAssemblyFoldersKey">
+<summary>
+ Found by AssemblyFolders registry key
+ (Originally from D:\a\_work\1\s\src\fsc\..\LegacyMSBuildResolver\LegacyResolver.txt:4)
+</summary>
+</member>
+<member name="M:LegacyResolver.SR.assemblyResolutionFoundByAssemblyFoldersExKey">
+<summary>
+ Found by AssemblyFoldersEx registry key
+ (Originally from D:\a\_work\1\s\src\fsc\..\LegacyMSBuildResolver\LegacyResolver.txt:5)
+</summary>
+</member>
+</members>
+</doc>

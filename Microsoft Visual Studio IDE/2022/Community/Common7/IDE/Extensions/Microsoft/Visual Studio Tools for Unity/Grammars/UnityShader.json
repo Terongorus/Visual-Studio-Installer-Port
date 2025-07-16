@@ -1,0 +1,149 @@
+﻿{
+  "scopeName": "source.shader.unity",
+  "name": "UnityShader",
+  "fileTypes": [
+    "shader",
+    "cginc",
+    "compute",
+    "hlsl",
+    "raytrace"
+  ],
+  "patterns": [
+    {
+      "match": "\\b([0-9]+\\.?[0-9]*)\\b",
+      "name": "constant.numeric.unity"
+    },
+    {
+      "match": "\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|Fog|AlphaTest|Blend|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack)\\b",
+      "name": "support.class.unity"
+    },
+    {
+      "match": "\\b(On|Off|ObjectLinear|EyeLinear|SphereMap|CubeReflect|CubeNormal|A|RGB|Less|Greater|LEqual|GEqual|NotEqual|Always|AmbientAndDiffuse|Emission|Back|Front|Linear|Exp|Exp2|One|Zero|SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha|AppSrcAdd|AppDstAdd|Vertex|VertexOrNone|VertexOnly|Pixel|PixelOnly|VertexOrPixel|VertexAndPixel|PixelOrNone|None|Always|SoftVegetation|Normal|Tangent|Mesh|Normals|Tangents|World|Texcoord|Texcoord0|Texcoord1)\\b",
+      "name": "support.class.unity"
+    },
+    {
+      "match": "\\b(CGPROGRAM|GLSLPROGRAM|ENDCG|ENDGLSL|C\\+\\+RAW|BEGIN DOC|END DOC|BEGIN EX|END EX|CSRAW|CSNONE|CLASS|CUSTOM|CUSTOM_PROP|THREAD_SAFE|BEGIN|END|TYPEMAP|ENUM|DOCUMENT|AUTO|AUTO_PROP|AUTO_PTR_PROP|OBSOLETE|THREAD_UNSAFE|CONVERTEXAMPLE|NONSEALED_CLASS|CONDITIONAL|STRUCT)\\b",
+      "name": "support.class.unity"
+    },
+    {
+      "match": "\\b(Dependency|Fallback)\\b",
+      "name": "support.variable.unity"
+    },
+    {
+      "match": "^\\s*\\[(HideInInspector)\\]",
+      "name": "keyword.unity"
+    },
+    {
+      "match": "\\b(_\\w+)\\b",
+      "name": "support.variable.input.unity"
+    },
+    {
+      "match": "\\b(uv(2)*_\\w+|viewDir|COLOR|screenPos|worldPos|worldRefl|worldNormal|worldRefl|worldNormal)\\b",
+      "name": "support.variable.input.unity"
+    },
+    {
+      "match": "\\b(Albedo|Normal|Emission|Specular|Gloss|Alpha)\\b",
+      "name": "support.variable.output.unity"
+    },
+    {
+      "match": "\\b(appdata_(base|tan|full|img)|SurfaceOutput)\\b",
+      "name": "support.variable.structure.unity"
+    },
+    {
+      "match": "\\b(UNITY_MATRIX_(MVP|MV|V|P|VP|T_MV|IT_MV|TEXTURE0|TEXTURE1|TEXTURE2|TEXTURE3)|_Object2World|_World2Object|_WorldSpaceCameraPos|unity_Scale)\\b",
+      "name": "support.variable.transformation.unity"
+    },
+    {
+      "match": "\\b(_ModelLightColor[0-9]|_SpecularLightColor[0-9]|_ObjectSpaceLightPos|_Light2World|_World2Light|_Object2Light)\\b",
+      "name": "support.variable.lighting.unity"
+    },
+    {
+      "match": "\\b(_Time|_SinTime|_CosTime|unity_DeltaTime|_ProjectionParams|_ScreenParams)\\b",
+      "name": "support.variable.other.unity"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#cg"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "//",
+          "end": "$",
+          "name": "comment.line.double-slash.unity"
+        },
+        {
+          "begin": "/\\*",
+          "end": "\\*/",
+          "name": "comment.line.block.unity"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.unity"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b \n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|sizeof|[cr]?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++\t\t\t\t  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()",
+          "captures": {
+            "1": {
+              "name": "punctuation.whitespace.function-call.leading.unity"
+            },
+            "2": {
+              "name": "support.function.any-method.unity"
+            },
+            "3": {
+              "name": "punctuation.definition.parameters.unity"
+            }
+          },
+          "name": "meta.function-call.unity"
+        }
+      ]
+    },
+    "cg": {
+      "patterns": [
+        {
+          "match": "^\\s*#\\s*(define|defined|elif|else|if|ifdef|include|endif|ifndef|line|pragma|undef)\\b",
+          "name": "keyword.control.unity"
+        },
+        {
+          "match": "\\b(break|goto|return|catch|throw|try|namespace|using)\\b",
+          "name": "keyword.cpp.unity"
+        },
+        {
+          "match": "\\b(asm|asm_fragment|auto|case|class|column_major|compile|const|const_cast|continue|decl|default|delete|discard|do|dword|dynamic_cast|else|emit|enum|explicit|extern|for|friend|get|if|inline|interface|matrix|mutable|new|operator|packed|pass|pixelfragment|pixelshader|private|protected|public|register|reinterpret_cast|row_major|shared|sizeof|static_cast|string|struct|switch|technique|template|texture|texture1D|texture2D|texture3D|textureCUBE|textureRECT|this|typedef|typeid|typename|union|vector|vertexfragment|vertexshader|virtual|volatile|while)\\b",
+          "name": "keyword.cpp.unity"
+        },
+        {
+          "match": "\\.([rgba]{1,4}|[xyzw]{1,4})\\b",
+          "name": "keyword.operator.unity"
+        },
+        {
+          "match": "\\b(const|extern|in|inline|inout|static|out|uniform|varying|profile name)\\b",
+          "name": "storage.modifier.unity"
+        },
+        {
+          "match": "\\b(void|struct|typedef|signed|unsigned|double([1-4])*(x[1-4])*|float([1-4])*(x[1-4])*|half([1-4])*(x[1-4])*|fixed([1-4])*(x[1-4])*|u?long([1-4])*(x[1-4])*|u?int([1-4])*(x[1-4])*|u?short([1-4])*(x[1-4])*|char([1-4])*(x[1-4])*|bool([1-4])*(x[1-4])*|sampler([1-3]D|RECT|CUBE)*)\\b",
+          "name": "storage.type.unity"
+        }
+      ]
+    }
+  }
+}

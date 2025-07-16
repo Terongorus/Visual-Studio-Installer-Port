@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivityTreeAriaLabel" xml:space="preserve">
+    <value>Async activity tree</value>
+    <comment>The name announced by screen reader tools when the main tree is selected in the UI</comment>
+  </data>
+  <data name="ActivityTreeHeaderName" xml:space="preserve">
+    <value>Name</value>
+    <comment>The header for the 'Name' column in the tree. This column will contain the method name for identified activities</comment>
+  </data>
+  <data name="ActivityTreeHeaderTotalTime" xml:space="preserve">
+    <value>Total Time (ms)</value>
+    <comment>The header for the 'Total Time' column in the tree. This column will contain the duration for each activity (in milliseconds)</comment>
+  </data>
+  <data name="ActivityTreeHeaderStartTime" xml:space="preserve">
+    <value>Start Time (ms)</value>
+    <comment>The header for the 'Start Time' column in the tree. This column will contain the starting time (in milliseconds) for the activites</comment>
+  </data>
+  <data name="ActivityTreeHeaderStopTime" xml:space="preserve">
+    <value>End Time (ms)</value>
+    <comment>The header for the 'End Time' column in the tree. This column will contain the ending time (in milliseconds) for the activites</comment>
+  </data>
+  <data name="TaskIdHeaderName" xml:space="preserve">
+    <value>Task ID</value>
+    <comment>The header for the 'Task ID' column in the tree. This column will contain the unique TPL number style identifier for the activities. E.g. "1:1:28"</comment>
+  </data>
+  <data name="TaskActivityLabel" xml:space="preserve">
+    <value>[Task]</value>
+    <comment>The label shown in the UI for any activity that we have identified as a .NET System.Threading.Tasks.Task. It will appear before the method name within the 'Name' column, E.g. [Task] DoSomethingAsync() - where DoSomethingAsync() is a method name from the user's code</comment>
+  </data>
+  <data name="LoadingDataMessage" xml:space="preserve">
+    <value>Loading data...</value>
+    <comment>The message displayed in the UI while the model is processing data</comment>
+  </data>
+  <data name="NoDataMessage" xml:space="preserve">
+    <value>No async activities occurred in the selected timespan</value>
+    <comment>The message displayed in the UI when there are 0 activities to display within the chosen timespan</comment>
+  </data>
+  <data name="TaskPendingLabel" xml:space="preserve">
+    <value>[Incomplete]</value>
+    <comment>The label shown in 'End Time' and 'Total Time' columns when the activity did not finish during the trace, so we do not have a time to show.</comment>
+  </data>
+  <data name="TaskCallerActivityLabel" xml:space="preserve">
+    <value>[Task in]</value>
+    <comment>The label shown in the UI for any activity that we have identified as a .NET System.Threading.Tasks.Task but where we are not able to determine the name of the task itself and are instead falling back to using the name of the caller. It  It will appear before the method name within the 'Name' column, E.g. [Task in] CallerOfDoSomethingAsync() - where CallerOfDoSomethingAsync() is a method name from the user's code which calls into the actual task that we could not figure out the name for. It can be thought of as 'This row is a Task used somewhere within the CallerOfDoSomethingAsync() method'</comment>
+  </data>
+  <data name="ContextMenu_Copy" xml:space="preserve">
+    <value>Copy</value>
+    <comment>The label shown in a context menu for the 'Copy' command which will copy the selected row as text to the clipboard</comment>
+  </data>
+  <data name="ContextMenu_GoToSourceFile" xml:space="preserve">
+    <value>Go To Source File</value>
+    <comment>The label shown in a context menu for the 'Show source file' command which will open up the source file in VS for the selected row</comment>
+  </data>
+  <data name="AggregatedTimeLabel" xml:space="preserve">
+    <value>(avg.)</value>
+    <comment>The label shown in the 'Total Time' column when the number value represents a calculated average rather than an exact amount. It will appear appended onto the end of the existing time value within the column.
+E.g. 100.34 (avg.)</comment>
+  </data>
+  <data name="TaskAggregationLabel" xml:space="preserve">
+    <value>[Aggregated]</value>
+    <comment>The label shown in the UI for any activity that has been created to represent a aggregated collection of child activities. It will appear before the method name within the 'Name' column, E.g. [Aggregated] CallManyAsync() - where CallManyAsync() is a method name from the user's code which has many callees.</comment>
+  </data>
+  <data name="VarianceContainerRowName" xml:space="preserve">
+    <value>{0} within normal variance</value>
+    <comment>The value shown in the 'Name' column when the row represents an expandable container with the specified number of children. The duration of those children fall within 1 standard deviation of the mean. {0} will be replaced by a count of the number of child rows.
+E.g. 8 within normal variance</comment>
+  </data>
+  <data name="AboveVarianceTooltip" xml:space="preserve">
+    <value>The duration of this activity was above the normal variance</value>
+    <comment>The tooltip shown in the UI when the user hovers over the 'up' icon on an activity that took longer than the average calculated for its siblings</comment>
+  </data>
+  <data name="BelowVarianceTooltip" xml:space="preserve">
+    <value>The duration of this activity was below the normal variance</value>
+    <comment>The tooltip shown in the UI when the user hovers over the 'down' icon on an activity that completed quicker than the average calculated for its siblings</comment>
+  </data>
+  <data name="ActivityTreeHeaderCount" xml:space="preserve">
+    <value>Count</value>
+    <comment>The header for the 'Count' column in the tree. This column will contain the number of occurrences of the activity</comment>
+  </data>
+  <data name="TaskDetailsLabel" xml:space="preserve">
+    <value>[Details]</value>
+    <comment>The label shown in the UI for any activity that has been created to contain a collection of child details activities. It will appear before the DetailsContainerRowName within the 'Name' column, E.g. [Details] 8 occurrences - where '8 occurrences' is the localized version of DetailsContainerRowName.</comment>
+  </data>
+  <data name="ContextMenu_CopyAsMarkdown" xml:space="preserve">
+    <value>Copy as Markdown</value>
+    <comment>Context menu item for copying the selected text to the clipboard as Markdown</comment>
+  </data>
+  <data name="IncompleteContainerRowName" xml:space="preserve">
+    <value>{0} did not finish</value>
+    <comment>The value shown in the 'Name' column when the row represents an expandable container with the specified number of children. The activities represented by the children never ran to completion and so timing data is incomplete. {0} will be replaced by a count of the number of child rows.
+E.g. 8 did not finish</comment>
+  </data>
+  <data name="Overlay_ProgressIndeterminateAriaLabel" xml:space="preserve">
+    <value>Loading data...</value>
+    <comment>Aria label for indeterminate progress bar in DotNetAsync tool after data collection</comment>
+  </data>
+</root>

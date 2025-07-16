@@ -1,0 +1,22 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Project">
+    <RelativePathOnDisk>VisualBasic\Test\VBDesktopUnitTestTemplate</RelativePathOnDisk>
+    <TemplateFileName>MSTestV2DesktopVB.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="510" />
+        <Description Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="511" />
+        <Icon Package="{52CBD135-1F97-2580-011F-C7CD052E44DE}" ID="533" />
+        <TemplateID>Microsoft.VisualBasic.UnitTestProject.v2</TemplateID>
+        <ProjectType>VisualBasic</ProjectType>
+        <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
+        <SortOrder>90</SortOrder>
+        <CreateNewFolder>true</CreateNewFolder>
+        <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+        <DefaultName>UnitTestProject</DefaultName>
+        <ProvideDefaultName>true</ProvideDefaultName>
+        <License>http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</License>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

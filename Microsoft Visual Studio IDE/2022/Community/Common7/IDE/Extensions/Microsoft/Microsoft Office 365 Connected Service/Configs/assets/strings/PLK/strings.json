@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Dostęp do usług Office 365 przy użyciu programu Microsoft Graph",
+  "o365DependencyTypeDescription": "Użyj interfejsu API programu Microsoft Graph, aby zintegrować aplikację z usługami Office 365.",
+  "connectionSettings": "Ustawienia połączenia",
+  "nugetComponentName": "Pakiety NuGet",
+  "nugetComponentDescription": "Pakiety NuGet zostaną zmodyfikowane w celu zapewnienia optymalnego działania nowej zależności",
+  "gettingStartedComponentName": "Dokument Wprowadzenie",
+  "gettingStartedComponentDescription": "Wywołaj platformę Microsoft 365 za pomocą dokumentacji interfejsu Graph API",
+  "graphPermissionsComponentName": "Uprawnienia programu Microsoft Graph",
+  "graphPermissionsComponentDescription": "Aktualizuje uprawnienia aplikacji usługi Microsoft Entra dla interfejsu Microsoft Graph API",
+  "configSettingsComponentName": "Ustawienia konfiguracji",
+  "configSettingsComponentDescription": "Ustawienia zostaną zmodyfikowane w celu zapewnienia optymalnego działania nowej zależności"
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************************************************************
+Microsoft.Windows.UI.Xaml.CSharp.ModernNET.DefaultItems.props
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--
+    SDK-style auto-import of XAML items for modern .NET UWP XAML apps. Note that we are intentionally
+    not including content assets here, as those would not work when using a separate WAP project. Those
+    are added below, only if we have checked that the MSIX tooling is enabled for the project. Note that
+    it's also valid for a UWP app to not have the XAML compiler enabled, but to still want to include
+    all default assets. For instance, this is the standard configuration of a non-XAML UWP CoreWindow
+    (DirectX) app. Such an app will only be using Composition and/or DirectX APIs, but no XAML at all.
+
+    Note: these items have to be imported after the common .NET SDK .props, as they are also removing all
+    'None' items for XAML pages. As such, these .props have to be evaluated after the .props adding those
+    default items as 'None' in the first place, in order for things to work correctly.
+  -->
+  <ItemGroup Condition="'$(UseUwpTools)' == 'true' AND '$(EnableXamlCompilerTargetsForUwpApps)' == 'true' AND '$(EnableDefaultItems)' == 'true'">
+
+    <!--
+      'App.xaml' definition (standard application definition, included in all XAML templates).
+      Note: both 'App.xaml' and all other XAML pages should also have 'SubType=Designer' set as
+      an attribute on their respective 'ApplicationDefinition' or 'Page' XML elements. However,
+      doing this from here results in the attribute not being seen by the project system component
+      that looks for it after creating XAML items from a project/item template. This results in
+      the .csproj file incorrectly still being modified with a new 'Update' item that sets that
+      attribute. This comment should be updated to reference the correct location to handle that
+      (presumably somewhere else in VS), once a solution for this SDK-style issue is found.
+
+      Note: while the XAML designer is not currently supported for UWP .NET 9 apps, we still need
+      the 'SubType=Designer' property, as that enables SHIFT + F7 navigation in the IDE to jump
+      from a .xaml.cs file back to its associated .xaml file. Without it, only F5 navigation will
+      work (which allows navigating from a .xaml file to its backing .xaml.cs file).
+    -->
+    <ApplicationDefinition
+      Include="App.xaml"
+      Condition="'$(EnableDefaultApplicationDefinition)' != 'false' AND Exists('$(MSBuildProjectDirectory)/App.xaml')">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' != ''">$(DefaultXamlRuntime)</XamlRuntime>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' == ''">UAP</XamlRuntime>
+    </ApplicationDefinition>
+
+    <!--
+      'UnitTestApp.xaml' definition, for unit test projects. In this case, we are following the naming convention used by both the classic UWP
+      unit test project template, and the new WinUI 3 unit test project template, where the application definition is named 'UnitTestApp'. To
+      make this work, we need to automatically mark that file as the application definition, or we won't get the entry point being generated.
+      To choose when to do that, we're also checking for 'IsTestProject', which is set by a .targets file in 'Microsoft.NET.Test.Sdk'.
+    -->
+    <ApplicationDefinition
+      Include="UnitTestApp.xaml"
+      Condition="'$(EnableDefaultApplicationDefinition)' != 'false' AND '$(IsTestProject)' == 'true' AND Exists('$(MSBuildProjectDirectory)/UnitTestApp.xaml')">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' != ''">$(DefaultXamlRuntime)</XamlRuntime>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' == ''">UAP</XamlRuntime>
+    </ApplicationDefinition>
+
+    <!-- Auto-include all XAML items (this covers pages, controls, resource dictionaries, etc.) -->
+    <Page
+      Include="**/*.xaml"
+      Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(ApplicationDefinition)"
+      Condition="'$(EnableDefaultPageItems)' != 'false'" >
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' != ''">$(DefaultXamlRuntime)</XamlRuntime>
+      <XamlRuntime Condition="'$(DefaultXamlRuntime)' == ''">UAP</XamlRuntime>
+    </Page>
+
+    <!-- Remove all XAML items from the implicit 'None' set if we did include them as XAML elements -->
+    <None
+      Remove="**/*.xaml"
+      Condition="'$(EnableDefaultApplicationDefinition)' != 'false' AND '$(EnableDefaultPageItems)' != 'false'" />
+  </ItemGroup>
+
+  <!--
+    If the MSIX tools are enabled, also include assets automatically, to match what WinUI and legacy UWP also do.
+    This also means that projects migrating from UWP on .NET 9 to WinUI 3 won't have to make any changes here.
+    Note: 'None' items for assets are intentionally not removed, to avoid Visual Studio adding them back automatically.
+  -->
+  <ItemGroup Condition="'$(UseUwpTools)' == 'true' AND
+                        '$(_EnableSingleProjectMsixToolingForUwpApps)' == 'true' AND
+                        '$(EnableDefaultItems)' == 'true' AND
+                        '$(EnableDefaultAssets)' != 'false'">
+    <Content Include="Assets/**/*.*" />
+  </ItemGroup>
+
+  <!--
+    Automatically import PRI resources (and remove those items from 'None') for class libraries. The logic below is equivalent
+    to the one for WindowsAppSDK that lives in 'Microsoft.NET.Sdk.DefaultItems.props' in the .NET SDK. Because UWP support is
+    built-in into Visual Studio, we can include this logic here along with all other item imports. Note that this is only
+    needed for libraries, and not for executables, since those would be using the lifted MSIX tooling NuGet package. UWP class
+    libraries use the APPX .targets files that are referenced by MSBuild (Desktop) instead, when 'UseUwpTools' is set.
+  -->
+  <ItemGroup Condition="'$(UseUwpTools)' == 'true' AND '$(OutputType)' == 'Library'">
+
+    <!-- Add all .resw files as PRI resources (opt-out with 'EnableDefaultPRIResourceItems') -->
+    <PRIResource
+      Include="**/*.resw"
+      Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)"
+      Condition="'$(EnableDefaultItems)' == 'true' AND '$(EnableDefaultPRIResourceItems)' != 'false'" />
+
+    <!--
+      Remove all .resw files from 'None' items (opt-out via 'EnableDefaultNoneItems', which
+      is enabled by the .NET SDK in 'Microsoft.NET.Sdk.DefaultItems.targets' by default).
+    -->
+    <None Remove="**/*.resw" Condition="'$(EnableDefaultItems)' == 'true' And '$(EnableDefaultNoneItems)' == 'true'" />
+  </ItemGroup>
+</Project>

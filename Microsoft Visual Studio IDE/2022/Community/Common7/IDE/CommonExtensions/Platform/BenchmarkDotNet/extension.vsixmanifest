@@ -1,0 +1,18 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="BenchmarkDotNet.Microsoft Corp..b880d9be-372a-40bf-9aec-0801dd3a2b5d" Version="1.0" Language="en-US" Publisher="Microsoft Corp." />
+    <DisplayName>BenchmarkDotNet Tool</DisplayName>
+    <Description xml:space="preserve">Tool to display BenchmarkDotNet results.</Description>
+    <AllowClientRole>true</AllowClientRole>
+  </Metadata>
+  <Installation AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,17.0)" />
+  </Installation>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,17.0)" DisplayName="Visual Studio core editor" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.DiagnosticTools" Version="[15.0,17.0)" DisplayName="Visual Studio Diagnostic Tools" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.DiagnosticsHub.BenchmarkDotNet.dll" />
+  </Assets>
+</PackageManifest>

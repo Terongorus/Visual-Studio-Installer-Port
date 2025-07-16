@@ -1,0 +1,301 @@
+{
+    "4.27": {
+        "templates": [
+            {
+                "type": "EditorModePlugin",
+                "basePath": "EditorMode",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEEdMode.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEEdModeToolkit.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEEdMode.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEEdModeToolkit.h"
+                    }
+                ],
+                "tokens": [],
+                "properties": [
+                    {
+                        "name": "MODULE_TYPE",
+                        "value": "Editor"
+                    }
+                ]
+            }
+        ]
+    },
+    "default": {
+        "properties": [
+            {
+                "name": "REPLACEMENT_MARKER",
+                "value": ""
+            },
+            {
+                "name": "MODULE_TYPE",
+                "value": "Runtime"
+            },
+            {
+                "name": "LOADING_PHASE",
+                "value": "Default"
+            }
+        ],
+        "tokens": [
+            {
+                "name": "PLUGIN_NAME",
+                "value": "$(UnPrefixedClassName)"
+            }
+        ],
+        "templates": [
+            {
+                "type": "AdvancedPlugin",
+                "basePath": "Advanced",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMECommands.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEStyle.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMECommands.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEStyle.h"
+                    }
+                ],
+                "tokens": [],
+                "properties": [
+                    {
+                        "name": "MODULE_TYPE",
+                        "value": "Editor"
+                    }
+                ]
+            },
+            {
+                "type": "BasicPlugin",
+                "basePath": "Basic",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMECommands.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEStyle.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMECommands.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEStyle.h"
+                    }
+                ],
+                "tokens": [],
+                "properties": [
+                    {
+                        "name": "MODULE_TYPE",
+                        "value": "Editor"
+                    }
+                ]
+            },
+            {
+                "type": "BlankPlugin",
+                "basePath": "Blank",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    }
+                ],
+                "tokens": []
+            },
+            {
+                "type": "BlueprintLibraryPlugin",
+                "basePath": "BlueprintLibrary",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEBPLibrary.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEBPLibrary.h"
+                    }
+                ],
+                "tokens": [],
+                "properties": [
+                    {
+                        "name": "LOADING_PHASE",
+                        "value": "PreLoadingScreen"
+                    }
+                ]
+            },
+            {
+                "type": "EditorModePlugin",
+                "basePath": "EditorMode",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\Tools\\PLUGIN_NAMEInteractiveTool.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\Tools\\PLUGIN_NAMESimpleTool.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEEditorMode.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEEditorModeCommands.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEEditorModeToolkit.cpp"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAMEModule.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEEditorMode.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEEditorModeCommands.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEEditorModeToolkit.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Private\\Tools\\PLUGIN_NAMEInteractiveTool.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Private\\Tools\\PLUGIN_NAMESimpleTool.h"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAMEModule.h"
+                    }
+                ],
+                "tokens": [],
+                "properties": [
+                    {
+                        "name": "MODULE_TYPE",
+                        "value": "Editor"
+                    }
+                ]
+            },
+            {
+                "type": "ThirdPartyLibraryPlugin",
+                "basePath": "ThirdPartyLibrary",
+                "files": [
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\PLUGIN_NAME.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\PLUGIN_NAME\\Private\\PLUGIN_NAME.cpp"
+                    },
+                    {
+                        "type": "Header",
+                        "name": "Source\\PLUGIN_NAME\\Public\\PLUGIN_NAME.h"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\ThirdParty\\PLUGIN_NAMELibrary\\PLUGIN_NAMELibrary.Build.cs"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\ThirdParty\\PLUGIN_NAMELibrary\\ExampleLibrary.vcxproj.filters"
+                    },
+                    {
+                        "type": "Source",
+                        "name": "Source\\ThirdParty\\PLUGIN_NAMELibrary\\ExampleLibrary.vcxproj"
+                    }
+                ],
+                "tokens": []
+            }
+        ]
+    }
+}

@@ -1,0 +1,56 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>WapProj\1033\Resw</RelativePathOnDisk>
+    <TemplateFileName>Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="202" />
+        <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="203" />
+        <Icon Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="300" />
+        <TemplateID>Microsoft.Templates.WapProj.Resw</TemplateID>
+        <ProjectType>WapProj</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Resources.resw</DefaultName>
+        <TemplateGroupID>WapProj</TemplateGroupID>
+        <AppliesTo>WapProj</AppliesTo>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>WapProj\1033\PackageLayout</RelativePathOnDisk>
+    <TemplateFileName>PackageLayout.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="304" />
+        <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="305" />
+        <Icon Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="303" />
+        <TemplateID>Microsoft.Templates.WapProj.PackageLayout</TemplateID>
+        <ProjectType>WapProj</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>App.packagelayout</DefaultName>
+        <TemplateGroupID>WapProj</TemplateGroupID>
+        <AppliesTo>WapProj</AppliesTo>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>WapProj\1033\AppInstaller</RelativePathOnDisk>
+    <TemplateFileName>AppInstaller.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="306" />
+        <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="307" />
+        <Icon Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="308" />
+        <TemplateID>Microsoft.Templates.WapProj.AppInstaller</TemplateID>
+        <ProjectType>WapProj</ProjectType>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <DefaultName>Package.appinstaller</DefaultName>
+        <TemplateGroupID>WapProj</TemplateGroupID>
+        <AppliesTo>WapProj</AppliesTo>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

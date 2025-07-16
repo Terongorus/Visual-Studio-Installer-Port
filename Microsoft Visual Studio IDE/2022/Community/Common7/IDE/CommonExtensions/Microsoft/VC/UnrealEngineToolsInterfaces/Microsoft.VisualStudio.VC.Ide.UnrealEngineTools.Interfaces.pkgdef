@@ -1,0 +1,6 @@
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{728EA998-1799-4684-8867-B17E0467BBAB}]
+"name"="Microsoft.VisualStudio.VC.UnrealEngineTools.Interfaces"
+"publicKeyToken"="b03f5f7f11d50a3a"
+"culture"="neutral"
+"version"="17.0.0.0"
+"codeBase"="$PackageFolder$\Microsoft.VisualStudio.VC.UnrealEngineTools.Interfaces.dll"

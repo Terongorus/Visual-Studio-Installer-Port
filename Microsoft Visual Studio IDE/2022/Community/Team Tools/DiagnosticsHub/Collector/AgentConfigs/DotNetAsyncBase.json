@@ -1,0 +1,8 @@
+﻿{
+  "Agents": [
+    {
+      "CLSID": "01A9C306-28C5-4BA9-A9D6-5082CF9040D7",
+      "Name": "DiagnosticsHub.DotNetAsyncAgent.dll"
+    }
+  ]
+}

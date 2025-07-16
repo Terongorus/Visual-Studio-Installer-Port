@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ML.ModelBuilder.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.CanNotLoadCoco">
+            <summary>
+              Looks up a localized string similar to Can&apos;t load coco data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.CanNotLoadVott">
+            <summary>
+              Looks up a localized string similar to Can&apos;t load Vott data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.NotCococFormated">
+            <summary>
+              Looks up a localized string similar to Dataset coco format is not correct..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ConfigurationResources.NotVottFormated">
+            <summary>
+              Looks up a localized string similar to Dataset Vott format is not correct..
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.GetMetricName(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)">
+            <summary>
+            return null if no metric name is given. Otherwise return the metric name in <see cref="P:Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration.TrainingOption"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.IsMaximizeMetric(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)">
+            <summary>
+            return true if matrix is larger the better, otherwise false.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.GetTrainingTime(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)">
+            <summary>
+            Get training time from training option if available. Return null if option not available or not applied (like image classification or object detection).
+            </summary>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.GetTabularFilePath(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)">
+            <summary>
+            get file path from <see cref="T:Microsoft.ML.ModelBuilder.Configuration.ITabularFileDataSource"/>. If <see cref="P:Microsoft.ML.ModelBuilder.Configuration.ITabularFileDataSource.FilePath"/> is not rooted,
+            it will make that path as full path using <see cref="P:Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration.TrainingConfigurationFolder"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel.TryParsingFromMBConfig(Microsoft.ML.ModelBuilder.Configuration.MBConfig)">
+            <summary>
+            Try parsing from <paramref name="config"/> and convert it to <paramref name="config"/>. During this process,
+            it will try to migrate <paramref name="config"/> to specific version if <paramref name="config"/> is out of date.
+            </summary>
+            <returns>true if success. Otherwise false with reason.</returns>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel`1">
+            <summary>
+            Define binding interface from a <typeparamref name="TMBConfig"/> to <see cref="T:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel"/>, and vise vesa.
+            </summary>
+            <typeparam name="TMBConfig">MBConfig class, like <see cref="T:Microsoft.ML.ModelBuilder.Configuration.Schema.TrainingConfigurationV1"/>.</typeparam>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel`1.TryParsingFromMBConfig(`0)">
+            <summary>
+            Try parsing from <paramref name="config"/> and convert it to model. During this process,
+            it will try to migrate <paramref name="config"/> to specific version if <paramref name="config"/> is out of date.
+            </summary>
+            <returns>true if success. Otherwise false with reason.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel`1.FromMBConfig(`0)">
+            <summary>
+            Parse from <paramref name="config"/> and convert it to model, The default implementation calls <see cref="M:Microsoft.ML.ModelBuilder.Configuration.IMBConfigModel`1.TryParsingFromMBConfig(`0)"/>
+            unless child class overloads this function.
+            </summary>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.Configuration.MBConfigModel`1">
+            <summary>
+            Base class which defines binding from a <typeparamref name="TMBConfig"/> to model, and vise vesa.
+            </summary>
+            <typeparam name="TMBConfig">MBConfig class, like <see cref="T:Microsoft.ML.ModelBuilder.Configuration.Schema.TrainingConfigurationV0"/>.</typeparam>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.MBConfigModel`1.TryParsingFromMBConfig(`0)">
+            <summary>
+            Try parsing from <paramref name="config"/>. During this process,
+            it will try to migrate <paramref name="config"/> to specific version if <paramref name="config"/> is out of date.
+            </summary>
+            <returns>true if success.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.Configuration.MBConfigModel`1.FromMBConfig(Microsoft.ML.ModelBuilder.Configuration.MBConfig)">
+            <summary>
+            Parse from <paramref name="config"/> and convert it to model. The default implementation calls <see cref="M:Microsoft.ML.ModelBuilder.Configuration.MBConfigModel`1.TryParsingFromMBConfig(`0)"/>
+            unless child class overloads this function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.FolderDataSource.FolderPath">
+            <summary>
+            local file path.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.IFolderDataSource.FolderPath">
+            <summary>
+            path to local folder with images.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ITabularFileDataSource.FilePath">
+            <summary>
+            path to file
+            Note: it can be either full path or relative path to <see cref="P:Microsoft.ML.ModelBuilder.Configuration.TrainingConfiguration.TrainingConfigurationFolder"/>.
+            To make sure you always get the correct file path, use <see cref="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.GetTabularFilePath(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)"/> or <see cref="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.SetTabularFilePath(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.String)"/> to get /set the path.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration.TrainingConfigurationFolder">
+            <summary>
+            gets or sets folder full path of .mbconfig. This property is used in <see cref="M:Microsoft.ML.ModelBuilder.Configuration.Extension.TrainingConfigurationExtension.GetTabularFilePath(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration)"/> and won't be saved in .mbconfig when serializing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ILocalImageClassificationTrainingOption.Arch">
+            <summary>
+            must be one of 'resnet101', 'resnet50', 'resnet18', 'alexnet'
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ISampleStrategyTrainingOption.Subsampling">
+            <summary>
+            subsample portion of training dataset instead of using entire dataset.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ITrainingOption.TrainingTime">
+            <summary>
+            Gets or sets training time in seconds.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.ITrainingOption.OutputFolder">
+            <summary>
+            Gets or sets output folder, where saves models and temp datasets.
+            By default, it's %(Temp)/AutoML-NNI/$(ExperimentID), where ExperimentID
+            has format $"Experiment-{6 random string}".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.AzureObjectDetectionTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be  AMP50.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.ClassificationTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.ClassificationTrainingOptionV0.AvailableTrainers">
+            <summary>
+            must be subset of [LBFGS, LGBM, SDCA, FASTTREE, RANDOMFOREST].
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.ClassificationTrainingOptionV1.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.ClassificationTrainingOptionV1.AvailableTrainers">
+            <summary>
+            must be subset of [LBFGS, LGBM, SDCA, FASTTREE, RANDOMFOREST].
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.LocalObjectDetectionTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be  AMP50, MAP50_95.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.QuestionAnswerTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric// this should be figured out what should the exact name".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.QuestionAnswerTrainingOptionV0.LabelColumn">
+            <summary>
+            The answer to context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RecommendationTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RecommendationTrainingOptionV1.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RegressionTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "R-Square", "RMSE".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RegressionTrainingOptionV0.AvailableTrainers">
+            <summary>
+            must be subset of [LBFGS, LGBM, SDCA, FASTTREE, RANDOMFOREST].
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RegressionTrainingOptionV1.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "R-Square", "RMSE".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.RegressionTrainingOptionV1.AvailableTrainers">
+            <summary>
+            must be subset of [LBFGS, LGBM, SDCA, FASTTREE, RANDOMFOREST].
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.SentenceSimilarityTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be  Pearson correlation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.SentenceSimilarityTrainingOptionV1.OptimizeMetric">
+            <summary>
+            optimize metric, must be  Pearson correlation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.TextClassificationTrainingOptionV0.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.Configuration.Schema.TextClassificationTrainingOptionV1.OptimizeMetric">
+            <summary>
+            optimize metric, must be one of "AUC", "Accuracy", "AUCPR", "F1", "MicroAccuracy", "MacroAccuracy", "LogLoss".
+            </summary>
+        </member>
+    </members>
+</doc>

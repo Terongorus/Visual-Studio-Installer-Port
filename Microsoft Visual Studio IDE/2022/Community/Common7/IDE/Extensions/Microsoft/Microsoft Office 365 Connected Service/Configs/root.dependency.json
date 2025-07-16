@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "dependencyTypes": {
+    "office365_": {
+      "model": "/dependency/o365.model.json"
+    },
+    "office365_.graph": {
+      "model": "/dependency/o365.graph.model.json",
+      "appliesTo": "/dependency/o365.graph.context.json"
+    }
+  },
+  "dependencyTypeConfigs": {
+    "office365_.graph": "/dependency/o365.graph.config.json"
+  }
+}

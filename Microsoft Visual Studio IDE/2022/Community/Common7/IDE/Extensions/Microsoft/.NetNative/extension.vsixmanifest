@@ -1,0 +1,10 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id=".NetNative.Microsoft.76F163D5-4A7A-47F7-9F5D-AA1743525C3F" Version="1.0.30123.00" Language="en-US" Publisher="Microsoft Corp." />
+    <DisplayName><!-- _locID="ExtensionDisplayName" -->.NET Native VS Integration</DisplayName>
+    <Description xml:space="preserve"><!-- _locID="ExtensionDescription" -->.NET Native Visual Studio Integration</Description>
+  </Metadata>
+  <Installation InstalledByMsi="true" AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="12.0" />
+  </Installation>
+</PackageManifest>

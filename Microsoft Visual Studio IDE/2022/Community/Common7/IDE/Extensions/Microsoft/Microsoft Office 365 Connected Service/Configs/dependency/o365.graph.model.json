@@ -1,0 +1,17 @@
+{
+  "id": "office365_.graph",
+  "provisioningId": "Microsoft.Office365/applications",
+  "name": "strings:#/o365DependencyTypeName",
+  "description": "strings:#/o365DependencyTypeDescription",
+  "isSingleton": false,
+  "connectionSettingPropertyDisplayName": "strings:#/connectionSettings",
+  "smallImage": {
+    "guid": "AE27A6B0-E345-4288-96DF-5EAF394EE369",
+    "id": 2110
+  },
+  "resizableImage": {
+    "guid": "AE27A6B0-E345-4288-96DF-5EAF394EE369",
+    "id": 2110
+  },
+  "displayOrder": 20100
+}

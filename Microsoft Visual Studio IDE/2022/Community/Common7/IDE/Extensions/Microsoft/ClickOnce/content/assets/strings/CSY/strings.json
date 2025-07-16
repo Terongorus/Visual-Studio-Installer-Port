@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "Publikovat aplikaci s nastavením ClickOnce",
+  "clickonceCategoryMultipleTargetsDescription": "Do kterého místního cíle chcete publikovat?",
+  "installLocation": "Umístění instalace",
+  "manifestsSigned": "Podepsané manifesty",
+  "publishLanguage": "Jazyk publikování",
+  "configuration": "Konfigurace",
+  "portable": "Přenosné",
+  "PublishLocation": "Umístění pro publikování",
+  "settingsSection": "Nastavení",
+  "showAll": "Zobrazit vše",
+  "targetFramework": "Cílová architektura",
+  "targetRuntime": "Cílový modul runtime",
+  "updateEnabled": "Aktualizace je povolená.",
+  "updateLocation": "Umístění aktualizace"
+}

@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Acesse os Serviços do Microsoft Office 365 com Microsoft Graph",
+  "o365DependencyTypeDescription": "Utilize a API do Microsoft Graph para integrar seus aplicativos aos serviços do Office 365.",
+  "connectionSettings": "Configurações da conexão",
+  "nugetComponentName": "Pacotes NuGet",
+  "nugetComponentDescription": "Os pacotes NuGet serão modificados para garantir a operação ideal da nova dependência",
+  "gettingStartedComponentName": "Documento de Introdução",
+  "gettingStartedComponentDescription": "Chamar o Microsoft 365 com a Documentação da API do Microsoft Graph",
+  "graphPermissionsComponentName": "Permissões do Microsoft Graph",
+  "graphPermissionsComponentDescription": "Atualiza as permissões do aplicativo Microsoft Entra para Microsoft Graph API",
+  "configSettingsComponentName": "Definições de Configuração",
+  "configSettingsComponentDescription": "As configurações serão modificadas para garantir a operação ideal da nova dependência"
+}

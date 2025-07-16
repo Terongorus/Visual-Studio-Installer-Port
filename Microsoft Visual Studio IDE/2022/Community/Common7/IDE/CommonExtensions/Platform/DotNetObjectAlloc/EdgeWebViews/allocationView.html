@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" />
+    <link href="css/allocationTree.css" type="text/css" rel="stylesheet" />
+    <link href="css/toolbar.css" type="text/css" rel="stylesheet" />
+    <link href="css/autoComplete.css" type="text/css" rel="stylesheet" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/allocationViewModel.js"></script>
+    <title>.NET Alloc Allocations</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.HotKeys.setClipboardState(true);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("allocationViewModel");
+            }
+        })();
+    </script>
+    <div class="mainArea">
+        <div id="left">
+            <div id="mainToolbar" class="toolbar-container">
+                <!-- ko template: { name: 'ToggleButtonView', data: showJmc } --><!-- /ko -->
+                <!-- ko template: { name: 'ToggleButtonView', data: showNative } --><!-- /ko -->
+                <!-- ko template: { name: 'AutoCompleteView', data: autoCompleteViewModel } --><!-- /ko -->
+            </div>
+            <div id="allocations" data-bind="
+                 event: { keydown: onKeyDownTypes },
+                 dynamicContextMenu: contextMenu,
+                 template: {
+                    name: 'TreeGridView',
+                    data: allocationTree,
+                    afterRender: allocationTree.onAfterDomInsert }">
+            </div>
+            <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+                <div class="message" data-bind="template: currentOverlay">
+                </div>
+            </div>
+        </div>
+        <div id="divider" data-bind="localizedAriaLabel: 'VerticalSplitterAriaLabel', verticalSplit: { leftSelector: '#left', rightSelector: '#right' }"></div>
+        <div id="right" class="container" style="width: 700px">
+            <div id="backtraceTypeDisplay" class="toolbar-container" data-bind="text: backtraceType"></div>
+            <div id="typeBacktrace" data-bind="
+                event: { keydown: onKeyDownBacktrace },
+                dynamicContextMenu: contextMenu,
+                template: {
+                    name: 'TreeGridView',
+                    data: backtraceTree,
+                    afterRender: backtraceTree.onAfterDomInsert }">
+            </div>
+            <div id="backtrace-message-overlay" data-bind="css: { hide: !backtraceOverlay() }, if: backtraceOverlay">
+                <div class="message" data-bind="template: backtraceOverlay">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

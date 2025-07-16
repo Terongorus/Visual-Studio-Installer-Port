@@ -1,0 +1,140 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Desktop.Cs.BlankWindow</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Desktop.Cs.BlankWindow.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>BlankWindow.xaml</DefaultName>
+        <Name ID="1001" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1003" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Desktop.Cs.BlankWindow.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Desktop.Cs.BlankWindow</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Neutral.Cs.ResourceDictionary</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Neutral.Cs.ResourceDictionary.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>ResourceDictionary.xaml</DefaultName>
+        <Name ID="1009" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1011" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Neutral.Cs.ResourceDictionary.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Cs.Neutral.ResourceDictionary</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Neutral.Cs.Resw</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Neutral.Cs.Resw.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>Resources.resw</DefaultName>
+        <Name ID="1013" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1015" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Neutral.Cs.Resw.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Cs.Neutral.Resw</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Neutral.Cs.UserControl</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Neutral.Cs.UserControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>UserControl.xaml</DefaultName>
+        <Name ID="1021" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1023" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Neutral.Cs.UserControl.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Cs.Neutral.UserControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Neutral.Cs.BlankPage</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Neutral.Cs.BlankPage.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>BlankPage.xaml</DefaultName>
+        <Name ID="1005" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1007" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Neutral.Cs.BlankPage.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Neutral.Cs.BlankPage</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\WinUI\1033\WinUI.Neutral.Cs.TemplatedControl</RelativePathOnDisk>
+    <TemplateFileName>WinUI.Neutral.Cs.TemplatedControl.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <DefaultName>CustomControl.cs</DefaultName>
+        <Name ID="1017" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Description ID="1019" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+        <Icon>WinUI.Neutral.Cs.TemplatedControl.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <TemplateID>WinUI.Neutral.Cs.TemplatedControl</TemplateID>
+        <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+        <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+        <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+        <ShowByDefault>false</ShowByDefault>
+        <TargetPlatformName>Windows</TargetPlatformName>
+        <LanguageTag>csharp</LanguageTag>
+        <PlatformTag>windows</PlatformTag>
+        <ProjectTypeTag>desktop</ProjectTypeTag>
+        <ProjectTypeTag>WinUI</ProjectTypeTag>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

@@ -1,0 +1,8 @@
+﻿{
+  "Agents": [
+    {
+      "CLSID": "2CBB92B5-973C-4BCB-B6E5-010007642BD3",
+      "Name": "DiagnosticsHub.FileIOAgent.dll"
+    }
+  ]
+}

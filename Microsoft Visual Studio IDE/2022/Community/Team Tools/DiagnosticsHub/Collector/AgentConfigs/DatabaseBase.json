@@ -1,0 +1,8 @@
+﻿{
+  "Agents": [
+    {
+      "CLSID": "FFE7C6F8-B356-4F48-9506-2F1B9CF96879",
+      "Name": "DiagnosticsHub.DatabaseAgent.dll"
+    }
+  ]
+}

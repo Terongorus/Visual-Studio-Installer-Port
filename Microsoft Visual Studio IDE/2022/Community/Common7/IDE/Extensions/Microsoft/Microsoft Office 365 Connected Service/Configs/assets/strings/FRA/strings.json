@@ -1,0 +1,13 @@
+{
+  "o365DependencyTypeName": "Accéder à Office 365 Connected Services avec Microsoft Graph",
+  "o365DependencyTypeDescription": "Utilisez l'API Microsoft Graph pour intégrer vos applications à Office 365 Connected Services.",
+  "connectionSettings": "Paramètres de connexion",
+  "nugetComponentName": "Packages NuGet",
+  "nugetComponentDescription": "Les packages NuGet vont être modifiés pour garantir le fonctionnement optimal de la nouvelle dépendance",
+  "gettingStartedComponentName": "Document de prise en main",
+  "gettingStartedComponentDescription": "Appel Microsoft 365 avec la documentation de l’API Microsoft Graph",
+  "graphPermissionsComponentName": "Autorisations pour Microsoft Graph",
+  "graphPermissionsComponentDescription": "Met à jour les autorisations d’application Microsoft Entra pour Microsoft Graph API",
+  "configSettingsComponentName": "Paramètres de configuration",
+  "configSettingsComponentDescription": "Les paramètres seront modifiés pour garantir le fonctionnement optimal de la nouvelle dépendance"
+}

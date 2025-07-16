@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/insightsViewModel.js"></script>
+    <title>.NET Alloc Insights</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.HotKeys.setClipboardState(true);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("insightsViewModel");
+            }
+        })();
+    </script>
+    <!-- ko if: !currentOverlay() -->
+    <div class="mainArea">
+        <div id="leftSide">
+            <div>
+                <span class="header" data-bind="localizedText: 'TopInsightsHeader'"></span>
+                <!-- ko if: topInsights() && topInsights().length > 0 -->
+                <table role="treegrid" class="boxedTreeGrid">
+                    <thead>
+                        <tr role="row" class="dashboardTitleRow">
+                            <th role="columnheader" class="dashboardName" data-bind="localizedText: ['TopInsightsTitleHeader']"></th>
+                            <th role="columnheader" data-bind="localizedText: ['TopInsightsDescriptionHeader']"></th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: topInsights, localizedAriaLabel: 'TopInsightsAriaLabel'" aria-readonly="true">
+                        <tr role="row">
+                            <td role="gridcell">
+                                <span class="dashboardName" data-bind="text: issueTitle, attr: { 'data-plugin-vs-tooltip': issueTitle }"></span>
+                                <a href="#" data-bind="visible: issueLink && issueLink !== '', click: function(data, event) { $root.linkNavigate(issueLink, data, event) }">
+                                    <div class="dashboardName" data-bind="localizedText: 'LearnMore'"></div>
+                                </a>
+                            </td>
+                            <td role="gridcell">
+                                <span class="issueDescription" data-bind="text: issueDescription, attr: { 'data-plugin-vs-tooltip': issueDescription }"></span>
+                                <a href="#" data-bind="visible: issueTitle !== 'Excessive induced GCs', click: function(data) { $root.investigate(data) }">
+                                    <div class="dashboardName" data-bind="localizedText: 'InvestigateInsightsIssue'"></div>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- /ko -->
+            </div>
+            <span class="subHeader" data-bind="visible: topInsights().length === 0, localizedText: 'Top_NoInsights'"></span>
+        </div>
+    </div>
+    <!-- /ko -->
+    <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+        <div class="message" data-bind="template: currentOverlay">
+        </div>
+    </div>
+</body>
+</html>

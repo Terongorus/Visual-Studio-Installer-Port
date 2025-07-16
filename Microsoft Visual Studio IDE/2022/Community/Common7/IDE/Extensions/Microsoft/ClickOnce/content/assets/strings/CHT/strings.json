@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "使用 ClickOnce 發佈您的應用程式",
+  "clickonceCategoryMultipleTargetsDescription": "您想要發佈到哪個本機目標?",
+  "installLocation": "安裝位置",
+  "manifestsSigned": "已簽署的資訊清單",
+  "publishLanguage": "發佈語言",
+  "configuration": "設定",
+  "portable": "可攜",
+  "PublishLocation": "發佈位置",
+  "settingsSection": "設定",
+  "showAll": "顯示全部",
+  "targetFramework": "目標 Framework",
+  "targetRuntime": "目標執行階段",
+  "updateEnabled": "已啟用更新",
+  "updateLocation": "更新位置"
+}

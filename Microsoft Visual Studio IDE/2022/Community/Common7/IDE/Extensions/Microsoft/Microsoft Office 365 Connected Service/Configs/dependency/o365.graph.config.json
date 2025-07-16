@@ -1,0 +1,15 @@
+{
+  "feature": {
+    "id": "o365"
+  },
+  "editSteps": [
+    "DomainSelection",
+    "AppRegistration",
+    "GraphPermissions",
+    "DependencySummary"
+  ],
+  "persistenceProperties": {},
+  "persistencePreprocessors": [
+    "O365Preprocessor"
+  ]
+}

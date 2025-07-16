@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>DeterminesOutputType</Title>
+			<Shortcut>DeterminesOutputType</Shortcut>
+      <Description>Unreal Engine Reflection Macro Specifier</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>value</ID>
+					<Default>VALUE</Default>
+					<ToolTip>
+            The return type of the function will dynamically change to match the input that is connected to the named parameter pin. The parameter should be a templated type like 'TSubClassOf&lt;X&gt;' or 'TSoftObjectPtr&lt;X&gt;', where the function's original return type is 'X*' or a container with 'X*' as the value type, such as 'TArray&lt;X&gt;'.</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="cpp">
+        <![CDATA[DeterminesOutputType="$value$"$end$]]>
+      </Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

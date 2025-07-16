@@ -1,0 +1,238 @@
+﻿/* Reset
+***************************************************************/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, header, footer {
+    -ms-high-contrast-adjust: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+
+blockquote, q {
+    quotes: "" "";
+}
+
+/* HTML 5 elements as block */
+header, footer, aside, nav, section, article {
+    display: block;
+}
+
+
+/* General
+***************************************************************/
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html, body {
+    padding: 13px 4% 0 4%;
+    font-family: "Segoe UI", Arial, sans-serif; /*[{plugin-font-family, Arial, sans-serif}]*/
+    font-size: 9pt; /*[{plugin-font-size}]*/
+    background-color: magenta; /*[{overview-body-background}]*/
+    color: magenta; /*[{overview-body}]*/
+}
+
+/* Typography
+***************************************************************/
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.6em;
+    color: magenta; /*[{overview-h1}]*/
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+h5 {
+    font-size: 1.3em;
+}
+
+h6 {
+    font-size: 1.2em;
+}
+
+.subtitleText {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.sectionHeader, .contentSectionHeader {
+    font-size: 1.222em;
+}
+
+a, a:link {
+    color: magenta; /*[{overview-hyperlink}]*/
+    text-decoration: none;
+}
+
+    a:hover {
+        color: magenta; /*[{overview-hyperlink-hover}]*/
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: magenta; /*[{overview-hyperlink-active}]*/
+        text-decoration: none;
+    }
+
+/* Floats and Clearing Floats
+***************************************************************/
+
+.group:after 
+{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clear { clear: both; }
+
+/* Lists 
+***************************************************************/
+
+ul.disc {
+    list-style-type: disc;
+}
+
+ul.square {
+    list-style-type: square;
+}
+
+ol.decimal {
+    list-style-type: decimal;
+}
+
+li {
+    display: block;
+    margin: 9px 0 0 0;
+    text-align: center;
+    line-height: 16px;
+}
+
+    li.numberedListItem div {
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        margin: 0 4px 0 0;
+        text-align: center;
+        line-height: 16px;
+        color: magenta; /*[{overview-numbered-list-item}]*/
+        background-color: magenta; /*[{overview-numbered-list-item-background}]*/
+        border-radius: 50%;
+    }
+
+    li.numberedListItem:hover, li.listAction:hover, li.listActionEnhanced:hover {
+        background-color: magenta; /*[{overview-numbered-list-item-hover-background}]*/
+        border-color: magenta; /*[{overview-numbered-list-item-hover-border}]*/
+        cursor: pointer;
+    }
+
+    li.numberedListItem:active, li.listAction:active, li.listActionEnhanced:active {
+        background-color: magenta; /*[{overview-numbered-list-item-active-background}]*/
+        border-color: magenta; /*[{overview-numbered-list-item-active-border}]*/
+        color: magenta; /*[{overview-numbered-list-item-active}]*/
+        cursor: pointer;
+    }
+
+
+/* Structure
+***************************************************************/
+
+#content {
+    float: left;
+    width: 100%;
+}
+
+    #content header {
+        margin: 0 0 5%;
+    }
+
+/* Sections */
+
+.contentSection {
+    width: 33%;
+    float: left;
+}
+
+.contentSectionImage {
+    display: block;
+    margin: 0 auto;
+    width: 66px;
+    height: 66px;
+}
+
+.contentSectionHeader {
+    display: block;
+    margin: 4px 16% 22px;
+    font-weight: 400;
+    color: magenta; /*[{overview-content-section-header}]*/
+    letter-spacing: 0.2pt;
+    font-style: normal;
+    text-align: center;
+}
+
+.contentSectionDescription {
+    display: block;
+    font-weight: 600;
+    margin: 20px 0 0 4px;
+}
+
+.contentSectionList {
+    margin: 0 20%;
+    padding: 0;
+    font-size: 1.084em;
+}

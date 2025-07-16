@@ -1,0 +1,11 @@
+﻿{
+  "Agents": [
+    {
+      "CLSID": "F5DA0D98-EA8F-4905-AE46-4C360190DFDE",
+      "Name": "DiagnosticsHub.DotNetObjectAllocAgent.dll",
+      "Config": {
+        "dotNetAllocSampleRate": 1000
+      }
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="Build" OverrideMode="Replace" Description="指定控制如何生成项目的属性。" DisplayName="编译" PageTemplate="generic" Order="300" xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="常规" />
+    <Category Name="Options" DisplayName="选项" />
+    <Category Name="Warnings" DisplayName="警告" />
+    <Category Name="Events" Description="配置生成之前和之后运行的自定义事件。" DisplayName="事件" />
+    <Category Name="Advanced" DisplayName="高级" Description="应用程序的高级设置。" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="True" />
+  </Rule.DataSource>
+  <StringProperty Name="OutputPath" DisplayName="生成输出路径" Category="General" Subtype="directory" />
+  <BoolProperty Name="GenerateDocumentationFile" DisplayName="生成 XML 文档文件" Description="指定是否生成文档信息。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2165772" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <StringProperty Name="DocumentationFile" DisplayName="XML 文档文件路径" Description="API 文档文件的可选路径。若要使用默认位置，请保留为空。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2147081" Category="General" Subtype="file">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </StringProperty.DataSource>
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+  </StringProperty>
+  <BoolProperty Name="PublishDocumentationFile" DisplayName="发布文档文件" Description="当此属性为 true 时，项目的 XML 文档文件如果生成，则包含在项目的发布输出中。此属性默认为 true。" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <!-- TODO: Condition the visibility on this being a class library -->
+  <BoolProperty Name="RegisterForComInterop" DisplayName="注册 COM 互操作" Description="指定托管应用程序是否将公开 COM 对象(可调用 COM 的包装器)，使 COM 对象能够与应用程序交互。" Category="General" />
+  <EnumProperty Name="OptionExplicit" DisplayName="选项显式" Description="指定是否需要显式声明变量。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionStrict" DisplayName="选项严格" Description="指定是否强制实施严格类型语义。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionCompare" DisplayName="选项比较" Description="指定要使用的字符串比较的类型。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Binary" DisplayName="Binary"></EnumValue>
+    <EnumValue Name="Text" DisplayName="Text"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionInfer" DisplayName="选项推断" Description="指定是否允许变量声明中的局部类型推理。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On">
+      <!-- On: This is a VB keyword and should not be translated -->
+    </EnumValue>
+    <EnumValue Name="Off" DisplayName="Off">
+      <!-- Off: This is a VB keyword and should not be translated -->
+    </EnumValue>
+  </EnumProperty>
+  <DynamicEnumProperty Name="PlatformTarget" DisplayName="目标 CPU" Description="指定输出文件的目标处理器。选择“任何 CPU”以指定任何处理器都是可接受的，从而允许应用程序在最广泛范围的硬件上运行。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options" EnumProvider="PlatformTargetEnumProvider" MultipleValuesAllowed="False" />
+  <BoolProperty Name="Prefer32Bit" DisplayName="首选 32 位" Description="在同时支持 32 位和 64 位应用程序的系统上以 32 位模式运行。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="PreferNativeArm64" DisplayName="首选本机 ARM64" Description="默认情况下在本机硬件平台上运行。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2166468" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <EnumProperty Name="WarningSeverity" DisplayName="警告严重性" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings">
+    <EnumValue Name="Individual" DisplayName="单独设置警告严重性" />
+    <EnumValue Name="DisableAll" DisplayName="禁用所有警告" />
+    <EnumValue Name="AllAsErrors" DisplayName="将所有警告视为错误" />
+  </EnumProperty>
+  <DynamicEnumProperty Name="ImplicitConversion" DisplayName="隐式转换" Description="当存在属于收缩转换的隐式数据类型转换时，会发生隐式收缩转换。当 “Option strict” 启用时，始终为 “Error”。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196420" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="LateBinding" DisplayName="晚期绑定" Description="将对象分配给声明为 “Object” 类型的变量的属性或方法时，该对象将处于晚期绑定状态。这些操作可能会在运行时失败。在启用 “Option strict” 时始终为 “Error”。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196325" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ImplicitType" DisplayName="隐式类型" Description="当无法为声明的变量推断适当的类型时，会发生隐式对象类型错误，因此会推断 “Object” 的类型。当 “Option strict” 启用时，始终为 “Error”。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196160" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UseOfVariablePriorToAssignment" DisplayName="在赋值前使用变量" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningRefTypeWithoutReturnValue" DisplayName="函数返回了不返回值的引用类型" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningIntrinsicValueTypeWithoutReturnValue" DisplayName="函数返回了不返回值的固有值类型" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UnusedLocalVariable" DisplayName="未使用的局部变量" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="InstanceVariableAccessesSharedMember" DisplayName="实例变量访问共享成员" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="RecursiveOperatorOrPropertyAccess" DisplayName="递归运算符或属性访问" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="DuplicateOrOverlappingCatchBlocks" DisplayName="重复或重叠的 catch 块" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <StringProperty Name="PreBuildEvent" DisplayName="预生成事件" Description="指定生成开始前运行的命令。如果项目是最新的，则不运行。非零退出代码将在生成运行前导致生成失败。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <StringProperty Name="PostBuildEvent" DisplayName="生成后事件" Description="指定生成完成后运行的命令。如果生成失败，则不运行。请使用“调用”来调用 .bat 文件。非零退出代码将导致生成失败。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="RunPostBuildEvent" DisplayName="何时运行生成后事件" Description="指定何种条件下将执行生成后事件。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <EnumProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" PersistedName="RunPostBuildEvent" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Always" DisplayName="始终" />
+    <EnumValue Name="OnBuildSuccess" DisplayName="生成成功时" IsDefault="True" />
+    <EnumValue Name="OnOutputUpdated" DisplayName="更新输出时" />
+  </EnumProperty>
+  <BoolProperty Name="RemoveIntegerChecks" DisplayName="不做整数溢出检查" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="移除整数溢出检查。" Category="Advanced" />
+  <BoolProperty Name="Optimize" DisplayName="启用优化" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="启用编译器优化。" Category="Advanced" />
+  <!-- TODO: Validation -->
+  <StringProperty Name="BaseAddress" DisplayName="DLL 基址" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced" />
+  <EnumProperty Name="DebugType" DisplayName="调试符号" Description="指定内部版本期间生成的调试符号类型。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced">
+    <EnumProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="调试类型" />
+    </EnumProperty.Metadata>
+    <EnumValue Name="none" DisplayName="未发出任何符号" />
+    <!--
+    Note that 'pdbonly' is the same as 'full'.
+    <EnumValue Name="pdbonly"
+               DisplayName="PDB Only" />
+    -->
+    <EnumValue Name="full" DisplayName="PDB 文件，当前平台" />
+    <EnumValue Name="portable" DisplayName="PDB 文件，可跨平台移植" />
+    <EnumValue Name="embedded" DisplayName="嵌入到 DLL/EXE 中，可跨平台移植" />
+  </EnumProperty>
+  <BoolProperty Name="DefineDebug" DisplayName="定义 DEBUG 常量" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="将 DEBUG 指定为编译常量。" Category="Advanced" />
+  <BoolProperty Name="DefineTrace" DisplayName="定义 TRACE 常量" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="将 TRACE 指定为编译常量。" Category="Advanced" />
+  <StringProperty Name="DefineConstants" DisplayName="自定义常量" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced" Description="指定应用程序的自定义条件编译常量。请注意，值是可选的，对于可选行为，请将值留空。如果值是字符串，请在它两边添加引号。">
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="NameValueList">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Encoding" Value="VBDefineConstantsEncoding" />
+          <NameValuePair Name="IsValueRequired" Value="False" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="GenerateSerializationAssemblies" DisplayName="生成序列化程序集" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced">
+    <EnumValue Name="On" DisplayName="On" />
+    <EnumValue Name="Off" DisplayName="Off" />
+    <EnumValue Name="Auto" DisplayName="自动" />
+  </EnumProperty>
+</Rule>

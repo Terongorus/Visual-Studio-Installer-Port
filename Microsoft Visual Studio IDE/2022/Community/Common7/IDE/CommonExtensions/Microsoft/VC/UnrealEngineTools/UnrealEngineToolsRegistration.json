@@ -1,0 +1,296 @@
+{
+  // These are the settings for the Unreal Engine Tools component
+  "properties": {
+    "unrealEngine.enableBlueprints": {
+      "type": "boolean",
+      "title": "@ToolsOptionsEnableBlueprintsText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsEnableBlueprintsDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.IsBlueprintSupportEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.enableEngineBlueprints": {
+      "type": "boolean",
+      "title": "@ToolsOptionsEnableEngineBlueprintsText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsEnableEngineBlueprintsDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.IsEngineBlueprintSupportEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.enableCodeAnalysis": {
+      "type": "boolean",
+      "title": "@ToolsOptionsEnableHeaderToolText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsEnableHeaderToolDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.IsHeaderToolSupportEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.enableCodeAnalysisForSource": {
+      "type": "boolean",
+      "title": "@ToolsOptionsEnableHeaderToolForSourceText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsEnableHeaderToolForSourceDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.IsHeaderToolForSourceSupportEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.showConfigurationPageOnStartup": {
+      "type": "boolean",
+      "title": "@UEConfigurationPageShowOnStartup;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@UEConfigurationPageShowOnStartupDescription;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.UEConfigurationPageShowOnStartup"
+          }
+        }
+      }
+    },
+    "unrealEngine.ubtParallelWorkspaceGeneration": {
+      "type": "boolean",
+      "title": "@ToolsOptionsUbtParallelWorkspaceGenerationText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsUbtParallelWorkspaceGenerationDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.UbtParallelWorkspaceGeneration"
+          }
+        }
+      }
+    },
+    "unrealEngine.ubtAllModulesGeneration": {
+      "type": "boolean",
+      "title": "@ToolsOptionsUEAllModulesGenerationText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsUEAllModulesGenerationDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.UbtAllModulesGeneration"
+          }
+        }
+      }
+    },
+    "unrealEngine.enableUEBlueprintDebuggerExtension": {
+      "type": "boolean",
+      "title": "@ToolsOptionsEnableUEBlueprintDebuggerExtensionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolsOptionsEnableUEBlueprintDebuggerExtensionDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "VsUserSettingsRegistry",
+            "path": "UnrealEngineTools\\IsUEBlueprintDebuggerExtensionEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.log.rememberFilters": {
+      "type": "boolean",
+      "title": "@ToolOptionsRememberUELogFiltersText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsRememberUELogFiltersDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.RememberUELogFilters"
+          }
+        }
+      }
+    },
+    "unrealEngine.log.clearOnLaunch": {
+      "type": "boolean",
+      "title": "@ToolOptionsAutoClearUELogText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsAutoClearUELogDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.AutoClearUELogOnLaunch"
+          }
+        }
+      }
+    },
+    "unrealEngine.log.requestJsonMessages": {
+      "type": "boolean",
+      "title": "@ToolOptionsJsonUeLogFormatText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsJsonUeLogFormatDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.RequestJsonUELogMessages"
+          }
+        }
+      }
+    },
+    "unrealEngine.log.showAutomatically": {
+      "type": "boolean",
+      "title": "@ToolOptionsAutoShowUELogText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsAutoShowUELogDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.AutoShowUELog"
+          }
+        }
+      }
+    },
+    "unrealEngine.enableMacroIntelliSense": {
+      "type": "boolean",
+      "title": "@ToolOptionsEnableUEMacroIntelliSenseText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsEnableUEMacroIntelliSenseDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.IsUEMacroIntelliSenseEnabled"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applyEngineFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsEngineFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsEngineFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableEngineTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applyNegativeFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsNegativeFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsNegativeFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableNegativeTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applyPerfFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsPerfFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsPerfFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnablePerfTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applyProductFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsProductFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsProductFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableProductTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applySmokeFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsSmokeFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsSmokeFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": true,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableSmokeTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.applyStressFilter": {
+      "type": "boolean",
+      "title": "@ToolOptionsStressFilterText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsStressFilterDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableStressTests"
+          }
+        }
+      }
+    },
+    "unrealEngine.testAdapter.enableServerMode": {
+      "type": "boolean",
+      "title": "@ToolOptionsUEServerText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "description": "@ToolOptionsUEServerDescriptionText;{a53e8e01-b345-4407-85f1-0db083778984}",
+      "default": false,
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.VC.UnrealEngineTools.ToolsOptionsPage.TestAdapterEnableServerMode"
+          }
+        }
+      }
+    }
+  },
+  "categories": {
+    "unrealEngine": {
+      "title": "@UnrealEngineCategoryText;{a53e8e01-b345-4407-85f1-0db083778984}"
+    },
+    "unrealEngine.log": {
+      "title": "@ToolsOptionsUELogCategoryText;{a53e8e01-b345-4407-85f1-0db083778984}"
+    },
+    "unrealEngine.testAdapter": {
+      "title": "@ToolsOptionsTestAdapterCategoryText;{a53e8e01-b345-4407-85f1-0db083778984}"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿{
+  "host": "dotnet",
+  "singleDomainLoaderOptimization": true,
+  "entryPoint": {
+    "assemblyPath": "Microsoft.ML.ModelBuilder.AutoMLService.dll",
+    "fullClassName": "Microsoft.ML.ModelBuilder.AutoMLService.ServiceFactory.ModelInferenceService"
+  }
+}

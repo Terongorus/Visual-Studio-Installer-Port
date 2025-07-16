@@ -1,0 +1,81 @@
+﻿<!-------------------------------------------------------------------------
+     Copyright (c) Microsoft Corporation.  All rights reserved.
+ ------------------------------------------------------------------------>
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <script src="scripts/plugin.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="styles/custom.css" media="screen" data-plugin-theme="true" />
+    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css" media="screen" data-plugin-theme="true" />
+    <title>wapproj overview</title>
+</head>
+
+<body style="display:none" onclick="log(event)">
+    <div class="title">
+        <h1 class="h1-theme-color">{{res:OverviewDocumentHeader}}</h1>
+        <h2 class="subtitleText">{{res:OverviewDocumentSubheader}}</h2>
+    </div>
+
+    <div class="content">
+        <div class="content-group">
+            <img data-plugin-theme-src="overview-image-code" src="images/code.png" style="margin: 0 auto; display: block" />
+            <h3 class="contentSectionHeader pb-3 mt-3">{{res:OverviewC1Header}}</h3>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=856991" id="ReviewRequirements">{{res:OverviewC1R1LinkTitle}}</a>
+            </span>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=856995" id="CreateAPackage">{{res:OverviewC1R2LinkTitle}}</a>
+            </span>
+
+            <span onclick="openManifestEvent(event)" class="contentLink" id="OpenDesigner">
+                <a href="#" target="_blank">{{res:OverviewC1R3LinkTitle}}</a>
+            </span>
+        </div>
+        <div class="content-group">
+            <img data-plugin-theme-src="overview-image-services" src="images/services.png" style="margin: 0 auto; display: block" />
+            <h3 class="contentSectionHeader mt-3 pb-3">{{res:OverviewC2Header}}</h3>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=856997" id="IntegrateWithWindows">{{res:OverviewC2R1LinkTitle}}</a>
+            </span>
+            <div class="contentLinkDesc">
+                {{res:OverviewC2R1LinkDescription}}
+            </div>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=856999" id="EnhanceWithWin10Api">{{res:OverviewC2R2LinkTitle}}</a>
+            </span>
+            <div class="contentLinkDesc">
+                {{res:OverviewC2R2LinkDescription}}
+            </div>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=857000" id="ExtendWithUwp">{{res:OverviewC2R3LinkTitle}}</a>
+            </span>
+            <div class="contentLinkDesc">
+                {{res:OverviewC2R3LinkDescription}}
+            </div>
+
+        </div>
+        <div class="content-group">
+            <img src="images/azure.png" data-plugin-theme-src="overview-image-azure" style="margin: 0 auto; display: block" />
+            <h3 class="contentSectionHeader mt-3 pb-3">{{res:OverviewC3Header}}</h3>
+
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=859286" id="Publish">{{res:OverviewC3R1LinkTitle}}</a>
+            </span>
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=857003" id="Distribute">{{res:OverviewC3R2LinkTitle}}</a>
+            </span>
+            <span class="contentLink">
+                <a target="_blank" href="https://go.microsoft.com/fwlink/?linkid=859266" id="ConfigureCI">{{res:OverviewC3R3LinkTitle}}</a>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

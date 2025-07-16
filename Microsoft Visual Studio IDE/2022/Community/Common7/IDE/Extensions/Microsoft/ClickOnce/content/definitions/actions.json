@@ -1,0 +1,12 @@
+{
+  "showAll": {
+    "id": "showAll",
+    "baseActionId": "edit",
+    "displayName": {
+      "$ref": "strings:#/showAll"
+    },
+    "description": {
+      "$ref": "strings:#/showAll"
+    }
+  }
+}

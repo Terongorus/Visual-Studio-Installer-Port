@@ -1,0 +1,5 @@
+{
+  "$schema": "../../../../../schemas/servicehub.host.schema.json",
+  "hostExecutable": "../../../../MSBuild/Microsoft/VisualStudio/NodeJs/node.exe",
+  "hostArgs": [ "$NODEDEBUGARGS", "hubHost.all.js", "$HOSTID", "$PIPE" ]
+}

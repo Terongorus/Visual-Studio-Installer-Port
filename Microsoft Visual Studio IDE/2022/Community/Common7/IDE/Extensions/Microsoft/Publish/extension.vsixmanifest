@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="E9E7F832-34FD-43F8-BACF-39D21037E93A" Version="17.14.119.50502" Language="en-US" Publisher="Microsoft" />
+    <Icon>net.png</Icon>
+    <PreviewImage>net_preview.png</PreviewImage>
+    <DisplayName>Microsoft VisualStudio Managed Publish</DisplayName>
+    <Description xml:space="preserve">Provides the Publish functionality for Managed Projects</Description>
+    <Tags>Visual Studio Web Developer Tools</Tags>
+    <AllowClientRole>true</AllowClientRole>
+  </Metadata>
+  <Installation InstalledByMsi="true" AllUsers="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.IntegratedShell" Version="[15.0,]" />
+  </Installation>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Microsoft.Publish.Framework.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.Publish.Framework.dll" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="Microsoft.Publish.Framework.Console.dll" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" Path="YamlDotNet.dll" />
+  </Assets>
+</PackageManifest>

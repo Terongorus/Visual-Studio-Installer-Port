@@ -1,0 +1,141 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateDir>
+    <RelativePath>VC\Unreal Engine</RelativePath>
+    <LocalizedName Package="{976CF7D5-2A72-47A3-9E46-5B7C3DB95F17}" ID="2315" />
+    <SortOrder>90</SortOrder>
+  </VSTemplateDir>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Common</RelativePathOnDisk>
+    <TemplateFileName>CookUEProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>Microsoft.VisualC.Item.UnrealEngine.CookUEProject</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-OpenFolderUnrealNoDisplay</TemplateGroupID>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Common</RelativePathOnDisk>
+    <TemplateFileName>PackageUEProject.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>Microsoft.VisualC.Item.UnrealEngine.PackageUEProject</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-OpenFolderUnrealNoDisplay</TemplateGroupID>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Common</RelativePathOnDisk>
+    <TemplateFileName>OpenFolderUnrealEngineCommon.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="1300" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="1301" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.OpenFolder.UnrealEngine.AddUnrealClass</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-OpenFolderUnreal</TemplateGroupID>
+        <DefaultName>MyClass</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Common</RelativePathOnDisk>
+    <TemplateFileName>UnrealEngineCommon.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="1300" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="1301" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.UnrealEngine.AddUnrealClass</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-Unreal</TemplateGroupID>
+        <DefaultName>MyClass</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>10</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Module</RelativePathOnDisk>
+    <TemplateFileName>OpenFolderUnrealEngineModule.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2316" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2317" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.OpenFolder.UnrealEngine.AddUnrealModule</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-OpenFolderUnreal</TemplateGroupID>
+        <DefaultName>MyModule</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>11</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Module</RelativePathOnDisk>
+    <TemplateFileName>UnrealEngineModule.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2316" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2317" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.UnrealEngine.AddUnrealModule</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-Unreal</TemplateGroupID>
+        <DefaultName>MyModule</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>11</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Plugin</RelativePathOnDisk>
+    <TemplateFileName>OpenFolderUnrealEnginePlugin.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2318" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2319" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.OpenFolder.UnrealEngine.AddUnrealPlugin</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-OpenFolderUnreal</TemplateGroupID>
+        <DefaultName>MyPlugin</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>12</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VC\Unreal Engine\Plugin</RelativePathOnDisk>
+    <TemplateFileName>UnrealEnginePlugin.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <Name Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2318" />
+        <Description Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="2319" />
+        <Icon Package="{976cf7d5-2a72-47a3-9e46-5b7c3db95f17}" ID="600" />
+        <TemplateID>Microsoft.VisualC.Item.UnrealEngine.AddUnrealPlugin</TemplateID>
+        <ProjectType>VC</ProjectType>
+        <TemplateGroupID>VC-Unreal</TemplateGroupID>
+        <DefaultName>MyPlugin</DefaultName>
+        <LocationField>Disabled</LocationField>
+        <ShowByDefault>false</ShowByDefault>
+        <SortOrder>12</SortOrder>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

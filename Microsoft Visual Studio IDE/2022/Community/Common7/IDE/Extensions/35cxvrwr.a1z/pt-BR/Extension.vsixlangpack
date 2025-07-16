@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageLanguagePackManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <DisplayName>Ferramentas HLSL para Visual Studio</DisplayName>
+        <Description xml:space="preserve">Suporte aprimorado para editar HLSL em Visual Studio</Description>
+    </Metadata>
+</PackageLanguagePackManifest>

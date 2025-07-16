@@ -1,0 +1,42 @@
+; This is a temporary pkgdef file for defining the ClrNativeCompilation engine GUID. We
+; will move it into SetupAuthoring once we are ready to turn it on for real.
+
+[$RootKey$\AD7Metrics\Engine\{47843766-18ee-4226-b2ee-0baa38e1e0d3}]
+@="DkmEngineId::ClrNativeCompilation"
+"Name"="resource=$BaseInstallDir$\Common7\Packages\Debugger\*\vsdebugui.dll#6072"
+"AddressBP"=dword:00000001
+"AlwaysLoadLocal"=dword:00000001
+"AlwaysLoadProgramProviderLocal"=dword:00000001
+"Attach"=dword:00000001
+"AutoSelectPriority"=dword:0000000C
+"CallStackBP"=dword:00000001
+"ClrDebuggingServicesId"=dword:00000000
+"CLSID"="{014D0C8F-3FBD-4A8F-A6F1-14190DD7C090}"
+"ConditionalBP"=dword:00000001
+"DataBP"=dword:00000000
+"Disassembly"=dword:00000001
+"DumpWriting"=dword:00000001
+; NOTE: EnginePriority=25; this must be higher than script (0) but lower than native (75)
+"EngineCanWatchProcess"=dword:00000001
+"EnginePriority"=dword:00000019
+"Exceptions"=dword:00000001
+"FunctionBP"=dword:00000001
+"HitCountBP"=dword:00000001
+"JITDebug"=dword:00000000
+"JustMyCodeStepping"=dword:00000001
+"ProgramProvider"="{4FF9DEF4-8922-4D02-9379-3FFA64D1D639}"
+"RemoteProcessListing"=dword:00000001
+"RemoteDebugging"=dword:00000001
+"SetNextStatement"=dword:00000000
+"SuspendThread"=dword:00000001
+
+[$RootKey$\AD7Metrics\Engine\{47843766-18ee-4226-b2ee-0baa38e1e0d3}\PortSupplier]
+"0"="{708C1ECA-FF48-11D2-904F-00C04FA302A1}"
+"1"="{3B476D38-A401-11D2-AAD4-00C04F990171}"
+
+[$RootKey$\AD7Metrics\Engine\{47843766-18ee-4226-b2ee-0baa38e1e0d3}\IncompatibleList]
+"guidCOMPlusOnlyEng"="{449EC4CC-30D2-4032-9256-EE18EB41B62B}"
+"guidCOMPlusOnlyEng2"="{5FFF7536-0C87-462D-8FD2-7971D948E6DC}"
+"guidCOMPlusOnlyEng4"="{FB0D4648-F776-4980-95F8-BB7F36EBC1EE}"
+"guidSilverlightEng"="{032F4B8C-7045-4B24-ACCF-D08C9DA108FE}"
+"GUID_WorkflowDebugEngine"="{6589AE11-3B51-494A-AC77-91DA1B53F35A}"

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                           xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
+  <Symbols>
+    <String Name="Resources" Value="/Microsoft.VisualStudio.DesktopBridge.ProjectSystem;Component/Resources" />
+    <Guid Name="WapProjImagesGuid" Value="{4D5DA0F0-6198-4035-B0FF-72DC88667E96}" />
+    <ID Name="WapProj" Value="0" />
+  </Symbols>
+  <Images>
+    <Image Guid="$(WapProjImagesGuid)" ID="$(WapProj)">
+      <Source Uri="$(Resources)/Icons/WindowsApplicationPackagingProject_16x.xaml" />
+      <Source Uri="$(Resources)/Icons/WindowsApplicationPackagingProject_16x.png" >
+        <Size Value="16" />
+      </Source>
+    </Image>
+  </Images>
+  <ImageLists />
+</ImageManifest>

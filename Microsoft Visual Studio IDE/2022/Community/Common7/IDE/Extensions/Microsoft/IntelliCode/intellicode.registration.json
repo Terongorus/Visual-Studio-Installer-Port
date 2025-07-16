@@ -1,0 +1,2315 @@
+// Convert Setting instance in IntellicodeOptions.cs to json
+//
+// This file contains 2 parts, properties and categories. Add the new setting in properties and new page/group in categories.
+// Keep property key same as Settings.Moniker value, e.g. intellicode.pageName.groupName.optionName
+// Keep category key same as the page/group name defined in IntellicodeOptions.cs, e.g. intellicode.pageName/intellicode.pageName.groupName
+// Add new property:
+// "type" : Map BoolSetting to "boolean", IntSetting to "integer", DoubleSetting to "number", StringSetting and StringSetSetting to "string"
+// "default" : Make sure this value is same as defined in Policy.
+// "title" and "description": Use the DisplayName and Description defined in Strings.resx.
+// "migration" : This part is no longer needed for settings that added after 17.14 P3 (TODO: change version if feature gets pushed to P4).
+// Add new category:
+// "title" and "description": Use the DisplayName and Description defined in Strings.resx.
+// Test new setting:
+// F5, and make sure the new setting is located in the expected place in both classic and USX settings page.
+// Change setting value on one setting page should apply to the other.
+// To switch between classic and USX settings page, please use Tools > Options Experience (request restart)
+{
+  "properties": {
+    // general settings
+    "intellicode.general.csharpRefactorings": {
+      "type": "boolean",
+      "default": true,
+      "title": "@CsharpRefactoringsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@CsharpRefactoringsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.CSharpRefactorings"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.general.useInlineTipStyle": {
+      "type": "boolean",
+      "default": false,
+      "title": "@UseInlineTipStyleDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@UseInlineTipStyleDescription;{237bde42-2754-4b15-adbd-0b6cece84300}"
+    },
+    "intellicode.general.showInlineDiffs": {
+      "type": "boolean",
+      "default": true,
+      "title": "@ShowInlineDiffsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@ShowInlineDiffsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.ShowInlineDiffs"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.general.showAICompletions": {
+      "type": "boolean",
+      "default": true,
+      "title": "@ShowAICompletionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "keywords": "@ShowAICompletionsKeywords;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.ShowAICompletions"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+
+    },
+    "intellicode.general.intellisenseStars": {
+      "type": "boolean",
+      "default": true,
+      "title": "@IntellisenseStarsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IntelliSenseStars"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.general.enableGaia": {
+      "type": "boolean",
+      "default": true,
+      "title": "@EnableGaiaDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableGaiaDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.GaiaEnabled"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.general.intellicodeIndicatorMargin": {
+      "type": "boolean",
+      "default": true,
+      "title": "@IntellicodeIndicatorMarginDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IntelliCodeIndicatorMargin"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // advanced settings
+    // whole-line completions settings
+    "intellicode.advanced.lineCompletions.disableSuggestingsWhileDebugging": {
+      "type": "boolean",
+      "default": true,
+      "title": "@DisableSuggestingsWhileDebuggingDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.DisableSuggestingsWhileDebugging"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.commitGrayTextOnRightArrowKey": {
+      "type": "boolean",
+      "default": false,
+      "title": "@CommitGrayTextOnRightArrowKeyDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@CommitGrayTextOnRightArrowKeyDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.CommitGrayTextOnRightArrowKey"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.wholeLineCompletionDebounceRequests": {
+      "type": "boolean",
+      "default": false,
+      "title": "@WholeLineCompletionDebounceRequestsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@WholeLineCompletionDebounceRequestsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.WholeLineCompletionDebounceRequests"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.wholeLineCompletionQueuePredictionAfterReturn": {
+      "type": "boolean",
+      "default": true,
+      "title": "@WholeLineCompletionQueuePredictionAfterReturnDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@WholeLineCompletionQueuePredictionAfterReturnDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.WholeLineCompletionQueuePredictionAfterReturn"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.hideGrayTextTip": {
+      "type": "boolean",
+      "default": false,
+      "title": "@HideGrayTextTipDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.HideGrayTextTip"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.escDismissesWhenVsVimPresent": {
+      "type": "boolean",
+      "default": true,
+      "title": "@EscDismissesWhenVsVimPresentDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EscDismissesWhenVsVimPresentDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EscDismissesWhenVsVimPresent"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.lineCompletions.tabAcceptsWhenVsVimPresent": {
+      "type": "boolean",
+      "default": true,
+      "title": "@TabAcceptsWhenVsVimPresentDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@TabAcceptsWhenVsVimPresentDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.TabAcceptsWhenVsVimPresent"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // logging settings
+    "intellicode.advanced.logging.suggestionsLogging": {
+      "type": "boolean",
+      "default": false,
+      "title": "@SuggestionsLoggingDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@SuggestionsLoggingDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.SuggestionsLogging"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.logging.outputWindowLogging": {
+      "type": "boolean",
+      "default": false,
+      "title": "@OutputWindowLoggingDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@OutputWindowLoggingDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.OutputWindowLogging"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // suggestions settings
+    "intellicode.advanced.suggestions.intentsQuickAction": {
+      "type": "boolean",
+      "default": true,
+      "title": "@IntentsQuickActionDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@IntentsQuickActionDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IntentsQuickActions"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.enableDiffViewDefaultForIntents": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableDiffViewDefaultForIntentsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableDiffViewDefaultForIntentsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EnableDiffViewDefaultForIntents"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.enableRenameIntent": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableRenameIntentDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableRenameIntentDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EnableRenameIntent"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.enableRemoveParameterIntent": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableRemoveParameterIntentDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableRemoveParameterIntentDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EnableRemoveParameterIntent"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.showApplyAllInSecondaryOption": {
+      "type": "boolean",
+      "default": false,
+      "title": "@ShowApplyAllInSecondaryOptionDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@ShowApplyAllInSecondaryOptionDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.ShowApplyAllInSecondaryOption"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.showTogglePreview": {
+      "type": "boolean",
+      "default": false,
+      "title": "@ShowTogglePreviewDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@ShowTogglePreviewDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.ShowTogglePreview"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.copyPastePreview": {
+      "type": "boolean",
+      "default": false,
+      "title": "@CopyPastePreviewDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@CopyPastePreviewDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.CopyPastePreview"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.refactoringsPersistence": {
+      "type": "boolean",
+      "default": false,
+      "title": "@RefactoringsPersistenceDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@RefactoringsPersistenceDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.RefactoringsPersistence"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.refactoringsShowToolwindowGrouping": {
+      "type": "boolean",
+      "default": false,
+      "title": "@RefactoringsShowToolwindowGroupingDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@RefactoringsShowToolwindowGroupingDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.RefactoringsShowToolwindowGrouping"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.copyPasteQuickAction": {
+      "type": "boolean",
+      "default": false,
+      "title": "@CopyPasteQuickActionDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.CopyPasteQuickAction"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.enableAdaptivePaste": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableAdaptivePasteDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableAdaptivePasteDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.AdaptivePasteEnabled"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.suggestions.enableNeuroSymbolic": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableNeuroSymbolicDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableNeuroSymbolicDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IsNeuroSymbolicEnabled"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // internal
+    "intellicode.advanced.internal.singleTabAccept": {
+      "type": "boolean",
+      "default": false,
+      "title": "@SingleTabAcceptDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.SingleTabAccept"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // internal
+    "intellicode.advanced.internal.showTabTabInHint": {
+      "type": "boolean",
+      "default": false,
+      "title": "@ShowTabTabInHintDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.ShowTabTabInHint"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    // internal
+    "intellicode.advanced.internal.intellicodeWholeLineCompletions": {
+      "type": "boolean",
+      "default": true,
+      "title": "@IntellicodeWholeLineCompletionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IntelliCodeWholeLineCompletions"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.enableCopilotInlineFix": {
+      "type": "boolean",
+      "default": false,
+      "title": "@EnableCopilotInlineFixDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EnableCopilotInlineFix"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.acceptWordOnCtrlRightArrowKey": {
+      "type": "boolean",
+      "default": false,
+      "title": "@AcceptWordOnCtrlRightArrowKeyDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.AcceptWordOnCtrlRightArrowKey"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.intellicodeTraceLevel": {
+      "type": "string",
+      "default": "info",
+      "enum": [
+        "off",
+        "error",
+        "warning",
+        "info",
+        "verbose"
+      ],
+      "enumItemLabels": [
+        "@OffDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+        "@ErrorDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+        "@WarningDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+        "@InfoDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+        "@VerboseDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}"
+      ],
+      "title": "@IntellicodeTraceLevelDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.IntelliCodeTraceLevel"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                ""
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.allowMultipleInlinePredictions": {
+      "type": "boolean",
+      "default": false,
+      "title": "@AllowMultipleInlinePredictionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.AllowMultipleInlinePredictions"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.queuePredictionsOnBackspace": {
+      "type": "boolean",
+      "default": true,
+      "title": "@QueuePredictionsOnBackspaceDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.QueuePredictionsOnBackspace"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.cachePredictionsOnLine": {
+      "type": "boolean",
+      "default": true,
+      "title": "@CachePredictionsOnLineDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.CachePredictionsOnLine"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.inlineCompletionLazyDelay": {
+      "type": "integer",
+      "default": 1500,
+      "title": "@InlineCompletionLazyDelayDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.InlineCompletionLazyDelay"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.inlineCompletionGroupingDelay": {
+      "type": "integer",
+      "default": 750,
+      "title": "@InlineCompletionGroupingDelayDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.InlineCompletionGroupingDelay"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.previewTestMarginProvider": {
+      "type": "boolean",
+      "default": false,
+      "title": "@PreviewTestMarginProviderDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@PreviewTestMarginProviderDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.PreviewTestMarginProvider"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.inlineCompletionsOnCtrlSpace": {
+      "type": "boolean",
+      "default": false,
+      "title": "@InlineCompletionsOnCtrlSpaceDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.InlineCompletionsOnCtrlSpace"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+
+    },
+    "intellicode.advanced.internal.outputSequenceLength": {
+      "type": "integer",
+      "default": 10,
+      "title": "@OutputSequenceLengthDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.OutputSequenceLength"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+
+    },
+    "intellicode.advanced.internal.apiUsageExamplesEndpoint": {
+      "type": "string",
+      "default": "https://data-ai.microsoft.com",
+      "title": "@ApiUsageExamplesEndpointDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@ApiUsageExamplesEndpointDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.IntelliCode.ApiUsageExamplesEndpoint"
+          }
+        }
+      }
+    },
+    "intellicode.advanced.internal.force32BitModelService": {
+      "type": "boolean",
+      "default": false,
+      "title": "@Force32BitModelServiceDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@Force32BitModelServiceDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.Force32BitModelService"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.enableArm64ModelService": {
+      "type": "boolean",
+      "default": true,
+      "title": "@EnableArm64ModelServiceDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@EnableArm64ModelServiceDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.EnableArm64ModelService"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.truncateTrailingBraces": {
+      "type": "boolean",
+      "default": false,
+      "title": "@TruncateTrailingBracesDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.TruncateTrailingBraces"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.hideTipOnLostFocus": {
+      "type": "boolean",
+      "default": true,
+      "title": "@HideTipOnLostFocusDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.HideTipOnLostFocus"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.dismissSuggestionOnLostFocus": {
+      "type": "boolean",
+      "default": true,
+      "title": "@DismissSuggestionOnLostFocusDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.DismissSuggestionOnLostFocus"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.debugCommands": {
+      "type": "boolean",
+      "default": false,
+      "title": "@DebugCommandsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@DebugCommandsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.DebugCommands"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.behaviors": {
+      "type": "boolean",
+      "default": false,
+      "title": "@BehaviorsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@BehaviorsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.Behaviors"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.logDiagnosticsForInlineCompletions": {
+      "type": "boolean",
+      "default": false,
+      "title": "@LogDiagnosticsForInlineCompletionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.LogDiagnosticsForInlineCompletions"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.filterAllProposalsUsingDiagnostics": {
+      "type": "boolean",
+      "default": false,
+      "title": "@FilterAllProposalsUsingDiagnosticsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.FilterAllProposalsUsingDiagnostics"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.skipSemanticDiagnosticFiltering": {
+      "type": "boolean",
+      "default": false,
+      "title": "@SkipSemanticDiagnosticFilteringDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.SkipSemanticDiagnosticFiltering"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.persistScopeHighlight": {
+      "type": "boolean",
+      "default": false,
+      "title": "@PersistScopeHighlightDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.PersistScopeHighlight"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.simpleDiffViewThreshold": {
+      "type": "number",
+      "default": 0.5,
+      "title": "@SimpleDiffViewThresholdDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}"
+    },
+    "intellicode.advanced.internal.aggressiveIntellisenseDefaults": {
+      "type": "boolean",
+      "default": false,
+      "title": "@AggressiveIntellisenseDefaultsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@AggressiveIntellisenseDefaultsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.AggressiveIntelliSenseDefaults"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.fullMethodCallDefaults": {
+      "type": "boolean",
+      "default": false,
+      "title": "@FullMethodCallDefaultsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@FullMethodCallDefaultsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.FullMethodCallDefaults"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.wholeLineCompletionUseGrayToShowIntellisense": {
+      "type": "boolean",
+      "default": false,
+      "title": "@WholeLineCompletionUseGrayToShowIntellisenseDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@WholeLineCompletionUseGrayToShowIntellisenseDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.WholeLineCompletionUseGrayToShowIntelliSense"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.treatEmptyLiteralsAsEditableFields": {
+      "type": "boolean",
+      "default": false,
+      "title": "@TreatEmptyLiteralsAsEditableFieldsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@TreatEmptyLiteralsAsEditableFieldsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.TreatEmptyLiteralsAsEditableFields"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.treatLiteralsValuesAsEditableFields": {
+      "type": "boolean",
+      "default": false,
+      "title": "@TreatLiteralsValuesAsEditableFieldsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@TreatLiteralsValuesAsEditableFieldsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.TreatLiteralsValuesAsEditableFields"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.highlightPredictionFieldsWithDistinctColors": {
+      "type": "boolean",
+      "default": false,
+      "title": "@HighlightPredictionFieldsWithDistinctColorsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@HighlightPredictionFieldsWithDistinctColorsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.HighlightPredictionFieldsWithDistinctColors"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.requestDebouncePeriod": {
+      "type": "integer",
+      "default": 1000,
+      "title": "@RequestDebouncePeriodDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@RequestDebouncePeriodDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.RequestDebouncePeriod"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.minTokenLength": {
+      "type": "integer",
+      "default": 2,
+      "title": "@MinTokenLengthDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.MinTokenLength"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.confidenceThreshold": {
+      "type": "number",
+      "default": -1.4,
+      "title": "@ConfidenceThresholdDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}"
+    },
+    "intellicode.advanced.internal.explicitInvocationConfidenceThreshold": {
+      "type": "number",
+      "default": -2.8,
+      "title": "@ExplicitInvocationConfidenceThresholdDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}"
+    },
+    "intellicode.advanced.internal.useInlineDiffs": {
+      "type": "boolean",
+      "default": false,
+      "title": "@UseInlineDiffsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.UseInlineDiffs"
+            }
+          ],
+          "map": [
+            {
+              "result": true,
+              "matches": [
+                1
+              ]
+            },
+            {
+              "result": false,
+              "matches": [
+                2
+              ]
+            },
+            {
+              "result": "@default",
+              "matches": [
+                0
+              ]
+            }
+          ]
+        }
+      }
+    },
+
+    "intellicode.advanced.internal.predictionProcessingDelay": {
+      "type": "integer",
+      "default": 0,
+      "title": "@PredictionProcessingDelayDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "custom": {
+          "inputs": [
+            {
+              "store": "SettingsManager",
+              "path": "Microsoft.VisualStudio.IntelliCode.DelayInProcessingPrediction"
+            }
+          ],
+          "map": [
+            {
+              "result": "@default",
+              "matches": [
+                -2147483648
+              ]
+            },
+            {
+              "result": "@=0",
+              "matches": [
+                "@any"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "intellicode.advanced.internal.disabledPredictionBrokers": {
+      "type": "string",
+      "default": "",
+      "title": "@DisabledPredictionBrokersDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.IntelliCode.DisabledPredictionBrokers"
+          }
+        }
+      }
+    },
+    "intellicode.advanced.internal.allowedInDocumentDiagnostics": {
+      "type": "string",
+      "default": "CS1026,CS0103,CS1519,CS0106,CS1061,CS8321,CS1002,CS8618,CS0168,CS0219,CS1513,CS0266,CS8070,CS0161,CS0029,CS8604,CS8024,CS8600,CS8370,CS0535,CS0308,CS4014,CS1023,CS1014,CS8619,CS8504,CS0022,CS0165,CS8180,CS1662,CS0518,CS1056,CS0122,CS0127,CS1733,CS1579,CS1587,CS1950,CS7022,CS0670,CS8509,CS0163,CS1586,CS0160,CS4016,CS8505,CS7014,CS8629,CS0742,CS8387,CS8641,CS0746,CS0846,CS4008,CS0030,CS8422,CS1620,CS0549,CS0310,CS0826,CS8515,CS0104,CS0314,CS0847,CS0428,CS1997,CS0150,CS1673,CS0304,CS1041,CS1922,CS0154,CS0205,CS0144,CS0236,CS1612,CS8524,CS1938,CS0200,CS1597,CS0173,CS0854,CS0053,CS0273,CS8016,CS8917,CS0073,CS8030,CS4010,SYSLIB0011,CS0184,CS1012,CS0839,CS8622,CS0177,CS8957,CS1937,CS0159,CS0656,CS0737,CS1936,SYSLIB0006,CS8059,CS0210,CS1522,CS0311,CS1016,CS1011,CS1511,CS0743,CS7003,CS8320,CS8703,CS8185,CS0601,CS0744,CS1935,CS0443,CS0832,CS0833,CS0540,CS0123,CS1941,CS0425,CS8421,CS8072,CS1963,CS8634,CS1739,CS8620,CS8506,CS8026,CS1106,CS0436,CS8907,CS8863,CS1920,CS0665,CS8933,SYSLIB0021,CS0233,CS0622,CS0666,CS8714,CS0834,CS8846,CS1626,CS0277,CS8132,CS1961,CS8183,CS0516,CS1989,CS1551,CS0157,CS8131,CS8302,CS0170,CS8767,CS0828,CS0211,CS1621,CS0109,CS8665,CS8150,CS1661,CS1930,CS1678,CS0132,CS8310,CS0034,CS1628,CS1574,CS1918,CS8752,CS8605,CS8644,CS8858,CS8089,CS8411,CS0253,CS0113,CS8188,CS1017,CS8646",
+      "title": "@AllowedInDocumentDiagnosticsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@AllowedInDocumentDiagnosticsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.IntelliCode.AllowInDocumentDiagnostics"
+          }
+        }
+      }
+    },
+    "intellicode.advanced.internal.allowedInlineDiagnostics": {
+      "type": "string",
+      "default": "CS1002,CS1026,CS8618,CS0168,CS0535,CS8070,CS0219,CS1526,CS8604,CS8600,CS1733,CS4014,CS0548,CS0518,CS8504,CS1998,CS0162,CS8619,CS8601,CS0311,CS8602,CS0022,CS0742,CS0534,CS0111,CS8180,CS8603,CS0136,CS7022,CS0053,CS0230,CS0114,CS8641,CS1515,CS1579,CS0177,CS8185,CS4016,CS8629,CS0747,CS0847,CS1056,CS1522,CS0144,CS0718,CS8057,CS1055,CS1620,CS8801,CS0623,CS8632,CS0104,CS1938,CS0846,CS0205,CS0736,CS0161,CS0443,CS0163,CS0622,CS1591,CS0515,CS0171,CS8803,CS0721,CS0109,CS0650,CS0150,CS0314,CS0236,CS1997,CS0121,CS0065,CS1937,CS1012,CS0825,CS8112,CS0854,CS0165,SYSLIB0011,CS1573,CS8703,CS0173,CS8957,CS0737,CS8612,CS1922,CS8917,CS0738,CS7003,SYSLIB0006,CS0425,CS0656,CS0432,CS0601,CS0080,CS0436,CS0123,CS1597,CS0157,CS8907,CS0050,CS0160,CS8634,CS8050,CS1941,CS8505,CS8149,CS0549,CS0745,CS8863,CS0507,CS8179,CS0159,CS0689,CS8622,CS8644,CS1963,CS0216,CS8714,CS0170,CS0152,CS1106,CS0066,CS8305,CS8605,CS8509,CS8620,CS1752,CS0073,CS1024,CS1072,CS0060,CS8414,CS1977,CS0642,CS0659,CS8053,CS0506,CS1914,CS1511,CS1690,CS0051,CS1989,CS0233,CS3001,CS7025,CS0175,CS1996,CS8858,CS8665,CS8417,CS8132,CS1918,CS0213,CS1930,CS8089,CS1018,CS1058,CS8129,CS0454,CS0552,CS0211,SYSLIB0023,SYSLIB0014,CS0460,CS8716,CS0139,CS0059,CS8752,CS8122,CS0132,CS8079,CS1621,CS1626,CS0057,CS8310,CS8411,CS1736,CS0151,CS8765,CS8767,SYSLIB0007,CS8127,CS1913,CS1576,CS8072,SYSLIB0022,CS8652,SYSLIB0021,CS1975,CS0641,CS0703,CS1934,CS8332,CS0231,CS0451,CS0556,CS1109,CS8628,CS1961,CS0174,ASP5001,CS0628,CS8756,CS0061,CS0570,CS8410,CS0544,CS8781,CS1995,CS1992,CS1712,CS8188,CS8769,CS8197,CS0567,CS0164,CS8422,CS3008,CS1958,CS0414,CS0107,CS1019,CS0617,CS0312,CS0720,CS0551,CS0435,CS0075,CS0250,CS0649,CS0253,CS0082,CS8670,CS0553,CS1103,CS8025,CS0673,CS8926,CS8866,CS8712,CS0695,CS8887,SYSLIB0020,CS0463,CS8421,CS1062,CS0271,CS8848,CS4036,CS0717,CS0446,CS8198,CS0441,CS0248,CS8137,CS8766,CS0731,CS1100,CS8631,CS0071,CS4029,CS1979,CS4022,CS8777,CS0809,CS1770,CS0434,CS0631,CS8161,CS8511,CS0279,CS8347,CS8074,CS4020,CS4021,CS1730,CS0550,CS8387,CS0056,CS0663,CS1107,CS0265,CS0575,CS0276,CS1105,CS8506,CS8519,CS3002,CS8882,CS1623,CS8873,CS1980,CS8624,CS0620,CS0457,CS1921,CS0574,CS0416,CS0458,CS8666,CS8627,CS8123,CS8136,CS8353,CS8640,CS8023,CS8669,CS0666,SYSLIB0018,CS8338,CS1962,CS0822,CS0274,CS1940,CS0218,CS1673,CS1517,CS1737,CS0655,CS0706,CS1545,CS8516,CS4004,CS0636,CS8207,CS1021,SYSLIB0013,CS0576,CS8918,CS8647,CS8761,CS1020,CS0694,CS0711,CS8707,CS0768,CS8352,CS1971,CS1670,CS8133,CS8170,CS0172,CS0262,CS0853,CS1525",
+      "title": "@AllowedInlineDiagnosticsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "description": "@AllowedInlineDiagnosticsDescription;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "migration": {
+        "pass": {
+          "input": {
+            "store": "SettingsManager",
+            "path": "Microsoft.VisualStudio.IntelliCode.AllowInLineDiagnostics"
+          }
+        }
+      }
+    }
+  },
+  "categories": {
+    "intellicode": {
+      "title": "IntelliCode"
+    },
+    "intellicode.general": {
+      "title": "@intellicode.generalDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "legacyOptionPageId": "c6a0ae28-f8eb-330b-8012-35a3022dded0",
+      "order": 0
+    },
+    "intellicode.advanced": {
+      "title": "@intellicode.advancedDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "legacyOptionPageId": "fcbd3182-d717-31c4-8392-12f1836031e2"
+    },
+    "intellicode.advanced.lineCompletions": {
+      "title": "@intellicode.advanced.lineCompletionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "order": 0
+    },
+    "intellicode.advanced.logging": {
+      "title": "@intellicode.advanced.loggingDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "order": 1
+    },
+    "intellicode.advanced.suggestions": {
+      "title": "@intellicode.advanced.suggestionsDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "order": 2
+    },
+    "intellicode.advanced.internal": {
+      "title": "@intellicode.advanced.internalDisplayName;{237bde42-2754-4b15-adbd-0b6cece84300}",
+      "order": 3,
+      "visibleWhen": "(${env:COPILOT_INTERNALUSER} == 'true' || ${feature:VS.Copilot.InternalUser} == 'true') && ${env:COPILOT_INTERNALUSER} != 'false'"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ML.ModelBuilder.CodeGenerator.Contract</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType">
+            <summary>
+            column type.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.Int">
+            <summary>
+            int.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.Float">
+            <summary>
+            float.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.Double">
+            <summary>
+            double.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.String">
+            <summary>
+            string.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.Bool">
+            <summary>
+            bool.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.Date">
+            <summary>
+            date.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.ColumnType.VectorString">
+            <summary>
+            Array string
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.Column">
+            <summary>
+            column contract.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.Column.Name">
+            <summary>
+            Gets or sets column's name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.Column.Type">
+            <summary>
+            Gets or sets column's type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.Column.SampleValue">
+            <summary>
+            Gets or sets column's sample value in text format.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType">
+            <summary>
+            code generator target.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType.ModelBuilder">
+            <summary>
+            model builder.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType.CLI">
+            <summary>
+            mlnet cli.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TaskType">
+            <summary>
+            Supported task type.
+            </summary>
+        </member>
+    </members>
+</doc>

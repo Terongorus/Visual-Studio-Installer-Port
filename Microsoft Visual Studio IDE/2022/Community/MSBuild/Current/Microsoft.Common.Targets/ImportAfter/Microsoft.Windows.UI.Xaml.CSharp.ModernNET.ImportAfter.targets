@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+***********************************************************************************************
+Microsoft.Windows.UI.Xaml.CSharp.ModernNET.ImportAfter.targets
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--
+    This .targets imports the XAML compiler .targets for UWP XAML apps using modern .NET. On legacy UWP, the default UWP XAML
+    template project had an 'Import' directive at the end of the .csproj file that would pull in those .targets. For apps on
+    modern .NET, which use the SDK-style .csproj, we want this to be done automatically when 'UseUwpTools' is set. This property
+    is the same one that controls several other opt-in features for UWP XAML apps on modern .NET (eg. single-project MSIX support).
+  -->
+  <PropertyGroup>
+    <UwpToolsMicrosoftWindowsUIXamlCSharpTargets Condition="'$(UwpToolsMicrosoftWindowsUIXamlCSharpTargets)' == ''">$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\8.21\Microsoft.Windows.UI.Xaml.CSharp.ModernNET.targets</UwpToolsMicrosoftWindowsUIXamlCSharpTargets>
+  </PropertyGroup>
+  <Import Condition="'$(UseUwpTools)' == 'true' AND Exists('$(UwpToolsMicrosoftWindowsUIXamlCSharpTargets)') AND '$(SkipImportUwpToolsMicrosoftWindowsUIXamlCSharpTargets)' != 'true'"
+          Project="$(UwpToolsMicrosoftWindowsUIXamlCSharpTargets)" />
+</Project>

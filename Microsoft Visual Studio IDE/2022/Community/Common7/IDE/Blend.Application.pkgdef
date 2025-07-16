@@ -1,0 +1,49 @@
+[$RootKey$]
+"ThisVersionDTECLSID"="{013041C5-34C6-4244-9413-586B7412EBC1}"
+
+[$RootKey$\AppCommandLine\FirstLaunchSetup]
+@="First Launch Setup"
+
+[$RootKey$\Menus]
+"{98163396-3C1D-459A-A5E2-90F7E31A1433}"=",1000,1"
+
+[$RootKey$\Packages\{98163396-3C1D-459A-A5E2-90F7E31A1433}]
+@="Blend Menu Package"
+"InprocServer32"="$PackageFolder$\BlendMnu.dll"
+
+[$RootKey$\Packages\{98163396-3C1D-459A-A5E2-90F7E31A1433}\SatelliteDll]
+"DllName"="BlendMui.dll"
+"Path"="$PackageFolder$"
+
+[$RootKey$\Profile]
+"AppIdSupportsProfiles"=dword:00000001
+"DefaultVsProfile"="$ShellFolder$\Common7\IDE\BlendExtensions\Profiles\Blend.vssettings"
+"DefaultSettingsLocation"="$ShellFolder$\Common7\IDE\BlendExtensions\Profiles\"
+
+[$RootKey$\Services\{0C539790-12E4-11CF-B661-00AA004CD6D8}]
+@="{98163396-3C1D-459A-A5E2-90F7E31A1433}"
+"Name"="SApplicationObject Service"
+
+[$RootKey$\Services\{FD9DC8E3-2FFC-446D-8C50-99CA4A3D2D1C}]
+@="{98163396-3C1D-459A-A5E2-90F7E31A1433}"
+"Name"="SVsShell Service"
+
+//Setting the URLs for Blend Help
+[$RootKey$\Help]
+"AskAQuestionUrl"="https://go.microsoft.com/fwlink/?LinkId=224400&clcid=%VSSPV_LCID_HEX%"
+"SendFeedbackUrl"="https://go.microsoft.com/fwlink/?LinkId=224401&clcid=%VSSPV_LCID_HEX%"
+[$RootKey$\StartPage]
+"NewsChannel"="https://go.microsoft.com/fwlink/?linkid=224423&clcid=%VSSPV_LCID_HEX%"
+
+[$RootKey$\AutoLoadPackages\{98163396-3C1D-459A-A5E2-90F7E31A1433}]
+@="UICONTEXT_Blend"
+
+[$RootKey$\TemplatesSettings]
+"AppIdFilterTag"="blend"
+"AppIdShowByDefault"=dword:00000000
+
+// Workaround while bug 1160832 is pending. A rogue pkgdef (Microsoft.VisualStudio.Web.PackageManagement) is overwriting this key with the wrong package value.
+[$RootKey$\ToolsOptionsPages\Projects]
+@="#14140"
+"Package"="{DA9FB551-C724-11D0-AE1F-00A0C90FFFC3}"
+"Sort"=dword:00000000

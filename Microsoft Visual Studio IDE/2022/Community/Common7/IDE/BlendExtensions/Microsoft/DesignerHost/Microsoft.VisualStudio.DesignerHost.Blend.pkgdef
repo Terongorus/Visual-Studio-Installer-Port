@@ -1,0 +1,40 @@
+[$RootKey$\Menus]
+"{512be089-83ec-4cc6-8483-cf16565ae209}"=", BlendMenus.ctmenu, 1"
+
+// Theme Names--------------------------------------------------------------------------------
+[$RootKey$\Themes\{563745D6-03F7-4048-9C51-D1259288A120}]
+@="Blend"
+"Name"="@ThemeName_Blend;{512be089-83ec-4cc6-8483-cf16565ae209}"
+
+//
+// Asset Pane Extensibility Points
+//
+
+// WPF 3.5
+[$RootKey$\AssetPane\WPF\v3.5\WPFInteractivity]
+@="$ProgramFiles$\Microsoft SDKs\Expression\Blend 3\Interactivity\Libraries\WPF\"
+[$RootKey$\AssetPane\WPF\v3.5\WPFToolkit]
+@="$ProgramFiles$\WPF Toolkit\v3.5.50211.1\"
+[$RootKey$\AssetPane\.NetFramework\v3.5\UserAssemblies]
+@="$BaseInstallDir$\Blend\Libraries\.NETFramework\v3.5\"
+
+// WPF 4.0
+[$RootKey$\AssetPane\.NetFramework\v4.0\BlendLibraries]
+@="$ProgramFiles$\Microsoft SDKs\Expression\Blend\.NETFramework\v4.0\Libraries\"
+[$RootKey$\AssetPane\.NetFramework\v4.0\UserAssemblies]
+@="$BaseInstallDir$\Blend\Libraries\.NETFramework\v4.0\"
+
+// WPF 4.5
+[$RootKey$\AssetPane\.NetFramework\v4.5\BlendLibraries]
+@="$ProgramFiles$\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\"
+[$RootKey$\AssetPane\.NetFramework\v4.5\UserAssemblies]
+@="$BaseInstallDir$\Blend\Libraries\.NETFramework\v4.5\"
+
+//
+// Provide IMef service required by "WPF App (.NET Core)" project template
+// rather than loading the WebCommonPackage package which provides it in VS.
+//
+[$RootKey$\Services\{6179AA16-A957-441E-9E0A-CC4F8A26849F}]
+@="{512be089-83ec-4cc6-8483-cf16565ae209}"
+"Name"="IMef Service"
+"IsAsyncQueryable"=dword:00000001

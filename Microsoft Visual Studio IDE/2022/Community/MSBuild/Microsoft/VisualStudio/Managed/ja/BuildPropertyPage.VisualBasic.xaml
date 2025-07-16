@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="Build" OverrideMode="Replace" Description="プロジェクトのビルド方法を制御するプロパティを指定します。" DisplayName="コンパイル" PageTemplate="generic" Order="300" xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="全般" />
+    <Category Name="Options" DisplayName="オプション" />
+    <Category Name="Warnings" DisplayName="警告" />
+    <Category Name="Events" Description="ビルドの前後に実行するカスタム イベントを構成します。" DisplayName="イベント" />
+    <Category Name="Advanced" DisplayName="詳細" Description="アプリケーションの詳細設定。" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="True" />
+  </Rule.DataSource>
+  <StringProperty Name="OutputPath" DisplayName="ビルド出力パス" Category="General" Subtype="directory" />
+  <BoolProperty Name="GenerateDocumentationFile" DisplayName="XML ドキュメント ファイルを生成する" Description="ドキュメント情報を生成するかどうかを指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2165772" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <StringProperty Name="DocumentationFile" DisplayName="XML ドキュメント ファイル パス" Description="API ドキュメント ファイルの省略可能なパスです。既定の場所を使用する場合は空白のままにしてください。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2147081" Category="General" Subtype="file">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </StringProperty.DataSource>
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+  </StringProperty>
+  <BoolProperty Name="PublishDocumentationFile" DisplayName="ドキュメント ファイルを公開する" Description="このプロパティが true の場合、プロジェクトの XML ドキュメント ファイル (生成された場合) は、プロジェクトの発行出力に含まれます。このプロパティの既定値は true です。" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <!-- TODO: Condition the visibility on this being a class library -->
+  <BoolProperty Name="RegisterForComInterop" DisplayName="COM 相互運用機能の登録" Description="管理対象アプリで COM オブジェクト (COM 呼び出し可能ラッパー) を公開して COM オブジェクトにそのアプリとの対話を可能にするかどうかを指定します。" Category="General" />
+  <EnumProperty Name="OptionExplicit" DisplayName="Option Explicit" Description="変数の明示的な宣言を必要とするかどうかを指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionStrict" DisplayName="Option Strict" Description="厳密な型セマンティクスを強制適用するかどうかを指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionCompare" DisplayName="Option Compare" Description="使用する文字列比較の種類を指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Binary" DisplayName="Binary"></EnumValue>
+    <EnumValue Name="Text" DisplayName="Text"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionInfer" DisplayName="Option Infer" Description="変数宣言でローカル型推論を許可するかどうかを指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On">
+      <!-- On: This is a VB keyword and should not be translated -->
+    </EnumValue>
+    <EnumValue Name="Off" DisplayName="Off">
+      <!-- Off: This is a VB keyword and should not be translated -->
+    </EnumValue>
+  </EnumProperty>
+  <DynamicEnumProperty Name="PlatformTarget" DisplayName="ターゲット CPU" Description="出力ファイルの対象となるプロセッサを指定します。[すべての CPU] を選択すると、すべてのプロセッサが許容可能に指定され、アプリケーションを幅広いハードウェアで実行できるようになります。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options" EnumProvider="PlatformTargetEnumProvider" MultipleValuesAllowed="False" />
+  <BoolProperty Name="Prefer32Bit" DisplayName="32 ビットを優先" Description="32 ビット アプリケーションと 64 ビット アプリケーションの両方をサポートするシステムで、32 ビット モードで実行します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="PreferNativeArm64" DisplayName="ネイティブ ARM64 を優先する" Description="既定では、ネイティブ ハードウェア プラットフォームで実行します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2166468" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <EnumProperty Name="WarningSeverity" DisplayName="警告の重要度" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings">
+    <EnumValue Name="Individual" DisplayName="警告の重要度を個別に設定する" />
+    <EnumValue Name="DisableAll" DisplayName="すべての警告を無効化" />
+    <EnumValue Name="AllAsErrors" DisplayName="すべての警告をエラーとして扱う" />
+  </EnumProperty>
+  <DynamicEnumProperty Name="ImplicitConversion" DisplayName="暗黙的な変換" Description="暗黙的な縮小変換は、縮小変換である暗黙的なデータ型変換がある場合に発生します。'Option Strict' がオンの場合は必ず 'エラー' になります。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196420" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="LateBinding" DisplayName="遅延バインド" Description="オブジェクトは、型 'Object' として宣言されている変数のプロパティまたはメソッドに割り当てられていると、遅延バインドされます。これらの操作は実行時に失敗する可能性があります。'Option Strict' がオンの場合は必ず 'エラー' になります。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196325" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ImplicitType" DisplayName="暗黙的な型" Description="暗黙的オブジェクト型のエラーは、宣言された変数に対して適切な型を推定できず 'Object' 型であると推定された場合に発生します。'Option Strict' がオンの場合は必ず 'エラー' になります。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196160" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UseOfVariablePriorToAssignment" DisplayName="割り当て前の変数の使用" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningRefTypeWithoutReturnValue" DisplayName="戻り値なしで参照型を返す関数" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningIntrinsicValueTypeWithoutReturnValue" DisplayName="戻り値なしで組み込み値型を返す関数" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UnusedLocalVariable" DisplayName="未使用のローカル変数" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="InstanceVariableAccessesSharedMember" DisplayName="共有メンバーにアクセスするインスタンス変数" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="RecursiveOperatorOrPropertyAccess" DisplayName="演算子またはプロパティの再帰的なアクセス" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="DuplicateOrOverlappingCatchBlocks" DisplayName="重複またはオーバーラップする catch ブロック" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <StringProperty Name="PreBuildEvent" DisplayName="ビルド前のイベント" Description="ビルドの開始前に実行されるコマンドを指定します。プロジェクトが最新の場合は実行されません。終了コードを 0 以外にすると、ビルドは実行前に失敗します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <StringProperty Name="PostBuildEvent" DisplayName="ビルド後のイベント" Description="ビルドの完了後に実行されるコマンドを指定します。ビルドに失敗した場合は実行されません。.Bat ファイルを呼び出すには、'call' を使用します。終了コードを 0 以外にすると、ビルドは失敗します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="RunPostBuildEvent" DisplayName="ビルド後のイベントをいつ実行するか" Description="ビルド後のイベントが実行される条件を指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <EnumProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" PersistedName="RunPostBuildEvent" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Always" DisplayName="常時" />
+    <EnumValue Name="OnBuildSuccess" DisplayName="ビルドに成功したとき" IsDefault="True" />
+    <EnumValue Name="OnOutputUpdated" DisplayName="出力が更新されたとき" />
+  </EnumProperty>
+  <BoolProperty Name="RemoveIntegerChecks" DisplayName="整数オーバーフローのチェックを解除" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="整数オーバーフローのチェックを解除します。" Category="Advanced" />
+  <BoolProperty Name="Optimize" DisplayName="最適化を有効にする" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="コンパイラの最適化を有効にします。" Category="Advanced" />
+  <!-- TODO: Validation -->
+  <StringProperty Name="BaseAddress" DisplayName="DLL ベース アドレス" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced" />
+  <EnumProperty Name="DebugType" DisplayName="デバッグ シンボル" Description="ビルド中に生成されたデバッグ シンボルの種類を指定します。" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced">
+    <EnumProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="デバッグの種類" />
+    </EnumProperty.Metadata>
+    <EnumValue Name="none" DisplayName="生成済みのシンボルはありません" />
+    <!--
+    Note that 'pdbonly' is the same as 'full'.
+    <EnumValue Name="pdbonly"
+               DisplayName="PDB Only" />
+    -->
+    <EnumValue Name="full" DisplayName="PDB ファイル、現在のプラットフォーム" />
+    <EnumValue Name="portable" DisplayName="プラットフォーム間で移植可能な PDB ファイル" />
+    <EnumValue Name="embedded" DisplayName="DLL/EXE に組み込まれ、プラットフォーム間で移植可能" />
+  </EnumProperty>
+  <BoolProperty Name="DefineDebug" DisplayName="DEBUG 定数の定義" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="DEBUG をコンパイル定数として指定します。" Category="Advanced" />
+  <BoolProperty Name="DefineTrace" DisplayName="TRACE 定数の定義" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="TRACE をコンパイル定数として指定します。" Category="Advanced" />
+  <StringProperty Name="DefineConstants" DisplayName="カスタム定数" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced" Description="アプリケーションのカスタム条件付きコンパイル定数を指定します。値はオプションであり、オプションの動作では値を空白のままにすることに注意してください。値が文字列の場合は、値を引用符で囲んでください。">
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="NameValueList">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Encoding" Value="VBDefineConstantsEncoding" />
+          <NameValuePair Name="IsValueRequired" Value="False" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="GenerateSerializationAssemblies" DisplayName="シリアル化アセンブリの生成" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced">
+    <EnumValue Name="On" DisplayName="オン" />
+    <EnumValue Name="Off" DisplayName="オフ" />
+    <EnumValue Name="Auto" DisplayName="自動" />
+  </EnumProperty>
+</Rule>

@@ -1,0 +1,36 @@
+{
+  "kind": "nuget.generic",
+  "order": 10,
+  "model": {
+    "jobs": {
+      ".NETCoreApp,Version=2.1": [
+        {
+          "Id": "Microsoft.EntityFrameworkCore.Sqlite",
+          "Version": "3.1.32",
+          "Operation": "Install"
+        }
+      ],
+      ".NETCoreApp,Version=6.0": [
+        {
+          "Id": "Microsoft.EntityFrameworkCore.Sqlite",
+          "Version": "6.0.36",
+          "Operation": "Install"
+        }
+      ],
+      ".NETCoreApp,Version=8.0": [
+        {
+          "Id": "Microsoft.EntityFrameworkCore.Sqlite",
+          "Version": "8.0.14",
+          "Operation": "Install"
+        }
+      ],
+      ".NETCoreApp,Version=9.0": [
+        {
+          "Id": "Microsoft.EntityFrameworkCore.Sqlite",
+          "Version": "9.0.3",
+          "Operation": "Install"
+        }
+      ]
+    }
+  }
+}

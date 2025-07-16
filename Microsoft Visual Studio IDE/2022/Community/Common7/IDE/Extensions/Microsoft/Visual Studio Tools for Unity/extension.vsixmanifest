@@ -1,0 +1,39 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="VSTU17.0.b6546c9c-e5fe-4095-8d39-c080d9bd6a85" Version="17.14.1.0" Language="en-US" Publisher="Microsoft Corporation" />
+    <DisplayName>Visual Studio 2022 Tools for Unity</DisplayName>
+    <Description xml:space="preserve">Visual Studio 2022 Tools for Unity</Description>
+    <MoreInfo>http://go.microsoft.com/fwlink/?LinkID=506723</MoreInfo>
+    <PackageId>SyntaxTree.VisualStudio.Unity.Vsix</PackageId>
+  </Metadata>
+  <Installation SystemComponent="true" Experimental="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Installation SystemComponent="true" Experimental="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <ProductArchitecture>x86</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Installation SystemComponent="true" Experimental="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
+      <ProductArchitecture>arm64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[17.0,18.0)" />
+    <Prerequisite Id="Microsoft.VisualStudio.Debugger" Version="[17.0,18.0)" DisplayName="Visual Studio Debugger" />
+  </Prerequisites>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="SyntaxTree.VisualStudio.Unity.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="UnityShader.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.MefComponent" Path="SyntaxTree.VisualStudio.Unity.dll" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.CodeLensComponent.Dotnet" Path="SyntaxTree.VisualStudio.Unity.CodeLens.dll" />
+  </Assets>
+</PackageManifest>

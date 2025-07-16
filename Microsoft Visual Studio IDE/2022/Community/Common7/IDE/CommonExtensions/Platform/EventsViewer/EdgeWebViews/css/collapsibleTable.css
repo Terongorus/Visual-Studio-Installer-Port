@@ -1,0 +1,20 @@
+﻿.collapsibleTableContainer .collapsibleTable-expander {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    vertical-align: middle;
+    background: var(--itemCollapsed, url("../images/itemCollapsed.png")) no-repeat 0px 0px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 70%;
+}
+
+    .collapsibleTableContainer .collapsibleTable-expander.expanded {
+        background: url("../images/itemExpanded.png") no-repeat 0px 0px; /*[ url({itemExpanded}) no-repeat 0px 0px]*/
+        background: var(--itemExpanded, url("../images/itemExpanded.png")) no-repeat 0px 0px;
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 60%;
+    }

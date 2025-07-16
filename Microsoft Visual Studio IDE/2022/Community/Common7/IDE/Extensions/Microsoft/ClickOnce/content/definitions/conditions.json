@@ -1,0 +1,201 @@
+{
+  "allWebProjects": {
+    "kind": "or",
+    "operands": [
+      { "$ref": "#/isWeb" },
+      { "$ref": "#/isWebSite" }
+    ]
+  },
+  "canHaveApi": {
+    "kind" : "and",
+    "operands": [
+      {
+        "kind": "TfmVersionComparison",
+        "tfmType": "netcore",
+        "version": "3.1",
+        "comparison": "GreaterThanOrEqualTo"
+      },
+      {
+        "kind": "HasProjectCapability",
+        "capability": "DotNetCoreWeb"
+      },
+      {
+        "kind": "IsPackageInstalledAtLeastVersion",
+        "minVersion": "5.0",
+        "packageName": "Swashbuckle.AspNetCore",
+      }
+    ]
+  },
+  "dockerOsWindows": {
+    "kind": "DockerOs",
+    "os": "Windows"
+  },
+  "hasDockerFile": {
+    "kind": "HasProjectItem",
+    "projectItem": "dockerFile"
+  },
+  "isAppServicePublish": {
+    "kind": "HasProjectCapability",
+    "capability": "AppServicePublish"
+  },
+  "isAzureFunction": {
+    "kind": "HasProjectCapability",
+    "capability": "AzureFunctions"
+  },
+  "isNotAzureFunction": {
+    "kind": "not",
+    "operand": {
+      "$ref": "#/isAzureFunction"
+    }
+  },
+  "isAzureFunctionLinuxSupported": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isAzureFunction" },
+      {
+        "kind": "not",
+        "operand": {
+          "kind": "or",
+          "operands": [
+            {
+              "kind": "ProjectProperty",
+              "propertyName": "AzureFunctionsVersion",
+              "expectedValue": "v2"
+            },
+            {
+              "kind": "ProjectProperty",
+              "propertyName": "AzureFunctionsVersion",
+              "expectedValue": "v1"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "isConsoleWebJob": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isNotWebProject" },
+      { "$ref": "#/isAppServicePublish" },
+      {
+        "kind": "not",
+        "operand": {
+          "$ref": "#/isLibraryProjectOutputType"
+        }
+      }
+    ]
+  },
+  "isCps": {
+    "kind": "HasProjectCapability",
+    "capability": "CPS"
+  },
+  "isDotNet": {
+    "kind": "HasProjectCapability",
+    "capability": ".NET"
+  },
+  "isDotNetCore": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isCps" },
+      { "$ref": "#/isDotNet" }
+    ]
+  },
+  "isDotNetCoreConsole": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isDotNetCore" },
+      { "$ref": "#/isNotWebProject" }
+    ]
+  },
+  "isDotNetCoreWeb": {
+    "kind": "HasProjectCapability",
+    "capability": "DotNetCoreWeb"
+  },
+  "isDotNetCoreTFM": {
+    "kind": "TfmVersionComparison",
+    "tfmType": "netcore",
+    "version": "3.1",
+    "comparison": "GreaterThanOrEqualTo"
+  },
+  "isFolderPublish": {
+    "kind": "HasProjectCapability",
+    "capability": "FolderPublish"
+  },
+  "isLibraryProjectOutputType": {
+    "kind": "ProjectProperty",
+    "propertyName": "OutputType",
+    "expectedValue": "library"
+  },
+  "isExeProjectOutputType": {
+    "kind": "or",
+    "operands": [
+      {
+        "kind": "ProjectProperty",
+        "propertyName": "OutputType",
+        "expectedValue": "Exe"
+      },
+      {
+        "kind": "ProjectProperty",
+        "propertyName": "OutputType",
+        "expectedValue": "WinExe"
+      }
+    ]
+  },
+  "isNotWebProject": {
+    "kind": "and",
+    "operands": [
+      {
+        "kind": "not",
+        "operand": {
+          "$ref": "#/isWeb"
+        }
+      },
+      {
+        "kind": "not",
+        "operand": {
+          "$ref": "#/isWebSite"
+        }
+      }
+    ]
+  },
+  "isWAP": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/allWebProjects" },
+      {
+        "kind": "not",
+        "operand": {
+          "$ref": "#/isDotNetCoreWeb"
+        }
+      }
+    ]
+  },
+  "isWeb": {
+    "kind": "HasProjectCapability",
+    "capability": "Web"
+  },
+  "isWebSite": {
+    "kind": "HasProjectCapability",
+    "capability": "WebsiteProject"
+  },
+  "isDotNetCoreWorker": {
+    "kind": "HasProjectCapability",
+    "capability": "DotNetCoreWorker"
+  },
+  "isNotDotNetCoreWorker": {
+    "kind": "not",
+    "operand": {
+      "$ref": "#/isDotNetCoreWorker"
+    }
+  },
+  "isAspire": {
+    "kind": "HasProjectCapability",
+    "capability": "Aspire"
+  },
+  "isNotAspire": {
+    "kind": "not",
+    "operand": {
+      "$ref": "#/isAspire"
+    }
+  }
+}

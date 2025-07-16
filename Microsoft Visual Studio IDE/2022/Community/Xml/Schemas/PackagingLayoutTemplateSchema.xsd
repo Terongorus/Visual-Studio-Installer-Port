@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schemas.microsoft.com/appx/makeappx/2017"
+  xmlns="http://schemas.microsoft.com/appx/makeappx/2017"
+  xmlns:t="http://schemas.microsoft.com/appx/manifest/types">
+
+  <xs:import namespace="http://schemas.microsoft.com/appx/manifest/types"/>
+
+  <xs:element name="PackagingLayoutTemplate">
+    <xs:complexType>
+      <xs:choice minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="GeneratedPackageFamily" type="CT_GeneratedPackageFamily"/>
+        <xs:element name="GeneratedPrebuiltPackage"/>
+        <xs:element name="OptionalPackage" type="CT_OptionalPackage"/>
+        <xs:element name="PackageFamily" type="CT_PackageFamily"/>
+        <xs:element name="PrebuiltPackage" type="CT_PrebuiltPackage"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="CT_GeneratedPackageFamily">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="GeneratedPackage" type="CT_GeneratedPackage"/>
+      <xs:element name="GeneratedAssetPackage" type="CT_GeneratedAssetPackage"/>
+      <xs:element name="GeneratedResourcePackage" type="CT_GeneratedResourcePackage"/>
+      <xs:element name="Package" type="CT_Package"/>
+      <xs:element name="AssetPackage" type="CT_AssetPackage"/>
+      <xs:element name="ResourcePackage" type="CT_ResourcePackage"/>
+    </xs:choice>
+    <xs:attribute name="ID" type="ST_ResourceIdToken" use="required"/>
+    <xs:attribute name="ManifestPath" type="ST_NonEmptyStringToken" use="required"/>
+    <xs:attribute name="FileName" type="t:ST_FileNameSegment" use="optional"/>
+    <xs:attribute name="RelatedSet" type="xs:boolean" use="optional" default="true"/>
+    <xs:attribute name="Optional" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="FlatBundle" type="xs:boolean" use="optional" default="true"/>
+    <xs:attribute name="Encrypt" type="xs:boolean" use="optional" default="false"/>
+    <xs:attribute name="ResourceManager" type="xs:boolean" use="optional" default="true"/>
+  </xs:complexType>
+
+  <xs:attributeGroup name="GeneratedGeneralPackageAttributes">
+    <xs:attribute name="ID" type="ST_ResourceIdToken" use="required"/>
+    <xs:attribute name="ManifestPath" type="ST_NonEmptyStringToken" use="optional"/>
+    <xs:attribute name="FileName" type="t:ST_FileNameSegment" use="optional"/>
+    <xs:attribute name="Compress" type="xs:boolean" use="optional" default="true"/>
+    <xs:attribute name="Encrypt" type="xs:boolean" use="optional" default="false"/>
+  </xs:attributeGroup>
+
+  <xs:complexType name="CT_GeneratedPackage">
+    <xs:all>
+      <xs:element name="GeneratedFiles" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="GeneratedResources" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Files" type="CT_Files" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Resources" type="CT_Resources" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attributeGroup ref="GeneratedGeneralPackageAttributes"/>
+    <xs:attribute name="ProcessorArchitecture" type="ST_ArchitectureUnrestrictedToken" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="CT_GeneratedAssetPackage">
+    <xs:all>
+      <xs:element name="GeneratedFiles" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Files" type="CT_Files" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attributeGroup ref="GeneratedGeneralPackageAttributes"/>
+    <xs:attribute name="AllowExecution" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+  <xs:complexType name="CT_GeneratedResourcePackage">
+    <xs:all>
+      <xs:element name="GeneratedFiles" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="GeneratedResources" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Files" type="CT_Files" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Resources" type="CT_Resources" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+    <xs:attributeGroup ref="GeneratedGeneralPackageAttributes"/>
+    <xs:attribute name="AllowExecution" type="xs:boolean" use="optional" default="false"/>
+  </xs:complexType>
+
+  <xs:complexType name="CT_OptionalPackage">
+    <xs:attribute name="Path" type="t:ST_NonEmptyString" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="ST_ResourceIdToken">
+    <xs:restriction base="ST_AsciiIdentifierToken">
+      <xs:maxLength value="32767"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_NonEmptyStringToken">
+    <xs:restriction base="t:ST_NonEmptyString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="32767"/>
+      <xs:pattern value="[-.A-Za-z0-9{}]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_ArchitectureUnrestrictedToken">
+    <xs:restriction base="ST_AsciiIdentifierToken">
+      <xs:maxLength value="45"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ST_AsciiIdentifierToken">
+    <xs:restriction base="t:ST_NonEmptyString">
+      <xs:pattern value="[-.A-Za-z0-9{}]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

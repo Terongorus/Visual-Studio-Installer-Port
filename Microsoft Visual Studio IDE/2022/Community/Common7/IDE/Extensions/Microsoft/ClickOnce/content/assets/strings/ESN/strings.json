@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "Publicar la aplicación con ClickOnce",
+  "clickonceCategoryMultipleTargetsDescription": "¿En qué destino local quiere publicar?",
+  "installLocation": "Ubicación de instalación",
+  "manifestsSigned": "Manifiestos firmados",
+  "publishLanguage": "Idioma de publicación",
+  "configuration": "Configuración",
+  "portable": "Portable",
+  "PublishLocation": "Ubicación de publicación",
+  "settingsSection": "Configuración",
+  "showAll": "Mostrar todo",
+  "targetFramework": "Plataforma de destino",
+  "targetRuntime": "Tiempo de ejecución de destino",
+  "updateEnabled": "Actualización habilitada",
+  "updateLocation": "Ubicación de actualización"
+}

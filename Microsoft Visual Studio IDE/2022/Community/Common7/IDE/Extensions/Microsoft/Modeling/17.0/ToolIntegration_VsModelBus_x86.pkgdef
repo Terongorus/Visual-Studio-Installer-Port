@@ -1,0 +1,11 @@
+[$RootKey$\Packages\{B7C8A95B-B8E4-4adb-9560-0F487D1429FB}]
+@="Microsoft.VisualStudio.Modeling.Integration.Shell.ModelBusPackage"
+"Assembly"="Microsoft.VisualStudio.Modeling.Sdk.Integration.Shell,version=17.0.0.0,publicKeyToken=b03f5f7f11d50a3a,culture=neutral"
+"Class"="Microsoft.VisualStudio.Modeling.Integration.Shell.ModelBusPackage"
+"InprocServer32"="$System$\mscoree.dll"
+[$RootKey$\Services\{099A2AA5-CE07-4FE4-85E8-AD53D8D5D56C}]
+@="{B7C8A95B-B8E4-4adb-9560-0F487D1429FB}"
+"Name"="ReferencePicker"
+[$RootKey$\Services\{8901DD4E-64BA-431f-8040-0BC75EE1ADAD}]
+@="{B7C8A95B-B8E4-4adb-9560-0F487D1429FB}"
+"Name"="ModelBus"

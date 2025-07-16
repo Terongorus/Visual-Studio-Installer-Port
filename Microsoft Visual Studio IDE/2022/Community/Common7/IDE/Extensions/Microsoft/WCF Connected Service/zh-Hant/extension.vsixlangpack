@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>Microsoft WCF Web Service Reference 提供者</LocalizedName>
+  <LocalizedDescription>Visual Studio Service Reference 提供者可將 WCF Web Service Reference 新增至 Visual Studio 2019 中的 .NET Core 專案。</LocalizedDescription>
+</VsixLanguagePack>

@@ -1,0 +1,2 @@
+﻿This file is for configuring the default checked providers in the Diagnostics Hub EventsViewer tool. Replace the contents of this file with an array of provider guids to be checked by default, like the next line below.
+[ "28ad2447-105b-4fe2-9599-e59b2aa9a634", "9e5f9046-43c6-4f62-ba13-7b19896253ff" ]

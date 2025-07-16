@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>Microsoft Office 365 服务与 Microsoft Graph</LocalizedName>
+  <LocalizedDescription>使用 Microsoft Graph API 将应用程序与 Office 365 服务集成</LocalizedDescription>
+</VsixLanguagePack>

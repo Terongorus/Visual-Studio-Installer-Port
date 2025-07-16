@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+    <Title>Setter</Title>
+    <Author>Microsoft Corporation</Author>
+    <Description>Snippet for a new Setter</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>set</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>PropertyName</ID>
+        <ToolTip>The name of the property to set</ToolTip>
+        <Default>Background</Default>
+        <Function>
+        </Function>
+      </Literal>
+      <Literal Editable="true">
+        <ID>PropertyValue</ID>
+        <ToolTip>The value of the property to set</ToolTip>
+        <Default>Red</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="XAML">
+      <![CDATA[<Setter Property="$PropertyName$" Value="$PropertyValue$" />$selected$$end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

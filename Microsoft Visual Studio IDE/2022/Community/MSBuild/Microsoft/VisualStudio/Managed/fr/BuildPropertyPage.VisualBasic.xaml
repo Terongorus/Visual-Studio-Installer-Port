@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license. See the LICENSE.md file in the project root for more information. -->
+<Rule Name="Build" OverrideMode="Replace" Description="Spécifie les propriétés qui contrôlent le mode de génération du projet." DisplayName="Compiler" PageTemplate="generic" Order="300" xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="Général" />
+    <Category Name="Options" DisplayName="Options" />
+    <Category Name="Warnings" DisplayName="Avertissements" />
+    <Category Name="Events" Description="Configure les événements personnalisés qui s’exécutent avant et après le build." DisplayName="Événements" />
+    <Category Name="Advanced" DisplayName="Avancé" Description="Paramètres de ressources avancés de l'application" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="True" />
+  </Rule.DataSource>
+  <StringProperty Name="OutputPath" DisplayName="Créer un chemin de sortie" Category="General" Subtype="directory" />
+  <BoolProperty Name="GenerateDocumentationFile" DisplayName="Générer un fichier de documentation XML" Description="Spécifie s’il faut générer des informations de documentation." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2165772" Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+  </BoolProperty>
+  <StringProperty Name="DocumentationFile" DisplayName="Chemin du fichier de documentation XML" Description="Chemin facultatif du fichier de documentation de l'API. Pour utiliser l'emplacement par défaut, n'indiquez rien." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2147081" Category="General" Subtype="file">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </StringProperty.DataSource>
+    <StringProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </StringProperty.Metadata>
+  </StringProperty>
+  <BoolProperty Name="PublishDocumentationFile" DisplayName="Publier le fichier de documentation" Description="Lorsque cette propriété a la valeur true, le fichier de documentation XML du projet, s’il est généré, est inclus dans la sortie de publication du projet. Cette propriété a la valeur true par défaut." Category="General">
+    <BoolProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" />
+    </BoolProperty.DataSource>
+    <BoolProperty.Metadata>
+      <NameValuePair Name="VisibilityCondition">
+        <NameValuePair.Value>(has-evaluated-value "Build" "GenerateDocumentationFile" true)</NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <!-- TODO: Condition the visibility on this being a class library -->
+  <BoolProperty Name="RegisterForComInterop" DisplayName="S’inscrire à COM Interop" Description="Spécifie si votre application managée exposera un objet COM (wrapper pouvant être appelé par COM) qui permet à un objet COM d’interagir avec l’application." Category="General" />
+  <EnumProperty Name="OptionExplicit" DisplayName="Option explicite" Description="Spécifie s’il faut exiger une déclaration explicite des variables." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionStrict" DisplayName="Option stricte" Description="Spécifie s’il faut appliquer une sémantique de type stricte." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On"></EnumValue>
+    <EnumValue Name="Off" DisplayName="Off"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionCompare" DisplayName="Option comparer" Description="Spécifie le type de comparaison de chaînes à utiliser." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Binary" DisplayName="Binary"></EnumValue>
+    <EnumValue Name="Text" DisplayName="Text"></EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="OptionInfer" DisplayName="Option infer" Description="Spécifie s’il faut autoriser l’inférence de type local dans les déclarations de variables." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFileWithInterception" HasConfigurationCondition="False" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="On" DisplayName="On">
+      <!-- On: This is a VB keyword and should not be translated -->
+    </EnumValue>
+    <EnumValue Name="Off" DisplayName="Off">
+      <!-- Off: This is a VB keyword and should not be translated -->
+    </EnumValue>
+  </EnumProperty>
+  <DynamicEnumProperty Name="PlatformTarget" DisplayName="Unité centrale cible" Description="Spécifie le processeur qui sera ciblé par le fichier de sortie. Choisissez « Any CPU » pour indiquer que n'importe quel processeur est acceptable, ce qui permet à l'application de fonctionner sur la plus large gamme de matériel." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options" EnumProvider="PlatformTargetEnumProvider" MultipleValuesAllowed="False" />
+  <BoolProperty Name="Prefer32Bit" DisplayName="Préférer 32 bits" Description="Exécutez en mode 32 bits sur les systèmes qui prennent en charge les applications 32 bits et 64 bits." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Options">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <BoolProperty Name="PreferNativeArm64" DisplayName="Préférer ARM64 natif" Description="Exécutez par défaut sur une plateforme matérielle native." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2166468" Category="General">
+    <BoolProperty.Metadata>
+      <NameValuePair Name="DependsOn" Value="Build::PlatformTarget" />
+      <NameValuePair Name="DependsOn" Value="Application::OutputType" />
+      <NameValuePair Name="VisibilityCondition">
+        <!-- Visibility based on: https://github.com/dotnet/msbuild/blob/9bcc06cbe19ae2482ab18eab90a82fd079b26897/src/Tasks/Microsoft.NETFramework.CurrentVersion.props#L87 -->
+        <NameValuePair.Value>
+          (and
+            (has-net-framework)
+            (has-evaluated-value "Build" "PlatformTarget" "Any CPU")
+            (or
+              (has-evaluated-value "Application" "OutputType" "Exe")
+              (has-evaluated-value "Application" "OutputType" "WinExe")
+              (has-evaluated-value "Application" "OutputType" "AppContainerExe")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </BoolProperty.Metadata>
+  </BoolProperty>
+  <EnumProperty Name="WarningSeverity" DisplayName="Gravité de l’avertissement" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings">
+    <EnumValue Name="Individual" DisplayName="Définir individuellement les gravités d’avertissement" />
+    <EnumValue Name="DisableAll" DisplayName="Désactiver tous les avertissements" />
+    <EnumValue Name="AllAsErrors" DisplayName="Traiter tous les avertissements comme des erreurs" />
+  </EnumProperty>
+  <DynamicEnumProperty Name="ImplicitConversion" DisplayName="Conversion implicite" Description="Une conversion restrictive implicite se produit lorsqu’une conversion de type de données implicite est une conversion restrictive. « Erreur » apparaît systématiquement lorsque « Option stricte » est activé." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196420" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="LateBinding" DisplayName="Liaison tardive" Description="Un objet est en liaison tardive lorsqu’il est affecté à une propriété ou à une méthode de variable déclarée comme de type « Objet ». Ces opérations peuvent échouer au moment de l’exécution. « Erreur » apparaît systématiquement lorsque « Option stricte » est activé." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196325" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ImplicitType" DisplayName="Type implicite" Description="Des erreurs de type d’objet implicite se produisent lorsqu’un type approprié ne peut pas être déduit pour une variable déclarée. Un type « Object » est donc déduit. « Erreur » apparaît systématiquement lorsque « Option stricte » est activé." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196160" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not 
+            (or
+              (has-evaluated-value "Build" "OptionStrict" "On")
+              (has-evaluated-value "Build" "WarningSeverity" "DisableAll")
+            )
+          )
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UseOfVariablePriorToAssignment" DisplayName="Utiliser une variable avant l'assignation" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningRefTypeWithoutReturnValue" DisplayName="Fonction qui retourne le type référence sans valeur de retour" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="ReturningIntrinsicValueTypeWithoutReturnValue" DisplayName="Fonction qui retourne un type valeur intrinsèque sans valeur de retour" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="UnusedLocalVariable" DisplayName="Variable locale non utilisée" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="InstanceVariableAccessesSharedMember" DisplayName="La variable d'instance accède au membre partagé" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="RecursiveOperatorOrPropertyAccess" DisplayName="Accès récursif à un opérateur ou une propriété" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <DynamicEnumProperty Name="DuplicateOrOverlappingCatchBlocks" DisplayName="Blocs catch dupliqués ou superposés" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196261" Category="Warnings" EnumProvider="VBDiagnosticSeverityEnumProvider">
+    <DynamicEnumProperty.Metadata>
+      <NameValuePair Name="IsReadOnlyCondition">
+        <NameValuePair.Value>
+          (not (has-evaluated-value "Build" "WarningSeverity" "DisableAll"))
+        </NameValuePair.Value>
+      </NameValuePair>
+    </DynamicEnumProperty.Metadata>
+  </DynamicEnumProperty>
+  <StringProperty Name="PreBuildEvent" DisplayName="Événement pré-build." Description="Spécifie les commandes qui s’exécutent avant le début du build. Ne s’exécute pas si le projet est à jour. Un code de sortie différent de zéro provoquera un échec du build avant son exécution." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <StringProperty Name="PostBuildEvent" DisplayName="Événement post-build" Description="Spécifie les commandes qui s’exécutent une fois le build effectuée. Ne s’exécute pas en cas d’échec du build. Utilisez ’Appeler’ pour appeler les fichiers .bat. Un code de sortie différent de zéro provoquera un échec du build." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <StringProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </StringProperty.DataSource>
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="MultiLineString">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="UseMonospaceFont" Value="True" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="RunPostBuildEvent" DisplayName="Quand exécuter l’événement post-build" Description="Spécifie la condition dans laquelle l’événement post-build est exécuté." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196162" Category="Events">
+    <EnumProperty.DataSource>
+      <DataSource HasConfigurationCondition="False" PersistedName="RunPostBuildEvent" Persistence="ProjectFileWithInterception" SourceOfDefaultValue="AfterContext" />
+    </EnumProperty.DataSource>
+    <EnumValue Name="Always" DisplayName="Toujours" />
+    <EnumValue Name="OnBuildSuccess" DisplayName="Quand le build réussit" IsDefault="True" />
+    <EnumValue Name="OnOutputUpdated" DisplayName="Lors de la mise à jour de la sortie" />
+  </EnumProperty>
+  <BoolProperty Name="RemoveIntegerChecks" DisplayName="Supprimer les contrôles de dépassement sur les entiers" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="Supprimez la vérification du dépassement de capacité de l’entier." Category="Advanced" />
+  <BoolProperty Name="Optimize" DisplayName="Activer les optimisations" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Description="Activez les optimisations du compilateur." Category="Advanced" />
+  <!-- TODO: Validation -->
+  <StringProperty Name="BaseAddress" DisplayName="Adresse de base de la DLL" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced" />
+  <EnumProperty Name="DebugType" DisplayName="Symboles de débogage" Description="Spécifie le genre de symboles de débogage produits lors de la génération." HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196163" Category="Advanced">
+    <EnumProperty.Metadata>
+      <NameValuePair Name="SearchTerms" Value="type de débogage" />
+    </EnumProperty.Metadata>
+    <EnumValue Name="none" DisplayName="Aucun symbole n’est émis" />
+    <!--
+    Note that 'pdbonly' is the same as 'full'.
+    <EnumValue Name="pdbonly"
+               DisplayName="PDB Only" />
+    -->
+    <EnumValue Name="full" DisplayName="Fichier PDB, plateforme actuelle" />
+    <EnumValue Name="portable" DisplayName="Fichier PDB, portable sur toutes les plateformes" />
+    <EnumValue Name="embedded" DisplayName="Incorporé dans DLL/EXE, portable sur toutes les plateformes" />
+  </EnumProperty>
+  <BoolProperty Name="DefineDebug" DisplayName="Définir une constante DEBUG" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="Spécifiez DEBUG comme constante de compilation." Category="Advanced" />
+  <BoolProperty Name="DefineTrace" DisplayName="Définir la constante TRACE" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Description="Spécifiez TRACE en tant que constante de compilation." Category="Advanced" />
+  <StringProperty Name="DefineConstants" DisplayName="Constantes personnalisées" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced" Description="Spécifie les constantes de compilation conditionnelle personnalisées pour votre application. Notez que les valeurs sont facultatives. Pour le comportement facultatif, laissez la valeur vide. Si la valeur est une chaîne, ajoutez des guillemets autour de celle-ci.">
+    <StringProperty.ValueEditors>
+      <ValueEditor EditorType="NameValueList">
+        <ValueEditor.Metadata>
+          <NameValuePair Name="Encoding" Value="VBDefineConstantsEncoding" />
+          <NameValuePair Name="IsValueRequired" Value="False" />
+        </ValueEditor.Metadata>
+      </ValueEditor>
+    </StringProperty.ValueEditors>
+  </StringProperty>
+  <EnumProperty Name="GenerateSerializationAssemblies" DisplayName="Générer des assemblages de sérialisation" HelpUrl="https://go.microsoft.com/fwlink/?linkid=2196264" Category="Advanced">
+    <EnumValue Name="On" DisplayName="Activé" />
+    <EnumValue Name="Off" DisplayName="Désactivé" />
+    <EnumValue Name="Auto" DisplayName="Automatique" />
+  </EnumProperty>
+</Rule>

@@ -1,0 +1,10 @@
+﻿
+[$RootKey$\Projects\{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}\RelatedFiles\.mbconfig]
+".consumption.cs"=dword:00000001
+".training.cs"=dword:00000001
+".evaluate.cs"=dword:00000001
+".zip"=dword:00000001
+".mlnet"=dword:00000001
+".onnx"=dword:00000001
+".map.json"=dword:00000001
+

@@ -1,0 +1,6 @@
+[$RootKey$\RuntimeConfiguration\dependentAssembly\codeBase\{828EA998-0799-4684-8867-B17E0467BBAA}]
+"name"="Microsoft.VisualStudio.VC.UnrealEngineTools.CodeLens.Interop"
+"publicKeyToken"="b03f5f7f11d50a3a"
+"culture"="neutral"
+"version"="17.0.0.0"
+"codeBase"="$PackageFolder$\Microsoft.VisualStudio.VC.UnrealEngineTools.CodeLens.Interop.dll"

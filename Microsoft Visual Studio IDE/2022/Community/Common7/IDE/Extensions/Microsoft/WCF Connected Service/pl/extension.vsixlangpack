@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VsixLanguagePack Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema-lp/2010">
+  <LocalizedName>Dostawca usług Microsoft WCF Web Service Reference</LocalizedName>
+  <LocalizedDescription>Dostawca usługi Visual Studio Service Reference w celu dodawania usług WCF Web Service Reference do projektów .NET Core w programie Visual Studio 2019.</LocalizedDescription>
+</VsixLanguagePack>

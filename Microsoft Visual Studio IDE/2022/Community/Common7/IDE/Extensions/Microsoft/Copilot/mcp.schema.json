@@ -1,0 +1,210 @@
+{
+  "type": "object",
+  "title": "Model Context Protocol Servers",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
+    "inputs": {
+      "type": "array",
+      "description": "User inputs. Used for defining user input prompts, such as free string input or a choice from several options.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [ "id", "type", "description" ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The input's id is used to associate an input with a variable of the form ${input:id}.",
+                "pattern": "^[a-zA-Z0-9_]+$"
+              },
+              "type": {
+                "type": "string",
+                "description": "The type of user input prompt to use.",
+                "enum": [ "promptString" ]
+              },
+              "description": {
+                "type": "string",
+                "description": "The description is shown when the user is prompted for input."
+              },
+              "default": {
+                "type": "string",
+                "description": "The default value is used if the user does not provide a value."
+              },
+              "password": {
+                "type": "boolean",
+                "description": "If true, the input is treated as a password and the value is hidden."
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [ "id", "type", "description", "options" ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The input's id is used to associate an input with a variable of the form ${input:id}.",
+                "pattern": "^[a-zA-Z0-9_]+$"
+              },
+              "type": {
+                "type": "string",
+                "description": "The type of user input prompt to use.",
+                "enum": [ "pickString" ]
+              },
+              "description": {
+                "type": "string",
+                "description": "The description is shown when the user is prompted for input."
+              },
+              "default": {
+                "type": "string",
+                "description": "The default value is used if the user does not provide a value."
+              },
+              "options": {
+                "type": "array",
+                "description": "The options are shown to the user when they are prompted for input.",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "required": [ "value" ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "description": "The label is shown to the user when they are prompted for input."
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "The value is used when the user selects this option."
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [ "id", "type", "command" ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The input's id is used to associate an input with a variable of the form ${input:id}.",
+                "pattern": "^[a-zA-Z0-9_]+$"
+              },
+              "type": {
+                "type": "string",
+                "description": "The type of user input prompt to use.",
+                "enum": [ "command" ]
+              },
+              "command": {
+                "type": "string",
+                "description": "The command to execute for this input variable."
+              },
+              "args": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "description": "Optional arguments passed to the command.",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string",
+                    "description": "Optional arguments passed to the command."
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "servers": {
+      "additionalProperties": false,
+      "patternProperties": {
+        "\\S": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [ "command" ],
+              "properties": {
+                "disabled": {
+                  "type": "boolean",
+                  "description": "If true, the server is disabled and will not be started."
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [ "stdio" ],
+                  "description": "The type of the server."
+                },
+                "command": {
+                  "type": "string",
+                  "description": "The command to run the server."
+                },
+                "args": {
+                  "type": "array",
+                  "description": "Arguments passed to the server.",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "envFile": {
+                  "type": "string",
+                  "description": "Path to a file containing environment variables for the server.",
+                  "examples": [ "${workspaceFolder}/.env" ]
+                },
+                "env": {
+                  "description": "Environment variables passed to the server.",
+                  "additionalProperties": {
+                    "type": [ "null", "string", "number" ]
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [ "url" ],
+              "properties": {
+                "disabled": {
+                  "type": "boolean",
+                  "description": "If true, the server is disabled and will not be started."
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [ "http", "sse" ],
+                  "description": "The type of the server."
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "The URL of the Streamable HTTP or SSE endpoint."
+                },
+                "headers": {
+                  "type": "object",
+                  "description": "Additional headers sent to the server.",
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

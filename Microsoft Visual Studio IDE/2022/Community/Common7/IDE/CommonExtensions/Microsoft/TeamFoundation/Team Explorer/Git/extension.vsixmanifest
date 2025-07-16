@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="Microsoft.VisualStudio.TeamFoundation.TeamExplorer.MinGit" Version="17.14.36224.1" Language="en-US" Publisher="Microsoft"/>
+    <DisplayName xml:space="preserve">MinGit</DisplayName>
+    <Description xml:space="preserve">MinGit</Description>
+    <PackageId>Microsoft.VisualStudio.TeamExplorer.MinGit</PackageId>
+    <AllowClientRole>true</AllowClientRole>
+  </Metadata>
+  <Installation InstalledByMsi="false" AllUsers="true" SystemComponent="true" Scope="ProductExtension">
+    <InstallationTarget Id="Microsoft.VisualStudio.IntegratedShell" Version="[17.0,18.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Express_All" Version="[17.0,18.0)" />
+  </Installation>
+  <Dependencies />
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor"/>
+  </Prerequisites>
+</PackageManifest>

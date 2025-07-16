@@ -1,0 +1,80 @@
+{
+  "isDotNetFramework_GreaterThan_v4.5": {
+    "kind": "TfmVersionComparison",
+    "tfmType": "netFramework",
+    "version": "4.5",
+    "comparison": "GreaterThan"
+  },
+  "isLocalEnvironment": {
+    "kind": "EnvironmentId",
+    "id": "local"
+  },
+  "isCSharpOrVB": {
+    "kind": "HasProjectCapability",
+    "capability": "CSharp|VB"
+  },
+  "isWinExeOutputType": {
+    "kind": "ProjectProperty",
+    "propertyName": "OutputType",
+    "expectedValue": "WinExe"
+  },
+  "isAppContainerExeOutputType": {
+    "kind": "ProjectProperty",
+    "propertyName": "OutputType",
+    "expectedValue": "AppContainerExe"
+  },
+  "isTestProject": {
+    "kind": "ProjectProperty",
+    "propertyName": "TestProject",
+    "expectedValue": "true"
+  },
+  "isWeb": {
+    "kind": "HasProjectCapability",
+    "capability": "Web"
+  },
+  "isWindowsDesktop": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isWinExeOutputType" },
+      { "$ref": "#/isCSharpOrVB" }
+    ]
+  },
+  "isUniversalWindows": {
+    "kind": "and",
+    "operands": [
+      {
+        "kind": "ProjectTypeGuid",
+        "guid": "A5A43C5B-DE2A-4C0C-9213-0A381AF9435A"
+      },
+      { "$ref": "#/isAppContainerExeOutputType" },
+      {
+        "kind": "not",
+        "operand": { "$ref": "#/isTestProject" }
+      }
+    ]
+  },
+  "isAndroidProject": {
+    "kind": "ProjectTypeGuid",
+    "guid": "EFBA0AD7-5A72-4C68-AF49-83D382785DCF"
+  },
+  "office365projects": {
+    "kind": "and",
+    "operands": [
+      { "$ref": "#/isDotNetFramework_GreaterThan_v4.5" },
+      { "$ref": "#/isLocalEnvironment" },
+      {
+        "kind": "or",
+        "operands": [
+          { "$ref": "#/isWeb" },
+          { "$ref": "#/isWindowsDesktop" },
+          { "$ref": "#/isUniversalWindows" },
+          { "$ref": "#/isAndroidProject" }
+        ]
+      }
+    ]
+  },
+  "always": {
+    "kind": "bool",
+    "value": true
+  }
+}

@@ -1,0 +1,32 @@
+﻿<VSTemplateManifest Version="1.0" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>CSharp\General\1033\RuntimeDirectives</RelativePathOnDisk>
+    <TemplateFileName>RuntimeDirectives.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>Microsoft.CS.WinRT.RuntimeDirective</TemplateID>
+        <ProvideDefaultName>false</ProvideDefaultName>
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4653" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4654" />
+        <Icon>__TemplateIcon.ico</Icon>
+        <ProjectType>CSharp</ProjectType>
+        <AppliesTo>CSharp + WindowsAppContainer + WindowsXaml + WindowsXamlCodeBehind</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item" Locale="1033">
+    <RelativePathOnDisk>VisualBasic\General\1033\RuntimeDirectives</RelativePathOnDisk>
+    <TemplateFileName>RuntimeDirectives.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>Microsoft.VB.WinRT.RuntimeDirective</TemplateID>
+        <ProvideDefaultName>false</ProvideDefaultName>
+        <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4653" />
+        <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4654" />
+        <Icon>__TemplateIcon.ico</Icon>
+        <ProjectType>VB</ProjectType>
+        <AppliesTo>VB + WindowsAppContainer + WindowsXaml + WindowsXamlCodeBehind</AppliesTo>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

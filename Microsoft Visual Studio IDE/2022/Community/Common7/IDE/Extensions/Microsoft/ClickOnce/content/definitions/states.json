@@ -1,0 +1,9 @@
+{
+  "pubxml": {
+    "providers": [
+      "PublishProgress",
+      "PublishHistory",
+      "PublishReady"
+    ]
+  }
+}

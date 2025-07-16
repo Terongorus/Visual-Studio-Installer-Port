@@ -1,0 +1,106 @@
+{
+  "kind": "nuget.generic",
+  "order": 10,
+  "model": {
+    "jobs": {
+      ".NETCoreApp,Version=1.0": [
+        {
+          "Id": "WindowsAzure.Storage",
+          "Operation": "Uninstall"
+        }
+      ],
+      ".NETCoreApp,Version=2.0": [
+        {
+          "Id": "Azure.Storage.Blobs",
+          "Version": "12.24.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Storage.Files.Shares",
+          "Version": "12.22.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Storage.Files",
+          "Operation": "Uninstall"
+        },
+        {
+          "Id": "Azure.Storage.Queues",
+          "Version": "12.22.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Data.Tables",
+          "Version": "12.10.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Microsoft.Extensions.Azure",
+          "Version": "1.11.0",
+          "Operation": "Install"
+        }
+      ],
+      ".NETFramework,Version=2.0": [
+        {
+          "Id": "WindowsAzure.Storage",
+          "Operation": "Uninstall"
+        }
+      ],
+      ".NETFramework,Version=4.0": [
+        {
+          "Id": "WindowsAzure.Storage",
+          "Operation": "Uninstall"
+        },
+        {
+          "Id": "Microsoft.WindowsAzure.ConfigurationManager",
+          "Operation": "Uninstall"
+        }
+      ],
+      ".NETFramework,Version=4.5.2": [
+        {
+          "Id": "WindowsAzure.Storage",
+          "Operation": "Uninstall"
+        },
+        {
+          "Id": "Microsoft.WindowsAzure.ConfigurationManager",
+          "Operation": "Uninstall"
+        },
+        {
+          "Id": "Microsoft.Azure.ConfigurationManager",
+          "Operation": "Uninstall"
+        }
+      ],
+      ".NETFramework,Version=4.6.1": [
+        {
+          "Id": "Azure.Storage.Blobs",
+          "Version": "12.24.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Storage.Files.Shares",
+          "Version": "12.22.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Storage.Files",
+          "Operation": "Uninstall"
+        },
+        {
+          "Id": "Azure.Storage.Queues",
+          "Version": "12.22.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Azure.Data.Tables",
+          "Version": "12.10.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Microsoft.Extensions.Azure",
+          "Version": "1.11.0",
+          "Operation": "Install"
+        }
+      ]
+    }
+  }
+}

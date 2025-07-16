@@ -1,0 +1,18 @@
+{
+  "model": {
+    "id": "ClickOnce",
+    "name": {
+      "$ref": "strings:#/clickonceCategoryName"
+    },
+    "description": {
+      "$ref": "strings:#/clickonceCategoryDescription"
+    },
+    "image": {
+      "$ref": "images:#/ClickOnce"
+    },
+    "multipleTargetsDescription": {
+      "$ref": "strings:#/clickonceCategoryMultipleTargetsDescription"
+    },
+    "displayOrder": 1100
+  }
+}

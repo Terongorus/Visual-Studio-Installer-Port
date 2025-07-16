@@ -1,0 +1,360 @@
+<!--
+***********************************************************************************************
+Microsoft.Windows.UI.Xaml.CSharp.ModernNET.targets
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Make sure the SDK info is set (same as for legacy UWP) -->
+  <PropertyGroup Condition="'$(SDKIdentifier)' == ''">
+    <SDKIdentifier>Windows</SDKIdentifier>
+    <SDKVersion>10.0</SDKVersion>
+  </PropertyGroup>
+
+  <!-- Same as in 'Microsoft.Windows.UI.Xaml.CSharp.targets' -->
+  <PropertyGroup>
+    <UWPNugetRepo Condition="'$(UWPNugetRepo)' == ''">$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\NuGet\Repository', 'UWPNugetPackages', null, RegistryView.Registry32, RegistryView.Default))</UWPNugetRepo>
+    <RestoreAdditionalProjectFallbackFolders>$(RestoreAdditionalProjectFallbackFolders);$(UWPNugetRepo)</RestoreAdditionalProjectFallbackFolders>
+  </PropertyGroup>
+
+  <!-- Common properties for both legacy UWP and modern .NET UWP XAML apps (same as in 'Microsoft.Windows.UI.Xaml.CSharp.targets') -->
+  <PropertyGroup>
+    <NoStdLib Condition="'$(NoStdLib)' == ''">true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <SuppressWarningsInPass1 Condition="'$(SuppressWarningsInPass1)' == '' ">true</SuppressWarningsInPass1>
+  </PropertyGroup>
+
+  <!-- Properties only for modern .NET UWP apps-->
+  <PropertyGroup>
+    <UseLowTrustEntryPoint Condition="'$(UseLowTrustEntryPoint)' == ''">true</UseLowTrustEntryPoint>
+
+    <!--
+      Set the root path for the XAML compiler output for libraries containing XAML files.
+      We set this regardless of whether the XAML compiler is imported to avoid PRI issues.
+    -->
+    <AppxPriInitialPath Condition="'$(OutputType)' == 'Library'">$(TargetName)</AppxPriInitialPath>
+  </PropertyGroup>
+
+  <!--
+    Public property to optionally disable importing the XAML compiler. This allows developers to build UWP apps without XAML without
+    having to install and target the new Windows SDK build that includes support for modern .NET for UWP XAML apps. For instance,
+    a UWP CoreApplication app (without XAML) doesn't actually need the XAML compiler to be imported, as it wouldn't do anything.
+    The name of this property matches the naming scheme for 'EnableAppxPackageTargetsForUwpClassLibraries' in MSBuild.
+  -->
+  <PropertyGroup>
+    <EnableXamlCompilerTargetsForUwpApps Condition="'$(EnableXamlCompilerTargetsForUwpApps)' == ''">true</EnableXamlCompilerTargetsForUwpApps>
+  </PropertyGroup>
+
+  <!-- Properties only for apps using XAML -->
+  <PropertyGroup Condition="'$(EnableXamlCompilerTargetsForUwpApps)' == 'true'">
+
+    <!-- Set the XAML runtime to enable XAML IntelliSense -->
+    <DefaultXamlRuntime Condition="'$(DefaultXamlRuntime)' == ''">UAP</DefaultXamlRuntime>
+
+    <!-- Opt-in into the CsWinRT codegen mode for the XAML compiler -->
+    <EnableCsWinRTXamlCompilerGeneration>true</EnableCsWinRTXamlCompilerGeneration>
+
+    <!--
+      Opt-in into optimizing the generated static constructor stubs. These are mostly needed for
+      WinRT-exposed types that declare dependency properties, as those are initialized via
+      side-effect from the static constructor of the type. By default, the XAML compiler has a
+      very conservative approach and it always emits them for all non-array types. This feature
+      switch enables further optimizations to avoid generating the stubs when types are determined
+      to not possibly contain any dependency properties (eg. corelib types). We allow overriding
+      this feature to provide users with an escape hatch in case they ever hit a scenario that failed.
+    -->
+    <ReduceGeneratedXamlTypeStaticInitializers Condition="'$(ReduceGeneratedXamlTypeStaticInitializers)' == ''">true</ReduceGeneratedXamlTypeStaticInitializers>
+
+    <!--
+      Opt-in into supporting required members (C# 11, see https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/required)
+      and init-only property setters (C# 9, see https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/init). This
+      feature switch enables initial support for these in the XAML compiler, such that types with any required members will not be treated
+      as constructible (unless they have an accessible parameterless constructor annotated with '[SetsRequiredMembers]'), and init-only
+      property setters will be ignored (ie. properties with such setters will be marked as readonly). This allows using these features in
+      XAML scenarios (eg. in data models bound to data templates) as expected. Previously, the XAML compiler would produce invalid code.
+      Like with the previous feature switch, this can be overridden in case users hit an edge case that caused issues in their project(s).
+    -->
+    <EnableRequiredAndInitOnlyFeatureSupport Condition="'$(EnableRequiredAndInitOnlyFeatureSupport)' == ''">true</EnableRequiredAndInitOnlyFeatureSupport>
+
+    <!--
+      Opt-in into disabling the generation of the 'rd.xml' XAML roots log file for the current project. This is enabled by default for
+      all managed projcts, but is only actually needed by .NET Native, which relies on the metadata information it provides to guide
+      its heuristics to root types for reflection, to support some dynamic XAML loading scenarios. This file is not needed when using
+      modern .NET, as ILLink/ILC do not use the information from that file whatsoever. Furthermore, that information is only necessary
+      when XAML type info reflection is enabled, but the 'EnableTypeInfoReflection' property is always disabled when using CsWinRT,
+      as it is not supported (it's fundamentally incompatible with the modern annotation-based trimming strategy, and the XAML
+      compiler does not support generating code for it at all when 'EnableCsWinRTXamlCompilerGeneration' is set).
+    -->
+    <DisableXamlRootsLogGeneration Condition="'$(DisableXamlRootsLogGeneration)' == ''">true</DisableXamlRootsLogGeneration>
+
+    <!--
+      Special case for modern UWP XAML apps: if the output is an .exe, make sure 'PriIndexName' is empty. We need to
+      check for this scenario from here, because the XAML compiler is only checking for 'AppxPackage', which is only
+      used by legacy UWP apps (modern UWP apps don't set that, as it's not compatible with the new build system).
+      Handling this case here also allows this .targets to update this logic without updates to the Windows SDK.
+    -->
+    <PriIndexNameOverridden Condition="'$(OutputType)' == 'WinExe'">true</PriIndexNameOverridden>
+    <PriIndexNameOverride Condition="'$(OutputType)' == 'WinExe'"></PriIndexNameOverride>
+  </PropertyGroup>
+
+  <!--
+    List of capabilities for UWP apps:
+    - "Uwp": indicates an app running under the UWP app model (specifically using modern .NET).
+      This capability is used by the deploy logic in VS to detect this configuration and suppress
+      warnings due to WindowsAppSDK references needing framework packages when executed at runtime.
+      This warning does not apply to UWP apps, as UWP apps can only be deployed as packaged apps. In
+      that case, WindowsAppSDK will already be declaring the necessary framework package dependencies.
+
+    - "WindowsXaml": indicates a UWP XAML app (ie. using Windows.UI.Xaml.* types and XAML files).
+      This capability is used by the VS templating system to show XAML item templates. We don't
+      need to set it here, because it's already included in the list of project capabilities
+      that are set by 'Microsoft.Windows.UI.Xaml.Common.targets' (the XAML compiler .targets).
+  -->
+  <ItemGroup>
+    <ProjectCapability Include="Uwp"/>
+  </ItemGroup>
+
+  <!-- Opt-out property to disable automatically adding/updating the "Windows.Universal" target device family in the manifest -->
+  <PropertyGroup>
+    <EnableAppxWindowsUniversalTargetDeviceFamilyItem Condition="'$(EnableAppxWindowsUniversalTargetDeviceFamilyItem)' == ''">true</EnableAppxWindowsUniversalTargetDeviceFamilyItem>
+  </PropertyGroup>
+
+  <!-- Include "Windows.Universal" by default if the opt-out property is not set -->
+  <ItemGroup>
+    <AppxTargetDeviceFamilyItem Condition="'$(EnableAppxWindowsUniversalTargetDeviceFamilyItem)' == 'true'" Include="Windows.Universal"/>
+  </ItemGroup>
+
+  <!-- Add all requested target device families to the manifest, with the right target platform version info -->
+  <ItemGroup>
+    <TargetDeviceFamily Include="@(AppxTargetDeviceFamilyItem)">
+      <TargetPlatformMinVersion>$(TargetPlatformMinVersion)</TargetPlatformMinVersion>
+      <TargetPlatformVersion>$(TargetPlatformVersion)</TargetPlatformVersion>
+    </TargetDeviceFamily>
+  </ItemGroup>
+
+  <!--
+    Opt-out properties to disable automatically adding the default SDK references.
+    Note: these are enabled by default only for applications. Class libraries do not
+    need SDK references, and also they might be built as "AnyCPU", which would fail.
+
+    By default, the 'AddMicrosoftUniversalCRTDebugSDKReference' property is only set for applications
+    building in Debug mode, but we still allow overriding this to be applied in other configurations.
+    This can be useful if there is a need to eg. reference some Debug libraries from a Release build.
+  -->
+  <PropertyGroup>
+    <AddMicrosoftVCLibsSDKReference Condition="'$(AddMicrosoftVCLibsSDKReference)' == '' AND '$(OutputType)' == 'WinExe'">true</AddMicrosoftVCLibsSDKReference>
+    <AddMicrosoftUniversalCRTDebugSDKReference Condition="'$(AddMicrosoftUniversalCRTDebugSDKReference)' == '' AND '$(Configuration)' == 'Debug' AND '$(OutputType)' == 'WinExe'">true</AddMicrosoftUniversalCRTDebugSDKReference>
+
+    <!--
+      We also provide a convenient way to reference the VCLibs.Desktop SDK, but it's off by default.
+      It can be useful for apps only targeting the Desktop device family using Desktop CRT libraries.
+    -->
+    <AddMicrosoftVCLibsDesktopSDKReference Condition="'$(AddMicrosoftVCLibsDesktopSDKReference)' == ''">false</AddMicrosoftVCLibsDesktopSDKReference>
+  </PropertyGroup>
+
+  <!-- Add the default SDK references whose opt-out properties are not set -->
+  <ItemGroup>
+    <SDKReference Condition="'$(AddMicrosoftVCLibsSDKReference)' == 'true'" Include="Microsoft.VCLibs, Version=14.0" />
+    <SDKReference Condition="'$(AddMicrosoftVCLibsDesktopSDKReference)' == 'true'" Include="Microsoft.VCLibs.Desktop, Version=14.0" />
+    <SDKReference Condition="'$(AddMicrosoftUniversalCRTDebugSDKReference)' == 'true'" Include="Microsoft.UniversalCRT.Debug, Version=$(TargetPlatformVersion)" />
+  </ItemGroup>
+
+  <!-- Additional properties to polish the developer experience in VS -->
+  <PropertyGroup>
+
+    <!--
+      Suppress warnings from the .NET SDK about SDK references with a version lower than the target version.
+      This is set by default, as it avoids unnecessary (and incorrect) warnings such as this:
+
+      "warning MSB3842: Project "MyProject" depends upon SDK "Visual C++ 2015-2019 Runtime for Universal Windows Platform Apps v14.0"
+      which supports apps targeting "Windows 10.0". To verify whether "Visual C++ 2015-2019 Runtime for Universal Windows Platform Apps v14.0"
+      is compatible with "Windows 10.0.22621.0", contact the SDK author or see http://go.microsoft.com/fwlink/?LinkID=309181."
+
+      These warnings are not needed, because these SDK references are always compatible with newer versions of Windows.
+      We still allowing users to opt-in to the default validation logic from the .NET SDK, if desired for some reason.
+    -->
+    <ValidateMaxTargetPlatformVersionForSDKReferences Condition="'$(ValidateMaxTargetPlatformVersionForSDKReferences)' == ''">false</ValidateMaxTargetPlatformVersionForSDKReferences>
+    <SDKReferenceWarnOnMissingMaxPlatformVersion Condition="'$(ValidateMaxTargetPlatformVersionForSDKReferences)' == 'true'">true</SDKReferenceWarnOnMissingMaxPlatformVersion>
+    <SDKReferenceWarnOnMissingMaxPlatformVersion Condition="'$(ValidateMaxTargetPlatformVersionForSDKReferences)' != 'true'">false</SDKReferenceWarnOnMissingMaxPlatformVersion>
+
+    <!--
+      Set the location of the platform WinMDs, which Visual Studio uses to populate the list of available
+      WinRT references in the "Windows" tab when doing right click > Add > Project reference on a project.
+      Developers will never need to actually add any .winmd assemblies this way (also because they would
+      not work, not to mention the fact they're all already referenced by default by the SDK), but if this
+      property is not set, the entire dialog will fail to open, so this just acts as a workaround for that.
+    -->
+    <TargetPlatformWinMDLocation Condition="'$(TargetPlatformWinMDLocation)' == ''">$(WinDir)\System32\WinMetadata</TargetPlatformWinMDLocation>
+  </PropertyGroup>
+
+  <!--
+    The XAML compiler changes required to support UWP XAML apps using modern .NET are only available in the 26100 SDK.
+    Rather than having users see hard to understand errors in case that SDK isn't being used, we skip importing the
+    XAML compiler entirely instead, and show an error suggesting to upgrade the target SDK to a supported one.
+  -->
+  <PropertyGroup>
+    <_IsXamlTargetPlatformVersionValidForUwpApps>false</_IsXamlTargetPlatformVersionValidForUwpApps>
+    <_IsXamlTargetPlatformVersionValidForUwpApps Condition="$([MSBuild]::VersionGreaterThanOrEquals($(TargetPlatformVersion), '10.0.26100.0'))">true</_IsXamlTargetPlatformVersionValidForUwpApps>
+
+    <!-- Internal escape hatch to disable validation, for testing purposes (undocumented and using the '_' prefix) -->
+    <_EnableCheckForInvalidXamlTargetPlatformVersionForUwpApps Condition="'$(_EnableCheckForInvalidXamlTargetPlatformVersionForUwpApps)' == ''">true</_EnableCheckForInvalidXamlTargetPlatformVersionForUwpApps>
+
+    <!-- Importing the XAML compiler is supported (if requested) if we're targeting at least the 26100 SDK or if the check is disabled -->
+    <_IsImportXamlCompilerTargetsSupportedForUwpApps>false</_IsImportXamlCompilerTargetsSupportedForUwpApps>
+    <_IsImportXamlCompilerTargetsSupportedForUwpApps Condition="'$(_IsXamlTargetPlatformVersionValidForUwpApps)' == 'true' OR '$(_EnableCheckForInvalidXamlTargetPlatformVersionForUwpApps)' != 'true'">true</_IsImportXamlCompilerTargetsSupportedForUwpApps>
+
+    <!-- Importing the XAML compiler is allowed (if requested) if the 'UseUwp' property is also set -->
+    <_IsImportXamlCompilerTargetsAllowedForUwpApps>false</_IsImportXamlCompilerTargetsAllowedForUwpApps>
+    <_IsImportXamlCompilerTargetsAllowedForUwpApps Condition="'$(UseUwp)' == 'true'">true</_IsImportXamlCompilerTargetsAllowedForUwpApps>
+
+    <!-- Check whether or not we can (and want to) import the XAML compiler .targets files -->
+    <_ImportXamlCompilerTargetsForUwpApps>false</_ImportXamlCompilerTargetsForUwpApps>
+    <_ImportXamlCompilerTargetsForUwpApps Condition="'$(EnableXamlCompilerTargetsForUwpApps)' == 'true' AND
+                                                     '$(_IsImportXamlCompilerTargetsSupportedForUwpApps)' == 'true' AND
+                                                     '$(_IsImportXamlCompilerTargetsAllowedForUwpApps)' == 'true'">true</_ImportXamlCompilerTargetsForUwpApps>
+  </PropertyGroup>
+  
+  <!-- These are the System XAML compiler .targets, which are the same for legacy UWP and for modern .NET UWP XAML apps -->
+  <Import Condition="'$(_ImportXamlCompilerTargetsForUwpApps)' == 'true'" Project="Microsoft.Windows.UI.Xaml.Common.targets" />
+  <Import Condition="'$(_ImportXamlCompilerTargetsForUwpApps)' == 'true'" Project="Microsoft.Windows.UI.Xaml.Cps.targets" />
+
+  <!-- Emit an error when the target Windows SDK is too old and lacking support for modern UWP -->
+  <Target Name="CheckIsImportXamlCompilerTargetsSupportedForUwpApps"
+          BeforeTargets="_CheckForInvalidConfigurationAndPlatform;CoreCompile"
+          Condition="'$(EnableXamlCompilerTargetsForUwpApps)' == 'true' AND '$(_IsImportXamlCompilerTargetsSupportedForUwpApps)' == 'false'">
+    <Error Text="This project is setting the UseUwpTools property, which indicates that a UWP (XAML) app is being built using modern .NET, but the target device family being used ($(TargetPlatformVersion)) is not supported for this configuration. Upgrade the target SDK version to '10.0.26100.0' or higher. It is recommended to do this by updating the target framework being used (currently set to $(TargetFramework))."/>
+  </Target>
+
+  <!--
+    Emit an error if 'UseUwp' is not set when trying to import the XAML compiler. The XAML compiler can only
+    be used when 'UseUwp' is set, as otherwise the Windows.UI.Xaml.* projections would not be available. This
+    would cause the XAML compiler to report hard to understand errors, so we emit a proper diagnostics instead.
+  -->
+  <Target Name="CheckIsImportXamlCompilerTargetsAllowedForUwpApps"
+          BeforeTargets="_CheckForInvalidConfigurationAndPlatform;CoreCompile"
+          Condition="'$(EnableXamlCompilerTargetsForUwpApps)' == 'true' AND '$(_IsImportXamlCompilerTargetsAllowedForUwpApps)' == 'false'">
+    <Error Text="This project is setting the UseUwpTools property and trying to import the XAML compiler, which indicates that a UWP XAML app is being built using modern .NET, but the UseUwp property is not set. Ensure to set that property to 'true' to allow the .NET SDK to add a reference to the Windows.UI.Xaml.* projections, which are required in this scenario."/>
+  </Target>
+
+  <!-- Additional properties for PRI generation (this is orthogonal to the MSIX configuration) -->
+  <PropertyGroup>
+
+    <!--
+      Workaround for https://github.com/microsoft/msbuild/issues/5341, which causes PRI files from referenced NuGet packages
+      to not be automatically referenced (as the 'ResolveAssemblyReference' target doesn't add them to the list of related
+      files). Without this workaround, XAML controls from referenced NuGet packages will not work correctly, or at all.
+      Note that these PRI files might also contain eg. localized resources, they're not just for XAML scenarios.
+    -->
+    <MarkPackageReferencesAsExternallyResolved Condition="'$(MarkPackageReferencesAsExternallyResolved)' == '' AND '$(OutputType)' == 'WinExe'">false</MarkPackageReferencesAsExternallyResolved>
+  </PropertyGroup>
+
+  <!-- Additional properties to control the MSIX configuration -->
+  <PropertyGroup>
+
+    <!--
+      Reference the single-project MSIX support if needed. We're using the shared MSIX tooling that WindowsAppSDK also relies
+      on for this. To offer a consistent experience (especially because the most common scenario for UWP on .NET 9 is to be a
+      migration step between UWP on .NET Native and WinUI 3), we allow projects to simply define 'EnableMsixTooling' to opt-in
+      to the MSIX support. This will reference the MSIX tooling to make everything work. This only applies to applications.
+      We also allow overriding this property (it's undocumented), to allow easier local testing of preview versions.
+
+      Note: this property only controls whether the MSIX tooling and the Windows SDK build tools are referenced, and not whether
+      the whole MSIX toolchain is enabled. That is controlled by 'EnableMsixTooling'. The reason for this split is that we still
+      want to reference these two packages by default for all UWP apps, even though they're using a WAP project for packaging.
+      The reason for this is that in that case (where 'EnableMsixTooling' would not be set), we still the PRI .targets from the
+      MSIX tooling to generate the resources to pass as input to the WAP toolchain. Those are automatically included and imported
+      as part of the MSIX tooling. Without that, creating an MSIX packaging from a WAP project would produce an invalid output.
+    -->
+    <_ReferenceSingleProjectMsixToolingForUwpApps Condition="'$(_ReferenceSingleProjectMsixToolingForUwpApps)' == '' AND '$(OutputType)' == 'WinExe'">true</_ReferenceSingleProjectMsixToolingForUwpApps>
+    <_ReferenceSingleProjectMsixToolingForUwpApps Condition="'$(_ReferenceSingleProjectMsixToolingForUwpApps)' == ''">false</_ReferenceSingleProjectMsixToolingForUwpApps>
+
+    <!-- This property controls whether the MSIX tooling is actually enabled, ie. it indicates single-project MSIX apps -->
+    <_EnableSingleProjectMsixToolingForUwpApps Condition="'$(_EnableSingleProjectMsixToolingForUwpApps)' == '' AND '$(EnableMsixTooling)' == 'true'">true</_EnableSingleProjectMsixToolingForUwpApps>
+    <_EnableSingleProjectMsixToolingForUwpApps Condition="'$(_EnableSingleProjectMsixToolingForUwpApps)' == ''">false</_EnableSingleProjectMsixToolingForUwpApps>
+  </PropertyGroup>
+
+  <!-- Additional options for all MSIX projects -->
+  <PropertyGroup Condition="'$(_ReferenceSingleProjectMsixToolingForUwpApps)' == 'true'">
+
+    <!--
+      Select the exact version of the Windows SDK MSIX build tools that is automatically added for
+      MSIX tooling. This can be overridden to help with testing, but it is not meant to be used by
+      most developers. This matches the existing 'WindowsSDKPackageVersion' property.
+    -->
+    <MicrosoftWindowsSDKBuildToolsMSIXPackageVersion Condition="'$(MicrosoftWindowsSDKBuildToolsMSIXPackageVersion)' == ''">1.3.20250314.1</MicrosoftWindowsSDKBuildToolsMSIXPackageVersion>
+
+    <!--
+      Select the exact version of Windows SDK build tools that is automatically added as well.
+      Just like with the MSIX build tools package, this package version can be overridden too.
+    -->
+    <MicrosoftWindowsSDKBuildToolsPackageVersion Condition="'$(MicrosoftWindowsSDKBuildToolsPackageVersion)' == ''">10.0.22621.3233</MicrosoftWindowsSDKBuildToolsPackageVersion>
+  </PropertyGroup>
+
+  <!-- Additional options for single-project MSIX projects only -->
+  <PropertyGroup Condition="'$(_EnableSingleProjectMsixToolingForUwpApps)' == 'true'">
+
+    <!--
+      Lastly, enable the publish and package menu if the single-project MSIX tooling is enabled.
+      Like with the MSIX project capability below, this is only needed until the MSIX package has
+      been restored. Once that happens, this property is just set by a .props file that it bundles.
+    -->
+    <HasPackageAndPublishMenu Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)' != 'true'">true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+
+  <!-- 
+    Also define the "Msix" capability if support for single-project MSIX is enabled. This capability is not
+    strictly necessary (as the MSIX tools also declare it), but declaring it here allows the "Single-project
+    MSIX Packaging Tools" extension to be activated for this project even if the MSIX tools package hasn't been
+    restored yet. The project templates for WindowsAppSDK include this in the .csproj, but because we have
+    this .targets that is always present, we can move that declaration here instead to keep things clean.
+
+    We only define this if 'DisableMsixProjectCapabilityAddedByProject' is not set. This is set by a .props
+    file in the MSIX package, which signals that it has been restored. After that, those .props will take
+    responsibility for defining this project capability, so we no longer need to do that.
+  -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)' != 'true' AND '$(_EnableSingleProjectMsixToolingForUwpApps)' == 'true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+
+  <!--
+    Add the MSIX build tools and Windows SDK build tools package references. To improve the developer experience, we
+    also set 'IsImplicitlyDefined', to hide the package references and make those versions fixed and not overrideable.
+  -->
+  <ItemGroup Condition="'$(_ReferenceSingleProjectMsixToolingForUwpApps)' == 'true'">
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="$(MicrosoftWindowsSDKBuildToolsPackageVersion)" IncludeAssets="build" PrivateAssets="all" IsImplicitlyDefined="true" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="$(MicrosoftWindowsSDKBuildToolsMSIXPackageVersion)" IncludeAssets="build" PrivateAssets="all" IsImplicitlyDefined="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)$(LangName)\CSharp.ProjectItemsSchema.xaml"/>
+  </ItemGroup>
+
+  <!--
+    General errors when the 'UseUwpTools' property is used incorrectly in several scenarios.
+    This target used to originally be in WindowsAppSDK, but because it's also detecting invalid
+    uses of 'UseUwpTools' that are unrelated to WindowsAppSDK itself (eg. when 'UseWpf' is set),
+    it makes more sense to keep this in this .targets as part of Visual Studio instead.
+  -->
+  <Target Name="CheckForInvalidUseUwpToolsMixedConfigurations"
+          BeforeTargets="_CheckForInvalidConfigurationAndPlatform;CoreCompile">
+
+    <!-- Using 'UseUwpTools' and 'UseWinUITools' together is invalid (eg. it breaks compiling XAML) -->
+    <Error Condition ="'$(UseWinUITools)' == 'true'"
+           Text="This project is setting both the UseUwpTools property and the UseWinUITools property, but only either of them can be used at a time (the UseWinUITools is set by the Windows App SDK when building WinUI apps, and UseUwpTools should be used when building UWP apps). If you are referencing the Windows App SDK to get single-project MSIX tools for a UWP app, set the UseUwpTools property only, and use IncludeAssets='build' on the PackageReference."/>
+    
+    <!-- Using 'UseUwpTools' and 'UseWinUI', 'UseWpf' or 'UseWindowsForms' together is invalid-->
+    <Error Condition ="'$(UseWinUI)' == 'true'"
+           Text="This project is setting the UseUwpTools property, but it also setting UseWinUI, which is not supported. The UseUwpTools property should only be set when building UWP apps, which are not compatible with WinUI 3."/>
+    <Error Condition ="'$(UseWpf)' == 'true'"
+           Text="This project is setting the UseUwpTools property, but it also setting UseWpf, which is not supported. The UseUwpTools property should only be set when building UWP apps, which are not compatible with WPF."/>
+    <Error Condition ="'$(UseWindowsForms)' == 'true'"
+           Text="This project is setting the UseUwpTools property, but it also setting UseWindowsForms, which is not supported. The UseUwpTools property should only be set when building UWP apps, which are not compatible with Windows Forms."/>
+  </Target>
+</Project>

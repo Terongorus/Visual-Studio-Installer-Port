@@ -1,0 +1,65 @@
+body {
+  background: #fffafa; /*[{plugin-background-color}]*/
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #1E1E1E; /*[{plugin-color}]*/
+  font-size: 13px;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+button, input {
+    background: #ffffff; /*[{test-button-backgroundcolor}]*/
+    color: #000000; /*[{test-button-color}]*/
+    font-size: inherit; /*[{plugin-font-size}]*/
+}
+
+/* General & 'Reset' Stuff */
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+#header {
+  color: #FFF; /*[{plugin-color}]*/
+  background: #afa4b3; /*[{plugin-background-color}]*/
+  position:relative;
+}
+
+h1, h2 {
+  font-family: "Segoe UI Light", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1;
+  margin: 0 18px;
+  padding: 0;
+}
+
+td
+{
+    padding: 10px;
+}
+
+#main_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bolder;
+}
+
+#plotly {
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: 0 auto;
+    margin-left: 0 auto;
+    background: #afa4b3; /*[{plugin-background-color}]*/
+}

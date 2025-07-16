@@ -1,0 +1,6 @@
+This file is for configuring the formatted text of events in the Diagnostics Hub EventsViewer tool.
+Replace the contents of this file with an array of event configuration objects with a defined provider guid, event name, and format string, like the next line below. Add either common or custom defined payload properties to the format string with the syntax $PropertyName. The property names are case sensitive.
+[{"providerGuid" : "9e814aad-3204-11d2-9a82-006008a86939", 
+"eventName" : "SysConfig/VolumeMapping", 
+"formatString" : "The thread id is $ThreadID. $Opcode / $NtPath"
+}]

@@ -1,0 +1,54 @@
+{
+  "image": {
+    "$ref": "images:#/ClickOnce"
+  },
+  "state": {
+    "$ref": "/definitions/states.json#/pubxml"
+  },
+  "isPublishable": true,
+  "globalCrudActions": [
+    {
+      "id": "edit",
+      "provider": "wizardEdit"
+    },
+    {
+      "id": "rename",
+      "provider": "default"
+    },
+    {
+      "id": "delete",
+      "provider": "default"
+    }
+  ],
+  "globalAdditionalActions": [
+  ],
+  "profileActions": [
+  ],
+  "sections": [
+    {
+      "id": "Settings",
+      "displayName": {
+        "$ref": "strings:#/settingsSection"
+      },
+      "bodyModel": {
+        "summaryEntries": [
+          "PublishDir_CO",
+          "InstallUrl",
+          "UpdateEnabled",
+          "UpdateUrl",
+          "SignManifests",
+          "TargetCulture",
+          "Configuration_CO",
+          "TargetFramework_CO",
+          "TargetRuntime_CO"
+        ],
+        "advancedAction": {
+          "base": {
+            "$refmerge": "/definitions/actions.json#/showAll"
+          },
+          "provider": "wizardEdit"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+.toolbar-container > *:first-child {
+    /* This anchors our content to the left side of the toolbar, overriding toolbar-container defined in main.css */
+    margin-left: 0;
+    margin-right: auto;
+}
+
+button {
+    border: 1px solid var(--CommonControls-ButtonBorder-Background, red);
+    background-color: var(--CommonControls-Button-Background, red);
+    color: var(--CommonControls-Button-Foreground, black);
+    /* Reset the injected min-width from daytona. Despite the CSS spec saying the value should be 'initial', only 'auto' works for our purposes. */
+    min-width: auto;
+}
+
+    button, button:active, button:hover, button:focus, button:disabled {
+        background-image: none; /*This overrides a background image injected by Plugin.css*/
+    }
+
+        button:hover {
+            border: 1px solid var(--CommonControls-ButtonBorderHover-Background, red);
+            background-color: var(--CommonControls-ButtonHover-Background, fuchsia);
+            color: var(--CommonControls-ButtonHover-Foreground, lawngreen);
+        }
+
+        button:active {
+            border: 1px solid var(--CommonControls-ButtonBorder-Background, red);
+            background-color: var(--CommonControls-ButtonPressed-Foreground, fuchsia);
+            color: var(--CommonControls-ButtonBorderPressed-Background, lawngreen);
+        }
+
+        button:focus {
+            border: 1px solid var(--CommonControls-ButtonBorderFocused-Background, red);
+            background-color: var(--CommonControls-ButtonFocused-Background, fuchsia);
+            color: var(--CommonControls-ButtonFocused-Foreground, lawngreen);
+        }
+
+        button:disabled {
+            border: 1px solid var(--CommonControls-ButtonBorderDisabled-Background, red);
+            background-color: var(--CommonControls-ButtonDisabled-Background, fuchsia);
+            color: var(--CommonControls-ButtonDisabled-Foreground, lawngreen);
+        }
+
+        /* reset the default IE button:active animation */
+        button:active * {
+            position: relative;
+        }

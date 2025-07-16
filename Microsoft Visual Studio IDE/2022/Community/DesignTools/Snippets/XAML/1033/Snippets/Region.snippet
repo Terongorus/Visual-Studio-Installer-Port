@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+      <SnippetType>SurroundsWith</SnippetType>
+    </SnippetTypes>
+    <Title>#region</Title>
+    <Author>Microsoft Corporation</Author>
+    <Description>Snippet for a new collapsible XAML region</Description>
+    <HelpUrl>
+    </HelpUrl>
+    <Shortcut>#region</Shortcut>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal Editable="true">
+        <ID>RegionName</ID>
+        <ToolTip>The name for the new region</ToolTip>
+        <Default>NewRegion</Default>
+        <Function>
+        </Function>
+      </Literal>
+    </Declarations>
+    <Code Language="XAML"><![CDATA[<!--#region $RegionName$ -->$end$$selected$<!--#endregion-->]]></Code>
+  </Snippet>
+</CodeSnippet>

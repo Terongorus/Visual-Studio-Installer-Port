@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <TemplateID>Microsoft.CS.WinRT.RuntimeDirective</TemplateID>
+    <ProvideDefaultName>false</ProvideDefaultName>
+    <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4653" />
+    <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4654" />
+    <Icon>__TemplateIcon.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <AppliesTo>CSharp + WindowsAppContainer + WindowsXaml + WindowsXamlCodeBehind</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$.rd.xml">Default.rd.xml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

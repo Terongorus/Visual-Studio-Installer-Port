@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/treeGrid.css" type="text/css" rel="stylesheet" />
+    <link href="css/chart.css" type="text/css" rel="stylesheet" />
+    <link href="css/toolbar.css" type="text/css" rel="stylesheet" />
+    <link href="css/indeterminateProgress.css" type="text/css" rel="stylesheet" />
+
+    <script src="scripts/diagnosticsHub.js" data-include-ui="true"></script>
+    <script src="scripts/collectionViewModel.js"></script>
+    <title>.NET Alloc Collection</title>
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            const plugin = require("plugin-vs-v2");
+            plugin.Messaging.addEventListener("pluginready", pluginLoaded);
+
+            function pluginLoaded() {
+                // We disable zooming via the mouse scroll since it is not a standard VS interaction.
+                // Zooming also breaks the placement of floating windows such as context menus
+                plugin.HotKeys.setZoomState(false);
+                plugin.HotKeys.setClipboardState(true);
+                plugin.Tooltip.defaultTooltipContentToHTML = false;
+
+                const diagnosticsHub = require("diagnosticsHub");
+                diagnosticsHub.InitializeErrorReporting();
+
+                require("collectionViewModel");
+            }
+        })();
+    </script>
+    <div id="mainToolbar" class="toolbar-container">
+        <!-- ko template: { name: 'ToggleButtonView', data: showOtherTypes } --><!-- /ko -->
+    </div>
+    <div class="mainArea">
+        <div id="GcSummary" data-bind="
+             event: { keydown: onKeyDown },
+             template: {
+                name: 'TreeGridView',
+                data: gcList,
+                afterRender: gcList.onAfterDomInsert }">
+        </div>
+        <div data-bind="localizedAriaLabel: 'VerticalSplitterAriaLabel', verticalSplit: { leftSelector: '#GcSummary', rightSelector: '#sideBar' }"></div>
+        <div id="sideBar" style="width: 200px">
+            <div id="collectedTypes" class="sidebar-container">
+                <span class="title" data-bind="localizedText: 'CollectedTypesTitle'"></span>
+                <div class="pieChartContainer" data-bind="pieChart: { localizedLabel: 'CollectedTypesTitle', data: collectedTypes }"></div>
+                <ul class="legend" data-bind="foreach: collectedTypes">
+                    <li class="legendItem"><div class="marker"></div><span class="label" data-bind="text: label"></span></li>
+                </ul>
+            </div>
+            <div id="survivedTypes" class="sidebar-container">
+                <span class="title" data-bind="localizedText: 'SurvivedTypesTitle'"></span>
+                <div class="pieChartContainer" data-bind="pieChart: { localizedLabel: 'SurvivedTypesTitle', data: survivedTypes }"></div>
+                <ul class="legend" data-bind="foreach: survivedTypes">
+                    <li class="legendItem"><div class="marker"></div><span class="label" data-bind="text: label"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="message-overlay" data-bind="css: { hide: !currentOverlay() }, if: currentOverlay">
+        <div class="message" data-bind="template: currentOverlay">
+        </div>
+    </div>
+</body>
+</html>

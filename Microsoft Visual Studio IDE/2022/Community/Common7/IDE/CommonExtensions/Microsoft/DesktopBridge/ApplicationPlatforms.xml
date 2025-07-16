@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPlatforms>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 11, version 24H2" version="10.0.26100.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 11, version 22H2" version="10.0.22621.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 11" version="10.0.22000.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10, version 2104" version="10.0.20348.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10, version 2004" version="10.0.19041.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10, version 1903" version="10.0.18362.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10, version 1809" version="10.0.17763.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10, version 1803" version="10.0.17134.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10 Fall Creators Update" version="10.0.16299.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10 Creators Update" version="10.0.15063.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10 Anniversary Update" version="10.0.14393.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10 November Update" version="10.0.10586.0"/>
+  <ApplicationPlatform name="UAP" friendlyName="Windows 10" version="10.0.10240.0"/>
+</ApplicationPlatforms>

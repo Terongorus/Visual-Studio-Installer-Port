@@ -1,0 +1,49 @@
+{
+  "nuget": {
+    "name": {
+      "$ref": "strings:#/nugetComponentName"
+    },
+    "image": {
+      "$ref": "images:#/nuget"
+    },
+    "description": {
+      "$ref": "strings:#/nugetComponentDescription"
+    }
+  },
+  "gettingStartedDocument": {
+    "name": {
+      "$ref": "strings:#/gettingStartedComponentName"
+    },
+    "image": {
+      "$ref": "images:#/code"
+    },
+    "description": {
+      "$ref": "strings:#/gettingStartedComponentDescription"
+    },
+    "restorable": true
+  },
+  "graphPermissionsUpdate": {
+    "name": {
+      "$ref": "strings:#/graphPermissionsComponentName"
+    },
+    "image": {
+      "$ref": "images:#/azureActiveDirectory"
+    },
+    "description": {
+      "$ref": "strings:#/graphPermissionsComponentDescription"
+    },
+    "restorable": true
+  },
+  "wapWebConfig": {
+    "name": {
+      "$ref": "strings:#/wapWebConfigComponentName"
+    },
+    "image": {
+      "$ref": "images:#/settingsFile"
+    },
+    "description": {
+      "$ref": "strings:#/wapWebConfigComponentDescription"
+    },
+    "restorable": true
+  }
+}

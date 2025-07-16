@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <DefaultName>Resources.resw</DefaultName>
+    <Name ID="1013" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+    <Description ID="1015" Package="{B0F1BA01-DE66-4EF9-9C8B-DBB99FB4DA4B}" />
+    <Icon>WinUI.Neutral.Cs.Resw.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <TemplateID>WinUI.Cs.Neutral.Resw</TemplateID>
+    <TemplateGroupID>WinRT-Managed-UAP</TemplateGroupID>
+    <AppliesTo>CSharp + WindowsAppSDK</AppliesTo>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TargetPlatformName>Windows</TargetPlatformName>
+    <LanguageTag>csharp</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>desktop</ProjectTypeTag>
+    <ProjectTypeTag>WinUI</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ItemType="PRIResource">Resources.resw</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

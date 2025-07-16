@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ML.ModelBuilder.AutoMLService.Contract</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:Microsoft.ML.ModelBuilder.AutoMLService.Contract.AzureImageDetails" -->
+        <!-- Badly formed XML comment ignored for member "T:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ObjectDetectionBoundingBoxLabel" -->
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.Contract.DataFormat.Coco.CocoAnnotation.Bbox">
+            <summary>
+            [x,y,width,height] format, unnormalized.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.Contract.DataFormat.Coco.CocoImage.FileName">
+            <summary>
+            filename.ext
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.GenerateConsumptionAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.String,System.String,System.String,Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType,System.String[],System.Threading.CancellationToken)">
+            <summary>
+            generate consumption code for local scenarios.
+            </summary>
+            <param name="trainingConfigruationFolder">folder of full path of .mbconfig. This allows relative path to work</param>
+            <param name="nameSpace">consumption code's namespace.</param>
+            <param name="className">consumption code's class name.</param>
+            <param name="target">generate target, should be modelbuilder or cli.</param>
+            <param name="labels">classification labels for onnx model. This value will be used only for azure training.</param>
+            <param name="ct">cancellation token.</param>
+            <returns><see cref="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.CSharpCode"/>.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.GenerateTrainingPipelineAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.String,System.String,Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType,System.Threading.CancellationToken)">
+            <summary>
+            generate training code for all scenarios.
+            </summary>
+            <param name="nameSpace">training code's namespace.</param>
+            <param name="className">training code's class name.</param>
+            <param name="target">generated target, should be modelbuilder or cli.</param>
+            <param name="ct">cancellation token.</param>
+            <returns><see cref="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.CSharpCode"/>.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.GeneratePFIAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.String,System.String,Microsoft.ML.ModelBuilder.CodeGenerator.Contract.TargetType,System.Threading.CancellationToken)">
+            <summary>
+            generate consumption code for local scenarios.
+            </summary>
+            <param name="nameSpace">consumption code's namespace.</param>
+            <param name="className">consumption code's class name.</param>
+            <param name="target">generate target, should be modelbuilder or cli.</param>
+            <param name="ct">cancellation token.</param>
+            <returns><see cref="T:Microsoft.ML.ModelBuilder.CodeGenerator.Contract.CSharpCode"/>.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.CreateWebApiProjectCodesAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.String,System.String,System.String,System.String,System.String,Microsoft.ML.ModelBuilder.Configuration.ColumnDataKind,System.String,System.String[],System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Generate WebApi project.
+            </summary>
+            <param name="modelpath">full path to model.</param>
+            <returns>WebApi project.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.CreateConsoleAppProjectCodesAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.String,System.String,System.String[],System.String,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Generate ConsoleApp project.
+            </summary>
+            <param name="modelPath">full path to model.</param>
+            <returns>ConsoleApp project.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.Contract.ICodeGeneratorService.GenerateConsumeCodeSnippetAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Generate consume code snippet.
+            </summary>
+            <param name="modelpath">full path to model.</param>
+            <returns>Cosume code snippet code.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.IAutoMLService.StartTrainingAsync(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,Microsoft.ML.ModelBuilder.AutoMLService.Contract.PathConfiguration,System.Threading.CancellationToken)">
+            <summary>
+            This function will launch an AutoML training using <paramref name="config"/> as training config.
+            </summary>
+            <param name="config">training config, it is a json seralized from <see cref="T:Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration"/>.</param>
+            <param name="cancellationToken">cancellation token.</param>
+            <returns><see cref="T:Microsoft.ML.ModelBuilder.Configuration.TrainResult"/>.</returns>
+        </member>
+    </members>
+</doc>

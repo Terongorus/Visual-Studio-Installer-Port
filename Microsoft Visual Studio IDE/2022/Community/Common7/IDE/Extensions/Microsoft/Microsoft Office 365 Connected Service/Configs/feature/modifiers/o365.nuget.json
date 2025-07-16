@@ -1,0 +1,20 @@
+{
+  "kind": "nuget.generic",
+  "order": 15,
+  "model": {
+    "jobs": {
+      ".NETFramework,Version=4.5": [
+        {
+          "Id": "Microsoft.Graph",
+          "Version": "4.37.0",
+          "Operation": "Install"
+        },
+        {
+          "Id": "Microsoft.Identity.Client",
+          "Version": "4.46.2",
+          "Operation": "Install"
+        }
+      ]
+    }
+  }
+}

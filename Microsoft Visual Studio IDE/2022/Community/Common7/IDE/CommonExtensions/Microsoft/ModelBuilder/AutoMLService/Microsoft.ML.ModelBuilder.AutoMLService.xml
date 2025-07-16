@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ML.ModelBuilder.AutoMLService</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ArtifactNotFound">
+            <summary>
+              Looks up a localized string similar to training artifacts not found.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.AttemptingCancel">
+            <summary>
+              Looks up a localized string similar to Attempting to cancel parent run {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.AuotMLStatus">
+            <summary>
+              Looks up a localized string similar to AutoML sweep final status is {0}. Run time is {1} seconds..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.CancelSuccessfully">
+            <summary>
+              Looks up a localized string similar to Cancel parentRun successfully.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ChildRunStatus">
+            <summary>
+              Looks up a localized string similar to Child run status:.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ColumnParsingException">
+            <summary>
+              Looks up a localized string similar to {0} was expected to be {1} but couldn&apos;t be parsed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.CompletedRun">
+            <summary>
+              Looks up a localized string similar to Completed a training run.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ComputeNotFound">
+            <summary>
+              Looks up a localized string similar to {0} compute target is not found in workspace {1}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.CreatedAutoMLRun">
+            <summary>
+              Looks up a localized string similar to Created AutoML run {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.CurrentChildRun">
+            <summary>
+              Looks up a localized string similar to Current child run stats: .
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.DelimitedOnlyWarning">
+            <summary>
+              Looks up a localized string similar to Only comma, tab or semi-colon delimited files are allowed..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.Done">
+            <summary>
+              Looks up a localized string similar to Done..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.DownloadError">
+            <summary>
+              Looks up a localized string similar to Download Error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.DownloadErrorHelper">
+            <summary>
+              Looks up a localized string similar to There&apos;s an error when downloading file from Azure Blob, would you like to try again?.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.DownloadingBestModel">
+            <summary>
+              Looks up a localized string similar to Downloading best model to {0}...
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.FailedTrainingMessage">
+            <summary>
+              Looks up a localized string similar to Training has failed. Please go to Azure portal to see more details..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.FixedWidthWarning">
+            <summary>
+              Looks up a localized string similar to File {0} appears to be a fixed width file..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.MonitorRunURL">
+            <summary>
+              Looks up a localized string similar to You can also monitor this run using URL: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.NoChildRun">
+            <summary>
+              Looks up a localized string similar to Didn&apos;t find a child run..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.NoComputeFound">
+            <summary>
+              Looks up a localized string similar to No compute targets found in workspace {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.NoSubscriptionNameError">
+            <summary>
+              Looks up a localized string similar to Must provide resource group or new resource group name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.Ok">
+            <summary>
+              Looks up a localized string similar to Ok..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.OkCompute">
+            <summary>
+              Looks up a localized string similar to Ok, compute target...
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.OkExperiment">
+            <summary>
+              Looks up a localized string similar to Ok, experiment...
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.ParseWarning">
+            <summary>
+              Looks up a localized string similar to Unable to parse file..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.PollingError">
+            <summary>
+              Looks up a localized string similar to Polling Error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.RetryNetworkMessage">
+             <summary>
+               Looks up a localized string similar to A network issue has been detected. Please check your internet and try again. If this issue continues, please select &quot;No&quot; and report this issue. 
+            
+            Would you like to retry?.
+             </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.RunIsLabel">
+            <summary>
+              Looks up a localized string similar to Run is {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.SetupIterationDone">
+            <summary>
+              Looks up a localized string similar to Setup iteration final status is {0}. Run time {1} seconds..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.SetupIterationInProgress">
+            <summary>
+              Looks up a localized string similar to Setup iteration in progress, status is.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.SQLColumnParsingError">
+            <summary>
+              Looks up a localized string similar to Cannot correctly parse type {0} of column {1}. Please report this error or edit this column type..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.StartingAutoMLRun">
+            <summary>
+              Looks up a localized string similar to Starting AutoML run in workspace {0}, experiment {1} using compute target {2}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.SweepRunning">
+            <summary>
+              Looks up a localized string similar to Running AutoML pipeline sweep....
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.TrainingFinishedNoModels">
+            <summary>
+              Looks up a localized string similar to Training time finished without any models trained..
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.VerifyParameters">
+            <summary>
+              Looks up a localized string similar to Verifying parameters: workspace...
+            </summary>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.AutoMLServiceResources.WaitingForSetupIteration">
+            <summary>
+              Looks up a localized string similar to Waiting for setup iteration to get created....
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.Experiments.BinaryClassificationExperiment">
+            <summary>
+            Binary classification experiment.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.Experiments.MultiClassificationExperiment">
+            <summary>
+            Multi classification experiment.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.Experiments.RegressionExperiment">
+            <summary>
+            Regression experiment
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.GetAllowedMultiClassifiers">
+            <summary>
+            Get allowed multiclass classifiers from featureflag.props, return <see cref="F:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.AllowedMultiClassifiers"/> if not set or value is in wrong format.
+            </summary>
+            <returns>allowed multiclass classifiers.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.GetAllowedBinaryClassifiers">
+            <summary>
+            Get allowed binary classifiers from featureflag.props, return <see cref="F:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.AllowedBianryClassifiers"/> if not set or value is in wrong format.
+            </summary>
+            <returns>allowed binary classifiers.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.GetAllowedRegressors">
+            <summary>
+            Get allowed binary classifiers from featureflag.props, return <see cref="F:Microsoft.ML.ModelBuilder.AutoMLService.FeatureFlagManager.AllowedRegressors"/> if not set or value is in wrong format.
+            </summary>
+            <returns>allowed binary classifiers.</returns>
+        </member>
+        <member name="P:Microsoft.ML.ModelBuilder.AutoMLService.QuestionAnswerMetricManager.LabelColumnName">
+            <summary>
+            Training answer column name
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.ModelInferenceEngine.PredictObjectDetectionAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            predict bounding boxes using object detection onnx model from <paramref name="modelPath"/> and picture from <paramref name="imagePath"/>.
+            </summary>
+            <param name="modelPath">path to objectt detecion onnx model.</param>
+            <param name="labelPath">path to onnx label mapping file.</param>
+            <param name="imagePath">path to image.</param>
+            <param name="labelColumnName">label column name.</param>
+            <param name="scoreColumnName">score column name.</param>
+            <param name="boxColumnName">box column name.</param>
+            <returns>list of <see cref="T:Microsoft.ML.ModelBuilder.AutoMLService.Contract.BoundingBox"/>.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.ModelInferenceEngine.LoadModelAndInputSchemaFromFile(System.String)">
+            <summary>
+            load model and input schema from <paramref name="modelPath"/>. Result will be cached.
+            </summary>
+            <param name="modelPath">path to mlnet model</param>
+            <returns>model and input schema.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLService.IRuntimeManager.IsRuntimeExist">
+            <summary>
+            Return true if runtime exists.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.RuntimeManager">
+            <summary>
+            managing runtime for torchsharp and tensorflow (in the future).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.Telemetry.InferColumnsEvent">
+            <summary>
+            Telemetry event for AutoML column inferencing.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ML.ModelBuilder.AutoMLService.Telemetry.SystemInfoEvent">
+            <summary>
+            System info telemetry event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLEngine.ProcessColumnDataKind(Microsoft.ML.ModelBuilder.Configuration.ITrainingConfiguration,Microsoft.ML.Data.DataKind)">
+            <summary>
+            if it's image scenario, convert label type to string. Otherwise remain what it's original kind.
+            </summary>
+            <param name="config">current training configuration.</param>
+            <param name="originalColumnKind">original datakind of column to check.</param>
+            <returns>data kind for the column. will be string or remain the same.</returns>
+        </member>
+        <member name="M:Microsoft.ML.ModelBuilder.AutoMLEngine.RandomPickAutoMLType">
+            <summary>
+            Get AutoML type from Environment['ModelBuilder_AutoMLType']. If not set, randomly select type between NNI and AutoML.Net.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Azure.MachineLearning.Services.AMLRest.AzureWebRequest">
+            <summary>
+            Handle calling the REST API.
+            </summary>
+        </member>
+        <member name="M:Azure.MachineLearning.Services.AMLRest.AzureWebRequest.CreateRequestAsync(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            Creates an Azure Web Request.
+            </summary>
+        </member>
+    </members>
+</doc>

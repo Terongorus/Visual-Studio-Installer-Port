@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="306" />
+    <Description Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="307" />
+    <Icon Package="{C00AC0D0-7385-4539-AA39-C3C63DD52C27}" ID="308" />
+    <TemplateID>Microsoft.Templates.WapProj.AppInstaller</TemplateID>
+    <ProjectType>WapProj</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>Package.appinstaller</DefaultName>
+    <TemplateGroupID>WapProj</TemplateGroupID>
+    <AppliesTo>WapProj</AppliesTo>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem>package.appinstaller</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

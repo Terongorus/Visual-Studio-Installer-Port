@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "ClickOnce로 애플리케이션 게시",
+  "clickonceCategoryMultipleTargetsDescription": "게시할 로컬 대상을 선택하세요.",
+  "installLocation": "설치 위치",
+  "manifestsSigned": "매니페스트 서명됨",
+  "publishLanguage": "게시 언어",
+  "configuration": "구성",
+  "portable": "이식 가능",
+  "PublishLocation": "게시 위치",
+  "settingsSection": "설정",
+  "showAll": "모두 표시",
+  "targetFramework": "대상 프레임워크",
+  "targetRuntime": "대상 런타임",
+  "updateEnabled": "업데이트 사용",
+  "updateLocation": "업데이트 위치"
+}

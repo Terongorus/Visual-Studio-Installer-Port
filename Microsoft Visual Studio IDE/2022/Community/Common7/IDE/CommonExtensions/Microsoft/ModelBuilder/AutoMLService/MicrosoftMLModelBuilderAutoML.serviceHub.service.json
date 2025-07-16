@@ -1,0 +1,10 @@
+﻿{
+  "host": "dotnet.x64",
+  "singleDomainLoaderOptimization": true,
+  "hostId": "cpu",
+  "name": "MicrosoftMLModelBuilderAutoML",
+  "entryPoint": {
+    "assemblyPath": "Microsoft.ML.ModelBuilder.AutoMLService.dll",
+    "fullClassName": "Microsoft.ML.ModelBuilder.AutoMLService.ServiceFactory.AutoMLService"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "使用 ClickOnce 发布应用程序",
+  "clickonceCategoryMultipleTargetsDescription": "希望发布到哪个本地目标?",
+  "installLocation": "安装位置",
+  "manifestsSigned": "已签名清单",
+  "publishLanguage": "发布语言",
+  "configuration": "配置",
+  "portable": "可移植",
+  "PublishLocation": "发布位置",
+  "settingsSection": "设置",
+  "showAll": "全部显示",
+  "targetFramework": "目标框架",
+  "targetRuntime": "目标运行时",
+  "updateEnabled": "已启用更新",
+  "updateLocation": "更新位置"
+}

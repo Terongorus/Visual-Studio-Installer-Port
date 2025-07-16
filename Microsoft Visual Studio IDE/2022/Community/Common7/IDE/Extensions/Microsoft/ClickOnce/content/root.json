@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "targets": [
+    {
+      "id": "ClickOnce",
+      "display": {
+        "$ref": "clickonce.target.json#/model"
+      },
+      "appliesTo": {
+        "$ref": "clickonce.target.json#/appliesTo"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "ClickOnce",
+      "display": {
+        "$ref": "clickonce.category.json#/model"
+      }
+    }
+  ],
+  "configs": {
+    "clickonce": {
+      "$ref": "clickonce.profileconfig.json"
+    }
+  },
+  "viewConfigs": {
+    "clickonce": {
+      "$ref": "clickonce.view.config.json"
+    }
+  },
+  "summaryEntries": [
+    {
+      "id": "PublishDir_CO",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/PublishDir_CO"
+      }
+    },
+    {
+      "id": "InstallUrl",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/InstallUrl"
+      }
+    },
+    {
+      "id": "SignManifests",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/SignManifests"
+      }
+    },
+    {
+      "id": "TargetCulture",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/TargetCulture"
+      }
+    },
+    {
+      "id": "UpdateEnabled",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/UpdateEnabled"
+      }
+    },
+    {
+      "id": "UpdateUrl",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/UpdateUrl"
+      }
+    },
+    {
+      "id": "Configuration_CO",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/Configuration_CO"
+      }
+    },
+    {
+      "id": "TargetFramework_CO",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/TargetFramework_CO"
+      }
+    },
+    {
+      "id": "TargetRuntime_CO",
+      "model": {
+        "$ref": "/definitions/summaryEntries.json#/TargetRuntime_CO"
+      }
+    }
+  ]
+}

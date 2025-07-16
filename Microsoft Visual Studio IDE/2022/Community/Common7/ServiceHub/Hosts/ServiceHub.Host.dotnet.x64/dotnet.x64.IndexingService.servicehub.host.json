@@ -1,0 +1,6 @@
+{
+  "$schema": "../../../schemas/servicehub.host.schema.json",
+  "hostExecutable": "./ServiceHub.IndexingService.exe",
+  "hostArgs": [ "$HOSTID", "$PIPE", "$TELEMETRYSESSION", "$HostRemoteBrokerPipeName" ],
+  "additionalEnvironmentVariables": { "DOTNET_gcConcurrent": "0" }
+}

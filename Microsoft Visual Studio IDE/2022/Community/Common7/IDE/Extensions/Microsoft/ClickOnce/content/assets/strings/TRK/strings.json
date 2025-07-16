@@ -1,0 +1,17 @@
+{
+  "clickonceCategoryName": "ClickOnce",
+  "clickonceCategoryDescription": "Uygulamanızı ClickOnce ile yayımlayın",
+  "clickonceCategoryMultipleTargetsDescription": "Hangi yerel hedefte yayımlamak istiyorsunuz?",
+  "installLocation": "Yükleme konumu",
+  "manifestsSigned": "İmzalanan bildirimler",
+  "publishLanguage": "Yayımlama dili",
+  "configuration": "Yapılandırma",
+  "portable": "Taşınabilir",
+  "PublishLocation": "Yayımlama konumu",
+  "settingsSection": "Ayarlar",
+  "showAll": "Tümünü göster",
+  "targetFramework": "Hedef Çerçeve",
+  "targetRuntime": "Hedef Çalışma Zamanı",
+  "updateEnabled": "Güncelleştirme etkin",
+  "updateLocation": "Güncelleştirme konumu"
+}
